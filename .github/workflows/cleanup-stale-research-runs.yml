@@ -1,0 +1,42 @@
+name: cleanup stale ACSIE research runs
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Cancel stale runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cancel_run() {
+            repo="$1"
+            run_id="$2"
+            echo "Cancelling $repo run $run_id"
+            curl --fail-with-body --silent --show-error \
+              -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              "https://api.github.com/repos/$repo/actions/runs/$run_id/cancel" || true
+          }
+
+          cancel_run Infrasigma/subsume-proving-ground 36975645367
+          cancel_run Infrasigma/subsume-proving-ground 36975636043
+          cancel_run Infrasigma/subsume-proving-ground 36975596694
+          cancel_run Infrasigma/subsume-proving-ground 36971665519
+          cancel_run Infrasigma/subsume-proving-ground 36971071407
+          cancel_run Infrasigma/subsume-proving-ground 36970990196
+          cancel_run Infrasigma/subsume-proving-ground 36977289715
+          cancel_run Infrasigma/Tester- 36979105249
+          cancel_run Infrasigma/Tester- 36984436982
+
+          echo "Stale-run cleanup requested."
