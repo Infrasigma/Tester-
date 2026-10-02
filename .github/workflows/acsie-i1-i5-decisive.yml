@@ -1,0 +1,216 @@
+name: ACSIE I1-I5 decisive recursive test via Tester
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/acsie-i1-i5-decisive.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: acsie-i1-i5-tester-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  ACSIE_COMMIT: "19038a5402ba534839e58c19d92a4ded75491ffc"
+  ACSIE_TREE: "39a973c53b8030c0d4e42fb9f491cc36587dfd62"
+  PG_COMMIT: "9d082b9a9df1f466c48ebed71b43f2c8dfa07148"
+  PG_REPO: "Infrasigma/subsume-proving-ground"
+
+jobs:
+  decisive:
+    strategy:
+      fail-fast: false
+      matrix:
+        seed: [2026100301,2026100302,2026100303,2026100304,2026100305,2026100306,2026100307,2026100308,2026100309,2026100310]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout exact Tester source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Checkout exact ACSIE candidate
+        uses: actions/checkout@v4
+        with:
+          repository: Infrasigma/ACSIE
+          ref: ${{ env.ACSIE_COMMIT }}
+          token: ${{ github.token }}
+          path: acsie
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Checkout exact proving-ground harness
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PG_REPO }}
+          ref: ${{ env.PG_COMMIT }}
+          token: ${{ github.token }}
+          path: proving-ground
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify exact sources
+        run: |
+          set -euo pipefail
+          test "$(git -C acsie rev-parse HEAD)" = "${ACSIE_COMMIT}"
+          test "$(git -C acsie rev-parse HEAD^{tree})" = "${ACSIE_TREE}"
+          test "$(git -C proving-ground rev-parse HEAD)" = "${PG_COMMIT}"
+          printf '%s\n' "acsie_commit=${ACSIE_COMMIT}"
+          printf '%s\n' "acsie_tree=${ACSIE_TREE}"
+          printf '%s\n' "proving_ground_commit=${PG_COMMIT}"
+          printf '%s\n' "seed=${{ matrix.seed }}"
+
+      - name: Syntax and substrate smoke
+        working-directory: acsie
+        run: |
+          set -euo pipefail
+          python3 -m py_compile cognitive_core/native_independent_core.py cognitive_core/recursive_research.py
+          PYTHONPATH="$PWD" python3 - <<'PY'
+          from cognitive_core.recursive_research import CapabilityDemandModel, MechanismConfig, HypothesisEngine
+          assert "unknown" in CapabilityDemandModel.HYPOTHESES
+          assert HypothesisEngine().generate(MechanismConfig(), rows=(), width=2)
+          print("I1-I3 substrate smoke: PASS")
+          PY
+
+      - name: Verify network namespace isolation support
+        id: net
+        shell: bash
+        run: |
+          set +e
+          unshare -Urn true >/dev/null 2>&1
+          rc=$?
+          if [ "$rc" -eq 0 ]; then
+            echo "mode=unshare-net" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=unavailable" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+
+      - name: Run decisive seed in isolated network namespace
+        if: steps.net.outputs.mode == 'unshare-net'
+        working-directory: proving-ground
+        env:
+          PYTHONPATH: "${{ github.workspace }}/acsie"
+          SEED: "${{ matrix.seed }}"
+        run: |
+          set +e
+          mkdir -p "evidence/i1-i5/$SEED"
+          unshare -Urn python3 research/acsie_i1_i5_decisive_test.py --seed "$SEED" --stages 7 --out "evidence/i1-i5/$SEED" | tee "evidence/i1-i5/$SEED/stdout.json"
+          rc=${PIPESTATUS[0]}
+          echo "$rc" > "evidence/i1-i5/$SEED/exit_code"
+          exit 0
+
+      - name: Run blocked-network fallback
+        if: steps.net.outputs.mode != 'unshare-net'
+        working-directory: proving-ground
+        env:
+          PYTHONPATH: "${{ github.workspace }}/acsie"
+          SEED: "${{ matrix.seed }}"
+        run: |
+          mkdir -p "evidence/i1-i5/$SEED"
+          printf '%s\n' '{"scientific_status":"BLOCKED","reason":"network_namespace_unavailable"}' > "evidence/i1-i5/$SEED/i1_i5_result.json"
+          printf '%s\n' '2' > "evidence/i1-i5/$SEED/exit_code"
+
+      - name: Add immutable source identity to artifact
+        working-directory: proving-ground
+        env:
+          SEED: "${{ matrix.seed }}"
+          NET_MODE: "${{ steps.net.outputs.mode }}"
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          p = Path("evidence/i1-i5") / os.environ["SEED"] / "i1_i5_result.json"
+          d = json.loads(p.read_text())
+          d["source_identity"] = {
+              "acsie_commit": os.environ["ACSIE_COMMIT"],
+              "acsie_tree": os.environ["ACSIE_TREE"],
+              "proving_ground_commit": os.environ["PG_COMMIT"],
+              "network_guard": os.environ["NET_MODE"],
+              "external_model": False,
+              "target_identity_accessible": False,
+              "manual_runtime_strategy": False,
+          }
+          p.write_text(json.dumps(d, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload seed evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acsie-i1-i5-tester-${{ matrix.seed }}
+          path: proving-ground/evidence/i1-i5/${{ matrix.seed }}/**
+          if-no-files-found: error
+
+  aggregate:
+    needs: decisive
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download seed evidence
+        uses: actions/download-artifact@v4
+        with:
+          pattern: acsie-i1-i5-tester-*
+          path: evidence/i1-i5
+          merge-multiple: true
+
+      - name: Enforce ten-seed scientific gate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import glob, json, sys
+          from pathlib import Path
+
+          expected_seeds={2026100301,2026100302,2026100303,2026100304,2026100305,
+                          2026100306,2026100307,2026100308,2026100309,2026100310}
+          paths=sorted(glob.glob("evidence/i1-i5/**/i1_i5_result.json", recursive=True))
+          rows=[json.loads(Path(p).read_text()) for p in paths]
+          got={int(r.get("seed")) for r in rows if r.get("seed") is not None}
+          failures=[]
+          for r in rows:
+              ident=r.get("source_identity",{})
+              if (
+                  r.get("scientific_status") != "PASSED"
+                  or (r.get("integrity",{}).get("integrity_ok") is not True)
+                  or ident.get("acsie_commit") != "19038a5402ba534839e58c19d92a4ded75491ffc"
+                  or ident.get("proving_ground_commit") != "9d082b9a9df1f466c48ebed71b43f2c8dfa07148"
+                  or ident.get("network_guard") != "unshare-net"
+                  or ident.get("external_model") is not False
+                  or ident.get("target_identity_accessible") is not False
+              ):
+                  failures.append({
+                      "seed":r.get("seed"),
+                      "scientific_status":r.get("scientific_status"),
+                      "integrity":r.get("integrity"),
+                      "source_identity":ident,
+                  })
+
+          out={
+              "scientific_status": "PASSED" if got == expected_seeds and not failures else "FAILED",
+              "seed_count": len(rows),
+              "expected_seed_count": len(expected_seeds),
+              "failed_seeds": failures,
+              "acsie_commit": "19038a5402ba534839e58c19d92a4ded75491ffc",
+              "acsie_tree": "39a973c53b8030c0d4e42fb9f491cc36587dfd62",
+              "proving_ground_commit": "9d082b9a9df1f466c48ebed71b43f2c8dfa07148",
+          }
+          print(json.dumps(out, indent=2, sort_keys=True))
+          Path("evidence/i1-i5/aggregate.json").write_text(json.dumps(out, indent=2, sort_keys=True))
+          if out["scientific_status"] != "PASSED":
+              sys.exit(1)
+          PY
+
+      - name: Upload aggregate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acsie-i1-i5-tester-aggregate
+          path: evidence/i1-i5/aggregate.json
+          if-no-files-found: error
