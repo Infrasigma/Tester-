@@ -22,7 +22,7 @@ jobs:
         with:
           repository: Infrasigma/ACSIE
           ref: 3fe72e9633ec8e762ca674df5c0e664b7bafd222
-          token: ${{ secrets.ACSIE_READ_TOKEN }}
+          token: ${{ github.token }}
           path: acsie-foundry
           fetch-depth: 0
           persist-credentials: false
@@ -59,7 +59,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: gen3-learning-rule-foundry-v1-tester-$${{ matrix.seed }}
+          name: gen3-learning-rule-foundry-v1-tester-${{ matrix.seed }}
           path: acsie-foundry/evidence/gen3-learning-rule-foundry-v1/**
           if-no-files-found: error
 
