@@ -17,6 +17,10 @@ This repository is public. Treat **all source, workflow files, logs, job summari
 
 Use encrypted, least-privilege secrets only where they are explicitly required. Never print or serialize credential values. A public workflow's default `GITHUB_TOKEN` must not be assumed to authorize checkout of the private ACSIE repository; configure and verify a dedicated, narrowly scoped credential when cross-repository read access is required. Do not expose secrets to untrusted pull-request code.
 
+## Private-receipt tooling check
+
+`.github/workflows/validate-acsie-receipt-tooling.yml` is manual-only and checks out a selected ACSIE ref using the `ACSIE_READ_TOKEN` repository secret. It parses the receipt schema and runs synthetic unit tests only; it does not execute research or export real receipt data. Configure `ACSIE_READ_TOKEN` as a fine-grained token with **Contents: read** access to only `Infrasigma/ACSIE` before running it.
+
 ## Existing workflow caveat
 
 `.github/workflows/gen3-learning-rule-foundry-parallel.yml` is an older research-run workflow, not a private-data storage contract. It uploads seed evidence and an aggregate JSON as artifacts on this public repository, and it uses `${{ github.token }}` for a private ACSIE checkout. Treat it as **not approved for private ACSIE research runs** until private-source authentication is explicitly verified and its evidence/log route is moved to private storage or reduced to deliberately sanitized public metadata. Do not use its green status as scientific qualification.
