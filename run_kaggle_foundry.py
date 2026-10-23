@@ -255,6 +255,7 @@ def run_phase0_tests() -> bool:
 
 
 def main() -> int:
+    sys.path.insert(0, str(ROOT))
     if not run_phase0_tests():
         print('PHASE0_FAILED: refusing to start the 5x12 research run.', file=sys.stderr)
         return 2
@@ -272,7 +273,6 @@ def main() -> int:
     checkpoints_root.mkdir(parents=True, exist_ok=True)
     summaries_root.mkdir(parents=True, exist_ok=True)
 
-    sys.path.insert(0, str(ROOT))
     foundry = None
     import_error = None
     try:
