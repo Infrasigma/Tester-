@@ -1,0 +1,188 @@
+name: Recover or ingest a private Kaggle Foundry receipt
+
+on:
+  workflow_dispatch:
+    inputs:
+      kernel_slug:
+        description: Completed private Kaggle kernel slug
+        required: true
+        type: string
+        default: memorican/acsie-gen3-foundry
+      kernel_version:
+        description: Exact completed kernel version
+        required: true
+        type: string
+      dataset_slug:
+        description: Target private Kaggle dataset slug
+        required: true
+        type: string
+        default: memorican/acsie-foundry-checkpoints
+      target_branch:
+        description: ACSIE working branch (main is forbidden)
+        required: true
+        type: string
+        default: work/research-data-routing-20261023
+  push:
+    branches:
+      - work/public-infra-contract-20261023
+    paths:
+      - 'scripts/acsie-foundry-run-config.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: acsie-foundry-receipt-ingest-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out public orchestration branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+
+      - name: Resolve receipt-ingest control
+        id: resolve
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_KERNEL_SLUG: ${{ inputs.kernel_slug }}
+          INPUT_KERNEL_VERSION: ${{ inputs.kernel_version }}
+          INPUT_DATASET_SLUG: ${{ inputs.dataset_slug }}
+          INPUT_TARGET_BRANCH: ${{ inputs.target_branch }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          config = json.loads(Path("scripts/acsie-foundry-run-config.json").read_text(encoding="utf-8"))
+          if config.get("schema") != "ACSIE.foundry-workflow-control.v1":
+              raise SystemExit("Invalid one-shot workflow control schema.")
+          if os.environ["EVENT_NAME"] == "workflow_dispatch":
+              enabled = True
+              values = (
+                  os.environ.get("INPUT_KERNEL_SLUG", "").strip(),
+                  os.environ.get("INPUT_KERNEL_VERSION", "").strip(),
+                  os.environ.get("INPUT_DATASET_SLUG", "").strip(),
+                  os.environ.get("INPUT_TARGET_BRANCH", "").strip(),
+              )
+          else:
+              block = config.get("receipt_ingest", {})
+              enabled = block.get("enabled") is True
+              values = (
+                  str(block.get("kernel_slug", "")).strip(),
+                  str(block.get("kernel_version", "")).strip(),
+                  str(block.get("dataset_slug", "")).strip(),
+                  str(block.get("target_branch", "")).strip(),
+              )
+          slug, version, dataset, branch = values
+          if enabled:
+              if not re.fullmatch(r"[a-z0-9._-]+/[a-z0-9._-]+", slug):
+                  raise SystemExit("Invalid kernel slug.")
+              if not re.fullmatch(r"[1-9][0-9]*", version):
+                  raise SystemExit("A positive exact kernel version is required.")
+              if not re.fullmatch(r"[a-z0-9._-]+/[a-z0-9._-]+", dataset):
+                  raise SystemExit("Invalid dataset slug.")
+              if branch == "main" or branch == "refs/heads/main" or branch.endswith("/main") or not re.fullmatch(r"[A-Za-z0-9._/-]+", branch):
+                  raise SystemExit("Receipt target must be a non-main branch.")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"enabled={'true' if enabled else 'false'}\n")
+              out.write(f"kernel_slug={slug}\n")
+              out.write(f"kernel_version={version}\n")
+              out.write(f"dataset_slug={dataset}\n")
+              out.write(f"target_branch={branch}\n")
+          print("RECEIPT_INGEST=ENABLED" if enabled else "RECEIPT_INGEST=DISABLED")
+          PY
+
+      - name: Skip when receipt-ingest flag is disabled
+        if: steps.resolve.outputs.enabled != 'true'
+        run: echo "Receipt-ingest flag disabled; no Kaggle outputs were downloaded."
+
+      - name: Require scoped repository credentials
+        if: steps.resolve.outputs.enabled == 'true'
+        shell: bash
+        env:
+          ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          [[ -n "${ACSIE_READ_TOKEN:-}" ]] || { echo "::error::Missing Tester- secret ACSIE_READ_TOKEN."; exit 1; }
+          [[ -n "${KAGGLE_API_TOKEN:-}" ]] || { echo "::error::Missing Tester- secret KAGGLE_API_TOKEN."; exit 1; }
+          echo "REQUIRED_SECRETS=PRESENT"
+
+      - name: Configure Kaggle authentication on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_OWNER: memorican
+        run: python scripts/configure_kaggle_auth.py
+
+      - name: Check out ACSIE working branch
+        if: steps.resolve.outputs.enabled == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: Infrasigma/ACSIE
+          ref: ${{ steps.resolve.outputs.target_branch }}
+          token: ${{ secrets.ACSIE_READ_TOKEN }}
+          path: acsie-source
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Kaggle CLI on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
+        run: python -m pip install --disable-pip-version-check --no-cache-dir 'kaggle>=2.2.5'
+
+      - name: Download, archive privately, recheck hashes, and publish receipt
+        if: steps.resolve.outputs.enabled == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+          KERNEL_SLUG: ${{ steps.resolve.outputs.kernel_slug }}
+          KERNEL_VERSION: ${{ steps.resolve.outputs.kernel_version }}
+          DATASET_SLUG: ${{ steps.resolve.outputs.dataset_slug }}
+          TARGET_BRANCH: ${{ steps.resolve.outputs.target_branch }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/archive_and_publish_foundry.py \
+            --kernel-slug "$KERNEL_SLUG" \
+            --kernel-version "$KERNEL_VERSION" \
+            --dataset-slug "$DATASET_SLUG" \
+            --target-branch "$TARGET_BRANCH" \
+            --acsie-root acsie-source \
+            --work-root "/tmp/acsie-foundry-recovery-${GITHUB_RUN_ID}"
+
+      - name: Reset one-shot receipt-ingest control after a push-triggered run
+        if: always() && github.event_name == 'push' && steps.resolve.outputs.enabled == 'true'
+        continue-on-error: true
+        shell: bash
+        env:
+          EXPECTED_KERNEL_SLUG: ${{ steps.resolve.outputs.kernel_slug }}
+          EXPECTED_KERNEL_VERSION: ${{ steps.resolve.outputs.kernel_version }}
+        run: |
+          set -euo pipefail
+          python - "$EXPECTED_KERNEL_SLUG" "$EXPECTED_KERNEL_VERSION" <<'PY'
+          import json, sys
+          from pathlib import Path
+          path = Path("scripts/acsie-foundry-run-config.json")
+          config = json.loads(path.read_text(encoding="utf-8"))
+          control = config.get("receipt_ingest", {})
+          if (control.get("enabled") is True
+                  and str(control.get("kernel_slug")) == sys.argv[1]
+                  and str(control.get("kernel_version")) == sys.argv[2]):
+              control["enabled"] = False
+              path.write_text(json.dumps(config, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+              print("RECEIPT_INGEST_CONTROL_RESET=TRUE")
+          else:
+              print("RECEIPT_INGEST_CONTROL_RESET=UNCHANGED")
+          PY

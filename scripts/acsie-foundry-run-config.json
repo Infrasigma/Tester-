@@ -1,0 +1,15 @@
+{
+  "schema": "ACSIE.foundry-workflow-control.v1",
+  "note": "Public non-secret one-shot controls. Set exactly one enabled flag true for the desired branch-triggered run, then set it false after completion.",
+  "foundry_dispatch": {
+    "enabled": false,
+    "acsie_ref": "work/research-data-routing-20261023"
+  },
+  "receipt_ingest": {
+    "enabled": false,
+    "kernel_slug": "memorican/acsie-gen3-foundry",
+    "kernel_version": 0,
+    "dataset_slug": "memorican/acsie-foundry-checkpoints",
+    "target_branch": "work/research-data-routing-20261023"
+  }
+}

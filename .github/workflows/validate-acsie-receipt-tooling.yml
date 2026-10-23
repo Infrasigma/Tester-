@@ -8,6 +8,14 @@ on:
         required: true
         type: string
         default: work/research-data-routing-20261023
+  push:
+    branches:
+      - work/public-infra-contract-20261023
+    paths:
+      - '.github/workflows/validate-acsie-receipt-tooling.yml'
+      - '.github/workflows/gen3-learning-rule-foundry-parallel.yml'
+      - '.github/workflows/ingest-kaggle-foundry-receipt.yml'
+      - 'scripts/**'
 
 permissions:
   contents: read
@@ -32,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Infrasigma/ACSIE
-          ref: ${{ inputs.acsie_ref }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.acsie_ref || 'work/research-data-routing-20261023' }}
           token: ${{ secrets.ACSIE_READ_TOKEN }}
           path: acsie
           persist-credentials: false
@@ -71,4 +79,7 @@ jobs:
 
       - name: Run synthetic receipt-validator unit tests
         working-directory: acsie
-        run: python -m unittest research.tests.test_remote_receipts research.tests.test_emit_validated_receipt
+        run: python -m unittest research.tests.test_remote_receipts research.tests.test_emit_validated_receipt research.tests.test_gen3_foundry_generations
+
+      - name: Run hosted private-dataset archiver tests
+        run: python -m unittest scripts.tests.test_archive_foundry_outputs

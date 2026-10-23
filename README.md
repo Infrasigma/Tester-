@@ -4,32 +4,46 @@ Public infrastructure and workflow-template repository for Infrasigma research.
 
 ## Responsibility split
 
-- **Private ACSIE:** authoritative scientific source, gate definitions, provenance, per-seed/per-generation outcomes, failures, and compact receipts.
-- **Kaggle:** remote research execution and private, versioned kernel output / dataset storage for bulky artifacts.
-- **Tester- (this public repository):** non-sensitive orchestration code only. Workflows check out private ACSIE source at dispatch time and submit it to a private Kaggle kernel; private research source and outputs are not committed or uploaded as GitHub Actions artifacts here.
-- **Termux/Android:** control and relay only. Do not clone/cache the research tree, download datasets, stage logs, or retain checkpoints on the phone.
+- **Private ACSIE:** authoritative source, research protocol, provenance, per-seed/per-generation outcomes, failure records, and compact receipts.
+- **Kaggle:** isolated research execution and versioned private datasets/kernel output for bulky artifacts.
+- **Tester-:** public orchestration code only. Private ACSIE source is checked out during a hosted workflow run; it is sent to a private Kaggle kernel and is not committed to this repository. Raw experiment outputs and checkpoints are not uploaded as GitHub Actions artifacts.
+- **Termux/Android:** control and low-volume receipt retry only. Do not clone the research repository, download checkpoint bundles, or retain logs/datasets on the phone.
 
-## Gen3 Foundry dispatch
+## Required repository secrets
 
-The workflow at .github/workflows/gen3-learning-rule-foundry-parallel.yml is manual-only. It requires these Tester- repository secrets:
+Add these secrets in **Tester- → Settings → Secrets and variables → Actions**:
 
-- ACSIE_READ_TOKEN: fine-grained credential with Contents: read on only Infrasigma/ACSIE.
-- KAGGLE_API_TOKEN: a Kaggle API access token used only to submit the private kernel.
+- `ACSIE_READ_TOKEN`: fine-grained PAT scoped only to `Infrasigma/ACSIE`, with **Contents: Read and write** for the end-to-end pipeline. Checkout and tests need read access, but receipt publication and the archive retry require write access to the ACSIE working branch. A read-only token will run the synthetic preflight but cannot publish receipts.
+- `KAGGLE_API_TOKEN`: the Kaggle token used by the hosted runner. A secret stored in ACSIE is not visible to Tester-. The credential helper accepts a current `KGAT_...` bearer token, a JSON payload with `username` and `key`, or a legacy key paired with the Kaggle owner `memorican`. Do not put the token into a workflow file, command line, issue, log, or phone-side file.
 
-A secret stored on ACSIE is not automatically available to workflows running in Tester-. The workflow stages only Python source files into a private Kaggle kernel, keeps kernel internet disabled, and uploads no seed evidence, checkpoints, logs, or aggregate research results as public GitHub artifacts.
+Credentials are consumed on GitHub-hosted runners; the Kaggle CLI and research data are not installed or stored in Termux.
 
-Kaggle kernel metadata is committed at kernel-metadata.json; the public payload contains only the runner and metadata. The actual private ACSIE source snapshot is fetched during the manual workflow and sent to memorican/acsie-gen3-foundry.
+## Branch-only workflow controls
 
-Scientific gate caveat: the currently pinned research/gen3_learning_rule_foundry_v1.py performs one Foundry run per seed and does not expose an explicit 12-generation checkpoint interface. run_kaggle_foundry.py preserves the five-seed diagnostic outcomes, records the missing generation coverage, and labels the frozen 5-seed x 12-generation qualification INCONCLUSIVE. It must not be treated as a qualification run or promoted.
+Changes stay on `work/public-infra-contract-20261023` and `work/research-data-routing-20261023`; do not merge to either `main` branch without separate scientific and security review.
 
-## Private receipt tooling
+The workflows are also reachable before merging by changing the non-secret one-shot config file:
 
-The workflow at .github/workflows/validate-acsie-receipt-tooling.yml is manual-only and checks out a selected ACSIE ref using secrets.ACSIE_READ_TOKEN. The exact workflow binding maps ACSIE_READ_TOKEN from the same-named Actions secret for both its preflight and checkout token. The secret must be configured in Tester- Settings > Secrets and variables > Actions, scoped read-only to private ACSIE. The workflow tests synthetic fixtures only.
+`scripts/acsie-foundry-run-config.json`
 
-## Public-repository safety
+For a Foundry run, set `foundry_dispatch.enabled` to `true` and provide the ACSIE ref. For receipt-only recovery, leave that flag false and set `receipt_ingest.enabled` to `true`, with the exact kernel slug, positive kernel version, private dataset slug, and target working branch. **Enable only one flag at a time.** Commit the config change to the working branch. The workflow resets the flag after a push-triggered attempt so a later commit does not accidentally repeat it. A disabled config push runs no Kaggle job.
 
-Treat workflow files, logs, job summaries, caches, and any uploaded artifacts here as public-facing. Never put credentials, private ACSIE source/data, raw experiment outputs, hidden evaluation inputs, checkpoints, or private artifact contents here. Never print or serialize credential values. No secrets are exposed to pull-request code because the research dispatcher is manual-only.
+The Foundry workflow resolves the requested ACSIE revision through the GitHub API, verifies the Git blob hashes while staging only Python source, records the exact source SHA and a unique dispatch nonce inside the private Kaggle payload, and pushes a private kernel with internet disabled. Public job logs show staging status and file counts, not the private ACSIE SHA or source contents. The hosted runner waits for that kernel version, downloads its JSON output, validates a 5-seed × 12-generation manifest, creates/versions a private Kaggle Dataset, downloads its files back for independent SHA-256 rechecks, and only then attempts to write a compact receipt and provenance records to ACSIE. Logs are limited to stage/status and structural counts; heavy artifacts remain on the hosted runner during transfer and in private Kaggle storage after completion.
 
-## Scientific-status discipline
+Default private archive slug: `memorican/acsie-foundry-checkpoints` (matches the current `memorican/acsie-gen3-foundry` kernel owner). If your Kaggle workspace uses a different owner slug, set the Tester- repository variable `ACSIE_FOUNDRY_DATASET_SLUG` or update the non-secret workflow/config values before running. The archive workflow rejects a dataset when its privacy cannot be confirmed as private.
 
-Infrastructure success proves only that infrastructure ran. Preserve PASSED, FAILED, BLOCKED, CRASHED, INVALID, and INCONCLUSIVE distinctions. Never promote research claims based on workflow success, benchmark-only results, or artifact existence.
+## Termux receipt retry
+
+`scripts/publish_from_termux.sh <run_id> [target_branch]` is a small retry path **after** the hosted publisher has already verified and committed the candidate, manifest, and archive attestation under `research/archive-attestations/<run_id>/` in ACSIE. It downloads only those small JSON files plus the two Python validator files, runs the receipt checks, and publishes via the GitHub CLI session. It does not use Kaggle credentials, clone a repo, fetch checkpoints, or download the private dataset; the script enforces a temporary workspace below 5 MiB. GitHub CLI authentication must have Contents: write for the target ACSIE working branch.
+
+This Termux wrapper cannot create or verify the heavy dataset archive on the phone. If the private Dataset has not yet been created and rechecked by the hosted workflow, rerun the hosted archive workflow instead.
+
+## Scientific status and promotion
+
+The Foundry source now has a deterministic state-carrying `run_generations(seed, generations=12)` driver. Generations execute sequentially as `0 → 1 → … → 11`: each generation evaluates a bounded mutated candidate population on inner forward/reverse streams, selects using those inner metrics only, writes a checkpoint, and passes the selected rule plus learned core state to the next generation. Outer holdout/transfer and legacy retention are measured after the loop, not used for per-generation selection. A broken precondition yields explicit `FAILED`/ `BLOCKED` rows; exceptions are `CRASHED`. The 5 × 12 matrix is structural coverage, not proof of success.
+
+No qualifying Kaggle run has been observed merely because these files exist. Preserve `PASSED`, `FAILED`, `BLOCKED`, `CRASHED`, `INVALID`, and `INCONCLUSIVE`; one non-passing seed/generation blocks the frozen qualification. AGI/ASI/general capability remains **NOT_DEMONSTRATED** and promotion remains **DO NOT PROMOTE** until actual evidence passes the frozen gate.
+
+## Public repository safety
+
+Treat workflow files, logs, job summaries, and caches as public-facing. Never place credentials, private ACSIE source/data, raw experimental output, hidden evaluation inputs, checkpoint contents, or private artifact contents in this repository or its public logs. Do not use workflow-green status, benchmark-only results, or artifact existence to promote scientific claims.

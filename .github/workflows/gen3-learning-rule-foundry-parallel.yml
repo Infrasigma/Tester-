@@ -1,64 +1,120 @@
-name: Dispatch private ACSIE Gen3 Foundry to Kaggle
+name: Run private ACSIE Gen3 Foundry on Kaggle
 
 on:
   workflow_dispatch:
     inputs:
       acsie_ref:
-        description: Exact ACSIE branch, tag, or commit to use as source
+        description: ACSIE branch, tag, or full commit SHA to test
         required: true
         type: string
-        default: 3fe72e9633ec8e762ca674df5c0e664b7bafd222
+        default: work/research-data-routing-20261023
+  push:
+    branches:
+      - work/public-infra-contract-20261023
+    paths:
+      - 'scripts/acsie-foundry-run-config.json'
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: acsie-gen3-foundry-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  dispatch-private-kaggle-kernel:
+  dispatch-and-publish:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 355
     steps:
-      - name: Check out public orchestration code
+      - name: Check out public orchestration branch
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
-          persist-credentials: false
 
-      - name: Require managed credentials
+      - name: Resolve one-shot control and dispatch nonce
+        id: resolve
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_ACSIE_REF: ${{ inputs.acsie_ref }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          config = json.loads(Path("scripts/acsie-foundry-run-config.json").read_text(encoding="utf-8"))
+          if config.get("schema") != "ACSIE.foundry-workflow-control.v1":
+              raise SystemExit("Invalid one-shot workflow control schema.")
+          if os.environ["EVENT_NAME"] == "workflow_dispatch":
+              enabled = True
+              acsie_ref = os.environ.get("INPUT_ACSIE_REF", "").strip()
+          else:
+              block = config.get("foundry_dispatch", {})
+              enabled = block.get("enabled") is True
+              acsie_ref = str(block.get("acsie_ref", "")).strip()
+          if enabled and not acsie_ref:
+              raise SystemExit("An ACSIE ref is required when dispatch is enabled.")
+          if enabled and acsie_ref in {"main", "refs/heads/main"}:
+              raise SystemExit("The ACSIE main ref is not an eligible source for this branch-scoped experiment.")
+          if enabled and len(acsie_ref) > 200:
+              raise SystemExit("ACSIE ref exceeds the supported length.")
+          nonce = f'{os.environ["RUN_ID"]}-{os.environ["RUN_ATTEMPT"]}'
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"enabled={'true' if enabled else 'false'}\n")
+              out.write(f"acsie_ref={acsie_ref}\n")
+              out.write(f"dispatch_nonce={nonce}\n")
+          print("FOUNDRY_CONTROL=ENABLED" if enabled else "FOUNDRY_CONTROL=DISABLED")
+          PY
+
+      - name: Skip when one-shot flag is disabled
+        if: steps.resolve.outputs.enabled != 'true'
+        run: |
+          echo "Foundry dispatch disabled; no Kaggle kernel was started." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Require scoped credentials
+        if: steps.resolve.outputs.enabled == 'true'
         shell: bash
         env:
           ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         run: |
           set -euo pipefail
-          [[ -n "${ACSIE_READ_TOKEN:-}" ]] || {
-            echo "::error::Add Tester- repository secret ACSIE_READ_TOKEN (fine-grained Contents: read, only Infrasigma/ACSIE)."
-            exit 1
-          }
-          [[ -n "${KAGGLE_API_TOKEN:-}" ]] || {
-            echo "::error::Add Tester- repository secret KAGGLE_API_TOKEN. A secret saved in ACSIE is not visible to this public repository."
-            exit 1
-          }
+          [[ -n "${ACSIE_READ_TOKEN:-}" ]] || { echo "::error::Missing Tester- secret ACSIE_READ_TOKEN."; exit 1; }
+          [[ -n "${KAGGLE_API_TOKEN:-}" ]] || { echo "::error::Missing Tester- secret KAGGLE_API_TOKEN."; exit 1; }
+          echo "REQUIRED_SECRETS=PRESENT"
 
-      - name: Check out exact private ACSIE source
-        uses: actions/checkout@v4
-        with:
-          repository: Infrasigma/ACSIE
-          ref: ${{ inputs.acsie_ref }}
-          token: ${{ secrets.ACSIE_READ_TOKEN }}
-          path: acsie-source
-          fetch-depth: 1
-          persist-credentials: false
+      - name: Configure Kaggle authentication on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_OWNER: memorican
+        run: python scripts/configure_kaggle_auth.py
 
-      - name: Stage private kernel payload (Python sources only)
+      - name: Stage exact private ACSIE source snapshot without exposing its SHA in public logs
+        if: steps.resolve.outputs.enabled == 'true'
+        env:
+          ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+          ACSIE_REF: ${{ steps.resolve.outputs.acsie_ref }}
+        run: python scripts/fetch_private_acsie_source.py --repository Infrasigma/ACSIE --ref "$ACSIE_REF" --destination acsie-source
+
+      - name: Stage private kernel payload and provenance
+        if: steps.resolve.outputs.enabled == 'true'
         shell: bash
         env:
-          ACSIE_REF: ${{ inputs.acsie_ref }}
-          WORKFLOW_SHA: ${{ github.sha }}
+          ACSIE_REF: ${{ steps.resolve.outputs.acsie_ref }}
+          DISPATCH_NONCE: ${{ steps.resolve.outputs.dispatch_nonce }}
+          ORCHESTRATION_SHA: ${{ github.sha }}
+          ORCHESTRATION_RUN_ID: ${{ github.run_id }}
+          ORCHESTRATION_RUN_ATTEMPT: ${{ github.run_attempt }}
         run: |
           set -euo pipefail
           test -f acsie-source/research/gen3_learning_rule_foundry_v1.py
           test -f acsie-source/cognitive_core/native_independent_core.py
-          ACSIE_SOURCE_SHA="$(git -C acsie-source rev-parse HEAD)"
+          ACSIE_SOURCE_SHA="$(python -c 'import json; print(json.load(open("acsie-source/source-info.json", encoding="utf-8"))["commit_sha"])')"
           mkdir -p kaggle-kernel
           cp run_kaggle_foundry.py kernel-metadata.json kaggle-kernel/
           cp -R acsie-source/cognitive_core kaggle-kernel/cognitive_core
@@ -67,40 +123,97 @@ jobs:
             mkdir -p "kaggle-kernel/$(dirname "$rel")"
             cp "$src" "kaggle-kernel/$rel"
           done < <(find acsie-source/research -type f -name '*.py' -print0)
-          python - "$ACSIE_SOURCE_SHA" "$ACSIE_REF" "$WORKFLOW_SHA" <<'PY'
-          import json, pathlib, sys
-          sha, ref, workflow_sha = sys.argv[1:]
+          python - "$ACSIE_SOURCE_SHA" <<'PY'
+          import json, os, pathlib, sys
+          sha, = sys.argv[1:]
           manifest = {
               "schema": "ACSIE.kaggle-source-manifest.v1",
               "repository": "Infrasigma/ACSIE",
               "source_commit": sha,
-              "requested_ref": ref,
-              "orchestration_commit": workflow_sha,
+              "requested_ref": os.environ["ACSIE_REF"],
+              "orchestration_commit": os.environ["ORCHESTRATION_SHA"],
+              "orchestration_run_id": int(os.environ["ORCHESTRATION_RUN_ID"]),
+              "orchestration_run_attempt": int(os.environ["ORCHESTRATION_RUN_ATTEMPT"]),
+              "dispatch_nonce": os.environ["DISPATCH_NONCE"],
               "foundry_entrypoint": "research/gen3_learning_rule_foundry_v1.py",
               "network_during_research": False,
           }
-          pathlib.Path("kaggle-kernel/source-manifest.json").write_text(
-              json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-          )
-          metadata = json.loads(pathlib.Path("kaggle-kernel/kernel-metadata.json").read_text())
+          target = pathlib.Path("kaggle-kernel/source-manifest.json")
+          target.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+          metadata = json.loads(pathlib.Path("kaggle-kernel/kernel-metadata.json").read_text(encoding="utf-8"))
           assert metadata.get("id") == "memorican/acsie-gen3-foundry"
           assert str(metadata.get("is_private", "")).lower() == "true"
           assert str(metadata.get("enable_internet", "")).lower() == "false"
-          print(f"Prepared private kernel payload for ACSIE source {sha}; no artifacts or logs were staged.")
+          print("KAGGLE_PAYLOAD_STAGED=PRIVATE_INTERNET_DISABLED")
           PY
-          echo "acsie_source_commit=$ACSIE_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
-          echo "kaggle_kernel=memorican/acsie-gen3-foundry (private, internet disabled)" >> "$GITHUB_STEP_SUMMARY"
-          echo "The pinned Foundry source has no explicit 12-generation driver; its candidate will remain non-qualifying until a real generation matrix is present." >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "## Private Kaggle Foundry"
+            echo "- Kernel visibility: private"
+            echo "- Kernel internet: disabled"
+            echo "- Expected matrix: 5 seeds × 12 generations"
+          } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Set up Python for Kaggle CLI
+      - name: Set up Python on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
-      - name: Install Kaggle CLI
-        run: python -m pip install --disable-pip-version-check --no-cache-dir "kaggle>=2.2.5"
+      - name: Install Kaggle CLI on hosted runner
+        if: steps.resolve.outputs.enabled == 'true'
+        run: python -m pip install --disable-pip-version-check --no-cache-dir 'kaggle>=2.2.5'
 
-      - name: Push and run private Kaggle kernel
+      - name: Push and wait for exact private kernel version
+        id: kernel
+        if: steps.resolve.outputs.enabled == 'true'
+        run: python scripts/poll_kaggle_kernel.py --kernel-slug memorican/acsie-gen3-foundry --path kaggle-kernel --dispatch-nonce "${{ steps.resolve.outputs.dispatch_nonce }}" --timeout-minutes 300
+
+      - name: Archive, recheck SHA-256s, and publish compact receipt
+        if: steps.resolve.outputs.enabled == 'true'
         env:
-          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-        run: kaggle kernels push --path kaggle-kernel
+          GITHUB_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+          DATASET_SLUG: ${{ vars.ACSIE_FOUNDRY_DATASET_SLUG }}
+          KERNEL_VERSION: ${{ steps.kernel.outputs.kernel_version }}
+          TARGET_BRANCH: work/research-data-routing-20261023
+          EXPECTED_NONCE: ${{ steps.resolve.outputs.dispatch_nonce }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          dataset="${DATASET_SLUG:-memorican/acsie-foundry-checkpoints}"
+          python scripts/archive_and_publish_foundry.py \
+            --kernel-slug memorican/acsie-gen3-foundry \
+            --kernel-version "$KERNEL_VERSION" \
+            --dataset-slug "$dataset" \
+            --target-branch "$TARGET_BRANCH" \
+            --acsie-root acsie-source \
+            --work-root "/tmp/acsie-foundry-${GITHUB_RUN_ID}" \
+            --expected-dispatch-nonce "$EXPECTED_NONCE"
+
+      - name: Reset one-shot Foundry control after a push-triggered run
+        if: always() && github.event_name == 'push' && steps.resolve.outputs.enabled == 'true'
+        continue-on-error: true
+        shell: bash
+        env:
+          EXPECTED_REF: ${{ steps.resolve.outputs.acsie_ref }}
+        run: |
+          set -euo pipefail
+          python - "$EXPECTED_REF" <<'PY'
+          import json, sys
+          from pathlib import Path
+          path = Path("scripts/acsie-foundry-run-config.json")
+          config = json.loads(path.read_text(encoding="utf-8"))
+          control = config.get("foundry_dispatch", {})
+          if control.get("enabled") is True and control.get("acsie_ref") == sys.argv[1]:
+              control["enabled"] = False
+              path.write_text(json.dumps(config, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+              print("FOUNDRY_CONTROL_RESET=TRUE")
+          else:
+              print("FOUNDRY_CONTROL_RESET=UNCHANGED")
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/acsie-foundry-run-config.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: reset one-shot Foundry dispatch control' >/dev/null 2>&1
+            git push >/dev/null 2>&1
+          fi

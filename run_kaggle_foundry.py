@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Run the pinned Gen3 Foundry on Kaggle without exporting research data to GitHub.
+"""Kaggle entrypoint for the private ACSIE Gen3 Foundry.
 
-This source currently exposes one Foundry invocation per seed, not a 12-generation
-checkpoint API. The runner preserves those diagnostic outcomes and marks the frozen
-5-seed x 12-generation qualification INCONCLUSIVE; it never fabricates generations.
+The kernel runs without internet. It writes one generation bundle per seed and
+generation, a SHA-256 artifact manifest, and a compact receipt candidate. The
+candidate is never published from the research kernel itself.
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ from typing import Any
 
 SEEDS = (771221, 771222, 771223, 771224, 771225)
 STATUS = {"PASSED", "FAILED", "BLOCKED", "CRASHED", "INVALID", "INCONCLUSIVE"}
-REQUIRED_INTEGRITY = (
+INTEGRITY_FLAGS = (
     "external_model", "pretrained_model", "embeddings", "external_api",
     "hidden_prompt", "task_family_routing", "target_access_during_discovery",
     "holdout_used_for_training", "holdout_used_for_selection",
@@ -49,144 +49,357 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def classify(result: dict[str, Any]) -> str:
-    status = result.get("scientific_status")
-    if status in STATUS:
-        return status
-    return "PASSED" if result.get("passed") is True else "FAILED"
+def canonical_sha256(value: Any) -> str:
+    raw = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def safe_status(value: Any) -> str:
+    return value if value in STATUS else "INVALID"
 
 
 def load_source_manifest() -> dict[str, Any]:
     path = ROOT / "source-manifest.json"
     if not path.is_file():
-        raise RuntimeError("source-manifest.json missing; submit only through the private Tester- dispatcher")
+        raise RuntimeError("source manifest is missing")
     manifest = json.loads(path.read_text(encoding="utf-8"))
-    sha = manifest.get("source_commit")
-    if manifest.get("repository") != "Infrasigma/ACSIE" or not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
-        raise RuntimeError("invalid ACSIE source manifest")
+    commit = manifest.get("source_commit")
+    if (manifest.get("repository") != "Infrasigma/ACSIE"
+            or not isinstance(commit, str)
+            or not re.fullmatch(r"[0-9a-f]{40}", commit)):
+        raise RuntimeError("source manifest is invalid")
     if manifest.get("network_during_research") is not False:
-        raise RuntimeError("research kernel must keep internet disabled")
+        raise RuntimeError("research kernel must have internet disabled")
     return manifest
+
+
+def fallback_seed(seed: int, run_error: dict[str, Any], checkpoint_dir: Path) -> dict[str, Any]:
+    generations = []
+    for generation in range(12):
+        status = "CRASHED" if generation == 0 else "BLOCKED"
+        evaluated = False
+        record = {
+            "generation": generation,
+            "scientific_status": status,
+            "evaluated": evaluated,
+            "reason": "foundry_driver_exception" if generation == 0 else "blocked_by_prior_generation_exception",
+            "candidate_count": 0,
+            "selected_program_sha256": None,
+            "state_in_sha256": None,
+            "state_out_sha256": None,
+            "fitness": None,
+            "replay_exact": False,
+            "persistent_state_roundtrip": False,
+            "persistent_state_delta": False,
+            "candidate_crash_count": 0,
+            "result_sha256": canonical_sha256({
+                "seed": seed, "generation": generation, "scientific_status": status,
+                "evaluated": evaluated,
+            }),
+        }
+        bundle = {
+            "schema": "ACSIE.gen3-foundry-generation-checkpoint.v1",
+            "seed": seed,
+            "generation": generation,
+            "checkpoint_available": False,
+            "generation_record": record,
+            "error": run_error if generation == 0 else {"reason": "blocked_by_prior_generation_exception"},
+        }
+        path = checkpoint_dir / f"generation-{generation:02d}.json"
+        write_json(path, bundle)
+        record["checkpoint_path"] = path.as_posix()
+        generations.append(record)
+    return {
+        "version": "gen3-learning-rule-foundry-v1",
+        "seed": seed,
+        "scientific_status": "CRASHED",
+        "passed": False,
+        "reason": "foundry_driver_exception",
+        "generation_count": 12,
+        "generations": generations,
+        "final_metrics": {},
+        "integrity": {flag: False for flag in INTEGRITY_FLAGS},
+        "runner_error": run_error,
+    }
+
+
+def matrix_row(seed_result: dict[str, Any], seed: int) -> dict[str, Any]:
+    raw_gens = seed_result.get("generations")
+    if not isinstance(raw_gens, list) or len(raw_gens) != 12:
+        raise ValueError(f"seed {seed} did not emit twelve explicit generation records")
+    generations = []
+    seen = set()
+    for item in raw_gens:
+        if not isinstance(item, dict):
+            raise ValueError(f"seed {seed} emitted a malformed generation record")
+        number = item.get("generation")
+        if isinstance(number, bool) or not isinstance(number, int) or number not in range(12) or number in seen:
+            raise ValueError(f"seed {seed} emitted duplicate or invalid generation indices")
+        seen.add(number)
+        status = safe_status(item.get("scientific_status"))
+        evaluated = item.get("evaluated")
+        if not isinstance(evaluated, bool):
+            raise ValueError(f"seed {seed} generation {number} omitted its evaluated flag")
+        if status == "PASSED" and evaluated is not True:
+            raise ValueError(f"seed {seed} generation {number} claimed PASSED without evaluation")
+        result_sha = item.get("result_sha256")
+        if not isinstance(result_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", result_sha):
+            result_sha = canonical_sha256({
+                "seed": seed, "generation": number, "scientific_status": status,
+                "evaluated": evaluated, "reason": item.get("reason"),
+            })
+        generations.append({
+            "generation": number,
+            "scientific_status": status,
+            "evaluated": evaluated,
+            "result_sha256": result_sha,
+        })
+    if seen != set(range(12)):
+        raise ValueError(f"seed {seed} generation matrix is incomplete")
+    generations.sort(key=lambda row: row["generation"])
+    status = safe_status(seed_result.get("scientific_status"))
+    if status == "PASSED" and any(row["scientific_status"] != "PASSED" for row in generations):
+        raise ValueError(f"seed {seed} has conflicting passed status")
+    return {"seed": seed, "scientific_status": status, "generations": generations}
 
 
 def main() -> int:
     manifest = load_source_manifest()
     source_sha = manifest["source_commit"]
+    dispatch_nonce = manifest.get("dispatch_nonce")
+    if not isinstance(dispatch_nonce, str) or not dispatch_nonce:
+        raise RuntimeError("source manifest omitted the orchestration dispatch nonce")
     run_id = f"gen3-foundry-{source_sha[:10]}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     working = Path("/kaggle/working")
     if not working.is_dir():
         working = ROOT / "kaggle-output"
-    result_dir = working / "seed-results"
-    result_dir.mkdir(parents=True, exist_ok=True)
+    checkpoints_root = working / "checkpoints"
+    summaries_root = working / "seed-results"
+    checkpoints_root.mkdir(parents=True, exist_ok=True)
+    summaries_root.mkdir(parents=True, exist_ok=True)
 
     sys.path.insert(0, str(ROOT))
+    foundry = None
     import_error = None
     try:
-        module = importlib.import_module("research.gen3_learning_rule_foundry_v1")
-        foundry_run = getattr(module, "run")
-        if not callable(foundry_run):
-            raise RuntimeError("Foundry module has no callable run(seed)")
+        foundry = importlib.import_module("research.gen3_learning_rule_foundry_v1")
+        driver = getattr(foundry, "run_generations")
+        if not callable(driver):
+            raise RuntimeError("Foundry source lacks run_generations(seed, generations=12)")
     except Exception as exc:
         import_error = {
             "exception_type": type(exc).__name__,
             "exception": str(exc),
             "traceback": traceback.format_exc(),
         }
-        foundry_run = None
+        driver = None
 
-    results: list[dict[str, Any]] = []
+    results = []
     for seed in SEEDS:
-        if import_error is not None:
-            result = {
-                "version": "gen3-learning-rule-foundry-v1",
-                "seed": seed,
-                "scientific_status": "CRASHED",
-                "passed": False,
-                "reason": "foundry_import_or_interface_failure",
-                **import_error,
-            }
+        checkpoint_dir = checkpoints_root / f"seed-{seed}"
+        if driver is None:
+            result = fallback_seed(seed, import_error or {"reason": "foundry driver unavailable"}, checkpoint_dir)
         else:
             try:
-                raw = foundry_run(seed)
-                if not isinstance(raw, dict):
-                    raise TypeError("Foundry run(seed) did not return a JSON-compatible object")
-                result = dict(raw)
+                result = driver(seed, generations=12, checkpoint_dir=checkpoint_dir)
+                if not isinstance(result, dict):
+                    raise TypeError("run_generations did not return an object")
+                if len(result.get("generations", [])) != 12:
+                    raise ValueError("run_generations returned an incomplete generation matrix")
                 result.setdefault("seed", seed)
-                result["scientific_status"] = classify(result)
+                result["scientific_status"] = safe_status(result.get("scientific_status"))
                 result["passed"] = result.get("passed") is True and result["scientific_status"] == "PASSED"
+                if result["scientific_status"] == "PASSED" and not result["passed"]:
+                    result["scientific_status"] = "FAILED"
             except Exception as exc:
-                result = {
-                    "version": "gen3-learning-rule-foundry-v1",
-                    "seed": seed,
-                    "scientific_status": "CRASHED",
-                    "passed": False,
-                    "reason": "foundry_invocation_exception",
+                result = fallback_seed(seed, {
                     "exception_type": type(exc).__name__,
                     "exception": str(exc),
                     "traceback": traceback.format_exc(),
-                }
-        if result["scientific_status"] not in STATUS:
-            result["scientific_status"] = "INVALID"
-            result["passed"] = False
-            result["reason"] = "unsupported_scientific_status"
+                }, checkpoint_dir)
         results.append(result)
-        write_json(result_dir / f"result-{seed}.json", result)
+        write_json(summaries_root / f"result-{seed}.json", result)
 
-    failures: list[dict[str, Any]] = []
-    for result in results:
-        if result["scientific_status"] != "PASSED":
-            failures.append({
-                "status": result["scientific_status"] if result["scientific_status"] in {"FAILED", "BLOCKED", "CRASHED", "INVALID", "INCONCLUSIVE"} else "FAILED",
-                "reason": str(result.get("reason") or f"seed {result['seed']} did not pass"),
-                "seed": int(result["seed"]),
+        # If a driver returned records but failed to write a bundle, preserve a clearly
+        # marked failure record instead of fabricating a model-state checkpoint.
+        existing_numbers = set()
+        for path in checkpoint_dir.glob("generation-*.json"):
+            try:
+                existing_numbers.add(int(path.stem.split("-")[-1]))
+            except ValueError:
+                continue
+        for generation in range(12):
+            if generation in existing_numbers:
+                continue
+            row = result["generations"][generation]
+            record = {
+                "generation": generation,
+                "scientific_status": "CRASHED",
+                "evaluated": False,
+                "reason": "generation_checkpoint_missing",
+                "candidate_count": 0,
+                "selected_program_sha256": None,
+                "state_in_sha256": None,
+                "state_out_sha256": None,
+                "fitness": None,
+                "replay_exact": False,
+                "persistent_state_roundtrip": False,
+                "persistent_state_delta": False,
+                "candidate_crash_count": 0,
+            }
+            record["result_sha256"] = canonical_sha256({
+                "seed": seed, "generation": generation,
+                "scientific_status": "CRASHED", "evaluated": False,
+                "reason": "generation_checkpoint_missing",
             })
+            row.update({"scientific_status": "CRASHED", "evaluated": False, "result_sha256": record["result_sha256"]})
+            write_json(checkpoint_dir / f"generation-{generation:02d}.json", {
+                "schema": "ACSIE.gen3-foundry-generation-checkpoint.v1",
+                "seed": seed, "generation": generation, "checkpoint_available": False,
+                "generation_record": record,
+                "error": {"reason": "generation_checkpoint_missing"},
+            })
+        write_json(summaries_root / f"result-{seed}.json", result)
 
-    # Preserve only integrity flags actually reported explicitly by every seed.
-    integrity: dict[str, bool] = {}
-    for flag in REQUIRED_INTEGRITY:
-        values = [
-            row.get("integrity", {}).get(flag)
-            for row in results
-            if isinstance(row.get("integrity"), dict) and isinstance(row["integrity"].get(flag), bool)
-        ]
-        if len(values) == len(results):
-            integrity[flag] = any(values)
-
-    if any(row["scientific_status"] == "CRASHED" for row in results):
-        foundry_status = "CRASHED"
-    elif any(row["scientific_status"] == "INVALID" for row in results):
-        foundry_status = "INVALID"
-    elif any(row["scientific_status"] != "PASSED" for row in results):
-        foundry_status = "FAILED"
-    else:
-        foundry_status = "PASSED"
-
-    # Empty generation arrays honestly record missing coverage; no 0..11 rows are fabricated.
-    seed_results = [
-        {"seed": int(row["seed"]), "scientific_status": row["scientific_status"], "generations": []}
-        for row in results
-    ]
-    artifact_records = []
-    for path in sorted(result_dir.glob("result-*.json")):
-        artifact_records.append({
-            "storage": "kaggle-kernel-output",
+    # The manifest lists every durable output other than itself. Checkpoint bytes and
+    # per-seed summaries stay in Kaggle kernel output, not in Git or on the phone.
+    manifest_files = []
+    for path in sorted(checkpoints_root.rglob("*.json")):
+        relative = path.relative_to(working).as_posix()
+        bundle = json.loads(path.read_text(encoding="utf-8"))
+        record = bundle.get("generation_record", {})
+        manifest_files.append({
+            "path": relative,
+            "sha256": sha256_file(path),
+            "size_bytes": path.stat().st_size,
+            "kind": "generation_bundle",
+            "seed": int(bundle["seed"]),
+            "generation": int(bundle["generation"]),
+            "scientific_status": safe_status(record.get("scientific_status")),
+            "evaluated": bool(record.get("evaluated")) if isinstance(record.get("evaluated"), bool) else False,
+            "result_sha256": record.get("result_sha256") if isinstance(record.get("result_sha256"), str) else canonical_sha256(record),
+            "checkpoint_available": bool("native_state" in bundle),
+        })
+    for path in sorted(summaries_root.glob("result-*.json")):
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        manifest_files.append({
             "path": path.relative_to(working).as_posix(),
             "sha256": sha256_file(path),
             "size_bytes": path.stat().st_size,
+            "kind": "seed_summary",
+            "seed": int(payload["seed"]),
         })
+    summary = {
+        "run_id": run_id,
+        "source_commit": source_sha,
+        "scientific_status": "PASSED" if all(r.get("scientific_status") == "PASSED" for r in results) else (
+            "CRASHED" if any(r.get("scientific_status") == "CRASHED" for r in results) else "FAILED"
+        ),
+        "qualification_status": "PASSED" if all(r.get("passed") is True for r in results) else "FAILED",
+        "seed_count": len(results),
+        "expected_generation_records": 60,
+        "evaluated_generation_records": sum(
+            1 for r in results for g in r["generations"] if g.get("evaluated") is True
+        ),
+        "passed_generation_records": sum(
+            1 for r in results for g in r["generations"] if g.get("scientific_status") == "PASSED"
+        ),
+        "failed_generation_records": sum(
+            1 for r in results for g in r["generations"] if g.get("scientific_status") != "PASSED"
+        ),
+        "checkpoint_bundle_count": len(list(checkpoints_root.rglob("*.json"))),
+    }
+    write_json(working / "foundry-summary.json", summary)
+    manifest_files.append({
+        "path": "foundry-summary.json",
+        "sha256": sha256_file(working / "foundry-summary.json"),
+        "size_bytes": (working / "foundry-summary.json").stat().st_size,
+        "kind": "foundry_summary",
+    })
+    artifact_manifest = {
+        "schema": "ACSIE.kaggle-foundry-artifact-manifest.v1",
+        "run_id": run_id,
+        "source_commit": source_sha,
+        "dispatch_nonce": dispatch_nonce,
+        "expected_seed_ids": list(SEEDS),
+        "expected_generations_per_seed": 12,
+        "files": manifest_files,
+        "file_count": len(manifest_files),
+        "total_size_bytes": sum(int(row["size_bytes"]) for row in manifest_files),
+    }
+    write_json(working / "artifact_manifest.json", artifact_manifest)
+
+    compact_rows = [matrix_row(result, int(result["seed"])) for result in results]
+    failures = []
+    for row in compact_rows:
+        seed = row["seed"]
+        failed_generations = []
+        for generation in row["generations"]:
+            if generation["scientific_status"] == "PASSED":
+                continue
+            failed_generations.append(generation)
+            failures.append({
+                "status": generation["scientific_status"] if generation["scientific_status"] in STATUS - {"PASSED"} else "FAILED",
+                "reason": f"seed {seed} generation {generation['generation']} status {generation['scientific_status']}",
+                "seed": seed,
+                "generation": generation["generation"],
+            })
+        if row["scientific_status"] != "PASSED" and not failed_generations:
+            failures.append({
+                "status": row["scientific_status"] if row["scientific_status"] in STATUS - {"PASSED"} else "FAILED",
+                "reason": str(next((r.get("reason") for r in results if r["seed"] == seed), "seed qualification failed")),
+                "seed": seed,
+            })
+
+    seed_statuses = [row["scientific_status"] for row in compact_rows]
+    if "CRASHED" in seed_statuses:
+        overall = "CRASHED"
+    elif "INVALID" in seed_statuses:
+        overall = "INVALID"
+    elif "BLOCKED" in seed_statuses:
+        overall = "BLOCKED"
+    elif "INCONCLUSIVE" in seed_statuses:
+        overall = "INCONCLUSIVE"
+    elif all(status == "PASSED" for status in seed_statuses):
+        overall = "PASSED"
+    else:
+        overall = "FAILED"
+
+    candidate_artifacts = []
+    manifest_path = working / "artifact_manifest.json"
+    candidate_artifacts.append({
+        "storage": "kaggle-kernel-output",
+        "path": "artifact_manifest.json",
+        "sha256": sha256_file(manifest_path),
+        "size_bytes": manifest_path.stat().st_size,
+    })
+    for item in manifest_files:
+        if item.get("kind") == "generation_bundle":
+            candidate_artifacts.append({
+                "storage": "kaggle-kernel-output",
+                "path": item["path"],
+                "sha256": item["sha256"],
+                "size_bytes": item["size_bytes"],
+            })
+
+    integrity = {}
+    for flag in INTEGRITY_FLAGS:
+        values = [
+            result.get("integrity", {}).get(flag)
+            for result in results
+            if isinstance(result.get("integrity"), dict)
+            and isinstance(result["integrity"].get(flag), bool)
+        ]
+        if len(values) == len(results):
+            integrity[flag] = any(values)
 
     candidate = {
         "candidate_schema": "ACSIE.kaggle-foundry-candidate.v1",
         "run_id": run_id,
         "created_at_utc": utc_now(),
         "experiment_id": "gen3-learning-rule-foundry-v1",
-        "scientific_status": foundry_status,
-        "qualification_status": "INCONCLUSIVE",
-        "qualification_reason": (
-            "The pinned Foundry source exposes one run(seed) invocation, not an explicit "
-            "12-generation driver/checkpoint interface. The 5x12 gate is therefore incomplete; "
-            "no generation records are fabricated."
-        ),
+        "scientific_status": overall,
+        "qualification_status": "PASSED" if overall == "PASSED" else "FAILED",
         "source": {"repository": "Infrasigma/ACSIE", "commit_sha": source_sha},
         "execution": {
             "platform": "kaggle",
@@ -203,37 +416,34 @@ def main() -> int:
             "expected_generations_per_seed": 12,
         },
         "expected_seed_ids": list(SEEDS),
-        "seed_results": seed_results,
-        "artifacts": artifact_records,
+        "seed_results": compact_rows,
+        "artifacts": candidate_artifacts,
         "integrity": integrity,
         "failures": failures,
-        "diagnostic_results": [
-            {"seed": int(row["seed"]), "scientific_status": row["scientific_status"], "passed": row.get("passed") is True,
-             "reason": row.get("reason")}
-            for row in results
-        ],
         "provenance": {
             "workflow_source": "Infrasigma/Tester-",
             "orchestration_commit": manifest.get("orchestration_commit"),
             "requested_acsie_ref": manifest.get("requested_ref"),
             "actual_acsie_commit": source_sha,
+            "dispatch_nonce": dispatch_nonce,
         },
     }
     write_json(working / "receipt-candidate.json", candidate)
-    summary = {
+    print(json.dumps({
         "run_id": run_id,
         "source_commit": source_sha,
-        "foundry_status": foundry_status,
-        "qualification_status": "INCONCLUSIVE",
-        "expected_matrix_records": 60,
-        "observed_generation_records": sum(len(row["generations"]) for row in seed_results),
-        "seed_count": len(results),
-        "artifacts": len(artifact_records),
-        "reason": candidate["qualification_reason"],
-    }
-    write_json(working / "foundry-summary.json", summary)
-    print(json.dumps(summary, indent=2, sort_keys=True))
-    return 0 if len(results) == len(SEEDS) else 2
+        "scientific_status": overall,
+        "qualification_status": candidate["qualification_status"],
+        "seed_count": len(compact_rows),
+        "generation_records": sum(len(row["generations"]) for row in compact_rows),
+        "evaluated_generation_records": summary["evaluated_generation_records"],
+        "passed_generation_records": summary["passed_generation_records"],
+        "checkpoint_bundle_count": len(candidate_artifacts) - 1,
+        "artifact_manifest_sha256": sha256_file(manifest_path),
+    }, indent=2, sort_keys=True))
+    # Infrastructure success means complete diagnostic records were written. Scientific
+    # failure is represented in the records; it never gets upgraded to PASSED here.
+    return 0 if len(compact_rows) == 5 and all(len(row["generations"]) == 12 for row in compact_rows) else 2
 
 
 if __name__ == "__main__":
