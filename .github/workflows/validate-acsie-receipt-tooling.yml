@@ -43,10 +43,32 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Parse receipt schema
-        working-directory: acsie
-        run: python -m json.tool research/remote-run-receipt.schema.json > /dev/null
+      - name: Install JSON Schema validator
+        run: python -m pip install --disable-pip-version-check jsonschema==4.23.0
 
-      - name: Run synthetic receipt-validator tests
+      - name: Parse and validate schema against synthetic receipts
+        working-directory: acsie
+        run: |
+          python -m json.tool research/remote-run-receipt.schema.json > /dev/null
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          from research.tests.test_remote_receipts import valid_receipt
+
+          schema = json.loads(Path("research/remote-run-receipt.schema.json").read_text())
+          Draft202012Validator.check_schema(schema)
+          validator = Draft202012Validator(schema, format_checker=FormatChecker())
+          good = valid_receipt()
+          validator.validate(good)
+
+          bad = copy.deepcopy(good)
+          bad["execution"]["internet_enabled"] = True
+          assert not validator.is_valid(bad), "schema incorrectly accepted internet-enabled research execution"
+          print("JSON Schema and synthetic positive/negative fixtures validated; no real research receipt was read.")
+          PY
+
+      - name: Run synthetic receipt-validator unit tests
         working-directory: acsie
         run: python -m unittest research.tests.test_remote_receipts
