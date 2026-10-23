@@ -1,143 +1,106 @@
-name: ACSIE Gen3 Foundry parallel replication
+name: Dispatch private ACSIE Gen3 Foundry to Kaggle
 
 on:
   workflow_dispatch:
+    inputs:
+      acsie_ref:
+        description: Exact ACSIE branch, tag, or commit to use as source
+        required: true
+        type: string
+        default: 3fe72e9633ec8e762ca674df5c0e664b7bafd222
 
 permissions:
   contents: read
 
 jobs:
-  foundry:
-    strategy:
-      fail-fast: false
-      matrix:
-        seed: [771221, 771222, 771223, 771224, 771225]
+  dispatch-private-kaggle-kernel:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 30
     steps:
-      - name: Checkout exact ACSIE Foundry source
+      - name: Check out public orchestration code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Require managed credentials
+        shell: bash
+        env:
+          ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          [[ -n "${ACSIE_READ_TOKEN:-}" ]] || {
+            echo "::error::Add Tester- repository secret ACSIE_READ_TOKEN (fine-grained Contents: read, only Infrasigma/ACSIE)."
+            exit 1
+          }
+          [[ -n "${KAGGLE_API_TOKEN:-}" ]] || {
+            echo "::error::Add Tester- repository secret KAGGLE_API_TOKEN. A secret saved in ACSIE is not visible to this public repository."
+            exit 1
+          }
+
+      - name: Check out exact private ACSIE source
         uses: actions/checkout@v4
         with:
           repository: Infrasigma/ACSIE
-          ref: 3fe72e9633ec8e762ca674df5c0e664b7bafd222
-          token: ${{ github.token }}
-          path: acsie-foundry
-          fetch-depth: 0
+          ref: ${{ inputs.acsie_ref }}
+          token: ${{ secrets.ACSIE_READ_TOKEN }}
+          path: acsie-source
+          fetch-depth: 1
           persist-credentials: false
 
-      - name: Verify exact source and provenance
-        working-directory: acsie-foundry
-        run: |
-          set -euo pipefail
-          test "$(git rev-parse HEAD)" = "3fe72e9633ec8e762ca674df5c0e664b7bafd222"
-          git merge-base --is-ancestor "b4beeeb792abe45a62d583287356fb80c87c2fb7" HEAD
-          printf '%s\n' "host_repo=Infrasigma/Tester-" >> "$GITHUB_STEP_SUMMARY"
-          printf '%s\n' "acsie_source=3fe72e9633ec8e762ca674df5c0e664b7bafd222" >> "$GITHUB_STEP_SUMMARY"
-          printf '%s\n' "seed=${{ matrix.seed }}" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Syntax-check Foundry
-        working-directory: acsie-foundry
-        run: python -m py_compile research/gen3_learning_rule_foundry_v1.py
-
-      - name: Run Foundry
-        working-directory: acsie-foundry
+      - name: Stage private kernel payload (Python sources only)
+        shell: bash
         env:
-          SEED: "${{ matrix.seed }}"
-        run: |
-          set +e
-          export PYTHONPATH="$PWD"
-          mkdir -p evidence/gen3-learning-rule-foundry-v1
-          python research/gen3_learning_rule_foundry_v1.py "$SEED" > "evidence/gen3-learning-rule-foundry-v1/result-$SEED.json"
-          status=$?
-          set -e
-          test -s "evidence/gen3-learning-rule-foundry-v1/result-$SEED.json"
-          exit "$status"
-
-      - name: Upload seed evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gen3-learning-rule-foundry-v1-tester-${{ matrix.seed }}
-          path: acsie-foundry/evidence/gen3-learning-rule-foundry-v1/**
-          if-no-files-found: error
-
-  aggregate:
-    needs: foundry
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download seed evidence
-        uses: actions/download-artifact@v4
-        with:
-          pattern: gen3-learning-rule-foundry-v1-tester-*
-          path: evidence/gen3-learning-rule-foundry-v1
-          merge-multiple: true
-
-      - name: Aggregate replication result
+          ACSIE_REF: ${{ inputs.acsie_ref }}
+          WORKFLOW_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          import glob, json
-          from pathlib import Path
-          seeds=(771221,771222,771223,771224,771225)
-          paths=sorted(glob.glob("evidence/gen3-learning-rule-foundry-v1/result-*.json"))
-          expected={f"result-{s}.json" for s in seeds}
-          found={Path(p).name for p in paths}
-          rows=[json.load(open(p)) for p in paths]
-          crashes=[r for r in rows if r.get("scientific_status")=="CRASHED"]
-          passed=[r for r in rows if r.get("passed") is True]
-          integrity=all(
-              all(v is False for k,v in r.get("integrity",{}).items()
-                  if k.endswith("_used_for_selection") or k.endswith("_scan")
-                  or k in {"external_model","network_dependency","task_family_routing",
-                           "target_identity_available","holdout_used_for_training"})
-              for r in rows
-          ) if rows else False
-          if found != expected or len(rows)!=5:
-              status="INCONCLUSIVE"
-          elif crashes:
-              status="CRASHED"
-          elif len(passed)==5 and integrity:
-              status="PASSED"
-          else:
-              status="FAILED"
-          out={
-              "version":"gen3-learning-rule-foundry-v1",
-              "host_repository":"Infrasigma/Tester-",
-              "acsie_source":"3fe72e9633ec8e762ca674df5c0e664b7bafd222",
-              "scientific_status":status,
-              "seed_count":len(rows),
-              "passed_seed_count":len(passed),
-              "crashed_seed_count":len(crashes),
-              "integrity_ok":integrity,
-              "per_seed":[{
-                "seed":r.get("seed"),
-                "passed":r.get("passed"),
-                "scientific_status":r.get("scientific_status"),
-                "reason":r.get("reason"),
-                "selected_program":r.get("selected_program"),
-                "outer_holdout_gain":r.get("outer_holdout_gain"),
-                "outer_transfer_gain":r.get("outer_transfer_gain"),
-                "legacy_before":r.get("legacy_before"),
-                "legacy_after":r.get("legacy_after"),
-                "legacy_retention_ok":r.get("legacy_retention_ok"),
-                "replay_exact":r.get("replay_exact"),
-                "persistent_state_delta":r.get("persistent_state_delta"),
-                "integrity":r.get("integrity"),
-                "exception_type":r.get("exception_type"),
-                "exception":r.get("exception")
-              } for r in rows]
+          test -f acsie-source/research/gen3_learning_rule_foundry_v1.py
+          test -f acsie-source/cognitive_core/native_independent_core.py
+          ACSIE_SOURCE_SHA="$(git -C acsie-source rev-parse HEAD)"
+          mkdir -p kaggle-kernel
+          cp run_kaggle_foundry.py kernel-metadata.json kaggle-kernel/
+          cp -R acsie-source/cognitive_core kaggle-kernel/cognitive_core
+          while IFS= read -r -d '' src; do
+            rel="${src#acsie-source/}"
+            mkdir -p "kaggle-kernel/$(dirname "$rel")"
+            cp "$src" "kaggle-kernel/$rel"
+          done < <(find acsie-source/research -type f -name '*.py' -print0)
+          python - "$ACSIE_SOURCE_SHA" "$ACSIE_REF" "$WORKFLOW_SHA" <<'PY'
+          import json, pathlib, sys
+          sha, ref, workflow_sha = sys.argv[1:]
+          manifest = {
+              "schema": "ACSIE.kaggle-source-manifest.v1",
+              "repository": "Infrasigma/ACSIE",
+              "source_commit": sha,
+              "requested_ref": ref,
+              "orchestration_commit": workflow_sha,
+              "foundry_entrypoint": "research/gen3_learning_rule_foundry_v1.py",
+              "network_during_research": False,
           }
-          Path("evidence/gen3-learning-rule-foundry-v1").mkdir(parents=True,exist_ok=True)
-          Path("evidence/gen3-learning-rule-foundry-v1/aggregate.json").write_text(
-              json.dumps(out,indent=2,sort_keys=True))
-          print(json.dumps(out,indent=2,sort_keys=True))
+          pathlib.Path("kaggle-kernel/source-manifest.json").write_text(
+              json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          metadata = json.loads(pathlib.Path("kaggle-kernel/kernel-metadata.json").read_text())
+          assert metadata.get("id") == "memorican/acsie-gen3-foundry"
+          assert str(metadata.get("is_private", "")).lower() == "true"
+          assert str(metadata.get("enable_internet", "")).lower() == "false"
+          print(f"Prepared private kernel payload for ACSIE source {sha}; no artifacts or logs were staged.")
           PY
+          echo "acsie_source_commit=$ACSIE_SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "kaggle_kernel=memorican/acsie-gen3-foundry (private, internet disabled)" >> "$GITHUB_STEP_SUMMARY"
+          echo "The pinned Foundry source has no explicit 12-generation driver; its candidate will remain non-qualifying until a real generation matrix is present." >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload aggregate evidence
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Set up Python for Kaggle CLI
+        uses: actions/setup-python@v5
         with:
-          name: gen3-learning-rule-foundry-v1-tester-aggregate
-          path: evidence/gen3-learning-rule-foundry-v1/aggregate.json
-          if-no-files-found: error
+          python-version: "3.12"
+
+      - name: Install Kaggle CLI
+        run: python -m pip install --disable-pip-version-check --no-cache-dir "kaggle>=2.2.5"
+
+      - name: Push and run private Kaggle kernel
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: kaggle kernels push --path kaggle-kernel
