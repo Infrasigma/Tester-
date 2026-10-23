@@ -71,4 +71,4 @@ jobs:
 
       - name: Run synthetic receipt-validator unit tests
         working-directory: acsie
-        run: python -m unittest research.tests.test_remote_receipts
+        run: python -m unittest research.tests.test_remote_receipts research.tests.test_emit_validated_receipt
