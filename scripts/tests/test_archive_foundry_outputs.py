@@ -162,6 +162,22 @@ class ArchiveFoundryOutputsTests(unittest.TestCase):
             self.assertEqual(manifest["dispatch_nonce"], "test-run-001")
             self.assertEqual(candidate["provenance"]["dispatch_nonce"], "test-run-001")
 
+    def test_prepare_rejects_outputs_from_a_different_dispatch_nonce(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output_root = root / "kernel"
+            output_root.mkdir()
+            build_output(output_root)
+            dataset_root = root / "dataset"
+            with self.assertRaisesRegex(archive.ArchiveError, "different dispatch invocation"):
+                archive.prepare(Namespace(
+                    output_root=str(output_root),
+                    dataset_root=str(dataset_root),
+                    dataset_slug="memorican/acsie-foundry-checkpoints",
+                    prepare_record=str(root / "prepare.json"),
+                    expected_dispatch_nonce="not-the-current-run",
+                ))
+
     def test_prepare_rejects_manifest_checksum_mismatch(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

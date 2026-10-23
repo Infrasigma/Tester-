@@ -198,6 +198,13 @@ def prepare(args: argparse.Namespace) -> int:
     if not SLUG.fullmatch(args.dataset_slug):
         raise ArchiveError("dataset slug must be owner/dataset-slug")
     candidate, manifest, manifest_rows = verify_outputs(output_root)
+    expected_nonce = getattr(args, "expected_dispatch_nonce", None)
+    candidate_nonce = candidate.get("provenance", {}).get("dispatch_nonce") if isinstance(candidate.get("provenance"), dict) else None
+    manifest_nonce = manifest.get("dispatch_nonce")
+    if not isinstance(candidate_nonce, str) or not candidate_nonce or candidate_nonce != manifest_nonce:
+        raise ArchiveError("candidate/manifest dispatch nonce mismatch")
+    if expected_nonce is not None and candidate_nonce != expected_nonce:
+        raise ArchiveError("kernel output belongs to a different dispatch invocation")
     if dataset_root.exists():
         shutil.rmtree(dataset_root)
     dataset_root.mkdir(parents=True)
@@ -264,6 +271,7 @@ def prepare(args: argparse.Namespace) -> int:
         "schema": "ACSIE.kaggle-foundry-dataset-prepare.v1",
         "run_id": manifest["run_id"],
         "source_commit": manifest["source_commit"],
+        "dispatch_nonce": manifest_nonce,
         "dataset_slug": args.dataset_slug,
         "expected_seed_ids": list(SEEDS),
         "receipt_candidate_sha256": candidate_sha,
