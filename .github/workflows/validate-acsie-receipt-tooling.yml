@@ -1,0 +1,52 @@
+name: Validate private ACSIE receipt tooling
+
+on:
+  workflow_dispatch:
+    inputs:
+      acsie_ref:
+        description: ACSIE branch or commit to validate
+        required: true
+        type: string
+        default: work/research-data-routing-20261023
+
+permissions:
+  contents: read
+
+jobs:
+  validator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require read-only ACSIE access
+        shell: bash
+        env:
+          ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${ACSIE_READ_TOKEN:-}" ]]; then
+            echo "::error::Set Tester- repository secret ACSIE_READ_TOKEN to a fine-grained, read-only token scoped only to Infrasigma/ACSIE."
+            exit 1
+          fi
+
+      - name: Check out selected private ACSIE ref
+        uses: actions/checkout@v4
+        with:
+          repository: Infrasigma/ACSIE
+          ref: ${{ inputs.acsie_ref }}
+          token: ${{ secrets.ACSIE_READ_TOKEN }}
+          path: acsie
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Parse receipt schema
+        working-directory: acsie
+        run: python -m json.tool research/remote-run-receipt.schema.json > /dev/null
+
+      - name: Run synthetic receipt-validator tests
+        working-directory: acsie
+        run: python -m unittest research.tests.test_remote_receipts
