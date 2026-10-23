@@ -157,6 +157,10 @@ class ArchiveFoundryOutputsTests(unittest.TestCase):
             self.assertFalse(any(path.is_dir() for path in dataset_root.iterdir()))
             record = json.loads(prepare_record.read_text(encoding="utf-8"))
             self.assertEqual(record["prepared_dataset_file_count"], 68)
+            candidate = json.loads((output_root / "receipt-candidate.json").read_text(encoding="utf-8"))
+            manifest = json.loads((output_root / "artifact_manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["dispatch_nonce"], "test-run-001")
+            self.assertEqual(candidate["provenance"]["dispatch_nonce"], "test-run-001")
 
     def test_prepare_rejects_manifest_checksum_mismatch(self):
         with tempfile.TemporaryDirectory() as tmp:
