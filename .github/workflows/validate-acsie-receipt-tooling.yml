@@ -36,6 +36,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Compile public orchestration scripts
+        run: python -m compileall -q scripts run_kaggle_foundry.py
+
       - name: Run public-only archive/manifest tests
         run: python -m unittest scripts.tests.test_archive_foundry_outputs
 
