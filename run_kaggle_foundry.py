@@ -181,6 +181,7 @@ def run_phase0_tests() -> bool:
     )
     suite = unittest.TestSuite()
     loader_errors = []
+    loaded_suites = []
     file_rows = []
     for label, test_path in required:
         present = test_path.is_file()
@@ -201,6 +202,7 @@ def run_phase0_tests() -> bool:
             if tests.countTestCases() == 0:
                 raise RuntimeError("test module loaded but contains zero unittest cases")
             suite.addTests(tests)
+            loaded_suites.append(label)
         except Exception as exc:
             loader_errors.append({
                 "suite": label,
@@ -227,7 +229,7 @@ def run_phase0_tests() -> bool:
         "status": "PASSED" if passed else "FAILED",
         "worker": "kaggle",
         "required_suite_count": len(required),
-        "loaded_suite_count": len(required) - len(loader_errors) - sum(1 for row in file_rows if not row["present"]),
+        "loaded_suite_count": len(loaded_suites),
         "required_test_files": file_rows,
         "tests_run": result.testsRun,
         "tests_passed": result.testsRun - len(result.failures) - len(result.errors),
