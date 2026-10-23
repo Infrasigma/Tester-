@@ -9,10 +9,13 @@ from __future__ import annotations
 
 import hashlib
 import importlib
+import importlib.util
+import io
 import json
 import re
 import sys
 import traceback
+import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -163,7 +166,96 @@ def matrix_row(seed_result: dict[str, Any], seed: int) -> dict[str, Any]:
     return {"seed": seed, "scientific_status": status, "generations": generations}
 
 
+def run_phase0_tests() -> bool:
+    """Run the required synthetic test suite inside the Kaggle worker before compute."""
+    working = Path("/kaggle/working")
+    if not working.is_dir():
+        working = ROOT / "kaggle-output"
+    report_path = working / "test_report.json"
+    working.mkdir(parents=True, exist_ok=True)
+
+    required = (
+        ("receipt_emitter", ROOT / "research" / "tests" / "test_emit_validated_receipt.py"),
+        ("generation_driver", ROOT / "research" / "tests" / "test_gen3_foundry_generations.py"),
+        ("archive_manifest", ROOT / "scripts" / "tests" / "test_archive_foundry_outputs.py"),
+    )
+    suite = unittest.TestSuite()
+    loader_errors = []
+    file_rows = []
+    for label, test_path in required:
+        present = test_path.is_file()
+        file_rows.append({"suite": label, "path": test_path.relative_to(ROOT).as_posix(), "present": present})
+        if not present:
+            loader_errors.append({
+                "suite": label,
+                "error": "required Phase 0 test file is missing from the staged Kaggle package",
+            })
+            continue
+        try:
+            spec = importlib.util.spec_from_file_location(f"_acsie_phase0_{label}", test_path)
+            if spec is None or spec.loader is None:
+                raise ImportError("could not create an import loader for test module")
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            tests = unittest.defaultTestLoader.loadTestsFromModule(module)
+            if tests.countTestCases() == 0:
+                raise RuntimeError("test module loaded but contains zero unittest cases")
+            suite.addTests(tests)
+        except Exception as exc:
+            loader_errors.append({
+                "suite": label,
+                "error": f"{type(exc).__name__}: {exc}",
+                "traceback": traceback.format_exc(),
+            })
+
+    stream = io.StringIO()
+    result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
+
+    def serialize_errors(rows):
+        return [
+            {
+                "test": test.id() if hasattr(test, "id") else str(test),
+                "traceback": detail,
+            }
+            for test, detail in rows
+        ]
+
+    passed = result.wasSuccessful() and not loader_errors and result.testsRun > 0
+    report = {
+        "schema": "ACSIE.kaggle-phase0-test-report.v1",
+        "created_at_utc": utc_now(),
+        "status": "PASSED" if passed else "FAILED",
+        "worker": "kaggle",
+        "required_suite_count": len(required),
+        "loaded_suite_count": len(required) - len(loader_errors) - sum(1 for row in file_rows if not row["present"]),
+        "required_test_files": file_rows,
+        "tests_run": result.testsRun,
+        "tests_passed": result.testsRun - len(result.failures) - len(result.errors),
+        "failure_count": len(result.failures),
+        "error_count": len(result.errors),
+        "loader_errors": loader_errors,
+        "failures": serialize_errors(result.failures),
+        "errors": serialize_errors(result.errors),
+        "test_log": stream.getvalue(),
+        "research_started": False,
+    }
+    write_json(report_path, report)
+    print(json.dumps({
+        "phase": "phase0_unit_tests",
+        "status": report["status"],
+        "tests_run": report["tests_run"],
+        "failure_count": report["failure_count"],
+        "error_count": report["error_count"],
+        "loader_error_count": len(loader_errors),
+        "test_report": report_path.as_posix(),
+    }, indent=2, sort_keys=True))
+    return passed
+
+
 def main() -> int:
+    if not run_phase0_tests():
+        print('PHASE0_FAILED: refusing to start the 5x12 research run.', file=sys.stderr)
+        return 2
     manifest = load_source_manifest()
     source_sha = manifest["source_commit"]
     dispatch_nonce = manifest.get("dispatch_nonce")
