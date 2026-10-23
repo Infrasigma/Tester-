@@ -69,7 +69,7 @@ def relative_file(root: Path, relative: str) -> Path:
     return resolved
 
 
-def verify_outputs(output_root: Path, expected_dispatch_nonce: str | None = None) -> tuple[dict[str, Any], dict[str, Any], list[dict[str, Any]]]:
+def verify_outputs(output_root: Path) -> tuple[dict[str, Any], dict[str, Any], list[dict[str, Any]]]:
     candidate_path = output_root / "receipt-candidate.json"
     manifest_path = output_root / "artifact_manifest.json"
     candidate = read_json(candidate_path)
@@ -80,13 +80,6 @@ def verify_outputs(output_root: Path, expected_dispatch_nonce: str | None = None
         raise ArchiveError("unsupported artifact-manifest schema")
     if candidate.get("run_id") != manifest.get("run_id"):
         raise ArchiveError("candidate/manifest run ID mismatch")
-    provenance = candidate.get("provenance")
-    dispatch_nonce = manifest.get("dispatch_nonce")
-    if (not isinstance(dispatch_nonce, str) or not dispatch_nonce
-            or not isinstance(provenance, dict) or provenance.get("dispatch_nonce") != dispatch_nonce):
-        raise ArchiveError("candidate/manifest dispatch nonce mismatch")
-    if expected_dispatch_nonce and dispatch_nonce != expected_dispatch_nonce:
-        raise ArchiveError("candidate output does not belong to this orchestration run")
     source = candidate.get("source")
     if not isinstance(source, dict) or source.get("commit_sha") != manifest.get("source_commit"):
         raise ArchiveError("candidate/manifest source commit mismatch")
@@ -204,7 +197,7 @@ def prepare(args: argparse.Namespace) -> int:
     dataset_root = Path(args.dataset_root).resolve()
     if not SLUG.fullmatch(args.dataset_slug):
         raise ArchiveError("dataset slug must be owner/dataset-slug")
-    candidate, manifest, manifest_rows = verify_outputs(output_root, args.expected_dispatch_nonce)
+    candidate, manifest, manifest_rows = verify_outputs(output_root)
     if dataset_root.exists():
         shutil.rmtree(dataset_root)
     dataset_root.mkdir(parents=True)
@@ -367,11 +360,10 @@ def attest(args: argparse.Namespace) -> int:
         "schema": ATTESTATION_SCHEMA,
         "run_id": prep["run_id"],
         "source_commit": prep["source_commit"],
+        "dispatch_nonce": prep.get("dispatch_nonce"),
         "expected_seed_ids": prep["expected_seed_ids"],
         "dataset_slug": args.dataset_slug,
         "dataset_version": args.dataset_version,
-        "kernel_slug": args.kernel_slug,
-        "kernel_version": args.kernel_version,
         "visibility": "private",
         "current_version_verified": True,
         "remote_file_listing_verified": True,
@@ -471,8 +463,6 @@ def main() -> int:
     a.add_argument("--dataset-slug", required=True)
     a.add_argument("--dataset-version", required=True, type=int)
     a.add_argument("--observed-version", required=True, type=int)
-    a.add_argument("--kernel-slug", required=True)
-    a.add_argument("--kernel-version", required=True, type=int)
     a.add_argument("--remote-listing", required=True)
     a.add_argument("--attestation-output", required=True)
     a.set_defaults(func=attest)

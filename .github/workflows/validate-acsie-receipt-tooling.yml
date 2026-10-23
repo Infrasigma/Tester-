@@ -39,14 +39,14 @@ jobs:
       - name: Run public-only archive/manifest tests
         run: python -m unittest scripts.tests.test_archive_foundry_outputs
 
-      - name: Require read-only ACSIE access
+      - name: Require scoped ACSIE access
         shell: bash
         env:
           ACSIE_READ_TOKEN: ${{ secrets.ACSIE_READ_TOKEN }}
         run: |
           set -euo pipefail
           if [[ -z "${ACSIE_READ_TOKEN:-}" ]]; then
-            echo "::error::Set Tester- repository secret ACSIE_READ_TOKEN to a fine-grained, read-only token scoped only to Infrasigma/ACSIE."
+            echo "::error::Set Tester- repository secret ACSIE_READ_TOKEN to a fine-grained token scoped only to Infrasigma/ACSIE with Contents: read/write; the pipeline publishes compact receipts to its working branch."
             exit 1
           fi
 
