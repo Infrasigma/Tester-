@@ -167,22 +167,29 @@ def build(
     encoded = base64.b64encode(archive_bytes).decode("ascii")
     new_resolver = make_resolver(expected_sha256, encoded)
     source = source[:start] + new_resolver + source[end:]
-    import_block = "import base64\n"
-    if "import base64\n" not in source:
-        marker = "import hashlib\n"
-        if marker not in source:
-            raise BuildError("template runner has no hashlib import anchor")
-        source = source.replace(marker, import_block + marker, 1)
-    for name, statement in (
-        ("io", "import io\n"),
-        ("tarfile", "import tarfile\n"),
-        ("shutil", "import shutil\n"),
-        ("PurePosixPath", "from pathlib import PurePosixPath\n"),
-    ):
-        if statement not in source:
-            marker = "import hashlib\n"
-            if marker not in source:
-                raise BuildError("template runner lacks the import insertion anchor")
+
+    def has_top_level_import(module: str, imported_name: str | None = None) -> bool:
+        for node in ast.parse(source).body:
+            if isinstance(node, ast.Import):
+                if imported_name is None and any(alias.name == module for alias in node.names):
+                    return True
+            elif isinstance(node, ast.ImportFrom) and node.module == module:
+                if imported_name is None or any(alias.name == imported_name for alias in node.names):
+                    return True
+        return False
+
+    import_specs = (
+        ("base64", None, "import base64\n"),
+        ("io", None, "import io\n"),
+        ("tarfile", None, "import tarfile\n"),
+        ("shutil", None, "import shutil\n"),
+        ("pathlib", "PurePosixPath", "from pathlib import PurePosixPath\n"),
+    )
+    marker = "import hashlib\n"
+    if marker not in source:
+        raise BuildError("template runner lacks the import insertion anchor")
+    for module, imported_name, statement in import_specs:
+        if not has_top_level_import(module, imported_name):
             source = source.replace(marker, statement + marker, 1)
 
     # The standalone runner intentionally lacks expanded sources, forcing extraction.

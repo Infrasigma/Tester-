@@ -40,29 +40,57 @@ This Termux wrapper cannot create or verify the heavy dataset archive on the pho
 
 ## Mount-free private Kaggle packaging
 
-When Kaggle's private-dataset mount is unavailable or stalls, use
-`scripts/build_embedded_kaggle_kernel.py` to create a **transient deployment
-folder** containing only `run_kaggle_foundry.py` and `kernel-metadata.json`.
-The builder validates the private source archive against an independently
-obtained expected SHA-256, checks required package members and safe archive
-paths, embeds the verified archive, and sets `dataset_sources: []`. The
-generated runner checks the embedded digest before extracting source under
-Kaggle's working directory. It rejects metadata that is not private or that
-enables internet/GPU, and requires the title slug to agree with the kernel ID.
+For direct Termux-to-Kaggle dispatches, run
+`scripts/build_embedded_kaggle_kernel.py` after the private ACSIE source blobs
+have been verified and the archive's `source-manifest.json` has the current
+dispatch nonce. It creates a **transient deployment folder** containing only
+`run_kaggle_foundry.py` and `kernel-metadata.json`, so Kaggle does not need
+to mount a private source dataset. The generated runner checks the embedded
+archive SHA-256 before safe extraction under Kaggle's working directory.
 
-Example (run only in a controlled private staging environment with a verified
-archive and a source-matched template runner):
+The builder checks the supplied SHA-256 against the exact archive bytes,
+verifies the required source files and rejects unsafe archive paths, refuses
+metadata that is not private or that enables internet/GPU, sets
+`dataset_sources: []`, and requires the title slug to agree with the kernel ID.
+Compute the digest only after verifying the source blobs against the private
+ACSIE commit; the digest binds the exact packaged bytes but does not replace
+those source-blob checks.
+
+Example (run only in a controlled private staging environment after source-blob
+verification; `$TEMPLATE_DIR` contains the complete package, source manifest,
+runner, and kernel metadata):
 
 ```bash
+set -euo pipefail
+SOURCE_ARCHIVE="$TMPDIR/acsie-gen3-foundry-package.tar.gz"
+tar -czf "$SOURCE_ARCHIVE" --exclude=kernel-metadata.json --exclude=__pycache__ --exclude='*.pyc' -C "$TEMPLATE_DIR" .
+ARCHIVE_SHA256="$(sha256sum "$SOURCE_ARCHIVE" | awk '{print $1}')"
+
 python3 scripts/build_embedded_kaggle_kernel.py \
   --template-dir "$TEMPLATE_DIR" \
-  --source-archive "$PRIVATE_PACKAGE_ARCHIVE" \
+  --source-archive "$SOURCE_ARCHIVE" \
   --output-dir "$TMPDIR/acsie-gen3-embedded-kernel" \
-  --expected-sha256 "$VERIFIED_PACKAGE_SHA256" \
-  --kernel-id memorican/acsie-gen3-foundry-embedded-source \
-  --title "ACSIE Gen3 Foundry Embedded Source"
+  --expected-sha256 "$ARCHIVE_SHA256" \
+  --kernel-id memorican/acsie-gen3-foundry \
+  --title "ACSIE Gen3 Foundry" \
+  > "$TMPDIR/embedded-kernel-build.json"
 
-kaggle kernels push -p "$TMPDIR/acsie-gen3-embedded-kernel"
+python3 - "$TMPDIR/embedded-kernel-build.json" <<'PY'
+import json, sys
+result = json.load(open(sys.argv[1], encoding="utf-8"))
+assert result.get("build_status") == "PASSED"
+assert result.get("dataset_sources_count") == 0
+assert result.get("expanded_source_files_in_output") == 0
+assert result.get("is_private") is True
+assert result.get("enable_internet") is False and result.get("enable_gpu") is False
+print("KAGGLE_PAYLOAD_STAGED=PRIVATE_EMBEDDED_SOURCE_NO_DATASET_MOUNT")
+PY
+
+python3 scripts/poll_kaggle_kernel.py \
+  --kernel-slug memorican/acsie-gen3-foundry \
+  --path "$TMPDIR/acsie-gen3-embedded-kernel" \
+  --dispatch-nonce "$DISPATCH_NONCE" \
+  --timeout-minutes 300
 ```
 
 **Never commit or publish the generated output directory or its runner.** The

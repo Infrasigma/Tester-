@@ -13,9 +13,6 @@ from scripts import build_embedded_kaggle_kernel as builder
 
 TEMPLATE = '''#!/usr/bin/env python3
 import hashlib
-import io
-import shutil
-import tarfile
 from pathlib import Path
 
 
@@ -26,6 +23,10 @@ def _resolve_package_root() -> Path:
         return candidate.is_dir() and all((candidate / item).is_file() for item in required)
     if is_package(here):
         return here
+    destination = Path("/kaggle/working/_runtime_src")
+    if destination.exists():
+        import shutil
+        shutil.rmtree(destination)
     input_root = Path("/kaggle/input")
     return here
 
@@ -97,6 +98,10 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertIn("EMBEDDED_SOURCE_SHA256", generated)
         self.assertNotIn("/kaggle/input", generated)
         tree = ast.parse(generated)
+        self.assertTrue(any(
+            isinstance(node, ast.Import) and any(alias.name == "shutil" for alias in node.names)
+            for node in tree.body
+        ), "a nested-only template import must not be mistaken for a top-level import")
         expr = next(
             node.value for node in tree.body
             if isinstance(node, ast.Assign)
@@ -124,7 +129,12 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
                      "__name__": "_generated_runner_test"}
         exec(compile(simulated, namespace["__file__"], "exec"), namespace)
         self.assertEqual(Path(namespace["ROOT"]), runtime_root)
-        self.assertTrue((runtime_root / "research/gen3_learning_rule_foundry_v1.py").is_file())
+        research_entry = runtime_root / "research/gen3_learning_rule_foundry_v1.py"
+        self.assertTrue(research_entry.is_file())
+        sentinel = runtime_root / "stale-sentinel.txt"
+        sentinel.write_text("must be removed before re-extraction", encoding="utf-8")
+        exec(compile(simulated, namespace["__file__"], "exec"), namespace)
+        self.assertFalse(sentinel.exists(), "existing extraction should be replaced from the verified archive")
 
     def test_rejects_sha256_mismatch_before_output(self):
         with self.assertRaisesRegex(builder.BuildError, "SHA-256"):
