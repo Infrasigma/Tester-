@@ -573,6 +573,11 @@ cp "$WORKDIR/profile-build-report.json" "$HANDOFF/profile-build-report.json"
 cp "$WORKDIR/local-test-report.json" "$HANDOFF/local-test-report.json"
 cp "$WORKDIR/remote-test-report.json" "$HANDOFF/remote-test-report.json"
 cp "$OUTPUT/foundry-summary.json" "$HANDOFF/foundry-summary.json"
+if [ -f "$OUTPUT/progress_heartbeat.json" ]; then
+  cp "$OUTPUT/progress_heartbeat.json" "$HANDOFF/progress_heartbeat.json"
+else
+  echo "WARNING: generation progress heartbeat artifact was not emitted" >&2
+fi
 if [ -f "$WORKDIR/one-generation-profile.json" ]; then
   cp "$WORKDIR/one-generation-profile.json" "$HANDOFF/one_generation_profile.json"
 else
@@ -601,6 +606,8 @@ remote_tests = json.loads((root / "remote-test-report.json").read_text(encoding=
 local_tests = json.loads((root / "local-test-report.json").read_text(encoding="utf-8"))
 profile_path = root / "one_generation_profile.json"
 profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.is_file() else None
+heartbeat_path = root / "progress_heartbeat.json"
+heartbeat = json.loads(heartbeat_path.read_text(encoding="utf-8")) if heartbeat_path.is_file() else None
 
 seeds = []
 gen0_durations = []
@@ -666,6 +673,12 @@ scorecard = {
         },
         "one_generation_profile": profile,
     },
+    "progress_heartbeat": {
+        "status": heartbeat.get("status") if heartbeat else None,
+        "worker_count": heartbeat.get("worker_count") if heartbeat else None,
+        "completed_generation_events": heartbeat.get("completed_generation_events") if heartbeat else None,
+        "expected_generation_events": heartbeat.get("expected_generation_events") if heartbeat else None,
+    },
     "phase0": {
         "local": {k: local_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
         "remote": {k: remote_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
@@ -689,6 +702,7 @@ print(json.dumps({
     "hardware": scorecard["hardware"],
     "runtime": scorecard["runtime"],
     "one_generation_profile": scorecard["runtime"]["one_generation_profile"],
+    "progress_heartbeat": scorecard["progress_heartbeat"],
     "phase0": scorecard["phase0"],
     "seeds": [
         {k: s[k] for k in ("seed","scientific_status","evaluated_generations","passed_generations","failed_or_blocked_generations","final_metrics")}
