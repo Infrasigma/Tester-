@@ -485,6 +485,7 @@ def main() -> int:
     p.add_argument("--dataset-root", required=True)
     p.add_argument("--dataset-slug", required=True)
     p.add_argument("--prepare-record", required=True)
+    p.add_argument("--expected-dispatch-nonce")
     p.set_defaults(func=prepare)
     v = commands.add_parser("verify-private")
     v.add_argument("--dataset-slug", required=True)
