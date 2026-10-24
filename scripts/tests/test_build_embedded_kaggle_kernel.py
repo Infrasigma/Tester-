@@ -103,7 +103,7 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertIn("DEPLOYMENT_KERNEL_ID = 'memorican/test-kernel-embedded-source'", generated)
         self.assertIn("DEPLOYMENT_GPU_REQUESTED = False", generated)
         self.assertNotIn("DEPLOYMENT_KERNEL_ID = None", generated)
-        self.assertNotIn("DEPLOYMENT_GPU_REQUESTED = False\n", generated.split("DEPLOYMENT_GPU_REQUESTED = False", 1)[1])
+        self.assertEqual(generated.count("DEPLOYMENT_GPU_REQUESTED = False"), 1)
         self.assertNotIn("/kaggle/input", generated)
         tree = ast.parse(generated)
         self.assertTrue(any(
