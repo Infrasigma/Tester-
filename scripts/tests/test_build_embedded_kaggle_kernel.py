@@ -17,6 +17,7 @@ from pathlib import Path
 
 DEPLOYMENT_KERNEL_ID = None
 DEPLOYMENT_GPU_REQUESTED = False
+DEPLOYMENT_PROFILE_ONLY = False
 
 
 def _resolve_package_root() -> Path:
@@ -78,7 +79,8 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
                 archive.add(source_root / name, arcname=name)
 
     def _build(self, expected_sha=None, title="Test Kernel Embedded Source",
-               kernel_id="memorican/test-kernel-embedded-source", enable_gpu=False):
+               kernel_id="memorican/test-kernel-embedded-source", enable_gpu=False,
+               profile_only=False):
         return builder.build(
             self.template_dir,
             self.archive_path,
@@ -87,6 +89,7 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
             kernel_id,
             title,
             enable_gpu=enable_gpu,
+            profile_only=profile_only,
         )
 
     def test_builds_mount_free_private_runner_with_verified_archive(self):
@@ -102,8 +105,11 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertIn("EMBEDDED_SOURCE_SHA256", generated)
         self.assertIn("DEPLOYMENT_KERNEL_ID = 'memorican/test-kernel-embedded-source'", generated)
         self.assertIn("DEPLOYMENT_GPU_REQUESTED = False", generated)
+        self.assertIn("DEPLOYMENT_PROFILE_ONLY = False", generated)
         self.assertNotIn("DEPLOYMENT_KERNEL_ID = None", generated)
         self.assertEqual(generated.count("DEPLOYMENT_GPU_REQUESTED = False"), 1)
+        self.assertEqual(generated.count("DEPLOYMENT_PROFILE_ONLY = False"), 1)
+        self.assertFalse(result["profile_only"])
         self.assertNotIn("/kaggle/input", generated)
         tree = ast.parse(generated)
         self.assertTrue(any(
@@ -154,6 +160,19 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertEqual(str(metadata["enable_gpu"]).lower(), "true")
         self.assertEqual(str(metadata["enable_internet"]).lower(), "false")
         self.assertEqual(metadata["dataset_sources"], [])
+
+
+    def test_profile_only_mode_is_bound_and_can_be_disabled_for_control_run(self):
+        profile = self._build(profile_only=True)
+        generated_profile = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
+        profile_meta = json.loads((self.output_dir / "kernel-metadata.json").read_text(encoding="utf-8"))
+        self.assertTrue(profile["profile_only"])
+        self.assertIn("DEPLOYMENT_PROFILE_ONLY = True", generated_profile)
+        self.assertEqual(str(profile_meta["enable_internet"]).lower(), "false")
+        control = self._build(profile_only=False)
+        generated_control = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
+        self.assertFalse(control["profile_only"])
+        self.assertIn("DEPLOYMENT_PROFILE_ONLY = False", generated_control)
 
     def test_rejects_sha256_mismatch_before_output(self):
         with self.assertRaisesRegex(builder.BuildError, "SHA-256"):
