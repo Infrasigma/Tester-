@@ -34,6 +34,7 @@ STATUS = {"PASSED", "FAILED", "BLOCKED", "CRASHED", "INVALID", "INCONCLUSIVE"}
 # The embedded-source builder binds the effective deployment configuration.
 DEPLOYMENT_KERNEL_ID = None
 DEPLOYMENT_GPU_REQUESTED = False
+DEPLOYMENT_PROFILE_ONLY = False
 INTEGRITY_FLAGS = (
     "external_model", "pretrained_model", "embeddings", "external_api",
     "hidden_prompt", "task_family_routing", "target_access_during_discovery",
@@ -573,6 +574,8 @@ def main() -> int:
         raise RuntimeError("embedded kernel source archive SHA-256 was not bound")
     if not isinstance(DEPLOYMENT_GPU_REQUESTED, bool):
         raise RuntimeError("embedded GPU request marker is invalid")
+    if not isinstance(DEPLOYMENT_PROFILE_ONLY, bool):
+        raise RuntimeError("embedded profile-only marker is invalid")
     hardware_info = _gpu_device_telemetry()
     run_id = f"gen3-foundry-{source_sha[:10]}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     working = Path("/kaggle/working")
@@ -600,8 +603,44 @@ def main() -> int:
 
     research_started = time.perf_counter()
     parallel_results = {}
+    if driver is None and DEPLOYMENT_PROFILE_ONLY:
+        print(json.dumps({
+            "event": "one_generation_profile_failed",
+            "reason": "production generation driver could not be imported",
+            "source_commit": source_sha,
+            "dispatch_nonce": dispatch_nonce,
+        }, sort_keys=True, separators=(",", ":")), flush=True)
+        return 2
+    if driver is not None and DEPLOYMENT_PROFILE_ONLY:
+        profile = _profile_one_generation(str(ROOT), working, seed=0)
+        profile.update({
+            "source_commit": source_sha,
+            "dispatch_nonce": dispatch_nonce,
+            "kernel_slug": DEPLOYMENT_KERNEL_ID,
+            "embedded_source_archive_sha256": embedded_archive_sha256,
+        })
+        write_json(working / "one_generation_profile.json", profile)
+        print(json.dumps({
+            "event": "one_generation_profile_sealed",
+            "sec_per_gen": profile.get("sec_per_gen"),
+            "evaluated": profile.get("evaluated"),
+            "scientific_status": profile.get("scientific_status"),
+            "dispatch_nonce": dispatch_nonce,
+        }, sort_keys=True, separators=(",", ":")), flush=True)
+        write_json(working / "profile_only_summary.json", {
+            "schema": "ACSIE.gen3-foundry-profile-only-summary.v1",
+            "status": "COMPLETE",
+            "source_commit": source_sha,
+            "dispatch_nonce": dispatch_nonce,
+            "kernel_slug": DEPLOYMENT_KERNEL_ID,
+            "embedded_source_archive_sha256": embedded_archive_sha256,
+        })
+        print(json.dumps({
+            "event": "profile_only_complete",
+            "profile_file": (working / "one_generation_profile.json").as_posix(),
+        }, sort_keys=True, separators=(",", ":")), flush=True)
+        return 0
     if driver is not None:
-        _profile_one_generation(str(ROOT), working, seed=0)
         parallel_results = _run_parallel_seeds(
             SEEDS, str(ROOT), checkpoints_root, working, run_id, source_sha,
             embedded_archive_sha256, hardware_info,
@@ -721,6 +760,7 @@ def main() -> int:
         "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
         "gpu_acceleration_enabled": False,
         "gpu_device_telemetry": hardware_info,
+        "profile_only": DEPLOYMENT_PROFILE_ONLY,
         "platform": platform.platform(),
         "machine": platform.machine(),
     }
@@ -827,6 +867,7 @@ def main() -> int:
             "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
             "gpu_computation_used": False,
             "gpu_device_telemetry": hardware_info,
+            "profile_only": DEPLOYMENT_PROFILE_ONLY,
         },
         "gate": {
             "gate_id": "frozen_5x12",
@@ -866,6 +907,7 @@ def main() -> int:
         "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
         "gpu_acceleration_enabled": False,
         "gpu_device_telemetry": hardware_info,
+        "profile_only": DEPLOYMENT_PROFILE_ONLY,
         "platform": platform.platform(),
         "machine": platform.machine(),
     }, indent=2, sort_keys=True))
