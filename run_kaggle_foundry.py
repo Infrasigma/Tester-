@@ -658,6 +658,15 @@ def main() -> int:
             1 for r in results for g in r["generations"] if g.get("scientific_status") != "PASSED"
         ),
         "checkpoint_bundle_count": len(list(checkpoints_root.rglob("*.json"))),
+        "kernel_wall_clock_sec": round(max(0.0, time.perf_counter() - kernel_started), 3),
+        "research_wall_clock_sec": round(max(0.0, time.perf_counter() - research_started), 3),
+        "reported_cpu_count": os.cpu_count() or 4,
+        "parallel_worker_count": min(len(SEEDS), os.cpu_count() or 4) if driver is not None else 0,
+        "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
+        "gpu_acceleration_enabled": False,
+        "gpu_device_telemetry": hardware_info,
+        "platform": platform.platform(),
+        "machine": platform.machine(),
     }
     write_json(working / "foundry-summary.json", summary)
     manifest_files.append({
