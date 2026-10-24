@@ -17,6 +17,7 @@ import os
 import platform
 import queue
 import re
+import subprocess
 import sys
 import tarfile
 import time
@@ -29,8 +30,9 @@ from typing import Any
 
 SEEDS = (771221, 771222, 771223, 771224, 771225)
 STATUS = {"PASSED", "FAILED", "BLOCKED", "CRASHED", "INVALID", "INCONCLUSIVE"}
-# The embedded-source builder replaces this marker with kernel-metadata.json's id.
+# The embedded-source builder binds the effective deployment configuration.
 DEPLOYMENT_KERNEL_ID = None
+DEPLOYMENT_GPU_REQUESTED = False
 INTEGRITY_FLAGS = (
     "external_model", "pretrained_model", "embeddings", "external_api",
     "hidden_prompt", "task_family_routing", "target_access_during_discovery",
@@ -318,6 +320,40 @@ def run_phase0_tests() -> bool:
     return passed
 
 
+def _gpu_device_telemetry() -> dict[str, Any]:
+    """Report visible GPU devices without implying GPU compute was used."""
+    try:
+        result = subprocess.run(
+            [
+                "nvidia-smi",
+                "--query-gpu=name,memory.total",
+                "--format=csv,noheader",
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=5,
+        )
+        devices = [
+            line.strip() for line in (result.stdout or "").splitlines()
+            if line.strip()
+        ] if result.returncode == 0 else []
+        return {
+            "nvidia_smi_available": result.returncode == 0,
+            "query_returncode": result.returncode,
+            "devices": devices,
+            "gpu_computation_used": False,
+        }
+    except Exception as exc:
+        return {
+            "nvidia_smi_available": False,
+            "query_returncode": None,
+            "devices": [],
+            "error_type": type(exc).__name__,
+            "gpu_computation_used": False,
+        }
+
+
 def _run_seed_worker(seed: int, package_root: str, checkpoints_root: str, progress_queue) -> dict[str, Any]:
     """Run one independent seed in its own process and checkpoint directory."""
     if package_root not in sys.path:
@@ -364,6 +400,7 @@ def _run_parallel_seeds(
     run_id: str,
     source_commit: str,
     embedded_archive_sha256: str,
+    hardware_info: dict[str, Any],
 ) -> dict[int, dict[str, Any]]:
     """Run independent frozen seeds concurrently and persist parent-owned heartbeats."""
     worker_count = min(len(seeds), os.cpu_count() or 4)
@@ -379,7 +416,9 @@ def _run_parallel_seeds(
         "reported_cpu_count": os.cpu_count() or 4,
         "platform": platform.platform(),
         "machine": platform.machine(),
+        "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
         "gpu_acceleration_enabled": False,
+        "gpu_device_telemetry": hardware_info,
         "expected_generation_events": len(seeds) * 12,
         "completed_generation_events": 0,
         "events": [],
@@ -394,7 +433,9 @@ def _run_parallel_seeds(
         "reported_cpu_count": os.cpu_count() or 4,
         "platform": platform.platform(),
         "machine": platform.machine(),
+        "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
         "gpu_acceleration_enabled": False,
+        "gpu_device_telemetry": hardware_info,
     }, sort_keys=True, separators=(",", ":")), flush=True)
     outcomes: dict[int, dict[str, Any]] = {}
 
@@ -475,6 +516,9 @@ def main() -> int:
         raise RuntimeError("embedded kernel builder did not bind the deployed kernel ID")
     if not isinstance(embedded_archive_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", embedded_archive_sha256):
         raise RuntimeError("embedded kernel source archive SHA-256 was not bound")
+    if not isinstance(DEPLOYMENT_GPU_REQUESTED, bool):
+        raise RuntimeError("embedded GPU request marker is invalid")
+    hardware_info = _gpu_device_telemetry()
     run_id = f"gen3-foundry-{source_sha[:10]}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     working = Path("/kaggle/working")
     if not working.is_dir():
@@ -504,7 +548,7 @@ def main() -> int:
     if driver is not None:
         parallel_results = _run_parallel_seeds(
             SEEDS, str(ROOT), checkpoints_root, working, run_id, source_sha,
-            embedded_archive_sha256,
+            embedded_archive_sha256, hardware_info,
         )
 
     results = []
@@ -715,6 +759,9 @@ def main() -> int:
             "entrypoint": "python run_kaggle_foundry.py",
             "dataset_inputs": [],
             "embedded_source_archive_sha256": embedded_archive_sha256,
+            "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
+            "gpu_computation_used": False,
+            "gpu_device_telemetry": hardware_info,
         },
         "gate": {
             "gate_id": "frozen_5x12",
@@ -751,7 +798,9 @@ def main() -> int:
         "research_wall_clock_sec": round(max(0.0, time.perf_counter() - research_started), 3),
         "reported_cpu_count": os.cpu_count() or 4,
         "parallel_worker_count": min(len(SEEDS), os.cpu_count() or 4) if driver is not None else 0,
+        "gpu_requested": DEPLOYMENT_GPU_REQUESTED,
         "gpu_acceleration_enabled": False,
+        "gpu_device_telemetry": hardware_info,
         "platform": platform.platform(),
         "machine": platform.machine(),
     }, indent=2, sort_keys=True))
