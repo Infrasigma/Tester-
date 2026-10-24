@@ -314,6 +314,8 @@ checks = {
     "archive_sha256_matches": data.get("embedded_source_archive_sha256") == archive_sha,
     "diagnostic_only": data.get("diagnostic_only") is True,
     "excluded_from_qualification": data.get("qualification_slot") is False,
+    "frozen_limit_unchanged": data.get("frozen_generation_limit") == 12 and data.get("frozen_generation_limit_changed") is False,
+    "post_gen11_gates_not_evaluated": data.get("post_gen11_gates_evaluated") is False,
     "duration_is_finite_nonnegative_number": isinstance(duration, (int, float)) and math.isfinite(duration) and duration >= 0,
 }
 print(json.dumps({"profile_validation": checks, "sec_per_gen": duration, "evaluated": data.get("evaluated"), "scientific_status": data.get("scientific_status"), "candidate_count": data.get("candidate_count")}, sort_keys=True))
