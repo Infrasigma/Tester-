@@ -30,10 +30,14 @@ def main() -> int:
     parser.add_argument("--kernel-slug", required=True)
     parser.add_argument("--path", required=True)
     parser.add_argument("--dispatch-nonce", required=True)
+    parser.add_argument("--completion-file", default="receipt-candidate.json")
     parser.add_argument("--timeout-minutes", type=int, default=330)
     args = parser.parse_args()
     if not args.dispatch_nonce or len(args.dispatch_nonce) > 200:
         print("KAGGLE_KERNEL_FAILED: invalid dispatch nonce", file=sys.stderr)
+        return 2
+    if not re.fullmatch(r"[A-Za-z0-9._-]+", args.completion_file):
+        print("KAGGLE_KERNEL_FAILED: invalid completion file name", file=sys.stderr)
         return 2
 
     if not re.fullmatch(r"[a-z0-9._-]+/[a-z0-9._-]+", args.kernel_slug):
@@ -75,14 +79,17 @@ def main() -> int:
                     with tempfile.TemporaryDirectory(prefix="acsie-kernel-sentinel-") as temp:
                         sentinel = run([
                             "kaggle", "kernels", "output", f"{args.kernel_slug}/{version}",
-                            "--path", temp, "--file-pattern", r".*receipt-candidate\.json$",
+                            "--path", temp, "--file-pattern", ".*" + re.escape(args.completion_file) + r"$",
                             "--force", "--quiet",
                         ])
-                        matches = list(Path(temp).rglob("receipt-candidate.json"))
+                        matches = list(Path(temp).rglob(args.completion_file))
                         if sentinel is not None and sentinel.returncode == 0 and len(matches) == 1:
                             try:
                                 candidate = json.loads(matches[0].read_text(encoding="utf-8"))
-                                nonce = candidate.get("provenance", {}).get("dispatch_nonce")
+                                provenance = candidate.get("provenance", {})
+                                nonce = provenance.get("dispatch_nonce") if isinstance(provenance, dict) else None
+                                if nonce is None:
+                                    nonce = candidate.get("dispatch_nonce")
                             except (OSError, json.JSONDecodeError, AttributeError):
                                 nonce = None
                             if nonce == args.dispatch_nonce:
