@@ -365,8 +365,19 @@ def attest(args: argparse.Namespace) -> int:
         raise ArchiveError("archive-index.json failed its post-upload SHA-256 check")
     manifest_path = output_root / "artifact_manifest.json"
     candidate_path = output_root / "receipt-candidate.json"
+    if not SLUG.fullmatch(args.kernel_slug):
+        raise ArchiveError("kernel slug must be owner/kernel-slug")
+    if isinstance(args.kernel_version, bool) or not isinstance(args.kernel_version, int) or args.kernel_version < 1:
+        raise ArchiveError("kernel version must be a positive integer")
+    candidate_payload = read_json(candidate_path)
+    candidate_execution = candidate_payload.get("execution")
+    candidate_slug = candidate_execution.get("kernel_slug") if isinstance(candidate_execution, dict) else None
+    if candidate_slug != args.kernel_slug:
+        raise ArchiveError("kernel slug does not match the receipt candidate metadata")
     attestation = {
         "schema": ATTESTATION_SCHEMA,
+        "kernel_slug": args.kernel_slug,
+        "kernel_version": args.kernel_version,
         "run_id": prep["run_id"],
         "source_commit": prep["source_commit"],
         "dispatch_nonce": prep.get("dispatch_nonce"),
@@ -472,6 +483,8 @@ def main() -> int:
     a.add_argument("--dataset-slug", required=True)
     a.add_argument("--dataset-version", required=True, type=int)
     a.add_argument("--observed-version", required=True, type=int)
+    a.add_argument("--kernel-slug", required=True)
+    a.add_argument("--kernel-version", required=True, type=int)
     a.add_argument("--remote-listing", required=True)
     a.add_argument("--attestation-output", required=True)
     a.set_defaults(func=attest)
