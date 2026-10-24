@@ -186,81 +186,9 @@ tar -czf "$ARCHIVE" \
 ARCHIVE_SHA256="$(sha256sum "$ARCHIVE" | awk '{print $1}')"
 echo "EMBEDDED_SOURCE_ARCHIVE_SHA256=$ARCHIVE_SHA256"
 
-python3 "$TESTER/scripts/build_embedded_kaggle_kernel.py" \
-  --template-dir "$TEMPLATE" \
-  --source-archive "$ARCHIVE" \
-  --output-dir "$PAYLOAD" \
-  --expected-sha256 "$ARCHIVE_SHA256" \
-  --kernel-id "$KERNEL" \
-  --title "$KERNEL_TITLE" \
-  --enable-gpu > "$WORKDIR/build-report.json"
-
-python3 - "$PAYLOAD/kernel-metadata.json" "$WORKDIR/build-report.json" \
-  "$KERNEL" "$ARCHIVE_SHA256" <<'PY'
-import json, sys
-from pathlib import Path
-meta_path, report_path, kernel_id, archive_sha = sys.argv[1:]
-meta = json.loads(Path(meta_path).read_text(encoding="utf-8"))
-report = json.loads(Path(report_path).read_text(encoding="utf-8"))
-checks = {
-    "correct_kernel_id": meta.get("id") == kernel_id,
-    "private": str(meta.get("is_private", "")).lower() == "true",
-    "internet_disabled": str(meta.get("enable_internet", "")).lower() == "false",
-    "gpu_requested": str(meta.get("enable_gpu", "")).lower() == "true",
-    "no_dataset_mounts": meta.get("dataset_sources") == [],
-    "archive_hash_matches": report.get("embedded_archive_sha256") == archive_sha,
-    "slug_bound": report.get("deployment_kernel_id_bound") is True,
-    "build_passed": report.get("build_status") == "PASSED",
-}
-print(json.dumps({"payload_validation": checks, "build_report": report}, sort_keys=True))
-if not all(checks.values()):
-    raise SystemExit(2)
-PY
-
-POLL_LOG="$WORKDIR/kernel-poll.log"
-set +e
-python3 "$TESTER/scripts/poll_kaggle_kernel.py" \
-  --kernel-slug "$KERNEL" \
-  --path "$PAYLOAD" \
-  --dispatch-nonce "$DISPATCH_NONCE" \
-  --timeout-minutes 330 2>&1 | tee "$POLL_LOG"
-POLL_RC=$?
-set -e
-KERNEL_VERSION="$(grep '^KAGGLE_KERNEL_VERSION=' "$POLL_LOG" | tail -n 1 | cut -d= -f2 || true)"
-if [ "$POLL_RC" -ne 0 ]; then
-  if [ -n "$KERNEL_VERSION" ]; then
-    mkdir -p "$WORKDIR/phase0-failure"
-    kaggle kernels output "$KERNEL/$KERNEL_VERSION" \
-      --path "$WORKDIR/phase0-failure" \
-      --file-pattern '.*test_report\.json$' --force --quiet || true
-    python3 - "$WORKDIR/phase0-failure" <<'PY' || true
-import json, sys
-from pathlib import Path
-files = list(Path(sys.argv[1]).rglob("test_report.json"))
-if len(files) == 1:
-    report = json.loads(files[0].read_text(encoding="utf-8"))
-    print(json.dumps({k: report.get(k) for k in (
-        "status","tests_run","tests_passed","failure_count","error_count","loader_errors"
-    )}, sort_keys=True))
-else:
-    print("No unique remote test_report.json was available")
-PY
-  fi
-  echo "BLOCKED: dispatched kernel did not pass completion/sentinel checks" >&2
-  exit 2
-fi
-[[ "$KERNEL_VERSION" =~ ^[1-9][0-9]*$ ]] || {
-  echo "BLOCKED: exact Kaggle kernel version was not captured" >&2
-  exit 2
-}
-echo "KAGGLE_KERNEL_VERSION=$KERNEL_VERSION"
-
-PHASE0_DIR="$WORKDIR/remote-phase0"
-mkdir -p "$PHASE0_DIR"
-kaggle kernels output "$KERNEL/$KERNEL_VERSION" \
-  --path "$PHASE0_DIR" \
-  --file-pattern '.*test_report\.json$' --force --quiet
-python3 - "$PHASE0_DIR" "$WORKDIR/remote-test-report.json" <<'PY'
+verify_remote_phase0() {
+  local output_root="$1" saved_report="$2"
+  python3 - "$output_root" "$saved_report" <<'PY'
 import json, shutil, sys
 from pathlib import Path
 root, saved = map(Path, sys.argv[1:])
@@ -284,6 +212,206 @@ if (report.get("status") != "PASSED"
         or report.get("research_started") is not False):
     raise SystemExit("BLOCKED: remote Phase 0 report did not pass fail-closed validation")
 PY
+}
+
+# VERSION 1: run only the isolated seed=0 / generation=0 timing profile.
+PROFILE_PAYLOAD="$WORKDIR/profile-kernel-payload"
+python3 "$TESTER/scripts/build_embedded_kaggle_kernel.py" \
+  --template-dir "$TEMPLATE" \
+  --source-archive "$ARCHIVE" \
+  --output-dir "$PROFILE_PAYLOAD" \
+  --expected-sha256 "$ARCHIVE_SHA256" \
+  --kernel-id "$KERNEL" \
+  --title "$KERNEL_TITLE" \
+  --enable-gpu --profile-only > "$WORKDIR/profile-build-report.json"
+
+python3 - "$PROFILE_PAYLOAD/kernel-metadata.json" "$WORKDIR/profile-build-report.json" \
+  "$KERNEL" "$ARCHIVE_SHA256" <<'PY'
+import json, sys
+from pathlib import Path
+meta = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+report = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+kernel, archive_sha = sys.argv[3:]
+checks = {
+    "correct_kernel_id": meta.get("id") == kernel,
+    "private": str(meta.get("is_private", "")).lower() == "true",
+    "internet_disabled": str(meta.get("enable_internet", "")).lower() == "false",
+    "gpu_requested": str(meta.get("enable_gpu", "")).lower() == "true",
+    "no_dataset_mounts": meta.get("dataset_sources") == [],
+    "archive_hash_matches": report.get("embedded_archive_sha256") == archive_sha,
+    "slug_bound": report.get("deployment_kernel_id_bound") is True,
+    "profile_only": report.get("profile_only") is True,
+    "build_passed": report.get("build_status") == "PASSED",
+}
+print(json.dumps({"profile_payload_validation": checks}, sort_keys=True))
+if not all(checks.values()):
+    raise SystemExit(2)
+PY
+
+PROFILE_POLL_LOG="$WORKDIR/profile-kernel-poll.log"
+set +e
+python3 "$TESTER/scripts/poll_kaggle_kernel.py" \
+  --kernel-slug "$KERNEL" \
+  --path "$PROFILE_PAYLOAD" \
+  --dispatch-nonce "$DISPATCH_NONCE" \
+  --completion-file one_generation_profile.json \
+  --timeout-minutes 60 2>&1 | tee "$PROFILE_POLL_LOG"
+PROFILE_POLL_RC=\${PIPESTATUS[0]}
+set -e
+PROFILE_KERNEL_VERSION="$(grep '^KAGGLE_KERNEL_VERSION=' "$PROFILE_POLL_LOG" | tail -n 1 | cut -d= -f2 || true)"
+if [ "$PROFILE_POLL_RC" -ne 0 ]; then
+  if [ -n "$PROFILE_KERNEL_VERSION" ]; then
+    mkdir -p "$WORKDIR/profile-phase0-failure"
+    kaggle kernels output "$KERNEL/$PROFILE_KERNEL_VERSION" \
+      --path "$WORKDIR/profile-phase0-failure" \
+      --file-pattern '.*test_report\.json$' --force --quiet || true
+    python3 - "$WORKDIR/profile-phase0-failure" <<'PY' || true
+import json, sys
+from pathlib import Path
+files=list(Path(sys.argv[1]).rglob("test_report.json"))
+if len(files)==1:
+    d=json.loads(files[0].read_text(encoding="utf-8"))
+    print(json.dumps({k:d.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count","loader_errors")},sort_keys=True))
+else:
+    print("No unique profile-run test_report.json was available")
+PY
+  fi
+  echo "BLOCKED: profile-only kernel did not pass its completion check" >&2
+  exit 2
+fi
+[[ "$PROFILE_KERNEL_VERSION" =~ ^[1-9][0-9]*$ ]] || {
+  echo "BLOCKED: exact profile kernel version was not captured" >&2
+  exit 2
+}
+echo "PROFILE_KERNEL_VERSION=$PROFILE_KERNEL_VERSION"
+
+PROFILE_PHASE0_DIR="$WORKDIR/profile-remote-phase0"
+mkdir -p "$PROFILE_PHASE0_DIR"
+kaggle kernels output "$KERNEL/$PROFILE_KERNEL_VERSION" \
+  --path "$PROFILE_PHASE0_DIR" \
+  --file-pattern '.*test_report\.json$' --force --quiet
+verify_remote_phase0 "$PROFILE_PHASE0_DIR" "$WORKDIR/profile-remote-test-report.json"
+
+PROFILE_OUTPUT_DIR="$WORKDIR/profile-output"
+mkdir -p "$PROFILE_OUTPUT_DIR"
+kaggle kernels output "$KERNEL/$PROFILE_KERNEL_VERSION" \
+  --path "$PROFILE_OUTPUT_DIR" \
+  --file-pattern '.*one_generation_profile\.json$' --force --quiet
+python3 - "$PROFILE_OUTPUT_DIR" "$WORKDIR/one-generation-profile.json" "$DISPATCH_NONCE" \
+  "$KERNEL" "$ARCHIVE_SHA256" <<'PY'
+import json, math, shutil, sys
+from pathlib import Path
+root, saved = Path(sys.argv[1]), Path(sys.argv[2])
+nonce, kernel, archive_sha = sys.argv[3:]
+files = list(root.rglob("one_generation_profile.json"))
+if len(files) != 1:
+    raise SystemExit("BLOCKED: profile JSON missing or ambiguous")
+data = json.loads(files[0].read_text(encoding="utf-8"))
+duration = data.get("sec_per_gen")
+checks = {
+    "dispatch_nonce_matches": data.get("dispatch_nonce") == nonce,
+    "kernel_slug_matches": data.get("kernel_slug") == kernel,
+    "archive_sha256_matches": data.get("embedded_source_archive_sha256") == archive_sha,
+    "diagnostic_only": data.get("diagnostic_only") is True,
+    "excluded_from_qualification": data.get("qualification_slot") is False,
+    "duration_is_finite_nonnegative_number": isinstance(duration, (int, float)) and math.isfinite(duration) and duration >= 0,
+}
+print(json.dumps({"profile_validation": checks, "sec_per_gen": duration, "evaluated": data.get("evaluated"), "scientific_status": data.get("scientific_status"), "candidate_count": data.get("candidate_count")}, sort_keys=True))
+if not all(checks.values()):
+    raise SystemExit(2)
+shutil.copyfile(files[0], saved)
+PY
+
+echo "PROFILE_SEC_PER_GEN=$(python3 - "$WORKDIR/one-generation-profile.json" <<'PY'
+import json, sys
+print(json.load(open(sys.argv[1], encoding="utf-8"))["sec_per_gen"])
+PY
+)"
+echo "PROFILE_EVALUATED=$(python3 - "$WORKDIR/one-generation-profile.json" <<'PY'
+import json, sys
+print(str(json.load(open(sys.argv[1], encoding="utf-8"))["evaluated"]).lower())
+PY
+)"
+echo "========== PROFILE COMPLETE; NOW STAGE FROZEN 5x12 CONTROL VERSION =========="
+
+# VERSION 2: same source SHA and dispatch nonce; profile-only flag disabled.
+PAYLOAD="$WORKDIR/kernel-payload"
+python3 "$TESTER/scripts/build_embedded_kaggle_kernel.py" \
+  --template-dir "$TEMPLATE" \
+  --source-archive "$ARCHIVE" \
+  --output-dir "$PAYLOAD" \
+  --expected-sha256 "$ARCHIVE_SHA256" \
+  --kernel-id "$KERNEL" \
+  --title "$KERNEL_TITLE" \
+  --enable-gpu > "$WORKDIR/build-report.json"
+
+python3 - "$PAYLOAD/kernel-metadata.json" "$WORKDIR/build-report.json" \
+  "$KERNEL" "$ARCHIVE_SHA256" <<'PY'
+import json, sys
+from pathlib import Path
+meta = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+report = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+kernel, archive_sha = sys.argv[3:]
+checks = {
+    "correct_kernel_id": meta.get("id") == kernel,
+    "private": str(meta.get("is_private", "")).lower() == "true",
+    "internet_disabled": str(meta.get("enable_internet", "")).lower() == "false",
+    "gpu_requested": str(meta.get("enable_gpu", "")).lower() == "true",
+    "no_dataset_mounts": meta.get("dataset_sources") == [],
+    "archive_hash_matches": report.get("embedded_archive_sha256") == archive_sha,
+    "slug_bound": report.get("deployment_kernel_id_bound") is True,
+    "profile_only_disabled": report.get("profile_only") is False,
+    "build_passed": report.get("build_status") == "PASSED",
+}
+print(json.dumps({"control_payload_validation": checks}, sort_keys=True))
+if not all(checks.values()):
+    raise SystemExit(2)
+PY
+
+POLL_LOG="$WORKDIR/kernel-poll.log"
+set +e
+python3 "$TESTER/scripts/poll_kaggle_kernel.py" \
+  --kernel-slug "$KERNEL" \
+  --path "$PAYLOAD" \
+  --dispatch-nonce "$DISPATCH_NONCE" \
+  --timeout-minutes 330 2>&1 | tee "$POLL_LOG"
+POLL_RC=\${PIPESTATUS[0]}
+set -e
+KERNEL_VERSION="$(grep '^KAGGLE_KERNEL_VERSION=' "$POLL_LOG" | tail -n 1 | cut -d= -f2 || true)"
+if [ "$POLL_RC" -ne 0 ]; then
+  if [ -n "$KERNEL_VERSION" ]; then
+    mkdir -p "$WORKDIR/phase0-failure"
+    kaggle kernels output "$KERNEL/$KERNEL_VERSION" \
+      --path "$WORKDIR/phase0-failure" \
+      --file-pattern '.*test_report\.json$' --force --quiet || true
+    python3 - "$WORKDIR/phase0-failure" <<'PY' || true
+import json, sys
+from pathlib import Path
+files = list(Path(sys.argv[1]).rglob("test_report.json"))
+if len(files) == 1:
+    report = json.loads(files[0].read_text(encoding="utf-8"))
+    print(json.dumps({k: report.get(k) for k in (
+        "status","tests_run","tests_passed","failure_count","error_count","loader_errors"
+    )}, sort_keys=True))
+else:
+    print("No unique Control test_report.json was available")
+PY
+  fi
+  echo "BLOCKED: Control kernel did not pass completion/sentinel checks" >&2
+  exit 2
+fi
+[[ "$KERNEL_VERSION" =~ ^[1-9][0-9]*$ ]] || {
+  echo "BLOCKED: exact Control kernel version was not captured" >&2
+  exit 2
+}
+echo "KAGGLE_KERNEL_VERSION=$KERNEL_VERSION"
+
+PHASE0_DIR="$WORKDIR/remote-phase0"
+mkdir -p "$PHASE0_DIR"
+kaggle kernels output "$KERNEL/$KERNEL_VERSION" \
+  --path "$PHASE0_DIR" \
+  --file-pattern '.*test_report\.json$' --force --quiet
+verify_remote_phase0 "$PHASE0_DIR" "$WORKDIR/remote-test-report.json"
 
 OUTPUT="$WORKDIR/kernel-output"
 mkdir -p "$OUTPUT"
