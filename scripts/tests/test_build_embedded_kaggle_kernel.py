@@ -15,6 +15,8 @@ TEMPLATE = '''#!/usr/bin/env python3
 import hashlib
 from pathlib import Path
 
+DEPLOYMENT_KERNEL_ID = None
+
 
 def _resolve_package_root() -> Path:
     here = Path(__file__).resolve().parent
@@ -96,6 +98,8 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
                          ["kernel-metadata.json", "run_kaggle_foundry.py"])
         generated = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
         self.assertIn("EMBEDDED_SOURCE_SHA256", generated)
+        self.assertIn("DEPLOYMENT_KERNEL_ID = 'memorican/test-kernel-embedded-source'", generated)
+        self.assertNotIn("DEPLOYMENT_KERNEL_ID = None", generated)
         self.assertNotIn("/kaggle/input", generated)
         tree = ast.parse(generated)
         self.assertTrue(any(
