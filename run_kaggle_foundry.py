@@ -12,17 +12,24 @@ import importlib
 import importlib.util
 import io
 import json
+import multiprocessing
+import os
+import queue
 import re
 import sys
 import tarfile
+import time
 import traceback
 import unittest
+from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 SEEDS = (771221, 771222, 771223, 771224, 771225)
 STATUS = {"PASSED", "FAILED", "BLOCKED", "CRASHED", "INVALID", "INCONCLUSIVE"}
+# The embedded-source builder replaces this marker with kernel-metadata.json's id.
+DEPLOYMENT_KERNEL_ID = None
 INTEGRITY_FLAGS = (
     "external_model", "pretrained_model", "embeddings", "external_api",
     "hidden_prompt", "task_family_routing", "target_access_during_discovery",
@@ -150,6 +157,7 @@ def fallback_seed(seed: int, run_error: dict[str, Any], checkpoint_dir: Path) ->
             "persistent_state_roundtrip": False,
             "persistent_state_delta": False,
             "candidate_crash_count": 0,
+            "gen_duration_sec": 0.0,
             "result_sha256": canonical_sha256({
                 "seed": seed, "generation": generation, "scientific_status": status,
                 "evaluated": evaluated,
@@ -309,6 +317,133 @@ def run_phase0_tests() -> bool:
     return passed
 
 
+def _run_seed_worker(seed: int, package_root: str, checkpoints_root: str, progress_queue) -> dict[str, Any]:
+    """Run one independent seed in its own process and checkpoint directory."""
+    if package_root not in sys.path:
+        sys.path.insert(0, package_root)
+    checkpoint_dir = Path(checkpoints_root) / f"seed-{seed}"
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        foundry = importlib.import_module("research.gen3_learning_rule_foundry_v1")
+        driver = getattr(foundry, "run_generations", None)
+        if not callable(driver):
+            raise RuntimeError("Foundry source lacks run_generations(seed, generations=12)")
+        result = driver(
+            seed,
+            generations=12,
+            checkpoint_dir=checkpoint_dir,
+            progress_callback=progress_queue.put,
+        )
+        if not isinstance(result, dict):
+            raise TypeError("run_generations did not return an object")
+        if len(result.get("generations", [])) != 12:
+            raise ValueError("run_generations returned an incomplete generation matrix")
+        result.setdefault("seed", seed)
+        result["scientific_status"] = safe_status(result.get("scientific_status"))
+        result["passed"] = result.get("passed") is True and result["scientific_status"] == "PASSED"
+        if result["scientific_status"] == "PASSED" and not result["passed"]:
+            result["scientific_status"] = "FAILED"
+        return {"seed": seed, "result": result}
+    except Exception as exc:
+        return {
+            "seed": seed,
+            "run_error": {
+                "exception_type": type(exc).__name__,
+                "exception": str(exc),
+                "traceback": traceback.format_exc(),
+            },
+        }
+
+
+def _run_parallel_seeds(
+    seeds: tuple[int, ...],
+    package_root: str,
+    checkpoints_root: Path,
+    working: Path,
+    run_id: str,
+    source_commit: str,
+    embedded_archive_sha256: str,
+) -> dict[int, dict[str, Any]]:
+    """Run independent frozen seeds concurrently and persist parent-owned heartbeats."""
+    worker_count = min(len(seeds), os.cpu_count() or 4)
+    heartbeat_path = working / "progress_heartbeat.json"
+    heartbeat = {
+        "schema": "ACSIE.gen3-foundry-progress-heartbeat.v1",
+        "run_id": run_id,
+        "source_commit": source_commit,
+        "kernel_slug": DEPLOYMENT_KERNEL_ID,
+        "embedded_source_archive_sha256": embedded_archive_sha256,
+        "status": "RUNNING",
+        "worker_count": worker_count,
+        "expected_generation_events": len(seeds) * 12,
+        "completed_generation_events": 0,
+        "events": [],
+        "updated_at_utc": utc_now(),
+    }
+    write_json(heartbeat_path, heartbeat)
+    outcomes: dict[int, dict[str, Any]] = {}
+
+    def consume_events(event_queue) -> None:
+        changed = False
+        while True:
+            try:
+                event = event_queue.get_nowait()
+            except queue.Empty:
+                break
+            if not isinstance(event, dict):
+                continue
+            event = dict(event)
+            event["observed_at_utc"] = utc_now()
+            heartbeat["events"].append(event)
+            heartbeat["completed_generation_events"] = len(heartbeat["events"])
+            heartbeat["updated_at_utc"] = utc_now()
+            print(json.dumps(event, sort_keys=True, separators=(",", ":")), flush=True)
+            changed = True
+        if changed:
+            write_json(heartbeat_path, heartbeat)
+
+    with multiprocessing.Manager() as manager:
+        event_queue = manager.Queue()
+        context = multiprocessing.get_context("fork")
+        with ProcessPoolExecutor(max_workers=worker_count, mp_context=context) as executor:
+            future_to_seed = {
+                executor.submit(
+                    _run_seed_worker, seed, package_root, str(checkpoints_root), event_queue
+                ): seed
+                for seed in seeds
+            }
+            pending = set(future_to_seed)
+            while pending:
+                consume_events(event_queue)
+                completed = {future for future in pending if future.done()}
+                for future in completed:
+                    seed = future_to_seed[future]
+                    try:
+                        payload = future.result()
+                        if not isinstance(payload, dict):
+                            raise TypeError("seed worker returned a malformed result")
+                        outcomes[seed] = payload
+                    except Exception as exc:
+                        outcomes[seed] = {
+                            "seed": seed,
+                            "run_error": {
+                                "exception_type": type(exc).__name__,
+                                "exception": str(exc),
+                                "traceback": traceback.format_exc(),
+                            },
+                        }
+                    pending.remove(future)
+                if pending:
+                    time.sleep(0.25)
+            consume_events(event_queue)
+
+    heartbeat["status"] = "COMPLETE" if len(outcomes) == len(seeds) else "INCOMPLETE"
+    heartbeat["worker_results"] = len(outcomes)
+    heartbeat["updated_at_utc"] = utc_now()
+    write_json(heartbeat_path, heartbeat)
+    return outcomes
+
+
 def main() -> int:
     sys.path.insert(0, str(ROOT))
     if not run_phase0_tests():
@@ -319,6 +454,11 @@ def main() -> int:
     dispatch_nonce = manifest.get("dispatch_nonce")
     if not isinstance(dispatch_nonce, str) or not dispatch_nonce:
         raise RuntimeError("source manifest omitted the orchestration dispatch nonce")
+    embedded_archive_sha256 = globals().get("EMBEDDED_SOURCE_SHA256")
+    if not isinstance(DEPLOYMENT_KERNEL_ID, str) or not re.fullmatch(r"[a-z0-9._-]+/[a-z0-9._-]+", DEPLOYMENT_KERNEL_ID):
+        raise RuntimeError("embedded kernel builder did not bind the deployed kernel ID")
+    if not isinstance(embedded_archive_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", embedded_archive_sha256):
+        raise RuntimeError("embedded kernel source archive SHA-256 was not bound")
     run_id = f"gen3-foundry-{source_sha[:10]}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     working = Path("/kaggle/working")
     if not working.is_dir():
@@ -343,29 +483,28 @@ def main() -> int:
         }
         driver = None
 
+    parallel_results = {}
+    if driver is not None:
+        parallel_results = _run_parallel_seeds(
+            SEEDS, str(ROOT), checkpoints_root, working, run_id, source_sha,
+            embedded_archive_sha256,
+        )
+
     results = []
     for seed in SEEDS:
         checkpoint_dir = checkpoints_root / f"seed-{seed}"
         if driver is None:
             result = fallback_seed(seed, import_error or {"reason": "foundry driver unavailable"}, checkpoint_dir)
         else:
-            try:
-                result = driver(seed, generations=12, checkpoint_dir=checkpoint_dir)
-                if not isinstance(result, dict):
-                    raise TypeError("run_generations did not return an object")
-                if len(result.get("generations", [])) != 12:
-                    raise ValueError("run_generations returned an incomplete generation matrix")
-                result.setdefault("seed", seed)
-                result["scientific_status"] = safe_status(result.get("scientific_status"))
-                result["passed"] = result.get("passed") is True and result["scientific_status"] == "PASSED"
-                if result["scientific_status"] == "PASSED" and not result["passed"]:
-                    result["scientific_status"] = "FAILED"
-            except Exception as exc:
-                result = fallback_seed(seed, {
-                    "exception_type": type(exc).__name__,
-                    "exception": str(exc),
-                    "traceback": traceback.format_exc(),
-                }, checkpoint_dir)
+            payload = parallel_results.get(seed, {})
+            if payload.get("run_error") or not isinstance(payload.get("result"), dict):
+                result = fallback_seed(
+                    seed,
+                    payload.get("run_error") or {"reason": "parallel_seed_worker_returned_no_result"},
+                    checkpoint_dir,
+                )
+            else:
+                result = payload["result"]
         results.append(result)
         write_json(summaries_root / f"result-{seed}.json", result)
 
@@ -395,13 +534,14 @@ def main() -> int:
                 "persistent_state_roundtrip": False,
                 "persistent_state_delta": False,
                 "candidate_crash_count": 0,
+                "gen_duration_sec": 0.0,
             }
             record["result_sha256"] = canonical_sha256({
                 "seed": seed, "generation": generation,
                 "scientific_status": "CRASHED", "evaluated": False,
                 "reason": "generation_checkpoint_missing",
             })
-            row.update({"scientific_status": "CRASHED", "evaluated": False, "result_sha256": record["result_sha256"]})
+            row.update({"scientific_status": "CRASHED", "evaluated": False, "result_sha256": record["result_sha256"], "gen_duration_sec": 0.0})
             write_json(checkpoint_dir / f"generation-{generation:02d}.json", {
                 "schema": "ACSIE.gen3-foundry-generation-checkpoint.v1",
                 "seed": seed, "generation": generation, "checkpoint_available": False,
@@ -552,13 +692,12 @@ def main() -> int:
         "source": {"repository": "Infrasigma/ACSIE", "commit_sha": source_sha},
         "execution": {
             "platform": "kaggle",
-            "kernel_slug": "memorican/acsie-gen3-foundry",
+            "kernel_slug": DEPLOYMENT_KERNEL_ID,
             "kernel_visibility": "private",
             "internet_enabled": False,
             "entrypoint": "python run_kaggle_foundry.py",
-            "dataset_inputs": [
-                {"slug": "memorican/acsie-gen3-foundry-source", "version": 1, "visibility": "private"},
-            ],
+            "dataset_inputs": [],
+            "embedded_source_archive_sha256": embedded_archive_sha256,
         },
         "gate": {
             "gate_id": "frozen_5x12",
