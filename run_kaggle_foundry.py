@@ -391,7 +391,7 @@ def _profile_one_generation(package_root: str, working: Path, seed: int = 0) -> 
                 "scientific_status": row.get("scientific_status"),
                 "evaluated": row.get("evaluated") is True,
                 "candidate_count": row.get("candidate_count", 0),
-                "sec_per_gen": duration if row.get("evaluated") is True else None,
+                "sec_per_gen": duration,
                 "wall_clock_sec_including_setup_and_final_metrics": round(time.perf_counter() - started, 6),
                 "replay_exact": row.get("replay_exact") is True,
                 "note": "diagnostic-only seed 0; not part of the frozen qualification matrix",
