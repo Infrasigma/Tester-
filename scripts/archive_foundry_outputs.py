@@ -31,6 +31,15 @@ class ArchiveError(RuntimeError):
     pass
 
 
+def validated_kernel_identity(kernel_slug: str, kernel_version: int) -> dict[str, Any]:
+    """Validate kernel identity fields that the receipt validator binds to the run."""
+    if not isinstance(kernel_slug, str) or not SLUG.fullmatch(kernel_slug):
+        raise ArchiveError("kernel slug must be owner/kernel-slug")
+    if isinstance(kernel_version, bool) or not isinstance(kernel_version, int) or kernel_version < 1:
+        raise ArchiveError("kernel version must be a positive integer")
+    return {"kernel_slug": kernel_slug, "kernel_version": kernel_version}
+
+
 def canonical_bytes(value: Any) -> bytes:
     return (json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
 
@@ -365,10 +374,7 @@ def attest(args: argparse.Namespace) -> int:
         raise ArchiveError("archive-index.json failed its post-upload SHA-256 check")
     manifest_path = output_root / "artifact_manifest.json"
     candidate_path = output_root / "receipt-candidate.json"
-    if not SLUG.fullmatch(args.kernel_slug):
-        raise ArchiveError("kernel slug must be owner/kernel-slug")
-    if isinstance(args.kernel_version, bool) or not isinstance(args.kernel_version, int) or args.kernel_version < 1:
-        raise ArchiveError("kernel version must be a positive integer")
+    identity = validated_kernel_identity(args.kernel_slug, args.kernel_version)
     candidate_payload = read_json(candidate_path)
     candidate_execution = candidate_payload.get("execution")
     candidate_slug = candidate_execution.get("kernel_slug") if isinstance(candidate_execution, dict) else None
@@ -376,8 +382,7 @@ def attest(args: argparse.Namespace) -> int:
         raise ArchiveError("kernel slug does not match the receipt candidate metadata")
     attestation = {
         "schema": ATTESTATION_SCHEMA,
-        "kernel_slug": args.kernel_slug,
-        "kernel_version": args.kernel_version,
+        **identity,
         "run_id": prep["run_id"],
         "source_commit": prep["source_commit"],
         "dispatch_nonce": prep.get("dispatch_nonce"),
