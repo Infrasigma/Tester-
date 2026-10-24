@@ -264,6 +264,8 @@ def run_phase0_tests() -> bool:
             if spec is None or spec.loader is None:
                 raise ImportError("could not create an import loader for test module")
             module = importlib.util.module_from_spec(spec)
+            # ProcessPoolExecutor tests require importable, pickleable module names.
+            sys.modules[spec.name] = module
             spec.loader.exec_module(module)
             tests = unittest.defaultTestLoader.loadTestsFromModule(module)
             if tests.countTestCases() == 0:
@@ -541,7 +543,12 @@ def _run_parallel_seeds(
                     time.sleep(0.25)
             consume_events(event_queue)
 
-    heartbeat["status"] = "COMPLETE" if len(outcomes) == len(seeds) else "INCOMPLETE"
+    heartbeat["status"] = (
+        "COMPLETE"
+        if len(outcomes) == len(seeds)
+        and heartbeat["completed_generation_events"] == len(seeds) * 12
+        else "INCOMPLETE"
+    )
     heartbeat["worker_results"] = len(outcomes)
     heartbeat["updated_at_utc"] = utc_now()
     write_json(heartbeat_path, heartbeat)
