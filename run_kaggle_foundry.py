@@ -556,7 +556,9 @@ def main() -> int:
             "kernel_visibility": "private",
             "internet_enabled": False,
             "entrypoint": "python run_kaggle_foundry.py",
-            "dataset_inputs": [],
+            "dataset_inputs": [
+                {"slug": "memorican/acsie-gen3-foundry-source", "version": 1, "visibility": "private"},
+            ],
         },
         "gate": {
             "gate_id": "frozen_5x12",
