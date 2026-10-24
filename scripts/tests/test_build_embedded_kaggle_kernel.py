@@ -16,6 +16,7 @@ import hashlib
 from pathlib import Path
 
 DEPLOYMENT_KERNEL_ID = None
+DEPLOYMENT_GPU_REQUESTED = False
 
 
 def _resolve_package_root() -> Path:
@@ -77,7 +78,7 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
                 archive.add(source_root / name, arcname=name)
 
     def _build(self, expected_sha=None, title="Test Kernel Embedded Source",
-               kernel_id="memorican/test-kernel-embedded-source"):
+               kernel_id="memorican/test-kernel-embedded-source", enable_gpu=False):
         return builder.build(
             self.template_dir,
             self.archive_path,
@@ -85,6 +86,7 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
             expected_sha or self.archive_sha,
             kernel_id,
             title,
+            enable_gpu=enable_gpu,
         )
 
     def test_builds_mount_free_private_runner_with_verified_archive(self):
@@ -99,7 +101,9 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         generated = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
         self.assertIn("EMBEDDED_SOURCE_SHA256", generated)
         self.assertIn("DEPLOYMENT_KERNEL_ID = 'memorican/test-kernel-embedded-source'", generated)
+        self.assertIn("DEPLOYMENT_GPU_REQUESTED = False", generated)
         self.assertNotIn("DEPLOYMENT_KERNEL_ID = None", generated)
+        self.assertNotIn("DEPLOYMENT_GPU_REQUESTED = False\n", generated.split("DEPLOYMENT_GPU_REQUESTED = False", 1)[1])
         self.assertNotIn("/kaggle/input", generated)
         tree = ast.parse(generated)
         self.assertTrue(any(
@@ -119,7 +123,7 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertEqual(metadata["dataset_sources"], [])
         self.assertTrue(metadata["is_private"])
         self.assertFalse(metadata["enable_internet"])
-        self.assertFalse(metadata["enable_gpu"])
+        self.assertEqual(str(metadata["enable_gpu"]).lower(), "false")
 
         # Execute the generated resolver with a temporary extraction path so the
         # self-extraction branch is exercised without creating /kaggle directories.
@@ -139,6 +143,17 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         sentinel.write_text("must be removed before re-extraction", encoding="utf-8")
         exec(compile(simulated, namespace["__file__"], "exec"), namespace)
         self.assertFalse(sentinel.exists(), "existing extraction should be replaced from the verified archive")
+
+
+    def test_gpu_request_is_explicit_and_does_not_enable_internet(self):
+        result = self._build(enable_gpu=True)
+        generated = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
+        metadata = json.loads((self.output_dir / "kernel-metadata.json").read_text(encoding="utf-8"))
+        self.assertTrue(result["enable_gpu"])
+        self.assertIn("DEPLOYMENT_GPU_REQUESTED = True", generated)
+        self.assertEqual(str(metadata["enable_gpu"]).lower(), "true")
+        self.assertEqual(str(metadata["enable_internet"]).lower(), "false")
+        self.assertEqual(metadata["dataset_sources"], [])
 
     def test_rejects_sha256_mismatch_before_output(self):
         with self.assertRaisesRegex(builder.BuildError, "SHA-256"):
