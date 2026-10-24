@@ -84,6 +84,8 @@ def main() -> int:
                             except (OSError, json.JSONDecodeError, AttributeError):
                                 nonce = None
                             if nonce == args.dispatch_nonce:
+                                print(f"KAGGLE_KERNEL_VERSION={version}", flush=True)
+                                print(f"KAGGLE_KERNEL_SLUG={args.kernel_slug}", flush=True)
                                 output_path = os.environ.get("GITHUB_OUTPUT")
                                 if output_path:
                                     with open(output_path, "a", encoding="utf-8") as out:
@@ -98,6 +100,8 @@ def main() -> int:
                         return 2
         time.sleep(15)
 
+    print(f"KAGGLE_KERNEL_VERSION={version}", file=sys.stderr)
+    print(f"KAGGLE_KERNEL_SLUG={args.kernel_slug}", file=sys.stderr)
     print(f"KAGGLE_KERNEL_TIMEOUT: version={version} last_status={last_status}", file=sys.stderr)
     return 2
 
