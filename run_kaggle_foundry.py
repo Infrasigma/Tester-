@@ -14,6 +14,7 @@ import io
 import json
 import re
 import sys
+import tarfile
 import traceback
 import unittest
 from datetime import datetime, timezone
@@ -28,7 +29,62 @@ INTEGRITY_FLAGS = (
     "holdout_used_for_training", "holdout_used_for_selection",
     "transfer_used_for_selection", "hidden_strategy", "network_dependency",
 )
-ROOT = Path(__file__).resolve().parent
+def _resolve_package_root() -> Path:
+    """Resolve the verified package extracted from the private Kaggle input dataset."""
+    here = Path(__file__).resolve().parent
+    required = (
+        "run_kaggle_foundry.py",
+        "source-manifest.json",
+        "research/gen3_learning_rule_foundry_v1.py",
+        "research/tests/test_emit_validated_receipt.py",
+        "research/tests/test_gen3_foundry_generations.py",
+        "scripts/archive_foundry_outputs.py",
+        "scripts/tests/test_archive_foundry_outputs.py",
+    )
+
+    def is_package(candidate: Path) -> bool:
+        return candidate.is_dir() and all((candidate / item).is_file() for item in required)
+
+    if is_package(here):
+        return here
+
+    input_root = Path("/kaggle/input")
+    if input_root.is_dir():
+        archives = list(input_root.glob("*/acsie-gen3-foundry-package.tar.gz"))
+        if not archives:
+            archives = list(input_root.rglob("acsie-gen3-foundry-package.tar.gz"))
+        for archive_path in archives:
+            destination = Path("/kaggle/working/acsie-gen3-foundry-package")
+            if is_package(destination):
+                return destination
+            if destination.exists():
+                import shutil
+                shutil.rmtree(destination)
+            destination.mkdir(parents=True, exist_ok=True)
+            with tarfile.open(archive_path, mode="r:gz") as archive:
+                members = archive.getmembers()
+                for member in members:
+                    member_path = Path(member.name)
+                    if (member_path.is_absolute() or ".." in member_path.parts
+                            or member.issym() or member.islnk()):
+                        raise RuntimeError("private source archive contains an unsafe path")
+                archive.extractall(destination, members=members)
+            if is_package(destination):
+                return destination
+
+        manifests = list(input_root.glob("*/source-manifest.json"))
+        if not manifests:
+            manifests = list(input_root.rglob("source-manifest.json"))
+        for manifest_path in manifests:
+            candidate = manifest_path.parent
+            if is_package(candidate):
+                return candidate
+
+    # Keep the original path so Phase 0 emits a precise missing-package report.
+    return here
+
+
+ROOT = _resolve_package_root()
 
 
 def utc_now() -> str:
