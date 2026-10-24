@@ -114,6 +114,7 @@ def build(
     kernel_id: str,
     title: str,
     enable_gpu: bool = False,
+    profile_only: bool = False,
 ) -> dict[str, Any]:
     if not HEX64.fullmatch(expected_sha256):
         raise BuildError("expected archive SHA-256 must be 64 lowercase hex characters")
@@ -168,6 +169,12 @@ def build(
         raise BuildError("template runner must contain exactly one GPU request marker")
     source = source.replace(
         gpu_marker, f"DEPLOYMENT_GPU_REQUESTED = {bool(enable_gpu)!r}", 1
+    )
+    profile_marker = "DEPLOYMENT_PROFILE_ONLY = False"
+    if source.count(profile_marker) != 1:
+        raise BuildError("template runner must contain exactly one profile-only marker")
+    source = source.replace(
+        profile_marker, f"DEPLOYMENT_PROFILE_ONLY = {bool(profile_only)!r}", 1
     )
     start = source.index(ROOT_ANCHOR)
     end = source.index(ROOT_END, start)
@@ -240,6 +247,7 @@ def build(
     if (loaded_metadata.get("dataset_sources") != [] or loaded_metadata.get("id") != kernel_id
             or f"DEPLOYMENT_KERNEL_ID = {kernel_id!r}" not in source
             or f"DEPLOYMENT_GPU_REQUESTED = {bool(enable_gpu)!r}" not in source
+            or f"DEPLOYMENT_PROFILE_ONLY = {bool(profile_only)!r}" not in source
             or str(loaded_metadata.get("enable_gpu", "")).lower() != str(bool(enable_gpu)).lower()):
         raise BuildError("generated kernel metadata or bound slug failed post-write verification")
     if any((output_dir / p).exists() for p in ("cognitive_core", "research", "source-manifest.json")):
@@ -249,6 +257,7 @@ def build(
         "build_status": "PASSED",
         "kernel_id": kernel_id,
         "deployment_kernel_id_bound": True,
+        "profile_only": bool(profile_only),
         "is_private": True,
         "enable_internet": False,
         "enable_gpu": bool(enable_gpu),
@@ -275,12 +284,18 @@ def main() -> int:
         action="store_true",
         help="request Kaggle GPU hardware; this does not itself GPU-accelerate the CPU-based research code",
     )
+    parser.add_argument(
+        "--profile-only",
+        action="store_true",
+        help="run the diagnostic one-generation profile and exit without the frozen 5x12 run",
+    )
     args = parser.parse_args()
     try:
         result = build(
             args.template_dir, args.source_archive, args.output_dir,
             args.expected_sha256, args.kernel_id, args.title,
             enable_gpu=args.enable_gpu,
+            profile_only=args.profile_only,
         )
     except (BuildError, OSError, ValueError, KeyError, json.JSONDecodeError, StopIteration) as exc:
         print(f"EMBEDDED_KERNEL_BUILD_FAILED: {exc}", file=__import__("sys").stderr)
