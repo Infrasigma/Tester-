@@ -151,6 +151,24 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         self.assertFalse(sentinel.exists(), "existing extraction should be replaced from the verified archive")
 
 
+    def test_build_rejects_hard_coded_receipt_kernel_slug(self):
+        runner = self.template_dir / "run_kaggle_foundry.py"
+        original = runner.read_text(encoding="utf-8")
+        anchor = '"kernel_slug": DEPLOYMENT_KERNEL_ID'
+        self.assertIn(anchor, original)
+        runner.write_text(
+            original.replace(anchor, '"kernel_slug": "memorican/acsie-gen3-foundry"', 1),
+            encoding="utf-8",
+        )
+        try:
+            with self.assertRaisesRegex(
+                builder.BuildError,
+                "receipt kernel_slug must be dynamically bound to DEPLOYMENT_KERNEL_ID",
+            ):
+                self._build()
+        finally:
+            runner.write_text(original, encoding="utf-8")
+
     def test_gpu_request_is_explicit_and_does_not_enable_internet(self):
         result = self._build(enable_gpu=True)
         generated = (self.output_dir / "run_kaggle_foundry.py").read_text(encoding="utf-8")
