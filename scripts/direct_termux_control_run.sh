@@ -344,10 +344,25 @@ done
 }
 echo "KAGGLE_DATASET_VERSION=$DATASET_VERSION"
 
+# The current Kaggle CLI accepts owner/dataset-slug (not slug/version) for
+# dataset file listing and download. Prove the server's current version equals the
+# just-published version before and after downloading its bytes.
+python3 "$ARCHIVER" verify-private --dataset-slug "$CHECKPOINT_DATASET" \
+  > "$WORKDIR/dataset-current-before-download.json"
+CURRENT_DATASET_VERSION="$(python3 - "$WORKDIR/dataset-current-before-download.json" <<'PY'
+import json, sys
+print(json.load(open(sys.argv[1], encoding="utf-8"))["current_version"])
+PY
+)"
+[ "$CURRENT_DATASET_VERSION" -eq "$DATASET_VERSION" ] || {
+  echo "BLOCKED: checkpoint dataset version changed before download" >&2
+  exit 2
+}
+
 REMOTE_LISTING="$WORKDIR/remote-dataset-files.csv"
 LISTING_READY=0
 for attempt in $(seq 1 60); do
-  if kaggle datasets files "$CHECKPOINT_DATASET/$DATASET_VERSION" \
+  if kaggle datasets files "$CHECKPOINT_DATASET" \
       --page-size 200 --csv > "$REMOTE_LISTING" 2>/dev/null; then
     LISTING_READY=1
     break
@@ -355,14 +370,26 @@ for attempt in $(seq 1 60); do
   sleep 10
 done
 [ "$LISTING_READY" -eq 1 ] || {
-  echo "BLOCKED: exact checkpoint dataset version file listing unavailable" >&2
+  echo "BLOCKED: checkpoint dataset file listing unavailable" >&2
   exit 2
 }
 
 DOWNLOAD_DIR="$WORKDIR/checkpoint-dataset-recheck"
 mkdir -p "$DOWNLOAD_DIR"
-kaggle datasets download "$CHECKPOINT_DATASET/$DATASET_VERSION" \
+kaggle datasets download "$CHECKPOINT_DATASET" \
   --path "$DOWNLOAD_DIR" --unzip --force --quiet
+
+python3 "$ARCHIVER" verify-private --dataset-slug "$CHECKPOINT_DATASET" \
+  > "$WORKDIR/dataset-current-after-download.json"
+CURRENT_DATASET_VERSION="$(python3 - "$WORKDIR/dataset-current-after-download.json" <<'PY'
+import json, sys
+print(json.load(open(sys.argv[1], encoding="utf-8"))["current_version"])
+PY
+)"
+[ "$CURRENT_DATASET_VERSION" -eq "$DATASET_VERSION" ] || {
+  echo "BLOCKED: checkpoint dataset version changed during download" >&2
+  exit 2
+}
 
 python3 "$ARCHIVER" attest \
   --prepare-record "$WORKDIR/prepare-record.json" \
