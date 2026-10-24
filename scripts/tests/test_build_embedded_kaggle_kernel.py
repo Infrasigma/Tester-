@@ -18,6 +18,7 @@ from pathlib import Path
 DEPLOYMENT_KERNEL_ID = None
 DEPLOYMENT_GPU_REQUESTED = False
 DEPLOYMENT_PROFILE_ONLY = False
+RECEIPT_IDENTITY = {"execution": {"kernel_slug": DEPLOYMENT_KERNEL_ID}}
 
 
 def _resolve_package_root() -> Path:
