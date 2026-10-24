@@ -83,7 +83,6 @@ def _resolve_package_root() -> Path:
     # Keep the original path so Phase 0 emits a precise missing-package report.
     return here
 
-
 ROOT = _resolve_package_root()
 
 
