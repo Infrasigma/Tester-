@@ -359,47 +359,51 @@ def _gpu_device_telemetry() -> dict[str, Any]:
 
 
 def _profile_one_generation(package_root: str, working: Path, seed: int = 0) -> dict[str, Any]:
-    """Measure one diagnostic generation without weakening the frozen 12-gen run."""
+    """Time one real gen-0 slot while stopping before any post-Gen-11 gate."""
     if package_root not in sys.path:
         sys.path.insert(0, package_root)
     foundry = importlib.import_module("research.gen3_learning_rule_foundry_v1")
-    original_limit = getattr(foundry, "GENERATION_COUNT", None)
-    if original_limit != 12:
-        raise RuntimeError("cannot profile: production generation limit is not 12")
+    generation_limit = getattr(foundry, "GENERATION_COUNT", None)
+    if generation_limit != 12:
+        raise RuntimeError("cannot profile: frozen production generation limit is not 12")
+
     started = time.perf_counter()
-    profile: dict[str, Any]
-    try:
-        with tempfile.TemporaryDirectory(prefix="acsie-gen3-onegen-") as tmp:
-            # This is a diagnostic-only in-memory generation limit. Restore 12
-            # in finally, keep output temporary, and exclude the result from 5x12.
-            foundry.GENERATION_COUNT = 1
-            events: list[dict[str, Any]] = []
-            result = foundry.run_generations(
-                seed=seed, generations=1, checkpoint_dir=Path(tmp),
-                progress_callback=events.append,
-            )
-            rows = result.get("generations", [])
-            if len(rows) != 1:
-                raise RuntimeError("one-generation profile did not emit exactly one row")
-            row = rows[0]
-            duration = row.get("gen_duration_sec")
-            profile = {
-                "schema": "ACSIE.gen3-foundry-one-generation-profile.v1",
-                "diagnostic_only": True,
-                "qualification_slot": False,
-                "seed": seed,
-                "generation": row.get("generation"),
-                "scientific_status": row.get("scientific_status"),
-                "evaluated": row.get("evaluated") is True,
-                "candidate_count": row.get("candidate_count", 0),
-                "sec_per_gen": duration,
-                "wall_clock_sec_including_setup_and_final_metrics": round(time.perf_counter() - started, 6),
-                "replay_exact": row.get("replay_exact") is True,
-                "note": "diagnostic-only seed 0; not part of the frozen qualification matrix",
-                "created_at_utc": utc_now(),
-            }
-    finally:
-        foundry.GENERATION_COUNT = original_limit
+    with tempfile.TemporaryDirectory(prefix="acsie-gen3-onegen-") as tmp:
+        events: list[dict[str, Any]] = []
+        result = foundry.run_generations(
+            seed=seed,
+            generations=12,
+            checkpoint_dir=Path(tmp),
+            progress_callback=events.append,
+            diagnostic_stop_after_generation=0,
+        )
+        rows = result.get("generations", [])
+        if len(rows) != 1 or rows[0].get("generation") != 0:
+            raise RuntimeError("diagnostic profile did not emit exactly generation 0")
+        row = rows[0]
+        duration = row.get("gen_duration_sec")
+        final_metrics = result.get("final_metrics", {})
+        profile = {
+            "schema": "ACSIE.gen3-foundry-one-generation-profile.v1",
+            "diagnostic_only": True,
+            "qualification_slot": False,
+            "seed": seed,
+            "generation": 0,
+            "scientific_status": row.get("scientific_status"),
+            "evaluated": row.get("evaluated") is True,
+            "candidate_count": row.get("candidate_count", 0),
+            "sec_per_gen": duration,
+            "wall_clock_sec_including_setup_and_partial_initialization": round(
+                max(0.0, time.perf_counter() - started), 6
+            ),
+            "replay_exact": row.get("replay_exact") is True,
+            "progress_event_count": len(events),
+            "frozen_generation_limit": generation_limit,
+            "frozen_generation_limit_changed": False,
+            "post_gen11_gates_evaluated": final_metrics.get("post_gen11_gates_evaluated") is True,
+            "note": "one diagnostic seed-0 generation; returns before post-Gen-11 holdout/transfer/retention gates",
+            "created_at_utc": utc_now(),
+        }
     write_json(working / "one_generation_profile.json", profile)
     print(json.dumps({"event": "one_generation_profile", **profile}, sort_keys=True, separators=(",", ":")), flush=True)
     return profile
