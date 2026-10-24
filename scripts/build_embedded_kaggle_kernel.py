@@ -36,6 +36,30 @@ class BuildError(RuntimeError):
     pass
 
 
+def validate_kernel_slug_binding(source: str) -> int:
+    """Reject receipt code that hard-codes a kernel slug instead of binding the deployment ID."""
+    try:
+        tree = ast.parse(source)
+    except SyntaxError as exc:
+        raise BuildError("runner source is not valid Python") from exc
+
+    fields = 0
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Dict):
+            continue
+        for key, value in zip(node.keys, node.values):
+            if not (isinstance(key, ast.Constant) and key.value == "kernel_slug"):
+                continue
+            fields += 1
+            if not (isinstance(value, ast.Name) and value.id == "DEPLOYMENT_KERNEL_ID"):
+                raise BuildError(
+                    "receipt kernel_slug must be dynamically bound to DEPLOYMENT_KERNEL_ID"
+                )
+    if fields == 0:
+        raise BuildError("runner has no kernel_slug field to bind in its receipt")
+    return fields
+
+
 def sha256_bytes(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
@@ -176,6 +200,7 @@ def build(
     source = source.replace(
         profile_marker, f"DEPLOYMENT_PROFILE_ONLY = {bool(profile_only)!r}", 1
     )
+    validate_kernel_slug_binding(source)
     start = source.index(ROOT_ANCHOR)
     end = source.index(ROOT_END, start)
     old_resolver = source[start:end]
