@@ -501,22 +501,19 @@ scorecard = {
         "observed_gen0_sec_per_evaluated_seed": {
             "values": gen0_durations,
             "median": statistics.median(gen0_durations) if gen0_durations else None,
-            "note": "median per-seed generation-0 timings observed in the frozen run; see the separate diagnostic profile below",
+            "note": "median generation-0 timings across the frozen seeds",
         },
         "one_generation_profile": profile,
     },
     "phase0": {
-        },
+        "local": {k: local_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
+        "remote": {k: remote_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
     },
     "local_source": {
         "acsie_commit": source_commit,
         "tester_commit": orchestration_commit,
         "embedded_source_archive_sha256": archive_sha,
         "embedded_runner_sha256": build.get("runner_sha256"),
-    },
-    "phase0": {
-        "local": {k: local_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
-        "remote": {k: remote_tests.get(k) for k in ("status","tests_run","tests_passed","failure_count","error_count")},
     },
     "seeds": seeds,
 }
@@ -530,6 +527,7 @@ print(json.dumps({
     "published_receipt_commit": receipt_commit,
     "hardware": scorecard["hardware"],
     "runtime": scorecard["runtime"],
+    "one_generation_profile": scorecard["runtime"]["one_generation_profile"],
     "phase0": scorecard["phase0"],
     "seeds": [
         {k: s[k] for k in ("seed","scientific_status","evaluated_generations","passed_generations","failed_or_blocked_generations","final_metrics")}
