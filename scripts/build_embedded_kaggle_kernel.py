@@ -158,6 +158,10 @@ def build(
         raise BuildError("template runner has no recognized package resolver")
     if "EMBEDDED_SOURCE_B64" in source:
         raise BuildError("template runner is already an embedded runner")
+    deployment_marker = "DEPLOYMENT_KERNEL_ID = None"
+    if source.count(deployment_marker) != 1:
+        raise BuildError("template runner must contain exactly one deployment kernel ID marker")
+    source = source.replace(deployment_marker, f"DEPLOYMENT_KERNEL_ID = {kernel_id!r}", 1)
     start = source.index(ROOT_ANCHOR)
     end = source.index(ROOT_END, start)
     old_resolver = source[start:end]
@@ -225,14 +229,16 @@ def build(
     if sha256_bytes(roundtrip) != expected_sha256 or roundtrip != archive_bytes:
         raise BuildError("embedded archive round-trip verification failed")
     loaded_metadata = json.loads((output_dir / "kernel-metadata.json").read_text(encoding="utf-8"))
-    if loaded_metadata.get("dataset_sources") != [] or loaded_metadata.get("id") != kernel_id:
-        raise BuildError("generated kernel metadata failed post-write verification")
+    if (loaded_metadata.get("dataset_sources") != [] or loaded_metadata.get("id") != kernel_id
+            or f"DEPLOYMENT_KERNEL_ID = {kernel_id!r}" not in source):
+        raise BuildError("generated kernel metadata or bound slug failed post-write verification")
     if any((output_dir / p).exists() for p in ("cognitive_core", "research", "source-manifest.json")):
         raise BuildError("expanded source was copied to the output; only the self-extractor may be deployed")
 
     return {
         "build_status": "PASSED",
         "kernel_id": kernel_id,
+        "deployment_kernel_id_bound": True,
         "is_private": True,
         "enable_internet": False,
         "enable_gpu": False,
