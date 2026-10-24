@@ -567,19 +567,21 @@ cp "$OUTPUT/receipt-candidate.json" "$HANDOFF/receipt-candidate.json"
 cp "$OUTPUT/artifact_manifest.json" "$HANDOFF/artifact_manifest.json"
 cp "$WORKDIR/archive-attestation.json" "$HANDOFF/archive-attestation.json"
 cp "$WORKDIR/build-report.json" "$HANDOFF/build-report.json"
+cp "$WORKDIR/profile-build-report.json" "$HANDOFF/profile-build-report.json"
 cp "$WORKDIR/local-test-report.json" "$HANDOFF/local-test-report.json"
 cp "$WORKDIR/remote-test-report.json" "$HANDOFF/remote-test-report.json"
 cp "$OUTPUT/foundry-summary.json" "$HANDOFF/foundry-summary.json"
-if [ -f "$OUTPUT/one_generation_profile.json" ]; then
-  cp "$OUTPUT/one_generation_profile.json" "$HANDOFF/one_generation_profile.json"
+if [ -f "$WORKDIR/one-generation-profile.json" ]; then
+  cp "$WORKDIR/one-generation-profile.json" "$HANDOFF/one_generation_profile.json"
 else
-  echo "WARNING: no one-generation profile artifact was emitted" >&2
+  echo "BLOCKED: verified one-generation profile is missing from local handoff" >&2
+  exit 2
 fi
 for f in "$OUTPUT"/seed-results/result-*.json; do
   [ -f "$f" ] && cp "$f" "$HANDOFF/seed-results/"
 done
 
-python3 - "$HANDOFF" "$KERNEL" "$KERNEL_VERSION" "$CHECKPOINT_DATASET" \
+python3 - "$HANDOFF" "$KERNEL" "$KERNEL_VERSION" "$PROFILE_KERNEL_VERSION" "$CHECKPOINT_DATASET" \
   "$DATASET_VERSION" "$SOURCE_COMMIT" "$ORCHESTRATION_COMMIT" "$ARCHIVE_SHA256" \
   "$RECEIPT_COMMIT" <<'PY'
 import json, statistics, sys
@@ -587,8 +589,9 @@ from pathlib import Path
 
 root = Path(sys.argv[1])
 kernel, kernel_version = sys.argv[2], int(sys.argv[3])
-dataset, dataset_version = sys.argv[4], int(sys.argv[5])
-source_commit, orchestration_commit, archive_sha, receipt_commit = sys.argv[6:]
+profile_kernel_version = int(sys.argv[4])
+dataset, dataset_version = sys.argv[5], int(sys.argv[6])
+source_commit, orchestration_commit, archive_sha, receipt_commit = sys.argv[7:]
 receipt = json.loads((root / "receipt.json").read_text(encoding="utf-8"))
 summary = json.loads((root / "foundry-summary.json").read_text(encoding="utf-8"))
 build = json.loads((root / "build-report.json").read_text(encoding="utf-8"))
@@ -651,6 +654,7 @@ scorecard = {
         "machine": summary.get("machine"),
     },
     "runtime": {
+        "profile_kernel_version": profile_kernel_version,
         "kernel_wall_clock_sec": summary.get("kernel_wall_clock_sec"),
         "research_wall_clock_sec": summary.get("research_wall_clock_sec"),
         "observed_gen0_sec_per_evaluated_seed": {
