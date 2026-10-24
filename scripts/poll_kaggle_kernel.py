@@ -95,7 +95,12 @@ def main() -> int:
                                 return 0
                 elif found in {"ERROR", "FAILED", "CANCELLED"}:
                     version_match = re.search(r"(?i)version\s*[:#]?\s*(\d+)", result.stdout or "")
-                    if version_match and int(version_match.group(1)) == version:
+                    if version_match and int(version_match.group(1)) != version:
+                        # Status still refers to a prior revision; keep waiting.
+                        pass
+                    else:
+                        print(f"KAGGLE_KERNEL_VERSION={version}", file=sys.stderr)
+                        print(f"KAGGLE_KERNEL_SLUG={args.kernel_slug}", file=sys.stderr)
                         print(f"KAGGLE_KERNEL_FAILED: version={version} status={found}", file=sys.stderr)
                         return 2
         time.sleep(15)
