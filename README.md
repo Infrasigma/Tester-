@@ -38,6 +38,41 @@ Default private archive slug: `memorican/acsie-foundry-checkpoints` (matches the
 
 This Termux wrapper cannot create or verify the heavy dataset archive on the phone. If the private Dataset has not yet been created and rechecked by the hosted workflow, rerun the hosted archive workflow instead.
 
+## Mount-free private Kaggle packaging
+
+When Kaggle's private-dataset mount is unavailable or stalls, use
+`scripts/build_embedded_kaggle_kernel.py` to create a **transient deployment
+folder** containing only `run_kaggle_foundry.py` and `kernel-metadata.json`.
+The builder validates the private source archive against an independently
+obtained expected SHA-256, checks required package members and safe archive
+paths, embeds the verified archive, and sets `dataset_sources: []`. The
+generated runner checks the embedded digest before extracting source under
+Kaggle's working directory. It rejects metadata that is not private or that
+enables internet/GPU, and requires the title slug to agree with the kernel ID.
+
+Example (run only in a controlled private staging environment with a verified
+archive and a source-matched template runner):
+
+```bash
+python3 scripts/build_embedded_kaggle_kernel.py \
+  --template-dir "$TEMPLATE_DIR" \
+  --source-archive "$PRIVATE_PACKAGE_ARCHIVE" \
+  --output-dir "$TMPDIR/acsie-gen3-embedded-kernel" \
+  --expected-sha256 "$VERIFIED_PACKAGE_SHA256" \
+  --kernel-id memorican/acsie-gen3-foundry-embedded-source \
+  --title "ACSIE Gen3 Foundry Embedded Source"
+
+kaggle kernels push -p "$TMPDIR/acsie-gen3-embedded-kernel"
+```
+
+**Never commit or publish the generated output directory or its runner.** The
+generated runner embeds the private ACSIE archive as base64, so that output is
+sensitive even though it is a single Python file. Commit only the generic
+builder and its synthetic tests to this public repository. Keep the archive,
+the embedded runner, real source hashes where restricted, and all experimental
+outputs in private storage. The builder does not replace remote Phase 0 tests,
+the scientific gate, run-output hashing, or provenance review.
+
 ## Scientific status and promotion
 
 The Foundry source now has a deterministic state-carrying `run_generations(seed, generations=12)` driver. Generations execute sequentially as `0 → 1 → … → 11`: each generation evaluates a bounded mutated candidate population on inner forward/reverse streams, selects using those inner metrics only, writes a checkpoint, and passes the selected rule plus learned core state to the next generation. Outer holdout/transfer and legacy retention are measured after the loop, not used for per-generation selection. A broken precondition yields explicit `FAILED`/ `BLOCKED` rows; exceptions are `CRASHED`. The 5 × 12 matrix is structural coverage, not proof of success.
