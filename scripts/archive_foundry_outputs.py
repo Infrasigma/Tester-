@@ -431,6 +431,14 @@ def verify_private_dataset(args: argparse.Namespace) -> int:
     owner, slug = args.dataset_slug.split("/", 1)
     auth_header = None
     bearer = os.environ.get("KAGGLE_API_TOKEN", "").strip()
+    if not bearer:
+        # Kaggle CLI v2 token auth stores the bearer token here on direct Termux runs.
+        # Read only for the HTTPS Authorization header; never print or serialize it.
+        access_token_path = Path.home() / ".kaggle" / "access_token"
+        try:
+            bearer = access_token_path.read_text(encoding="utf-8").strip()
+        except OSError:
+            bearer = ""
     if bearer.startswith("KGAT_"):
         auth_header = f"Bearer {bearer}"
     else:
