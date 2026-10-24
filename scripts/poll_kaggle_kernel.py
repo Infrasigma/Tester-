@@ -12,6 +12,12 @@ import subprocess
 import sys
 import time
 
+try:
+    from scripts.build_embedded_kaggle_kernel import BuildError, validate_staged_kernel
+except ModuleNotFoundError:
+    # The control script may execute this file by path, where scripts/ itself is sys.path[0].
+    from build_embedded_kaggle_kernel import BuildError, validate_staged_kernel
+
 
 VERSION_RE = re.compile(r"(?i)kernel\s+version\s+(\d+)\s+successfully\s+pushed")
 KNOWN = ("COMPLETE", "ERROR", "FAILED", "CANCELLED", "RUNNING", "QUEUED", "INITIALIZING")
@@ -69,6 +75,12 @@ def main() -> int:
         print("KAGGLE_KERNEL_FAILED: staged kernel payload missing", file=sys.stderr)
         return 2
 
+    try:
+        guard = validate_staged_kernel(kernel_dir, args.kernel_slug)
+    except (BuildError, OSError, ValueError) as exc:
+        print(f"KAGGLE_KERNEL_FAILED: staged payload guard failed: {exc}", file=sys.stderr)
+        return 2
+    print(json.dumps({"event": "staged_kernel_guard", **guard}, sort_keys=True), flush=True)
     pushed = run(["kaggle", "kernels", "push", "--path", str(kernel_dir)])
     if pushed is None or pushed.returncode != 0:
         print("KAGGLE_KERNEL_FAILED: push stage failed", file=sys.stderr)

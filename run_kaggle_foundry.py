@@ -213,6 +213,26 @@ def matrix_row(seed_result: dict[str, Any], seed: int) -> dict[str, Any]:
             raise ValueError(f"seed {seed} generation {number} omitted its evaluated flag")
         if status == "PASSED" and evaluated is not True:
             raise ValueError(f"seed {seed} generation {number} claimed PASSED without evaluation")
+        gate_predicates = item.get("gate_predicates", [])
+        failed_gates = item.get("failed_gates", [])
+        if not isinstance(gate_predicates, list) or not isinstance(failed_gates, list) or any(not isinstance(name, str) or not name for name in failed_gates):
+            raise ValueError(f"seed {seed} generation {number} emitted malformed gate telemetry")
+        if status == "FAILED" and not failed_gates:
+            raise ValueError(f"seed {seed} generation {number} is FAILED without named failed_gates")
+        if gate_predicates:
+            if any(not isinstance(gate, dict) or not isinstance(gate.get("name"), str)
+                   or not isinstance(gate.get("passed"), bool) or "value" not in gate
+                   or "threshold" not in gate or not isinstance(gate.get("operator"), str)
+                   for gate in gate_predicates):
+                raise ValueError(f"seed {seed} generation {number} emitted malformed gate predicates")
+            failed_names = [gate["name"] for gate in gate_predicates if gate["passed"] is False]
+            if failed_names != failed_gates:
+                raise ValueError(f"seed {seed} generation {number} failed_gates disagree with measured predicates")
+        elif status == "FAILED":
+            raise ValueError(f"seed {seed} generation {number} is FAILED without measured gate predicates")
+        if status == "PASSED" and failed_gates:
+            raise ValueError(f"seed {seed} generation {number} is PASSED with failed gates")
+        gate_evaluation_status = item.get("gate_evaluation_status", "NOT_RECORDED")
         result_sha = item.get("result_sha256")
         if not isinstance(result_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", result_sha):
             result_sha = canonical_sha256({
@@ -224,6 +244,10 @@ def matrix_row(seed_result: dict[str, Any], seed: int) -> dict[str, Any]:
             "scientific_status": status,
             "evaluated": evaluated,
             "result_sha256": result_sha,
+            "gate_evaluation_status": gate_evaluation_status,
+            "gate_predicate_count": len(gate_predicates),
+            "gate_predicates_sha256": canonical_sha256(gate_predicates) if gate_predicates else None,
+            "failed_gates": list(failed_gates),
         })
     if seen != set(range(12)):
         raise ValueError(f"seed {seed} generation matrix is incomplete")
@@ -695,6 +719,9 @@ def main() -> int:
                 "persistent_state_delta": False,
                 "candidate_crash_count": 0,
                 "gen_duration_sec": 0.0,
+                "gate_evaluation_status": "NOT_EVALUATED",
+                "gate_predicates": [],
+                "failed_gates": [],
             }
             record["result_sha256"] = canonical_sha256({
                 "seed": seed, "generation": generation,
@@ -765,6 +792,19 @@ def main() -> int:
         "gpu_acceleration_enabled": False,
         "gpu_device_telemetry": hardware_info,
         "profile_only": DEPLOYMENT_PROFILE_ONLY,
+        "generation_gate_telemetry": [
+            {
+                "seed": int(result["seed"]),
+                "generation": int(generation.get("generation", -1)),
+                "scientific_status": generation.get("scientific_status"),
+                "evaluated": generation.get("evaluated") is True,
+                "gate_evaluation_status": generation.get("gate_evaluation_status", "NOT_RECORDED"),
+                "gate_predicates": generation.get("gate_predicates", []),
+                "failed_gates": generation.get("failed_gates", []),
+                "result_sha256": generation.get("result_sha256"),
+            }
+            for result in results for generation in result.get("generations", [])
+        ],
         "platform": platform.platform(),
         "machine": platform.machine(),
     }
@@ -831,6 +871,13 @@ def main() -> int:
         "path": "artifact_manifest.json",
         "sha256": sha256_file(manifest_path),
         "size_bytes": manifest_path.stat().st_size,
+    })
+    summary_path = working / "foundry-summary.json"
+    candidate_artifacts.append({
+        "storage": "kaggle-kernel-output",
+        "path": "foundry-summary.json",
+        "sha256": sha256_file(summary_path),
+        "size_bytes": summary_path.stat().st_size,
     })
     for item in manifest_files:
         if item.get("kind") == "generation_bundle":

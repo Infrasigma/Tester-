@@ -96,6 +96,8 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
     def test_builds_mount_free_private_runner_with_verified_archive(self):
         result = self._build()
         self.assertEqual(result["build_status"], "PASSED")
+        self.assertEqual(result["staged_payload_guard"], "PASSED")
+        self.assertEqual(result["staged_guard_required_files_verified"], len(builder.REQUIRED))
         self.assertEqual(result["dataset_sources_count"], 0)
         self.assertEqual(result["expanded_source_files_in_output"], 0)
         self.assertTrue((self.output_dir / "run_kaggle_foundry.py").is_file())
@@ -151,6 +153,60 @@ class BuildEmbeddedKernelTests(unittest.TestCase):
         exec(compile(simulated, namespace["__file__"], "exec"), namespace)
         self.assertFalse(sentinel.exists(), "existing extraction should be replaced from the verified archive")
 
+
+    def test_staged_guard_verifies_embedded_digest_phase0_files_and_slug_before_push(self):
+        result = self._build()
+        guard = builder.validate_staged_kernel(self.output_dir, result["kernel_id"])
+        self.assertEqual(guard["guard_status"], "PASSED")
+        self.assertEqual(guard["embedded_archive_sha256"], self.archive_sha)
+        self.assertEqual(guard["required_files_verified"], len(builder.REQUIRED))
+        self.assertTrue(guard["receipt_slug_bound"])
+
+    def test_staged_guard_rejects_modified_archive_digest(self):
+        result = self._build()
+        runner = self.output_dir / "run_kaggle_foundry.py"
+        source = runner.read_text(encoding="utf-8")
+        old = f"EMBEDDED_SOURCE_SHA256 = {self.archive_sha!r}"
+        self.assertIn(old, source)
+        runner.write_text(source.replace(old, "EMBEDDED_SOURCE_SHA256 = " + repr("0" * 64), 1), encoding="utf-8")
+        with self.assertRaisesRegex(builder.BuildError, "SHA-256"):
+            builder.validate_staged_kernel(self.output_dir, result["kernel_id"])
+
+    def test_staged_guard_rejects_missing_phase0_file_even_if_archive_digest_matches(self):
+        result = self._build()
+        # Rebuild an otherwise well-formed gzip tar whose bytes and declared digest agree,
+        # but which deliberately omits a required Phase-0 test. This bypasses build() to
+        # exercise the independent pre-dispatch guard against a stale/manual staged runner.
+        bad_archive = self.root / "missing-phase0.tar.gz"
+        missing = "research/tests/test_gen3_foundry_generations.py"
+        with tarfile.open(bad_archive, "w:gz") as tar:
+            source_root = self.root / "archive-files"
+            for name in builder.REQUIRED:
+                if name == missing:
+                    continue
+                tar.add(source_root / name, arcname=name)
+        raw = bad_archive.read_bytes()
+        sha = hashlib.sha256(raw).hexdigest()
+        import base64
+        runner = self.output_dir / "run_kaggle_foundry.py"
+        source = runner.read_text(encoding="utf-8")
+        tree = ast.parse(source)
+        replacements = []
+        for node in tree.body:
+            if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id in ("EMBEDDED_SOURCE_SHA256", "EMBEDDED_SOURCE_B64") for t in node.targets):
+                value = node.targets[0].id
+                replacements.append((node.lineno, node.end_lineno, f"{value} = {sha!r}" if value == "EMBEDDED_SOURCE_SHA256" else f"{value} = {base64.b64encode(raw).decode('ascii')!r}"))
+        lines = source.splitlines()
+        for first, last, replacement in sorted(replacements, reverse=True):
+            lines[first-1:last] = [replacement]
+        runner.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(builder.BuildError, "omits required Phase-0/runtime files"):
+            builder.validate_staged_kernel(self.output_dir, result["kernel_id"])
+
+    def test_staged_guard_rejects_target_slug_mismatch(self):
+        self._build()
+        with self.assertRaisesRegex(builder.BuildError, "does not match dispatch target"):
+            builder.validate_staged_kernel(self.output_dir, "memorican/different-kernel")
 
     def test_build_rejects_hard_coded_receipt_kernel_slug(self):
         runner = self.template_dir / "run_kaggle_foundry.py"

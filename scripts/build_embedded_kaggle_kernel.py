@@ -64,6 +64,118 @@ def sha256_bytes(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
+def _top_level_assignment(tree: ast.Module, name: str) -> Any:
+    matches = []
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(
+            isinstance(target, ast.Name) and target.id == name for target in node.targets
+        ):
+            matches.append(node.value)
+        elif isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name) and node.target.id == name:
+            matches.append(node.value)
+    if len(matches) != 1:
+        raise BuildError(f"staged runner must define exactly one {name} constant")
+    try:
+        return ast.literal_eval(matches[0])
+    except (ValueError, TypeError) as exc:
+        raise BuildError(f"staged runner {name} must be a literal constant") from exc
+
+
+def validate_staged_kernel(kernel_dir: Path, expected_kernel_id: str) -> dict[str, Any]:
+    """Fail closed before dispatch unless the staged runner embeds the complete verified Phase-0 archive."""
+    if not KERNEL_ID.fullmatch(expected_kernel_id):
+        raise BuildError("expected kernel ID must be owner/kernel-slug")
+    kernel_dir = Path(kernel_dir).resolve()
+    runner_path = kernel_dir / "run_kaggle_foundry.py"
+    metadata_path = kernel_dir / "kernel-metadata.json"
+    if not runner_path.is_file() or not metadata_path.is_file():
+        raise BuildError("staged kernel is missing runner or metadata")
+    try:
+        source = runner_path.read_text(encoding="utf-8")
+        tree = ast.parse(source)
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, SyntaxError, json.JSONDecodeError) as exc:
+        raise BuildError("staged runner or metadata cannot be parsed") from exc
+    if not isinstance(metadata, dict) or metadata.get("id") != expected_kernel_id:
+        raise BuildError("staged metadata kernel ID does not match dispatch target")
+    if str(metadata.get("is_private", "")).lower() != "true":
+        raise BuildError("staged kernel must be private")
+    if str(metadata.get("enable_internet", "")).lower() != "false":
+        raise BuildError("staged kernel must have internet disabled")
+    if metadata.get("dataset_sources") != []:
+        raise BuildError("staged embedded kernel must not use dataset mounts")
+    deployment_id = _top_level_assignment(tree, "DEPLOYMENT_KERNEL_ID")
+    if deployment_id != expected_kernel_id:
+        raise BuildError("staged runner deployment ID does not match dispatch target")
+    validate_kernel_slug_binding(source)
+    declared_sha = _top_level_assignment(tree, "EMBEDDED_SOURCE_SHA256")
+    encoded = _top_level_assignment(tree, "EMBEDDED_SOURCE_B64")
+    if not isinstance(declared_sha, str) or not HEX64.fullmatch(declared_sha):
+        raise BuildError("staged runner has no valid embedded archive SHA-256 constant")
+    if not isinstance(encoded, str) or not encoded:
+        raise BuildError("staged runner has no embedded source archive constant")
+    try:
+        archive_bytes = base64.b64decode(encoded, validate=True)
+    except (ValueError, TypeError) as exc:
+        raise BuildError("staged embedded source archive is not valid base64") from exc
+    observed_sha = sha256_bytes(archive_bytes)
+    if observed_sha != declared_sha:
+        raise BuildError("staged embedded archive SHA-256 does not match its declared digest")
+    try:
+        with tarfile.open(fileobj=__import__("io").BytesIO(archive_bytes), mode="r:gz") as archive:
+            members = archive.getmembers()
+            names: set[str] = set()
+            normalized_names: set[str] = set()
+            for member in members:
+                path = PurePosixPath(member.name)
+                normalized = str(path)
+                if (path.is_absolute() or ".." in path.parts or "\\" in member.name
+                        or member.issym() or member.islnk()
+                        or not (member.isfile() or member.isdir())):
+                    raise BuildError("staged embedded archive contains an unsafe member")
+                if normalized in normalized_names:
+                    raise BuildError("staged embedded archive contains a duplicate path")
+                normalized_names.add(normalized)
+                if member.isfile():
+                    names.add(normalized)
+            missing = sorted(set(REQUIRED) - names)
+            if missing:
+                raise BuildError("staged embedded archive omits required Phase-0/runtime files: " + ", ".join(missing))
+            # Read required members through the in-memory tar stream to ensure each
+            # path refers to an extractable regular file, not just a name in metadata.
+            by_name = {str(PurePosixPath(m.name)): m for m in members if m.isfile()}
+            for required in REQUIRED:
+                content = archive.extractfile(by_name[required])
+                if content is None:
+                    raise BuildError("required embedded source member is not extractable: " + required)
+                content.read(1)
+    except BuildError:
+        raise
+    except (tarfile.TarError, OSError, EOFError) as exc:
+        raise BuildError("staged embedded source is not a valid gzip tar archive") from exc
+
+    # The builder emits a self-extracting runner plus metadata only. Reject accidental
+    # expanded-source staging so the uploaded bytes are exactly the validated payload.
+    if any((kernel_dir / item).exists() for item in ("research", "cognitive_core", "source-manifest.json")):
+        raise BuildError("staged output contains expanded/unverified source files")
+    unexpected = {p.name for p in kernel_dir.iterdir()} - {"run_kaggle_foundry.py", "kernel-metadata.json"}
+    if unexpected:
+        raise BuildError("staged output contains unexpected files: " + ", ".join(sorted(unexpected)))
+    return {
+        "guard_status": "PASSED",
+        "kernel_id": expected_kernel_id,
+        "runner_sha256": sha256_bytes(runner_path.read_bytes()),
+        "runner_bytes": runner_path.stat().st_size,
+        "embedded_archive_sha256": observed_sha,
+        "embedded_archive_bytes": len(archive_bytes),
+        "required_files_verified": len(REQUIRED),
+        "dataset_sources": [],
+        "private": True,
+        "internet_enabled": False,
+        "receipt_slug_bound": True,
+    }
+
+
 def validate_title_id(title: str, kernel_id: str) -> None:
     if not KERNEL_ID.fullmatch(kernel_id):
         raise BuildError("kernel ID must be owner/kernel-slug")
@@ -278,6 +390,10 @@ def build(
     if any((output_dir / p).exists() for p in ("cognitive_core", "research", "source-manifest.json")):
         raise BuildError("expanded source was copied to the output; only the self-extractor may be deployed")
 
+    # Validate the exact bytes written to the staging directory before build() may
+    # report success. poll_kaggle_kernel repeats this check immediately before push.
+    staged_guard = validate_staged_kernel(output_dir, kernel_id)
+
     return {
         "build_status": "PASSED",
         "kernel_id": kernel_id,
@@ -292,6 +408,8 @@ def build(
         "embedded_archive_bytes": len(archive_bytes),
         "embedded_archive_sha256": expected_sha256,
         "embedded_roundtrip": "PASSED",
+        "staged_payload_guard": staged_guard["guard_status"],
+        "staged_guard_required_files_verified": staged_guard["required_files_verified"],
         "expanded_source_files_in_output": 0,
     }
 
