@@ -49,12 +49,17 @@ to mount a private source dataset. The generated runner checks the embedded
 archive SHA-256 before safe extraction under Kaggle's working directory.
 
 The builder checks the supplied SHA-256 against the exact archive bytes,
-verifies the required source files and rejects unsafe archive paths, refuses
-metadata that is not private or that enables internet/GPU, sets
-`dataset_sources: []`, and requires the title slug to agree with the kernel ID.
-Compute the digest only after verifying the source blobs against the private
-ACSIE commit; the digest binds the exact packaged bytes but does not replace
-those source-blob checks.
+verifies the required source files and rejects unsafe archive paths, requires
+private metadata and internet disabled, sets `dataset_sources: []`, and
+requires the title slug to agree with the kernel ID. GPU allocation is opt-in
+through `--enable-gpu`; this Foundry's candidate evaluation remains CPU Python
+work, so requesting a GPU does not mean its math is GPU-accelerated. When a GPU
+is requested, the runner records `nvidia-smi` device telemetry alongside CPU
+count, worker count, timing, and generation heartbeats. This telemetry supports
+measuring the assigned machine rather than assuming a speedup. The template
+must default to GPU disabled. Compute the digest only after verifying the
+source blobs against the private ACSIE commit; the digest binds the exact
+packaged bytes but does not replace those source-blob checks.
 
 Example (run only in a controlled private staging environment after source-blob
 verification; `$TEMPLATE_DIR` contains the complete package, source manifest,
