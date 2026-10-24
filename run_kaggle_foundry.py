@@ -20,6 +20,7 @@ import re
 import subprocess
 import sys
 import tarfile
+import tempfile
 import time
 import traceback
 import unittest
@@ -354,6 +355,53 @@ def _gpu_device_telemetry() -> dict[str, Any]:
         }
 
 
+def _profile_one_generation(package_root: str, working: Path, seed: int = 0) -> dict[str, Any]:
+    """Measure one diagnostic generation without weakening the frozen 12-gen run."""
+    if package_root not in sys.path:
+        sys.path.insert(0, package_root)
+    foundry = importlib.import_module("research.gen3_learning_rule_foundry_v1")
+    original_limit = getattr(foundry, "GENERATION_COUNT", None)
+    if original_limit != 12:
+        raise RuntimeError("cannot profile: production generation limit is not 12")
+    started = time.perf_counter()
+    profile: dict[str, Any]
+    try:
+        with tempfile.TemporaryDirectory(prefix="acsie-gen3-onegen-") as tmp:
+            # This is a diagnostic-only in-memory generation limit. Restore 12
+            # in finally, keep output temporary, and exclude the result from 5x12.
+            foundry.GENERATION_COUNT = 1
+            events: list[dict[str, Any]] = []
+            result = foundry.run_generations(
+                seed=seed, generations=1, checkpoint_dir=Path(tmp),
+                progress_callback=events.append,
+            )
+            rows = result.get("generations", [])
+            if len(rows) != 1:
+                raise RuntimeError("one-generation profile did not emit exactly one row")
+            row = rows[0]
+            duration = row.get("gen_duration_sec")
+            profile = {
+                "schema": "ACSIE.gen3-foundry-one-generation-profile.v1",
+                "diagnostic_only": True,
+                "qualification_slot": False,
+                "seed": seed,
+                "generation": row.get("generation"),
+                "scientific_status": row.get("scientific_status"),
+                "evaluated": row.get("evaluated") is True,
+                "candidate_count": row.get("candidate_count", 0),
+                "sec_per_gen": duration if row.get("evaluated") is True else None,
+                "wall_clock_sec_including_setup_and_final_metrics": round(time.perf_counter() - started, 6),
+                "replay_exact": row.get("replay_exact") is True,
+                "note": "diagnostic-only seed 0; not part of the frozen qualification matrix",
+                "created_at_utc": utc_now(),
+            }
+    finally:
+        foundry.GENERATION_COUNT = original_limit
+    write_json(working / "one_generation_profile.json", profile)
+    print(json.dumps({"event": "one_generation_profile", **profile}, sort_keys=True, separators=(",", ":")), flush=True)
+    return profile
+
+
 def _run_seed_worker(seed: int, package_root: str, checkpoints_root: str, progress_queue) -> dict[str, Any]:
     """Run one independent seed in its own process and checkpoint directory."""
     if package_root not in sys.path:
@@ -546,6 +594,7 @@ def main() -> int:
     research_started = time.perf_counter()
     parallel_results = {}
     if driver is not None:
+        _profile_one_generation(str(ROOT), working, seed=0)
         parallel_results = _run_parallel_seeds(
             SEEDS, str(ROOT), checkpoints_root, working, run_id, source_sha,
             embedded_archive_sha256, hardware_info,
