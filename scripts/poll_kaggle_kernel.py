@@ -56,7 +56,9 @@ def main() -> int:
         print("KAGGLE_KERNEL_FAILED: pushed version was not reported", file=sys.stderr)
         return 2
     version = int(match.group(1))
-    deadline = time.monotonic() + args.timeout_minutes * 60
+    started = time.monotonic()
+    deadline = started + args.timeout_minutes * 60
+    next_progress_log = started + 60
     last_status = "UNKNOWN"
 
     while time.monotonic() < deadline:
@@ -103,6 +105,16 @@ def main() -> int:
                         print(f"KAGGLE_KERNEL_SLUG={args.kernel_slug}", file=sys.stderr)
                         print(f"KAGGLE_KERNEL_FAILED: version={version} status={found}", file=sys.stderr)
                         return 2
+        now = time.monotonic()
+        if now >= next_progress_log:
+            print(json.dumps({
+                "event": "kaggle_kernel_poll",
+                "kernel_slug": args.kernel_slug,
+                "kernel_version": version,
+                "status": last_status,
+                "elapsed_sec": round(now - started, 1),
+            }, sort_keys=True, separators=(",", ":")), flush=True)
+            next_progress_log = now + 60
         time.sleep(15)
 
     print(f"KAGGLE_KERNEL_VERSION={version}", file=sys.stderr)
