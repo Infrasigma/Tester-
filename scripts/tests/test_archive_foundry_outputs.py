@@ -189,6 +189,17 @@ class ArchiveFoundryOutputsTests(unittest.TestCase):
             with self.assertRaisesRegex(archive.ArchiveError, "SHA-256"):
                 archive.verify_outputs(output_root)
 
+    def test_archive_attestation_kernel_identity_requires_explicit_slug_and_version(self):
+        identity = archive.validated_kernel_identity("memorican/acsie-gen3-foundry-embedded-source", 3)
+        self.assertEqual(identity, {
+            "kernel_slug": "memorican/acsie-gen3-foundry-embedded-source",
+            "kernel_version": 3,
+        })
+        with self.assertRaisesRegex(archive.ArchiveError, "kernel slug"):
+            archive.validated_kernel_identity("", 3)
+        with self.assertRaisesRegex(archive.ArchiveError, "kernel version"):
+            archive.validated_kernel_identity("memorican/acsie-gen3-foundry", 0)
+
 
 if __name__ == "__main__":
     unittest.main()
