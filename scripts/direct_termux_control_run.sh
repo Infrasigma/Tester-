@@ -415,6 +415,11 @@ cp "$WORKDIR/build-report.json" "$HANDOFF/build-report.json"
 cp "$WORKDIR/local-test-report.json" "$HANDOFF/local-test-report.json"
 cp "$WORKDIR/remote-test-report.json" "$HANDOFF/remote-test-report.json"
 cp "$OUTPUT/foundry-summary.json" "$HANDOFF/foundry-summary.json"
+if [ -f "$OUTPUT/one_generation_profile.json" ]; then
+  cp "$OUTPUT/one_generation_profile.json" "$HANDOFF/one_generation_profile.json"
+else
+  echo "WARNING: no one-generation profile artifact was emitted" >&2
+fi
 for f in "$OUTPUT"/seed-results/result-*.json; do
   [ -f "$f" ] && cp "$f" "$HANDOFF/seed-results/"
 done
@@ -434,6 +439,8 @@ summary = json.loads((root / "foundry-summary.json").read_text(encoding="utf-8")
 build = json.loads((root / "build-report.json").read_text(encoding="utf-8"))
 remote_tests = json.loads((root / "remote-test-report.json").read_text(encoding="utf-8"))
 local_tests = json.loads((root / "local-test-report.json").read_text(encoding="utf-8"))
+profile_path = root / "one_generation_profile.json"
+profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.is_file() else None
 
 seeds = []
 gen0_durations = []
@@ -494,7 +501,11 @@ scorecard = {
         "observed_gen0_sec_per_evaluated_seed": {
             "values": gen0_durations,
             "median": statistics.median(gen0_durations) if gen0_durations else None,
-            "note": "observed during the actual 5x12 run; the frozen production driver rejects generations=1, so this is not a separate 1x1 preflight",
+            "note": "median per-seed generation-0 timings observed in the frozen run; see the separate diagnostic profile below",
+        },
+        "one_generation_profile": profile,
+    },
+    "phase0": {
         },
     },
     "local_source": {
