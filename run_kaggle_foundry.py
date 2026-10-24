@@ -14,6 +14,7 @@ import io
 import json
 import multiprocessing
 import os
+import platform
 import queue
 import re
 import sys
@@ -375,12 +376,26 @@ def _run_parallel_seeds(
         "embedded_source_archive_sha256": embedded_archive_sha256,
         "status": "RUNNING",
         "worker_count": worker_count,
+        "reported_cpu_count": os.cpu_count() or 4,
+        "platform": platform.platform(),
+        "machine": platform.machine(),
+        "gpu_acceleration_enabled": False,
         "expected_generation_events": len(seeds) * 12,
         "completed_generation_events": 0,
         "events": [],
         "updated_at_utc": utc_now(),
     }
     write_json(heartbeat_path, heartbeat)
+    print(json.dumps({
+        "event": "parallel_dispatch_started",
+        "run_id": run_id,
+        "seed_count": len(seeds),
+        "worker_count": worker_count,
+        "reported_cpu_count": os.cpu_count() or 4,
+        "platform": platform.platform(),
+        "machine": platform.machine(),
+        "gpu_acceleration_enabled": False,
+    }, sort_keys=True, separators=(",", ":")), flush=True)
     outcomes: dict[int, dict[str, Any]] = {}
 
     def consume_events(event_queue) -> None:
@@ -445,6 +460,7 @@ def _run_parallel_seeds(
 
 
 def main() -> int:
+    kernel_started = time.perf_counter()
     sys.path.insert(0, str(ROOT))
     if not run_phase0_tests():
         print('PHASE0_FAILED: refusing to start the 5x12 research run.', file=sys.stderr)
@@ -483,6 +499,7 @@ def main() -> int:
         }
         driver = None
 
+    research_started = time.perf_counter()
     parallel_results = {}
     if driver is not None:
         parallel_results = _run_parallel_seeds(
@@ -730,6 +747,13 @@ def main() -> int:
         "passed_generation_records": summary["passed_generation_records"],
         "checkpoint_bundle_count": len(candidate_artifacts) - 1,
         "artifact_manifest_sha256": sha256_file(manifest_path),
+        "kernel_wall_clock_sec": round(max(0.0, time.perf_counter() - kernel_started), 3),
+        "research_wall_clock_sec": round(max(0.0, time.perf_counter() - research_started), 3),
+        "reported_cpu_count": os.cpu_count() or 4,
+        "parallel_worker_count": min(len(SEEDS), os.cpu_count() or 4) if driver is not None else 0,
+        "gpu_acceleration_enabled": False,
+        "platform": platform.platform(),
+        "machine": platform.machine(),
     }, indent=2, sort_keys=True))
     # Infrastructure success means complete diagnostic records were written. Scientific
     # failure is represented in the records; it never gets upgraded to PASSED here.
