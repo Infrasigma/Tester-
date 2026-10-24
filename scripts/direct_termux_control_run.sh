@@ -256,7 +256,7 @@ python3 "$TESTER/scripts/poll_kaggle_kernel.py" \
   --dispatch-nonce "$DISPATCH_NONCE" \
   --completion-file one_generation_profile.json \
   --timeout-minutes 60 2>&1 | tee "$PROFILE_POLL_LOG"
-PROFILE_POLL_RC=\${PIPESTATUS[0]}
+PROFILE_POLL_RC=${PIPESTATUS[0]}
 set -e
 PROFILE_KERNEL_VERSION="$(grep '^KAGGLE_KERNEL_VERSION=' "$PROFILE_POLL_LOG" | tail -n 1 | cut -d= -f2 || true)"
 if [ "$PROFILE_POLL_RC" -ne 0 ]; then
@@ -377,7 +377,7 @@ python3 "$TESTER/scripts/poll_kaggle_kernel.py" \
   --path "$PAYLOAD" \
   --dispatch-nonce "$DISPATCH_NONCE" \
   --timeout-minutes 330 2>&1 | tee "$POLL_LOG"
-POLL_RC=\${PIPESTATUS[0]}
+POLL_RC=${PIPESTATUS[0]}
 set -e
 KERNEL_VERSION="$(grep '^KAGGLE_KERNEL_VERSION=' "$POLL_LOG" | tail -n 1 | cut -d= -f2 || true)"
 if [ "$POLL_RC" -ne 0 ]; then
