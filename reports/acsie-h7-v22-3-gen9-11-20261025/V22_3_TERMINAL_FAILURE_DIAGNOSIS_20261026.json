@@ -1,0 +1,920 @@
+{
+  "canonical_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+  "caveats": [
+    "Candidate details in the committed compact event rows do not persist per-candidate expression ASTs, ast_depth/ast_nodes, holdout errors, or accepted field. Selected AST depth/node counts in the report are computed from the top-level selected_expression; direct-pair candidate AST/holdout values are explicitly marked NOT_RECORDED.",
+    "Expected target-parent IDs and target operators for the two stale-recouency slots were not preserved in the committed excerpt. The selected primitive ID and selected parent-generation pair are available in the 60-slot audit.",
+    "Gen7 vs Gen8 cause is localized to the Gen8 admission/retention boundary by the first triangle-count shortfall, but acceptance_reason / discovery validation cause is missing.",
+    "No scientific threshold, denominator, selection rule, or qualification gate was weakened. The new archive remains local and has not been dispatched to Kaggle."
+  ],
+  "created_date": "2026-10-26",
+  "failure_log_path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_FAILURE_EVENT_LINES_20261025.log",
+  "failure_log_sha256": "0fc73708fc90ffe146c314cacaf4272deb4bb892457a2af78daeda6a16c1c798",
+  "five_earliest_failure_diagnostics": [
+    {
+      "candidate_count": 205,
+      "closure_trap": true,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "expected_parent_generations": "NOT_RECORDED_IN_COMPACT_EVENT; selected_pair_gens are selected candidate parent generations, not reliable mapping of expected pair IDs",
+      "expected_parent_ids": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:0fcca8b958c7c756accc"
+      ],
+      "expression_reasoning": "Selected before closure/competence gate by selection_source=first_discovery_ranked_frontier_candidate_v1; no evidence that it beat alternatives on held-out metrics. It was rank 0 and selection logic did not switch to a later candidate that passed the pair-lineage/reuse gate.",
+      "frontier_lineage_matches": 6,
+      "generation": 6,
+      "holdout_error": "NOT_RECORDED_IN_COMPACT_EVENT",
+      "lineage_matching_direct_pair_candidate": [
+        {
+          "ast_depth": "NOT_RECORDED",
+          "ast_nodes": "NOT_RECORDED",
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "expression": "NOT_RECORDED_IN_COMPACT_EVENT",
+          "frontier_rank": 3,
+          "holdout_error": "NOT_RECORDED",
+          "index": 3,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:f20dd8a3e7f8cc5ed878",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:0fcca8b958c7c756accc",
+            "prim:7b9e019ca08c0944c250"
+          ]
+        }
+      ],
+      "pair_index": 3,
+      "pair_outcome_accepted": false,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:0fcca8b958c7c756accc": 0.0,
+          "prim:7b9e019ca08c0944c250": 0.0
+        },
+        "closure_train": {
+          "prim:0fcca8b958c7c756accc": 0.0,
+          "prim:7b9e019ca08c0944c250": 0.0
+        }
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:0fcca8b958c7c756accc": 0.0,
+        "prim:7b9e019ca08c0944c250": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejection_reasons": [
+        "closure_trap"
+      ],
+      "reuse_ok": false,
+      "seed": 2026100301,
+      "selected_ast_depth_computed": 2,
+      "selected_ast_nodes_computed": 3,
+      "selected_candidate_detail": {
+        "accepted_field": "NOT_RECORDED; pair-level accepted=false",
+        "candidate_in_frontier": false,
+        "competence_ok": true,
+        "frontier_rank": 0,
+        "holdout_error": "NOT_RECORDED",
+        "lineage_compatible": false,
+        "ood_error": 0.0,
+        "process_id": "proc:9dd23a0cc840fbf974f3",
+        "reuse_ok": false,
+        "transfer_error": 0.0,
+        "used_primitives": [
+          "prim:aa76925e4d86255adac4",
+          "prim:f7ff4c8074f55158c001"
+        ]
+      },
+      "selected_candidate_parent_generations": [
+        6,
+        1
+      ],
+      "selected_executable_lineage_ids": [
+        "prim:73ce8c6b3c2b7b3de053",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9c37d71e94d0744e366d",
+        "prim:aa76925e4d86255adac4",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:aa76925e4d86255adac4",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:f7ff4c8074f55158c001",
+          "op": "macro"
+        }
+      },
+      "selected_expression_pretty": "add(prim:aa76925e4d86255adac4,prim:f7ff4c8074f55158c001)",
+      "selected_lineage_match": false,
+      "selected_used_primitives": [
+        "prim:aa76925e4d86255adac4",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "source_event_line_in_log": 9,
+      "source_jsonl_line_no": null,
+      "source_raw_event_bytes": 58240,
+      "source_raw_event_sha256": "f4e85c690bb9c6b4a6f0ed5b989506a5b0a3c2f971ab521ec6294975b31acbb0",
+      "top_three_compact_candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 0,
+          "index": 0,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:9dd23a0cc840fbf974f3",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:aa76925e4d86255adac4",
+            "prim:f7ff4c8074f55158c001"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 1,
+          "index": 1,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:4477c3310ec3424d9e76",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7b9e019ca08c0944c250",
+            "prim:aa76925e4d86255adac4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 2,
+          "index": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:bd7edcd045894a74ee5b",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:0fcca8b958c7c756accc",
+            "prim:f7ff4c8074f55158c001"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate_count": 80,
+      "closure_trap": true,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "expected_parent_generations": "NOT_RECORDED_IN_COMPACT_EVENT; selected_pair_gens are selected candidate parent generations, not reliable mapping of expected pair IDs",
+      "expected_parent_ids": [
+        "prim:c8863ee347902ad8a560",
+        "prim:4c9bbb56a8227388dc10"
+      ],
+      "expression_reasoning": "Selected before closure/competence gate by selection_source=first_discovery_ranked_frontier_candidate_v1; no evidence that it beat alternatives on held-out metrics. It was rank 0 and selection logic did not switch to a later candidate that passed the pair-lineage/reuse gate.",
+      "frontier_lineage_matches": 40,
+      "generation": 7,
+      "holdout_error": "NOT_RECORDED_IN_COMPACT_EVENT",
+      "lineage_matching_direct_pair_candidate": [
+        {
+          "ast_depth": "NOT_RECORDED",
+          "ast_nodes": "NOT_RECORDED",
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "expression": "NOT_RECORDED_IN_COMPACT_EVENT",
+          "frontier_rank": 4,
+          "holdout_error": "NOT_RECORDED",
+          "index": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:3e1f7052497980d65e4e",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:4c9bbb56a8227388dc10",
+            "prim:c8863ee347902ad8a560"
+          ]
+        }
+      ],
+      "pair_index": 1,
+      "pair_outcome_accepted": false,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:4c9bbb56a8227388dc10": 0.0,
+          "prim:c8863ee347902ad8a560": 0.0
+        },
+        "closure_train": {
+          "prim:4c9bbb56a8227388dc10": 0.0,
+          "prim:c8863ee347902ad8a560": 0.0
+        }
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:4c9bbb56a8227388dc10": 0.0,
+        "prim:c8863ee347902ad8a560": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejection_reasons": [
+        "closure_trap"
+      ],
+      "reuse_ok": false,
+      "seed": 2026100302,
+      "selected_ast_depth_computed": 2,
+      "selected_ast_nodes_computed": 3,
+      "selected_candidate_detail": {
+        "accepted_field": "NOT_RECORDED; pair-level accepted=false",
+        "candidate_in_frontier": false,
+        "competence_ok": true,
+        "frontier_rank": 0,
+        "holdout_error": "NOT_RECORDED",
+        "lineage_compatible": false,
+        "ood_error": 0.0,
+        "process_id": "proc:1148574a1f571ef0f191",
+        "reuse_ok": false,
+        "transfer_error": 0.0,
+        "used_primitives": [
+          "prim:333e6308aa4aa679610d",
+          "prim:58f8a853ef5a383209b9"
+        ]
+      },
+      "selected_candidate_parent_generations": [
+        7,
+        1
+      ],
+      "selected_executable_lineage_ids": [
+        "prim:333e6308aa4aa679610d",
+        "prim:58f8a853ef5a383209b9",
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:333e6308aa4aa679610d",
+          "op": "macro"
+        },
+        "op": "min",
+        "right": {
+          "id": "prim:58f8a853ef5a383209b9",
+          "op": "macro"
+        }
+      },
+      "selected_expression_pretty": "min(prim:333e6308aa4aa679610d,prim:58f8a853ef5a383209b9)",
+      "selected_lineage_match": false,
+      "selected_used_primitives": [
+        "prim:333e6308aa4aa679610d",
+        "prim:58f8a853ef5a383209b9"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "source_event_line_in_log": 21,
+      "source_jsonl_line_no": null,
+      "source_raw_event_bytes": 24252,
+      "source_raw_event_sha256": "2c99800fca29e719bd09753196183d16690afd12caa8ea605ee643b175dbb908",
+      "top_three_compact_candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 0,
+          "index": 0,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:1148574a1f571ef0f191",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:333e6308aa4aa679610d",
+            "prim:58f8a853ef5a383209b9"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 1,
+          "index": 1,
+          "lineage_compatible": false,
+          "ood_error": 1.7763568394002506e-16,
+          "process_id": "proc:5fca652da9ce3b50514c",
+          "reuse_ok": false,
+          "transfer_error": 8.881784197001253e-17,
+          "used_primitives": [
+            "prim:333e6308aa4aa679610d",
+            "prim:c8863ee347902ad8a560"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 2,
+          "index": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:f731a9e3746bbec19f1d",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:58f8a853ef5a383209b9",
+            "prim:c4b6174ba9a4c1e815f8"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate_count": 20,
+      "closure_trap": false,
+      "competence_ok": false,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "expected_parent_generations": "NOT_RECORDED_IN_COMPACT_EVENT; selected_pair_gens are selected candidate parent generations, not reliable mapping of expected pair IDs",
+      "expected_parent_ids": [
+        "prim:82058e1e1f3b884805f0",
+        "prim:4a5093a8ae2b4487e3e4"
+      ],
+      "expression_reasoning": "Selected before closure/competence gate by selection_source=first_discovery_ranked_frontier_candidate_v1; no evidence that it beat alternatives on held-out metrics. It was rank 0 and selection logic did not switch to a later candidate that passed the pair-lineage/reuse gate.",
+      "frontier_lineage_matches": 1,
+      "generation": 6,
+      "holdout_error": "NOT_RECORDED_IN_COMPACT_EVENT",
+      "lineage_matching_direct_pair_candidate": [
+        {
+          "ast_depth": "NOT_RECORDED",
+          "ast_nodes": "NOT_RECORDED",
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "expression": "NOT_RECORDED_IN_COMPACT_EVENT",
+          "frontier_rank": 1,
+          "holdout_error": "NOT_RECORDED",
+          "index": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:13a371d06e99b41e3119",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:4a5093a8ae2b4487e3e4",
+            "prim:82058e1e1f3b884805f0"
+          ]
+        }
+      ],
+      "pair_index": 4,
+      "pair_outcome_accepted": false,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:4a5093a8ae2b4487e3e4": 0.0,
+          "prim:82058e1e1f3b884805f0": 0.0
+        },
+        "closure_train": {
+          "prim:4a5093a8ae2b4487e3e4": 0.0,
+          "prim:82058e1e1f3b884805f0": 0.0
+        }
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:4a5093a8ae2b4487e3e4": 0.0,
+        "prim:82058e1e1f3b884805f0": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejection_reasons": [
+        "competence_failure"
+      ],
+      "reuse_ok": false,
+      "seed": 2026100303,
+      "selected_ast_depth_computed": 2,
+      "selected_ast_nodes_computed": 3,
+      "selected_candidate_detail": {
+        "accepted_field": "NOT_RECORDED; pair-level accepted=false",
+        "candidate_in_frontier": false,
+        "competence_ok": false,
+        "frontier_rank": 0,
+        "holdout_error": "NOT_RECORDED",
+        "lineage_compatible": true,
+        "ood_error": 0.0,
+        "process_id": "proc:90a21930442163601550",
+        "reuse_ok": false,
+        "transfer_error": 0.28494989337274007,
+        "used_primitives": [
+          "prim:7a1f0b1112cc01bfd890",
+          "prim:82058e1e1f3b884805f0"
+        ]
+      },
+      "selected_candidate_parent_generations": [
+        6,
+        0
+      ],
+      "selected_executable_lineage_ids": [
+        "prim:4a5093a8ae2b4487e3e4",
+        "prim:7a1f0b1112cc01bfd890",
+        "prim:82058e1e1f3b884805f0",
+        "prim:9a83fc72887554d9d99a",
+        "prim:a0f9e15a97ff7a82441d",
+        "prim:aa42494341051e8db19c",
+        "prim:f68747183b144bb516f2"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:7a1f0b1112cc01bfd890",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:82058e1e1f3b884805f0",
+          "op": "macro"
+        }
+      },
+      "selected_expression_pretty": "add(prim:7a1f0b1112cc01bfd890,prim:82058e1e1f3b884805f0)",
+      "selected_lineage_match": true,
+      "selected_used_primitives": [
+        "prim:7a1f0b1112cc01bfd890",
+        "prim:82058e1e1f3b884805f0"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "source_event_line_in_log": 33,
+      "source_jsonl_line_no": null,
+      "source_raw_event_bytes": 8535,
+      "source_raw_event_sha256": "dc5be5562a0e14527f1c1e2505fb029859eb647dad2db0a84ece316bcaa3c556",
+      "top_three_compact_candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": false,
+          "frontier_rank": 0,
+          "index": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:90a21930442163601550",
+          "reuse_ok": false,
+          "transfer_error": 0.28494989337274007,
+          "used_primitives": [
+            "prim:7a1f0b1112cc01bfd890",
+            "prim:82058e1e1f3b884805f0"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "frontier_rank": 1,
+          "index": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:13a371d06e99b41e3119",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:4a5093a8ae2b4487e3e4",
+            "prim:82058e1e1f3b884805f0"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 2,
+          "index": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:acc9243944232f4c0094",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:82058e1e1f3b884805f0",
+            "prim:9a83fc72887554d9d99a"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate_count": 6,
+      "closure_trap": true,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "expected_parent_generations": "NOT_RECORDED_IN_COMPACT_EVENT; selected_pair_gens are selected candidate parent generations, not reliable mapping of expected pair IDs",
+      "expected_parent_ids": [
+        "prim:955d3c17dbbca3346a2e",
+        "prim:b0c420bf3316e423bc15"
+      ],
+      "expression_reasoning": "Selected before closure/competence gate by selection_source=first_discovery_ranked_frontier_candidate_v1; no evidence that it beat alternatives on held-out metrics. It was rank 0 and selection logic did not switch to a later candidate that passed the pair-lineage/reuse gate.",
+      "frontier_lineage_matches": 2,
+      "generation": 5,
+      "holdout_error": "NOT_RECORDED_IN_COMPACT_EVENT",
+      "lineage_matching_direct_pair_candidate": [
+        {
+          "ast_depth": "NOT_RECORDED",
+          "ast_nodes": "NOT_RECORDED",
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "expression": "NOT_RECORDED_IN_COMPACT_EVENT",
+          "frontier_rank": 1,
+          "holdout_error": "NOT_RECORDED",
+          "index": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:375a79be1e82e7b27a23",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:955d3c17dbbca3346a2e",
+            "prim:b0c420bf3316e423bc15"
+          ]
+        }
+      ],
+      "pair_index": 3,
+      "pair_outcome_accepted": false,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:955d3c17dbbca3346a2e": 0.0,
+          "prim:b0c420bf3316e423bc15": 0.0
+        },
+        "closure_train": {
+          "prim:955d3c17dbbca3346a2e": 0.0,
+          "prim:b0c420bf3316e423bc15": 0.0
+        }
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:955d3c17dbbca3346a2e": 0.0,
+        "prim:b0c420bf3316e423bc15": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejection_reasons": [
+        "closure_trap"
+      ],
+      "reuse_ok": false,
+      "seed": 2026100304,
+      "selected_ast_depth_computed": 2,
+      "selected_ast_nodes_computed": 3,
+      "selected_candidate_detail": {
+        "accepted_field": "NOT_RECORDED; pair-level accepted=false",
+        "candidate_in_frontier": false,
+        "competence_ok": true,
+        "frontier_rank": 0,
+        "holdout_error": "NOT_RECORDED",
+        "lineage_compatible": false,
+        "ood_error": 0.0,
+        "process_id": "proc:17f755e7f70bd577fdcb",
+        "reuse_ok": false,
+        "transfer_error": 0.0,
+        "used_primitives": [
+          "prim:955d3c17dbbca3346a2e",
+          "prim:9f30333819569f9b1d9d"
+        ]
+      },
+      "selected_candidate_parent_generations": [
+        0,
+        5
+      ],
+      "selected_executable_lineage_ids": [
+        "prim:3ae721d99fcfec3233e4",
+        "prim:886d849d920dc7d92ca2",
+        "prim:955d3c17dbbca3346a2e",
+        "prim:9f30333819569f9b1d9d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:955d3c17dbbca3346a2e",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:9f30333819569f9b1d9d",
+          "op": "macro"
+        }
+      },
+      "selected_expression_pretty": "add(prim:955d3c17dbbca3346a2e,prim:9f30333819569f9b1d9d)",
+      "selected_lineage_match": false,
+      "selected_used_primitives": [
+        "prim:955d3c17dbbca3346a2e",
+        "prim:9f30333819569f9b1d9d"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "source_event_line_in_log": 45,
+      "source_jsonl_line_no": null,
+      "source_raw_event_bytes": 4397,
+      "source_raw_event_sha256": "96bda7aa1bfbae59a7562dffbfc44d5b49fb4a88d38f9dc2ec635b2364da692e",
+      "top_three_compact_candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 0,
+          "index": 0,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:17f755e7f70bd577fdcb",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:955d3c17dbbca3346a2e",
+            "prim:9f30333819569f9b1d9d"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "frontier_rank": 1,
+          "index": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:375a79be1e82e7b27a23",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:955d3c17dbbca3346a2e",
+            "prim:b0c420bf3316e423bc15"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 2,
+          "index": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:4758670caf267d1c51df",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:3ae721d99fcfec3233e4",
+            "prim:955d3c17dbbca3346a2e"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate_count": 10,
+      "closure_trap": false,
+      "competence_ok": false,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "expected_parent_generations": "NOT_RECORDED_IN_COMPACT_EVENT; selected_pair_gens are selected candidate parent generations, not reliable mapping of expected pair IDs",
+      "expected_parent_ids": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "expression_reasoning": "Selected before closure/competence gate by selection_source=first_discovery_ranked_frontier_candidate_v1; no evidence that it beat alternatives on held-out metrics. It was rank 0 and selection logic did not switch to a later candidate that passed the pair-lineage/reuse gate.",
+      "frontier_lineage_matches": 3,
+      "generation": 4,
+      "holdout_error": "NOT_RECORDED_IN_COMPACT_EVENT",
+      "lineage_matching_direct_pair_candidate": [
+        {
+          "ast_depth": "NOT_RECORDED",
+          "ast_nodes": "NOT_RECORDED",
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "expression": "NOT_RECORDED_IN_COMPACT_EVENT",
+          "frontier_rank": 5,
+          "holdout_error": "NOT_RECORDED",
+          "index": 5,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:0dd34fde10887b40b40f",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "pair_index": 0,
+      "pair_outcome_accepted": false,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejection_reasons": [
+        "competence_failure"
+      ],
+      "reuse_ok": false,
+      "seed": 2026100305,
+      "selected_ast_depth_computed": 2,
+      "selected_ast_nodes_computed": 3,
+      "selected_candidate_detail": {
+        "accepted_field": "NOT_RECORDED; pair-level accepted=false",
+        "candidate_in_frontier": false,
+        "competence_ok": false,
+        "frontier_rank": 0,
+        "holdout_error": "NOT_RECORDED",
+        "lineage_compatible": true,
+        "ood_error": 0.3698623136982637,
+        "process_id": "proc:197253e262a768c2f02e",
+        "reuse_ok": false,
+        "transfer_error": 0.37812640529546765,
+        "used_primitives": [
+          "prim:7195554b49c72be55e6d",
+          "prim:a00ac8dc7c095a30bc5b"
+        ]
+      },
+      "selected_candidate_parent_generations": [
+        2,
+        3
+      ],
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:7195554b49c72be55e6d",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_expression_pretty": "add(prim:7195554b49c72be55e6d,prim:a00ac8dc7c095a30bc5b)",
+      "selected_lineage_match": true,
+      "selected_used_primitives": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "source_event_line_in_log": 55,
+      "source_jsonl_line_no": null,
+      "source_raw_event_bytes": 5584,
+      "source_raw_event_sha256": "892096860fa6b11e33c193ad84a9e030e096ebc83664fb3bd9e774e9f7f8ea28",
+      "top_three_compact_candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": false,
+          "frontier_rank": 0,
+          "index": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.3698623136982637,
+          "process_id": "proc:197253e262a768c2f02e",
+          "reuse_ok": false,
+          "transfer_error": 0.37812640529546765,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": false,
+          "frontier_rank": 1,
+          "index": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.3698623136982637,
+          "process_id": "proc:83877ebba849a5f1bae9",
+          "reuse_ok": false,
+          "transfer_error": 0.37812640529546765,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "frontier_rank": 2,
+          "index": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:ba67a217262723b11409",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        }
+      ]
+    }
+  ],
+  "historical_kaggle_status": "KernelWorkerStatus.ERROR",
+  "kaggle_check_repeated": false,
+  "local_fix_build": {
+    "archive_bytes": 101049,
+    "archive_sha256": "7001f4eda5970f398c49ce8a4d127c9bafa0e398f89078f422f609a9d255f6fd",
+    "build_report_file_sha256": "6b049c0a9af187d618e6e22e09ffccab2176d481c081d39f6b55d71ca5a094d7",
+    "build_status": "PASSED",
+    "frozen_contract_preserved": true,
+    "kaggle_dispatch_performed": false,
+    "metadata_sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd",
+    "phase0_status": "PASSED",
+    "phase0_tests": "34 ran, OK, 0 skipped",
+    "qualification_slots_evaluated": 0,
+    "runner_bytes": 163287,
+    "runner_sha256": "d620c7ff338974a0da1ec3119ef0a1f6f7392b703ce463d00d43bba13f74c8cd",
+    "source_manifest_file_sha256": "3bcb384fd94419ad3dd71208c63e169650b3986435587c77c2082e5821854a71",
+    "source_manifest_sha256": "7822698d7461ca0f9cbff4f0ceb54924d76bb6ddc73d88db35bef2a6a6ee962f",
+    "validator_unit_tests": "7 passed, 0 skipped"
+  },
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "recency_failures": [
+    {
+      "cause_conclusion": "Stale parent pair was selected. The source sorts discovery-fitting candidates with eligible pairs first; a false final gate shows no eligible candidate was chosen. The available evidence does not distinguish whether a depth-4/5 candidate was never generated, failed discovery fit, or was pruned before persistence.",
+      "gate_calculation_passed": false,
+      "generation": 9,
+      "observed_max_parent_generation": 7,
+      "recency_eligible_discovery_candidate_count": "NOT_RECOVERED: PRIMARY_PRIMITIVE_INVENTION_COMPLETE event for this slot was not retained in the committed excerpt",
+      "recency_rule": "max(selected_pair_gens) >= generation - 1",
+      "required_min_parent_generation": 8,
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        6,
+        7
+      ],
+      "selected_pair_recency_gate_passed": false,
+      "selected_primitive_id": "prim:526084bc4aa4cc1c3e9e",
+      "target_operator": "NOT_RECOVERED_IN_COMMITTED_COMPACT_FAILURE LOG",
+      "target_parent_ids": "NOT_RECOVERED_IN_COMMITTED_COMPACT_FAILURE LOG"
+    },
+    {
+      "cause_conclusion": "Stale parent pair was selected. The source sorts discovery-fitting candidates with eligible pairs first; a false final gate shows no eligible candidate was chosen. The available evidence does not distinguish whether a depth-4/5 candidate was never generated, failed discovery fit, or was pruned before persistence.",
+      "gate_calculation_passed": false,
+      "generation": 11,
+      "observed_max_parent_generation": 5,
+      "recency_eligible_discovery_candidate_count": "NOT_RECOVERED: PRIMARY_PRIMITIVE_INVENTION_COMPLETE event for this slot was not retained in the committed excerpt",
+      "recency_rule": "max(selected_pair_gens) >= generation - 1",
+      "required_min_parent_generation": 10,
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        5,
+        4
+      ],
+      "selected_pair_recency_gate_passed": false,
+      "selected_primitive_id": "prim:315a4b71c4f2ecd61599",
+      "target_operator": "NOT_RECOVERED_IN_COMMITTED_COMPACT_FAILURE LOG",
+      "target_parent_ids": "NOT_RECOVERED_IN_COMMITTED_COMPACT_FAILURE LOG"
+    }
+  ],
+  "schema": "ACSIE.h7.v22_3.terminal_failure_diagnosis.v1",
+  "schema_bug": {
+    "new_tests": [
+      "test_all_runtime_driver_rejection_identifiers_are_schema_approved",
+      "test_five_seed_failure_excerpt_rejection_reasons_are_schema_approved"
+    ],
+    "runtime_emitted_rejection_identifier": "primary_pair_add_not_discovery_qualified",
+    "runtime_source_branch": "source/lab/acsie_open_ended_self_extending_proving.py: primary_pair_add_generated_signatures AND primary_pair_add_not_discovery_qualified_signatures",
+    "validator_after_fix": "Added to both root and embedded-runtime allowlists; diagnostic telemetry only, no gate/denominator/threshold change",
+    "validator_before_fix": "REJECTION_REASONS did not include primary_pair_add_not_discovery_qualified",
+    "why_invalid_slots": "Seed 2026100304 Gen5-Gen11 audits raised ValueError because this runtime literal was outside the allowlist. The compact excerpt has the resulting AUDIT_END validation error for slots but not the exact original pair rows; the offending literal is identified from the only driver-emitted reason absent from the original allowlist."
+  },
+  "seed_2026100303_retained_triangle_drop": {
+    "inference": "Gen7 has 28/28 pair outcomes, matching C(8,2), while Gen8 is the first short slot (28/36, matching C(8,2) instead of C(9,2)). Since closure pairs are enumerated after that generation\u2019s primary admission and retained append, this localizes the missing retained primary to Gen8\u2019s admission/retention boundary, not Gen7\u2019s closure sweep.",
+    "observed_generation_rows": [
+      {
+        "closure_pair_audit_status": "CONSISTENT",
+        "expected_pair_count": 21,
+        "generation": 6,
+        "observed_pair_count": 21
+      },
+      {
+        "closure_pair_audit_status": "CONSISTENT",
+        "expected_pair_count": 28,
+        "generation": 7,
+        "observed_pair_count": 28
+      },
+      {
+        "closure_pair_audit_status": "INCOMPLETE",
+        "expected_pair_count": 36,
+        "generation": 8,
+        "observed_pair_count": 28
+      },
+      {
+        "closure_pair_audit_status": "INCOMPLETE",
+        "expected_pair_count": 45,
+        "generation": 9,
+        "observed_pair_count": 36
+      },
+      {
+        "closure_pair_audit_status": "INCOMPLETE",
+        "expected_pair_count": 55,
+        "generation": 10,
+        "observed_pair_count": 45
+      },
+      {
+        "closure_pair_audit_status": "INCOMPLETE",
+        "expected_pair_count": 66,
+        "generation": 11,
+        "observed_pair_count": 55
+      }
+    ],
+    "primary_invention_found_or_admission_reason": "NOT_RECOVERED: the compact committed excerpt has the Gen6 invention event but not seed 2026100303 Gen7/Gen8 PRIMARY_PRIMITIVE_INVENTION_COMPLETE or GENERATION_PROGRESS lines. A bounded local replay terminated by its 18-second timeout at Gen1. Exact accepted/acceptance_reason value and whether no primitive was found vs admission validation rejected it cannot be established.",
+    "seed": 2026100303
+  },
+  "worker_error_interpretation": {
+    "known": "The frozen runner returns process exit code 2 for any scientific_status other than PASSED. Schema-invalid slots, closure failures, competence failures and two recency failures all block qualification.",
+    "not_proven": "The final Kaggle run_manifest/seed logs/kernel log were not recovered, so the exact terminal process-exit path cannot be asserted. No further Kaggle output/status request was made."
+  }
+}

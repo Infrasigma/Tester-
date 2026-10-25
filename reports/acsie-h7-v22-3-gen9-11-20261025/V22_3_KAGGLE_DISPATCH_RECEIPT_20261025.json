@@ -33,6 +33,32 @@
   "initial_status_verified": false,
   "kernel_metadata_id": "memorican/acsie-h7-v22-3-frozen-qualification",
   "kernel_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+  "latest_local_repair_build": {
+    "archive_bytes": 101049,
+    "archive_sha256": "7001f4eda5970f398c49ce8a4d127c9bafa0e398f89078f422f609a9d255f6fd",
+    "build_report_file_sha256": "6b049c0a9af187d618e6e22e09ffccab2176d481c081d39f6b55d71ca5a094d7",
+    "build_status": "PASSED",
+    "canonical_notebook_url_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+    "changes": [
+      "Add primary_pair_add_not_discovery_qualified to both rejection-reason allowlists",
+      "Add regression tests for runtime rejection identifiers and five logged failures",
+      "Bind kernel metadata/preflight to the canonical title-derived slug"
+    ],
+    "frozen_contract_preserved": true,
+    "kaggle_dispatch_performed": false,
+    "metadata_sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd",
+    "phase0_status": "PASSED",
+    "phase0_tests": "34 ran, OK, 0 skipped",
+    "promotion": "DO NOT PROMOTE",
+    "qualification_slots_evaluated": 0,
+    "recorded_date": "2026-10-26",
+    "runner_bytes": 163287,
+    "runner_sha256": "d620c7ff338974a0da1ec3119ef0a1f6f7392b703ce463d00d43bba13f74c8cd",
+    "scientific_gates_or_denominators_changed": false,
+    "source_manifest_file_sha256": "3bcb384fd94419ad3dd71208c63e169650b3986435587c77c2082e5821854a71",
+    "source_manifest_sha256": "7822698d7461ca0f9cbff4f0ceb54924d76bb6ddc73d88db35bef2a6a6ee962f",
+    "validator_unit_tests": "7 passed, 0 skipped"
+  },
   "latest_status_check": {
     "command": "timeout 15s kaggle kernels status memorican/acsie-h7-v22-3-frozen-qualification",
     "exit_code": 0,
