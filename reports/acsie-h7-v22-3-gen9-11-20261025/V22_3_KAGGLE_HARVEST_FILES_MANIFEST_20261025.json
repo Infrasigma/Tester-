@@ -1,0 +1,370 @@
+{
+  "canonical_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+  "closure_audit_incomplete_slots": 4,
+  "closure_audit_invalid_slots": 7,
+  "failure_event_excerpt_bytes": 118745,
+  "failure_event_excerpt_path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_FAILURE_EVENT_LINES_20261025.log",
+  "failure_event_excerpt_sha256": "0fc73708fc90ffe146c314cacaf4272deb4bb892457a2af78daeda6a16c1c798",
+  "files": [
+    {
+      "bytes": 41147110,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-audit-events.jsonl",
+      "sha256": "f5bf54cf4c4e5b8c5b09751d4239be3fc3381098a8e682043956f340f500b674"
+    },
+    {
+      "bytes": 1609,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-00.json",
+      "sha256": "eb0b65df698dcb172c45a7bf5ac4c353f2d88e568977b300069c3ec2176a3e13"
+    },
+    {
+      "bytes": 8176,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-01.json",
+      "sha256": "66a0115c48bbe43405695c392744931856f3923823bbb612e5783a21636a3b53"
+    },
+    {
+      "bytes": 31897,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-02.json",
+      "sha256": "b48547fb8fbf47cbb2bb0c7c3df8d6c721cdaa833d4ab53a0f73c3c971fd770b"
+    },
+    {
+      "bytes": 412187,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-03.json",
+      "sha256": "c86f99617f1b304c94835c7b56020a88cf3e8b3fce6058241bbc143596551641"
+    },
+    {
+      "bytes": 662612,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-04.json",
+      "sha256": "e309b3500199f4642ed5df0439098b06d45893a8c7c62c81f248a1e5ca05e757"
+    },
+    {
+      "bytes": 631443,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-05.json",
+      "sha256": "7a3381984fda0ec1ed8f17b620b570b355a1319e1186b71f9480467d4ec82ad3"
+    },
+    {
+      "bytes": 937354,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-06.json",
+      "sha256": "bd91d11a0663d1f9a5e162d08eb63d3c549c7611f117c9b512ca6f09238defa7"
+    },
+    {
+      "bytes": 1248698,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-07.json",
+      "sha256": "d4a705253264fb702dfa1cb2be0f2ff43b7cf0568058cc920c4a9969df4ff615"
+    },
+    {
+      "bytes": 1746671,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-08.json",
+      "sha256": "95dc3017788d03c4d70d3623104cf85bd071fb99b1b3f682eb0cbfd4c62712a2"
+    },
+    {
+      "bytes": 1997112,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-09.json",
+      "sha256": "6cc6164b057263b73c204c7673afd9b212169d15b42d2adc8fa1100ffc5e10dc"
+    },
+    {
+      "bytes": 2434523,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-10.json",
+      "sha256": "2224f7ea01be5c5ec6ca621a9e053d02848b08f7d18e6cde578e24ed15222858"
+    },
+    {
+      "bytes": 2175182,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-11.json",
+      "sha256": "a7a186526c6c99274fa55ddb54b551127448b73c5829cc11fd29469549374bdf"
+    },
+    {
+      "bytes": 1609,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-00.json",
+      "sha256": "0dc5c7f6cfa63f6f9a576bff87148bf469882858a36f7699df6a3c088436bbb2"
+    },
+    {
+      "bytes": 7437,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-01.json",
+      "sha256": "a6a2a26318aede420824e6434994987a8fa8a994cd280c0aaac8dfc8fc33720c"
+    },
+    {
+      "bytes": 28747,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-02.json",
+      "sha256": "fd25de09b9aceefd965d014c9921b1bbd65bdecc0cfe73ece69b6f9817d25497"
+    },
+    {
+      "bytes": 74081,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-03.json",
+      "sha256": "c874cda09d66102c4a2f8c9c0ce6eeaa2e5258521a36c5ba4bc46453dfb625b4"
+    },
+    {
+      "bytes": 194554,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-04.json",
+      "sha256": "4b66530d0280e508789aa2be150162da418f68b4e5b26dc5d960d3c09fc30756"
+    },
+    {
+      "bytes": 0,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-05.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 62,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-05.json.kaggle-partial",
+      "sha256": "c0bdd9286f9d8621250854a97535f3036d041b87dbf3348e734cee7e0dae23a3"
+    }
+  ],
+  "foundry_summary_present": false,
+  "harvest_command": "timeout 60s kaggle kernels output memorican/acsie-h7-v22-3-frozen-qualification -p $HOME/tmp/v22_3_kaggle_out",
+  "harvest_completion": "INCOMPLETE_OUTPUT_BUNDLE",
+  "harvest_started_utc": "2026-10-25T21:27:41Z",
+  "jsonl_invalid_lines": [],
+  "jsonl_parse_valid_lines": 1981,
+  "legacy_metadata_id": "memorican/acsie-h7-v22-3",
+  "notes": [
+    "No retry of status or output API was performed.",
+    "Audit JSONL is syntactically valid but its event counts fail completeness checks: only 49 H7_GENERATION_PAIR_SUMMARY events, and seed 2026100303 has 38 fewer pair outcomes than the expected per-generation counts.",
+    "Downloaded pair-audit JSON files are partial: only a subset of 60 expected per-seed generation files was materialized before the harvest stopped.",
+    "No run_manifest.json, foundry-summary.json, complete per-seed runtime logs, or probe logs were downloaded."
+  ],
+  "partial_pair_audit_files": [
+    {
+      "accepted_pair_count": 0,
+      "bytes": 1609,
+      "file": "seed-2026100301-generation-00.json",
+      "generation": 0,
+      "observed_pair_count": 0,
+      "rejected_pair_count": 0,
+      "required_pair_count": 0,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "eb0b65df698dcb172c45a7bf5ac4c353f2d88e568977b300069c3ec2176a3e13"
+    },
+    {
+      "accepted_pair_count": 1,
+      "bytes": 8176,
+      "file": "seed-2026100301-generation-01.json",
+      "generation": 1,
+      "observed_pair_count": 1,
+      "rejected_pair_count": 0,
+      "required_pair_count": 1,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "66a0115c48bbe43405695c392744931856f3923823bbb612e5783a21636a3b53"
+    },
+    {
+      "accepted_pair_count": 3,
+      "bytes": 31897,
+      "file": "seed-2026100301-generation-02.json",
+      "generation": 2,
+      "observed_pair_count": 3,
+      "rejected_pair_count": 0,
+      "required_pair_count": 3,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "b48547fb8fbf47cbb2bb0c7c3df8d6c721cdaa833d4ab53a0f73c3c971fd770b"
+    },
+    {
+      "accepted_pair_count": 6,
+      "bytes": 412187,
+      "file": "seed-2026100301-generation-03.json",
+      "generation": 3,
+      "observed_pair_count": 6,
+      "rejected_pair_count": 0,
+      "required_pair_count": 6,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "c86f99617f1b304c94835c7b56020a88cf3e8b3fce6058241bbc143596551641"
+    },
+    {
+      "accepted_pair_count": 10,
+      "bytes": 662612,
+      "file": "seed-2026100301-generation-04.json",
+      "generation": 4,
+      "observed_pair_count": 10,
+      "rejected_pair_count": 0,
+      "required_pair_count": 10,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "e309b3500199f4642ed5df0439098b06d45893a8c7c62c81f248a1e5ca05e757"
+    },
+    {
+      "accepted_pair_count": 15,
+      "bytes": 631443,
+      "file": "seed-2026100301-generation-05.json",
+      "generation": 5,
+      "observed_pair_count": 15,
+      "rejected_pair_count": 0,
+      "required_pair_count": 15,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "7a3381984fda0ec1ed8f17b620b570b355a1319e1186b71f9480467d4ec82ad3"
+    },
+    {
+      "accepted_pair_count": 16,
+      "bytes": 937354,
+      "file": "seed-2026100301-generation-06.json",
+      "generation": 6,
+      "observed_pair_count": 21,
+      "rejected_pair_count": 5,
+      "required_pair_count": 21,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "bd91d11a0663d1f9a5e162d08eb63d3c549c7611f117c9b512ca6f09238defa7"
+    },
+    {
+      "accepted_pair_count": 21,
+      "bytes": 1248698,
+      "file": "seed-2026100301-generation-07.json",
+      "generation": 7,
+      "observed_pair_count": 28,
+      "rejected_pair_count": 7,
+      "required_pair_count": 28,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "d4a705253264fb702dfa1cb2be0f2ff43b7cf0568058cc920c4a9969df4ff615"
+    },
+    {
+      "accepted_pair_count": 26,
+      "bytes": 1746671,
+      "file": "seed-2026100301-generation-08.json",
+      "generation": 8,
+      "observed_pair_count": 36,
+      "rejected_pair_count": 10,
+      "required_pair_count": 36,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "95dc3017788d03c4d70d3623104cf85bd071fb99b1b3f682eb0cbfd4c62712a2"
+    },
+    {
+      "accepted_pair_count": 35,
+      "bytes": 1997112,
+      "file": "seed-2026100301-generation-09.json",
+      "generation": 9,
+      "observed_pair_count": 45,
+      "rejected_pair_count": 10,
+      "required_pair_count": 45,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "6cc6164b057263b73c204c7673afd9b212169d15b42d2adc8fa1100ffc5e10dc"
+    },
+    {
+      "accepted_pair_count": 44,
+      "bytes": 2434523,
+      "file": "seed-2026100301-generation-10.json",
+      "generation": 10,
+      "observed_pair_count": 55,
+      "rejected_pair_count": 11,
+      "required_pair_count": 55,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "2224f7ea01be5c5ec6ca621a9e053d02848b08f7d18e6cde578e24ed15222858"
+    },
+    {
+      "accepted_pair_count": 54,
+      "bytes": 2175182,
+      "file": "seed-2026100301-generation-11.json",
+      "generation": 11,
+      "observed_pair_count": 66,
+      "rejected_pair_count": 12,
+      "required_pair_count": 66,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "a7a186526c6c99274fa55ddb54b551127448b73c5829cc11fd29469549374bdf"
+    },
+    {
+      "accepted_pair_count": 0,
+      "bytes": 1609,
+      "file": "seed-2026100302-generation-00.json",
+      "generation": 0,
+      "observed_pair_count": 0,
+      "rejected_pair_count": 0,
+      "required_pair_count": 0,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "0dc5c7f6cfa63f6f9a576bff87148bf469882858a36f7699df6a3c088436bbb2"
+    },
+    {
+      "accepted_pair_count": 1,
+      "bytes": 7437,
+      "file": "seed-2026100302-generation-01.json",
+      "generation": 1,
+      "observed_pair_count": 1,
+      "rejected_pair_count": 0,
+      "required_pair_count": 1,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "a6a2a26318aede420824e6434994987a8fa8a994cd280c0aaac8dfc8fc33720c"
+    },
+    {
+      "accepted_pair_count": 3,
+      "bytes": 28747,
+      "file": "seed-2026100302-generation-02.json",
+      "generation": 2,
+      "observed_pair_count": 3,
+      "rejected_pair_count": 0,
+      "required_pair_count": 3,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "fd25de09b9aceefd965d014c9921b1bbd65bdecc0cfe73ece69b6f9817d25497"
+    },
+    {
+      "accepted_pair_count": 6,
+      "bytes": 74081,
+      "file": "seed-2026100302-generation-03.json",
+      "generation": 3,
+      "observed_pair_count": 6,
+      "rejected_pair_count": 0,
+      "required_pair_count": 6,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "c874cda09d66102c4a2f8c9c0ce6eeaa2e5258521a36c5ba4bc46453dfb625b4"
+    },
+    {
+      "accepted_pair_count": 10,
+      "bytes": 194554,
+      "file": "seed-2026100302-generation-04.json",
+      "generation": 4,
+      "observed_pair_count": 10,
+      "rejected_pair_count": 0,
+      "required_pair_count": 10,
+      "schema": "ACSIE.h7.generation_pair_summary.v1",
+      "seed": null,
+      "sha256": "4b66530d0280e508789aa2be150162da418f68b4e5b26dc5d960d3c09fc30756"
+    },
+    {
+      "bytes": 0,
+      "file": "seed-2026100302-generation-05.json",
+      "parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "per_seed_logs_present": false,
+  "probe_logs_present": false,
+  "report_files": {
+    "audit": {
+      "bytes": 84805,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_60_SLOT_AUDIT_20261025.json",
+      "sha256": "d2f037f14fa795df276fb1a79643855161122a7a8a37e6c782b16d88762ed010"
+    },
+    "failure": {
+      "bytes": 118745,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_FAILURE_EVENT_LINES_20261025.log",
+      "sha256": "0fc73708fc90ffe146c314cacaf4272deb4bb892457a2af78daeda6a16c1c798"
+    },
+    "md": {
+      "bytes": 21917,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_60_SLOT_AUDIT_20261025.md",
+      "sha256": "ee1ed596d79cabdb248f090aca8723cc2a69cf47a40a0d2ffc053fed5e495eae"
+    },
+    "receipt": {
+      "bytes": 4334,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_DISPATCH_RECEIPT_20261025.json",
+      "sha256": "a0e71e24900c616110b824d2f5f922f1c03ecb6faa3e90ee1581b0f31a46a640"
+    },
+    "status": {
+      "bytes": 12177,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_TERMINAL_STATUS_20261025.json",
+      "sha256": "ebe75de3d9de2e9a512f8011e1437e2bc306b15d87b55d11e8204408a1c246cb"
+    }
+  },
+  "run_manifest_present": false,
+  "schema": "ACSIE.h7.v22_3.kaggle_harvest_file_manifest.v1",
+  "selected_primitive_id_slots_recovered": 15,
+  "selected_recency_flags_recovered": 15,
+  "terminal_status": "KernelWorkerStatus.ERROR",
+  "timestamp_batch_start_utc": "2026-10-25T21:27:24Z"
+}
