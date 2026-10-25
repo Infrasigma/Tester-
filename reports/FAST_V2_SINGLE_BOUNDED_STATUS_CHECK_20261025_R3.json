@@ -1,0 +1,26 @@
+{
+  "additional_polling_authorized": false,
+  "elapsed_check_seconds": 5.31,
+  "end_utc": "2026-10-25T00:56:18Z",
+  "exit_code": 0,
+  "intended_version": "2 (Fast v2 full runner)",
+  "kernel": "memorican/acsie-gen3-foundry-fast",
+  "launch_elapsed_basis": {
+    "assumption": "The prior poller elapsed value refers to this same uninterrupted Kernel version 2 execution. This is an estimate, not a directly reported launch timestamp.",
+    "elapsed_since_prior_status_observation_seconds": 14252,
+    "estimated_elapsed_hms": "05:14:24.7",
+    "estimated_elapsed_wall_since_launch_seconds": 18864.7,
+    "prior_poller_elapsed_seconds": 4612.7,
+    "prior_status_observed_at_utc": "2026-10-24T20:58:46Z"
+  },
+  "outputs_downloaded": false,
+  "polls_performed": 1,
+  "promotion_status": "DO NOT PROMOTE",
+  "qualification_status": "NOT_ESTABLISHED_BY_THIS_STATUS_CHECK",
+  "schema": "ACSIE.kaggle.single_bounded_status_check.v1",
+  "slug_source": "research/FAST_V2_SINGLE_BOUNDED_STATUS_CHECK_20261025.json",
+  "start_utc": "2026-10-25T00:56:13Z",
+  "status_output": "memorican/acsie-gen3-foundry-fast has status \"KernelWorkerStatus.RUNNING\"",
+  "terminal_status": "RUNNING",
+  "timeout_seconds": 9
+}

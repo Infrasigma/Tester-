@@ -1,0 +1,49 @@
+{
+  "checkpoint_search_conclusion": {
+    "historical_kernel_metadata_examples": [
+      "memorican/acsie-h7-arch-v22-five-seed-qualification-20261023",
+      "memorican/acsie-h7-arch-v22-1-gen9-11-replay-20261023",
+      "memorican/acsie-h7-v22-2-closure-replay-20261023"
+    ],
+    "known_seed_2026100301_checkpoint_input_datasets": [
+      "memorican/acsie-h7-v21-b1-resume-gen9-inputs-20261022",
+      "memorican/acsie-h7-v22-b1-resume-gen9-inputs-20261023"
+    ],
+    "limitations": "The CLI listing returned dataset/kernel metadata only; it did not enumerate each historical kernel output file. No kernel output was downloaded. Therefore absence of separately named datasets is established, but absence of checkpoints inside historical kernel outputs is not established.",
+    "seeds_checked": [
+      2026100302,
+      2026100303,
+      2026100304,
+      2026100305
+    ],
+    "separately_named_seed_checkpoint_datasets_found": []
+  },
+  "outputs_downloaded": false,
+  "promotion_status": "DO NOT PROMOTE",
+  "queries": [
+    {
+      "command": "kaggle datasets list --mine --search acsie-h7 --format json --page-size 200",
+      "end_utc": "2026-10-25T00:57:57Z",
+      "exit_code": 0,
+      "result_count": 13,
+      "start_utc": "2026-10-25T00:57:54Z"
+    },
+    {
+      "command": "kaggle kernels list --mine --search acsie-h7 --format json --page-size 200",
+      "end_utc": "2026-10-25T00:58:00Z",
+      "exit_code": 0,
+      "result_count": 27,
+      "start_utc": "2026-10-25T00:57:57Z"
+    },
+    {
+      "command": "kaggle datasets list --mine --search 202610030 --format json --page-size 200",
+      "end_utc": "2026-10-25T01:00:11Z",
+      "exit_code": 0,
+      "raw_result": "No datasets found",
+      "result_count": 0,
+      "start_utc": "2026-10-25T01:00:08Z"
+    }
+  ],
+  "schema": "ACSIE.kaggle.metadata_only_checkpoint_inventory.v1",
+  "v22_3_kernel_dispatched": false
+}
