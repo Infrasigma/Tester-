@@ -507,10 +507,31 @@ Datasets #11 and #12 both contain the exact same Gen8 checkpoint SHA and byte si
 
 Exactly one bounded kaggle kernels output memorican/acsie-gen3-foundry-fast attempt was made with an 18-second timeout. It exited 124; only a partial _runtime_src tree was downloaded. No run_kaggle_foundry.log, summary, or seed/generation progress file was obtained, so the requested last 30 log lines are unavailable. No second attempt was made.
 
+### Complete pre/post-cap telemetry code (exact source excerpt)
+~~~python
+3923:                         int(_h7_generation_by_id.get(pid, -1)) for pid in direct_ids
+3924:                     ],
+3925:                     "executable_lineage_ids": sorted(set(str(pid) for pid in state[3])),
+3926:                 }
+3927:
+3928:             stats["primary_invention_frontier_diagnostics_complete"] = True
+3929:             stats["primary_invention_target_frontier_pre_cap"] = [
+3930:                 _h7_primary_candidate_diagnostic(state) for state in target_frontier
+3931:             ]
+3932:             stats["primary_invention_target_frontier_post_cap"] = [
+3933:                 _h7_primary_candidate_diagnostic(state) for state in selected_target_frontier
+3934:             ]
+3935:             stats["primary_invention_pair_signature_archive"] = [
+3936:                 _h7_primary_candidate_diagnostic(state)
+3937:                 for _, state in sorted(target_pair_archive_states.items())
+3938:             ]
+3939:         alternatives = tuple((state[0], state[2]) for state in selected_target_frontier)
+~~~
+
 ## Telemetry-only repair and validation
 
-Added complete candidate_details (expression, AST depth/nodes, direct primitive IDs/generations, recency priority) and full candidate_pair_diagnostics, plus selected find_exact_expression archive/cap statistics, to _h7_primitive_invention_summary. The legacy 32-row sample remains unchanged. Added Phase-0 regression coverage that verifies recency ordering and complete candidate diagnostics. This does not alter candidate enumeration, selection, hidden target generation, gates, thresholds, or denominators.
+Added complete candidate_details (expression, AST depth/nodes, direct primitive IDs/generations, recency priority) and full candidate_pair_diagnostics to _h7_primitive_invention_summary. Added primary-invention-only snapshots inside find_exact_expression for the complete discovery-fitting target frontier before and after the alternatives cap, plus every shallow pair-signature archive witness. The legacy 32-row sample remains unchanged. Added Phase-0 regression coverage for full diagnostics and a synthetic Gen11 case proving a recent pair signature survives the behavioral-search archive and cap. These changes are telemetry-only: they do not alter candidate enumeration, selection, hidden target generation, gates, thresholds, or denominators.
 
-Build: runner SHA-256 55583d039574810d1c99f2bc96be6ee4f9549e1686b7237e4dcfc82132853952; embedded source archive SHA-256 b0b1fddc060af109e88ec43b03e9afe95c88f7dc3bcbbcb2b8ecda8b59d9c61c; manifest SHA-256 b00b880f0199a44c29a1cb060c83b41600f7bce8cd1d360677637599549d5550. Phase-0: 24/24 tests passed, compile passed, research_started=false, qualification_slots_evaluated=0, kaggle_dispatch_performed=false.
+Build after complete-frontier telemetry: runner SHA-256 c795fb87c24a47195bfd6376e6b61cfd608c39f0b80b177ae06c0bf5616b9f84; embedded source archive SHA-256 aeb8ea3b3b3a0b4c42f6f9b2ac3014147141f90e06ed498f16685d91c6f857d6; manifest SHA-256 19d7ed1f0e223eeb366008bc028b6146d304325d3a4d43560e3433edef2022f4. Phase-0: 25/25 tests passed, compile passed, research_started=false, qualification_slots_evaluated=0, kaggle_dispatch_performed=false.
 
 Next step: use an authorized remote compute target for a focused Gen11 candidate-diagnostic replay, inspect all 57+ candidate expressions and find_exact_expression archive counts, then decide whether a search-retention algorithm change is justified. Do not launch qualification and do not promote.

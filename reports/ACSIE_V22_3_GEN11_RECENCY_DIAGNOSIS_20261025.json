@@ -1,4 +1,6 @@
 {
+  "algorithm_selection_changed": false,
+  "behavioral_search_pre_post_cap_diagnostics_patch": true,
   "candidate_diagnostics_telemetry_patch": true,
   "checkpoint_bytes": 17589621,
   "complete_candidate_list_persisted_before_patch": false,
@@ -1641,7 +1643,7 @@
   },
   "dataset11_checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
   "dataset12_checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
-  "embedded_archive_sha256": "b0b1fddc060af109e88ec43b03e9afe95c88f7dc3bcbbcb2b8ecda8b59d9c61c",
+  "embedded_archive_sha256": "aeb8ea3b3b3a0b4c42f6f9b2ac3014147141f90e06ed498f16685d91c6f857d6",
   "fast_v2_output_check": {
     "attempts": 1,
     "exit_code": 124,
@@ -1693,10 +1695,10 @@
     "status": "PASSED_GEN0_11_SINGLE_SEED_DIAGNOSTIC"
   },
   "kaggle_dispatch_performed": false,
-  "manifest_sha256": "b00b880f0199a44c29a1cb060c83b41600f7bce8cd1d360677637599549d5550",
+  "manifest_sha256": "19d7ed1f0e223eeb366008bc028b6146d304325d3a4d43560e3433edef2022f4",
   "phase0_tests": {
     "failed": 0,
-    "passed": 24,
+    "passed": 25,
     "qualification_slots_evaluated": 0,
     "research_started": false,
     "status": "PASSED"
@@ -1704,7 +1706,7 @@
   "promotion": "DO NOT PROMOTE",
   "qualification_status": "NOT_QUALIFIED",
   "reason_not_repeated": "Only active Desktop Commander device is the Termux phone; saved doctrine avoids phone compute and user explicitly forbade Kaggle dispatch.",
-  "runner_sha256": "55583d039574810d1c99f2bc96be6ee4f9549e1686b7237e4dcfc82132853952",
+  "runner_sha256": "c795fb87c24a47195bfd6376e6b61cfd608c39f0b80b177ae06c0bf5616b9f84",
   "schema": "ACSIE.h7.v22_3.gen11_recency_diagnosis.v1",
   "selection_uses_holdout_transfer_ood": false,
   "status": "DIAGNOSED_NOT_FIXED_ALGORITHM",
