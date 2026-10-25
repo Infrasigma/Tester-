@@ -1,0 +1,34 @@
+{"archive_sha256": "802c102ffcd9187c91aafa9cd7e23ef81ff745ad5f32e6dae7d1a9b04b960e28", "checks": {"frozen_seed_timeout_exact": true, "frozen_seeds_exact": true, "full_pair_denominator_frozen": true, "generations_exact": true, "gpu_disabled": true, "holdout_transfer_ood_not_used_for_selection": true, "internet_disabled": true, "kernel_slug_bound": true, "metadata_digest_bound": true, "no_dataset_sources": true, "no_kernel_sources": true, "private_kernel": true, "promotion_locked": true, "slots_exact": true, "target_access_during_discovery_false": true, "thresholds_denominators_unchanged": true}, "event": "V22_3_RUNNER_PREFLIGHT", "frozen_seeds": [2026100301, 2026100302, 2026100303, 2026100304, 2026100305], "gate_changes": false, "generations_per_seed": 12, "kernel_id": "memorican/acsie-h7-v22-3", "manifest_sha256": "5da98c661e020e3a8e699e3958b2eac34a4fd9539d244b7f696a36f6dcf9551d", "policy": {"code_file": "run_acsie_h7_v22_3.py", "competition_sources": [], "dataset_sources": [], "enable_gpu": false, "enable_internet": false, "id": "memorican/acsie-h7-v22-3", "is_private": true, "kernel_sources": [], "kernel_type": "script", "language": "python", "title": "ACSIE H7 V22.3 Frozen Qualification"}, "preflight_status": "PASSED", "promotion": "DO NOT PROMOTE", "required_pair_denominator": "g*(g+1)/2", "seed_generation_slots": 60, "target_access_during_discovery": false}
+test_candidate_detail_records_do_not_change_pair_denominator (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_candidate_detail_records_do_not_change_pair_denominator) ... ok
+test_declared_generation_filter_ignores_unrequested_summary_generations (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_declared_generation_filter_ignores_unrequested_summary_generations) ... ok
+test_declared_generation_with_no_pair_events_is_incomplete (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_declared_generation_with_no_pair_events_is_incomplete) ... ok
+test_duplicate_pair_index_or_identity_is_inconsistent (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_duplicate_pair_index_or_identity_is_inconsistent) ... ok
+test_gen9_reconciles_37_of_45_when_raw_rows_support_it (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_gen9_reconciles_37_of_45_when_raw_rows_support_it) ... ok
+test_missing_pair_is_incomplete_and_does_not_shrink_denominator (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_missing_pair_is_incomplete_and_does_not_shrink_denominator) ... ok
+test_missing_raw_rows_are_incomplete_not_a_rate_mismatch (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_missing_raw_rows_are_incomplete_not_a_rate_mismatch) ... ok
+test_parses_events_from_kaggle_stream_json (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_parses_events_from_kaggle_stream_json) ... ok
+test_reported_rate_mismatch_is_inconsistent (test_h7_closure_telemetry_audit.ClosureTelemetryAuditTests.test_reported_rate_mismatch_is_inconsistent) ... ok
+test_frontier_ranks_recency_eligible_primary_pair_ahead_of_stale_pair (test_h7_v22_2_overlay_regressions.H7V22OverlayRegressionTests.test_frontier_ranks_recency_eligible_primary_pair_ahead_of_stale_pair) ... ok
+test_open_ended_overlay_checkpoint_keeps_primary_chain_order (test_h7_v22_2_overlay_regressions.H7V22OverlayRegressionTests.test_open_ended_overlay_checkpoint_keeps_primary_chain_order) ... ok
+test_overlay_export_from_state_preserves_ordered_chain_and_bootstrap_primitives (test_h7_v22_2_overlay_regressions.H7V22OverlayRegressionTests.test_overlay_export_from_state_preserves_ordered_chain_and_bootstrap_primitives) ... ok
+test_pair_summary_records_all_flags_with_zero_candidate_details (test_h7_v22_2_overlay_regressions.H7V22OverlayRegressionTests.test_pair_summary_records_all_flags_with_zero_candidate_details) ... ok
+test_primary_pair_prefix_survives_3000_expression_limit (test_h7_v22_2_overlay_regressions.H7V22OverlayRegressionTests.test_primary_pair_prefix_survives_3000_expression_limit) ... ok
+test_behavioral_search_records_pair_archive_before_and_after_cap (test_h7_v22_3_repairs.H7V223RepairTests.test_behavioral_search_records_pair_archive_before_and_after_cap) ... ok
+test_checkpoint_closure_trap_boundary_has_competent_lineage_candidate (test_h7_v22_3_repairs.H7V223RepairTests.test_checkpoint_closure_trap_boundary_has_competent_lineage_candidate) ... ok
+test_closure_telemetry_distinguishes_generated_pair_from_unqualified_pair (test_h7_v22_3_repairs.H7V223RepairTests.test_closure_telemetry_distinguishes_generated_pair_from_unqualified_pair) ... ok
+test_commutative_search_keeps_unique_asymmetric_depth_pair (test_h7_v22_3_repairs.H7V223RepairTests.test_commutative_search_keeps_unique_asymmetric_depth_pair) ... ok
+test_explicit_bootstrap_root_is_protected_outside_primary_chain (test_h7_v22_3_repairs.H7V223RepairTests.test_explicit_bootstrap_root_is_protected_outside_primary_chain) ... ok
+test_memoized_eval_is_bit_identical_and_reuses_shared_nodes (test_h7_v22_3_repairs.H7V223RepairTests.test_memoized_eval_is_bit_identical_and_reuses_shared_nodes) ... ok
+test_primary_invention_priority_prefers_recent_two_parent_chain (test_h7_v22_3_repairs.H7V223RepairTests.test_primary_invention_priority_prefers_recent_two_parent_chain) ... ok
+test_primary_pair_recency_gate_rejects_stale_gen11_pair_8_3 (test_h7_v22_3_repairs.H7V223RepairTests.test_primary_pair_recency_gate_rejects_stale_gen11_pair_8_3) ... ok
+test_primary_recency_diagnostics_persist_every_returned_candidate (test_h7_v22_3_repairs.H7V223RepairTests.test_primary_recency_diagnostics_persist_every_returned_candidate) ... ok
+test_retained_representation_error_rejects_primitive_map_in_hidden_macros_slot (test_h7_v22_3_repairs.H7V223RepairTests.test_retained_representation_error_rejects_primitive_map_in_hidden_macros_slot) ... ok
+test_scoped_depth4_recency_continuation_preserves_primary_pair_under_cap (test_h7_v22_3_repairs.H7V223RepairTests.test_scoped_depth4_recency_continuation_preserves_primary_pair_under_cap) ... ok
+test_seed0304_gen6_probe_trap_fixture_prefers_executable_lineage (test_h7_v22_3_repairs.H7V223RepairTests.test_seed0304_gen6_probe_trap_fixture_prefers_executable_lineage) ... ok
+test_selected_candidate_gate_does_not_promote_other_lineage_candidate (test_h7_v22_3_repairs.H7V223RepairTests.test_selected_candidate_gate_does_not_promote_other_lineage_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 1.615s
+
+OK
+{"archive_sha256": "802c102ffcd9187c91aafa9cd7e23ef81ff745ad5f32e6dae7d1a9b04b960e28", "compile_status": "PASSED", "event": "V22_3_PHASE0_REPORT", "manifest_sha256": "5da98c661e020e3a8e699e3958b2eac34a4fd9539d244b7f696a36f6dcf9551d", "phase0_status": "PASSED", "promotion": "DO NOT PROMOTE", "qualification_slots_evaluated": 0, "regression_exit_code": 0, "research_started": false, "schema": "ACSIE.h7.v22_3.phase0_report.v1"}

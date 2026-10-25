@@ -1,0 +1,55 @@
+{
+  "probe_results": [
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 0,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "selected_process_id": "proc:34b007b7465521eced6f"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 1,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:22db8a28d488b47c499b",
+        "prim:9c37d71e94d0744e366d"
+      ],
+      "selected_process_id": "proc:34e1b72ad3fb7f145cc4"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 2,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:26db1445ec125612c47d"
+      ],
+      "selected_process_id": "proc:40c8d4087ef92fa99e30"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 3,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:1a7f483ad996e0c26f19",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "selected_process_id": "proc:4ecf33402d8c3b699403"
+    }
+  ],
+  "probe_traps": 0,
+  "promotion": "DO NOT PROMOTE",
+  "schema": "ACSIE.h7.v22_3.gen11_probe_partial.v1"
+}
