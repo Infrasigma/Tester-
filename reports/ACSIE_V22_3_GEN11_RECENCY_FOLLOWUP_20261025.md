@@ -80,6 +80,16 @@ is globally equivalent to the Gen11 target. The numerical replay's maximum error
 - Pair-signature archive depth: 2 only; archived signatures: 56
 - Distinct (AST depth, direct signature, parent generations, outcome) tuples: 212
 
+All 99 raw two-macro target matches group as follows; none has Gen9 or Gen10 as a direct parent:
+
+| Parent generations | Admitted before later pruning | Subtree-output-degeneracy pruned | Total |
+|---|---:|---:|---:|
+| [3,4] | 28 | 0 | 28 |
+| [3,8] | 7 | 42 | 49 |
+| [3,6] | 21 | 0 | 21 |
+| [2,3] | 1 | 0 | 1 |
+| **Total** | **57** | **42** | **99** |
+
 A separate post-hoc counterfactual, not used in search or selection, evaluates:
 
     (prim:1c9f1097608c3f094303 + prim:26db1445ec125612c47d) *
@@ -92,7 +102,26 @@ It has AST depth 4, direct parent generations [9,10], and maximum absolute error
 
 The search's recency-restricted generic continuation was limited to depth <= first_exact_target_depth + 1. Gen11 finds an older exact target at depth 2; that condition only continues the generic lane through depth 3, while the counterfactual above has depth 4. In addition, the commutative generic loop skipped whenever the left structural key sorted after the right key, even when child AST depths differed and the deeper/shallower pair had only one visit in the depth-frontier loop.
 
-A discovery-only patch now (a) allows recency-restricted continuation through two levels beyond the first stale exact target, bounded by the existing search depth and binary-combination budget, and (b) reorients unique asymmetric-depth commutative pairs rather than dropping them. The frozen recency gate remains max(pair_gens) >= generation - 1, exactly two direct primary-chain IDs, with legacy exclusions {9:{4,7}, 10:{1,4}, 11:{3,4}} unchanged.
+The discovery-only patch changes the continuation predicate to:
+
+    continue_generic_for_recency = bool(
+        primary_invention_diagnostics_enabled
+        and not eligible_primary_pair_target_found
+        and (
+            first_exact_target_depth is None
+            or depth <= first_exact_target_depth + 2
+        )
+    )
+
+It also uses this pure ordering rule for commutative pairs:
+
+    if left_key <= right_key:
+        return False, False
+    if left_ast_depth == right_ast_depth:
+        return True, False
+    return False, True
+
+The return tuple means (skip_duplicate, swap_operands). Equal-depth operands are visited in both orders by the depth frontier, but for unequal depths the deeper operand is only in the current frontier; canonical ordering must reorient that pair rather than silently skip its sole visit. The frozen recency gate remains max(pair_gens) >= generation - 1, exactly two direct primary-chain IDs, with legacy exclusions {9:{4,7}, 10:{1,4}, 11:{3,4}} unchanged.
 
 **Post-fix replay status: NOT VERIFIED.** Two post-fix primary-only attempts exceeded the lightweight-device budget and were stopped without an output artifact (one at about 98 seconds with memory reaching 23.6%; another at about 61 seconds). A separate synthetic search-path regression fixture also exceeded the local budget and was stopped at about 43 seconds, so it was removed from Phase-0 rather than leaving a slow/hanging test. No post-fix search result is inferred from any interrupted attempt. The final code change has unit/Phase-0 coverage, but must be replay-verified on suitable remote compute before it can be considered a demonstrated fix. No Kaggle kernel was launched.
 

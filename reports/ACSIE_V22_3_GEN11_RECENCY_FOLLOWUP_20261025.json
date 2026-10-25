@@ -24,6 +24,40 @@
     "raw_two_macro_match_count": 99,
     "recency_eligible_pre_cap": 0,
     "recency_eligible_raw_matches": 0,
+    "two_macro_match_parent_generation_counts": [
+      {
+        "admitted_before_later_pruning": 28,
+        "pair_gens": [
+          3,
+          4
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      },
+      {
+        "admitted_before_later_pruning": 7,
+        "pair_gens": [
+          3,
+          8
+        ],
+        "subtree_output_degeneracy_pruned": 42
+      },
+      {
+        "admitted_before_later_pruning": 21,
+        "pair_gens": [
+          3,
+          6
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      },
+      {
+        "admitted_before_later_pruning": 1,
+        "pair_gens": [
+          2,
+          3
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      }
+    ],
     "used_for_search_or_selection": false,
     "wall_seconds": 15.934715
   },
