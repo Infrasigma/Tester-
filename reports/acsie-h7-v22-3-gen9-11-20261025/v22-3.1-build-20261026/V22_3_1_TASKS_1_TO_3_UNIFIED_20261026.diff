@@ -1,0 +1,785 @@
+diff --git a/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py b/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
+index 5632155..53aab1d 100644
+--- a/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
++++ b/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
+@@ -145,6 +145,18 @@ GENERATIONS_PER_SEED = 12
+ SEED_TIMEOUT_SECONDS = 7200
+ TARGET_ACCESS_DURING_DISCOVERY = False
+
++_FINAL_RUN_CONTEXT = {
++    "started_epoch_seconds": time.time(),
++    "seed_results": [],
++    "seed_summaries": {},
++    "seed_generation_slots": [],
++    "slot_status_counts": {},
++    "run_status": None,
++    "terminal_exception": None,
++    "qualification_status": "NOT_QUALIFIED",
++    "promotion": "DO NOT PROMOTE",
++}
++
+
+ def sha256(raw):
+     return hashlib.sha256(raw).hexdigest()
+@@ -337,6 +349,16 @@ def run_frozen_qualification(root, source_root):
+     seed_results = []
+     seed_summaries = {}
+     seed_events = {}
++    _FINAL_RUN_CONTEXT.update({
++        "output_dir": str(output_dir),
++        "started_epoch_seconds": overall_started,
++        "seed_results": seed_results,
++        "seed_summaries": seed_summaries,
++        "seed_events": seed_events,
++        "seed_generation_slots": [],
++        "slot_status_counts": {},
++        "run_status": None,
++    })
+     for seed in FROZEN_SEEDS:
+         seed_log = output_dir / f"acsie-h7-v22-3-seed-{seed}.log"
+         command = [
+@@ -572,6 +594,17 @@ def run_frozen_qualification(root, source_root):
+         "source_manifest_sha256": SOURCE_MANIFEST_SHA256,
+         "promotion": "DO NOT PROMOTE",
+     }
++    _FINAL_RUN_CONTEXT.update({
++        "run_status": run_status,
++        "seed_results": seed_results,
++        "seed_summaries": seed_summaries,
++        "seed_events": seed_events,
++        "seed_generation_slots": slot_rows,
++        "slot_status_counts": slot_counts,
++        "qualification_status": run_status["qualification_status"],
++        "scientific_status": scientific_status,
++        "completed_epoch_seconds": time.time(),
++    })
+     (output_dir / "acsie-h7-v22-3-slot-manifest.json").write_text(
+         json.dumps({
+             "schema": "ACSIE.h7.v22_3.seed_generation_slot_manifest.v1",
+@@ -592,6 +625,113 @@ def run_frozen_qualification(root, source_root):
+     })
+     return 0 if scientific_status == "PASSED" else 2
+
++def _write_json_atomic(path, payload):
++    path = Path(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    temporary = path.with_suffix(path.suffix + ".tmp")
++    temporary.write_text(json.dumps(payload, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8")
++    temporary.replace(path)
++
++
++def _write_final_manifests(output_dir):
++    """Persist provenance and a fail-closed summary even after a child crash."""
++    output_dir = Path(output_dir)
++    output_dir.mkdir(parents=True, exist_ok=True)
++    ctx = _FINAL_RUN_CONTEXT
++    now = time.time()
++    runner_digest = None
++    try:
++        runner_digest = sha256(Path(__file__).read_bytes())
++    except OSError:
++        pass
++    status = ctx.get("run_status") if isinstance(ctx.get("run_status"), dict) else {}
++    seed_results = list(ctx.get("seed_results") or [])
++    summaries = dict(ctx.get("seed_summaries") or {})
++    slot_rows = list(ctx.get("seed_generation_slots") or [])
++    slot_counts = dict(ctx.get("slot_status_counts") or {})
++    observed = {(int(r.get("seed", -1)), int(r.get("generation", -1))): r
++                for r in slot_rows if isinstance(r, dict)}
++    durable_slots = []
++    for seed in FROZEN_SEEDS:
++        for generation in range(GENERATIONS_PER_SEED):
++            row = observed.get((seed, generation))
++            if row is None:
++                row = {
++                    "seed": seed, "generation": generation,
++                    "required_pair_count": generation * (generation + 1) // 2,
++                    "observed_pair_count": 0, "required_probe_count": 4,
++                    "observed_probe_count": 0, "slot_complete": False,
++                    "slot_status": "INCONCLUSIVE", "slot_gate_passed": False,
++                    "evidence_present": False, "promotion": "DO NOT PROMOTE",
++                }
++            durable_slots.append(row)
++    qualification_status = status.get("qualification_status", ctx.get("qualification_status", "NOT_QUALIFIED"))
++    if qualification_status != "QUALIFIED" or len(durable_slots) != 60 or any(r.get("slot_status") != "PASSED" for r in durable_slots):
++        qualification_status = "NOT_QUALIFIED"
++    manifest = {
++        "schema": "ACSIE.h7.v22_3.run_manifest.v1",
++        "kernel_id": KERNEL_POLICY.get("id"),
++        "run_started_epoch_seconds": ctx.get("started_epoch_seconds"),
++        "run_finished_epoch_seconds": now,
++        "elapsed_seconds": round(now - float(ctx.get("started_epoch_seconds", now)), 3),
++        "executed_archive_sha256": EMBEDDED_SOURCE_SHA256,
++        "source_manifest_sha256": SOURCE_MANIFEST_SHA256,
++        "runner_sha256": runner_digest,
++        "frozen_seeds": FROZEN_SEEDS,
++        "generations_per_seed": GENERATIONS_PER_SEED,
++        "expected_seed_generation_slots": 60,
++        "seed_results": seed_results,
++        "seed_generation_slots": durable_slots,
++        "slot_status_counts": slot_counts,
++        "target_access_during_discovery": False,
++        "pair_denominator": "g*(g+1)/2",
++        "qualification_status": qualification_status,
++        "scientific_status": status.get("scientific_status", "INCOMPLETE"),
++        "terminal_exception": ctx.get("terminal_exception"),
++        "promotion": "DO NOT PROMOTE",
++    }
++    summary = {
++        "schema": "ACSIE.h7.v22_3.foundry_summary.v1",
++        "executed_archive_sha256": EMBEDDED_SOURCE_SHA256,
++        "source_manifest_sha256": SOURCE_MANIFEST_SHA256,
++        "runner_sha256": runner_digest,
++        "target_access_during_discovery": False,
++        "frozen_seeds": FROZEN_SEEDS,
++        "generations_per_seed": GENERATIONS_PER_SEED,
++        "expected_seed_generation_slots": 60,
++        "seed_results": seed_results,
++        "seed_summaries": summaries,
++        "seed_generation_slots": durable_slots,
++        "slot_status_counts": slot_counts,
++        "qualification_status": qualification_status,
++        "terminal_exception": ctx.get("terminal_exception"),
++        "promotion": "DO NOT PROMOTE",
++    }
++    _write_json_atomic(output_dir / "run_manifest.json", manifest)
++    _write_json_atomic(output_dir / "foundry-summary.json", summary)
++    # The ordinary qualification files are also made durable on exception paths.
++    _write_json_atomic(output_dir / "acsie-h7-v22-3-slot-manifest.json", {
++        "schema": "ACSIE.h7.v22_3.seed_generation_slot_manifest.v1",
++        "expected_slot_count": 60, "slot_count": len(durable_slots),
++        "seed_generation_slots": durable_slots, "slot_status_counts": slot_counts,
++        "promotion": "DO NOT PROMOTE",
++    })
++    final_status = dict(status)
++    final_status.update({
++        "qualification_status": qualification_status,
++        "target_access_during_discovery": False,
++        "source_archive_sha256": EMBEDDED_SOURCE_SHA256,
++        "source_manifest_sha256": SOURCE_MANIFEST_SHA256,
++        "runner_sha256": runner_digest,
++        "seed_results": seed_results,
++        "seed_generation_slots": durable_slots,
++        "slot_status_counts": slot_counts,
++        "terminal_exception": ctx.get("terminal_exception"),
++        "promotion": "DO NOT PROMOTE",
++    })
++    _write_json_atomic(output_dir / "acsie-h7-v22-3-qualification-status.json", final_status)
++
++
+ def main():
+     parser = argparse.ArgumentParser()
+     parser.add_argument("--phase0-only", action="store_true",
+@@ -617,12 +757,43 @@ def main():
+
+     is_kaggle = Path("/kaggle/working").is_dir()
+     if is_kaggle:
+-        root = Path("/kaggle/working/acsie-h7-v22-3-source")
+-        root.mkdir(parents=True, exist_ok=True)
+-        _, source_root = extract_verified(root)
+-        if args.phase0_only:
+-            raise RuntimeError("--phase0-only is only permitted in local staging")
+-        raise SystemExit(run_frozen_qualification(root, source_root))
++        output_dir = Path("/kaggle/working")
++        root = output_dir / "acsie-h7-v22-3-source"
++        exit_code = 2
++        _FINAL_RUN_CONTEXT.update({
++            "started_epoch_seconds": time.time(),
++            "output_dir": str(output_dir),
++            "qualification_status": "NOT_QUALIFIED",
++            "promotion": "DO NOT PROMOTE",
++        })
++        try:
++            root.mkdir(parents=True, exist_ok=True)
++            _, source_root = extract_verified(root)
++            if args.phase0_only:
++                raise RuntimeError("--phase0-only is only permitted in local staging")
++            exit_code = run_frozen_qualification(root, source_root)
++        except BaseException as exc:
++            _FINAL_RUN_CONTEXT["terminal_exception"] = {
++                "type": type(exc).__name__, "message": str(exc)
++            }
++            _FINAL_RUN_CONTEXT["qualification_status"] = "NOT_QUALIFIED"
++            emit("V22_3_RUN_ABORTED", exception_type=type(exc).__name__,
++                 message=str(exc), promotion="DO NOT PROMOTE")
++            exit_code = 2
++        finally:
++            try:
++                _write_final_manifests(output_dir)
++                emit("V22_3_FINAL_MANIFESTS_WRITTEN",
++                     run_manifest=str(output_dir / "run_manifest.json"),
++                     foundry_summary=str(output_dir / "foundry-summary.json"),
++                     qualification_status=_FINAL_RUN_CONTEXT.get("qualification_status", "NOT_QUALIFIED"),
++                     promotion="DO NOT PROMOTE")
++            except BaseException as manifest_exc:
++                emit("V22_3_FINAL_MANIFEST_WRITE_FAILED",
++                     exception_type=type(manifest_exc).__name__,
++                     message=str(manifest_exc), promotion="DO NOT PROMOTE")
++                exit_code = 2
++        raise SystemExit(exit_code)
+
+     with tempfile.TemporaryDirectory(prefix="acsie-h7-v22-3-phase0-") as tmp:
+         root = Path(tmp)
+diff --git a/research/recovered/h7_v22_2_runtime/source/cognitive_core/open_ended_growth.py b/research/recovered/h7_v22_2_runtime/source/cognitive_core/open_ended_growth.py
+index ed8fd84..9eceb63 100644
+--- a/research/recovered/h7_v22_2_runtime/source/cognitive_core/open_ended_growth.py
++++ b/research/recovered/h7_v22_2_runtime/source/cognitive_core/open_ended_growth.py
+@@ -31,6 +31,28 @@ from .recursive_cognitive_compiler import (
+ )
+
+
++def canonical_parent_generation_details(primitives, parent_ids):
++    """Return canonical parent IDs/generations from one runtime primitive map.
++
++    Sort and deduplicate IDs before deriving generations so invention events and
++    accepted generation rows use the same provenance extraction.
++    """
++    ids = sorted({str(pid) for pid in (parent_ids or ()) if pid is not None})
++    details = []
++    for pid in ids:
++        primitive = primitives.get(pid) if hasattr(primitives, "get") else None
++        try:
++            generation = int(getattr(primitive, "generation", -1)) if primitive is not None else -1
++        except (TypeError, ValueError):
++            generation = -1
++        details.append({"parent_id": pid, "generation": generation})
++    return {
++        "parent_ids": ids,
++        "parent_generations": [item["generation"] for item in details],
++        "parent_details": details,
++    }
++
++
+ def _h7_pair_signature_preserving_specs(
+     specs,
+     non_pair_cap: int = 8,
+@@ -336,11 +358,10 @@ class OpenEndedRecursiveCognitiveCompiler(RecursiveCognitiveCompiler):
+                 if node.get("op") == "macro" and node.get("id") is not None
+             }
+             recency_priority = self._h7_primary_pair_recency_priority(expression)
+-            direct_parent_generations = [
+-                int(getattr(self.primitives.get(pid), "generation", -1))
+-                if self.primitives.get(pid) is not None else -1
+-                for pid in sorted(direct_ids)
+-            ]
++            canonical_parents = canonical_parent_generation_details(
++                self.primitives, direct_ids
++            )
++            direct_parent_generations = canonical_parents["parent_generations"]
+             detail = {
+                 "expression": copy.deepcopy(expression),
+                 "ast_depth": int(ast_depth(expression)),
+@@ -397,11 +418,11 @@ class OpenEndedRecursiveCognitiveCompiler(RecursiveCognitiveCompiler):
+         if int(self.generation) in (9, 10, 11):
+             selected = frontier[0] if frontier else None
+             selected_ids = list(getattr(selected, "parent_ids", ())) if selected is not None else []
+-            selected_generations = [
+-                int(getattr(self.primitives.get(pid), "generation", -1))
+-                if self.primitives.get(pid) is not None else -1
+-                for pid in selected_ids
+-            ]
++            selected_parent_details = canonical_parent_generation_details(
++                self.primitives, selected_ids
++            )
++            selected_ids = selected_parent_details["parent_ids"]
++            selected_generations = selected_parent_details["parent_generations"]
+             self._h7_primitive_invention_summary = {
+                 "generation": int(self.generation),
+                 "source": "OpenEndedRecursiveCognitiveCompiler.invent_primitive",
+diff --git a/research/recovered/h7_v22_2_runtime/source/cognitive_core/recursive_cognitive_compiler.py b/research/recovered/h7_v22_2_runtime/source/cognitive_core/recursive_cognitive_compiler.py
+index 3b44f28..5f26a6e 100644
+--- a/research/recovered/h7_v22_2_runtime/source/cognitive_core/recursive_cognitive_compiler.py
++++ b/research/recovered/h7_v22_2_runtime/source/cognitive_core/recursive_cognitive_compiler.py
+@@ -23,6 +23,28 @@ def ast_nodes(e: Mapping[str, Any]) -> int:
+     if op in {"abs","neg","threshold"}: return 1 + ast_nodes(e["arg"])
+     return 1 + ast_nodes(e["left"])+ast_nodes(e["right"])
+
++
++def h7_primary_pair_rank_prefix(
++    is_minimal_primary_pair: bool,
++    primary_lineage_size: int,
++    expanded_depth: int,
++    expanded_nodes: int,
++) -> tuple[int, int, int, int]:
++    """Rank exact-fit primary-pair expressions without collapsing lineage aliases.
++
++    Only members of the minimal direct-primary-pair tier receive this tie-break.
++    Within that tier, preserve executable primary-chain identity before unrolled
++    syntax cost; otherwise a shallow ancestor alias can outrank the live macro
++    whose lineage is actually being tested. No target-pair labels or validation
++    outcomes are inputs to this rank prefix.
++    """
++    return (
++        0 if is_minimal_primary_pair else 1,
++        -int(primary_lineage_size) if is_minimal_primary_pair else 0,
++        int(expanded_depth),
++        int(expanded_nodes),
++    )
++
+ def eval_expr(e: Mapping[str, Any], inputs: Mapping[str,float], macros: Mapping[str, Mapping[str,Any]]) -> float:
+     op=e["op"]
+     if op=="const": return float(e["value"])
+@@ -913,18 +935,21 @@ class RecursiveCognitiveCompiler:
+             )
+             # Process/closure synthesis is not a primary-invention recency
+             # selector. Every retained expression is already an exact fit on
+-            # the combined discovery+selection rows. Rank primary direct pairs
+-            # by minimal *unrolled executable* cost first; never prefer a newer
+-            # or longer transitive macro chain merely because it has more
+-            # ancestors. Transfer/OOD and the closure target pair are not read.
++            # the combined discovery+selection rows. Within the minimal direct-
++            # primary-pair tier, preserve executable primary-chain lineage before
++            # comparing unrolled cost. This prevents a shallow ancestor alias from
++            # outranking a lineage-preserving macro solely for being shorter.
++            # No expected-pair label, holdout, transfer, or OOD result is read.
+             expanded_depth, expanded_nodes = _expanded_ast_metrics(item[1])
+             return (
+-                0 if is_minimal_primary_pair else 1,
+-                expanded_depth,
+-                expanded_nodes,
++                *h7_primary_pair_rank_prefix(
++                    is_minimal_primary_pair,
++                    _primary_lineage_size(item),
++                    expanded_depth,
++                    expanded_nodes,
++                ),
+                 int(ast_depth(item[1])),
+                 int(ast_nodes(item[1])),
+-                _primary_lineage_size(item),
+                 len(json.dumps(item[1], sort_keys=True, separators=(",", ":"))),
+                 item[0][0],
+                 json.dumps(item[1], sort_keys=True, separators=(",", ":")),
+diff --git a/research/recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py b/research/recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py
+index 92e60a7..24f4277 100644
+--- a/research/recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py
++++ b/research/recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py
+@@ -6,13 +6,17 @@ import json
+ import os
+ import random
+ import statistics
++import sys
+ import time
+ from dataclasses import asdict, dataclass, is_dataclass
+ from pathlib import Path
+ from hashlib import sha256
+ from typing import Any
+
+-from cognitive_core.open_ended_growth import OpenEndedRecursiveCognitiveCompiler
++from cognitive_core.open_ended_growth import (
++    OpenEndedRecursiveCognitiveCompiler,
++    canonical_parent_generation_details,
++)
+ from lab.exact_checkpoint import load_checkpoint, restore_checkpoint, save_checkpoint
+ from cognitive_core.recursive_cognitive_compiler import (
+     RecursiveCognitiveCompiler,
+@@ -31,6 +35,7 @@ from lab.h7_exact_audit import memoized_eval_expr
+ BASE_BIN_OPS = ("add", "sub", "mul", "max", "min")
+ UNARY_OPS = ("abs", "neg")
+ KEYS = ("x", "y", "z")
++_H7_ACTIVE_GENERATION_CONTEXT: dict[str, Any] = {}
+
+
+ @dataclass(frozen=True)
+@@ -468,6 +473,80 @@ def _h7_write_pair_summary(seed: int, generation: int, summary: dict[str, Any])
+         return None
+
+
++def _h7_write_incomplete_pair_summary(seed, generation, required_pair_count, pair_rows, reason, errors=None, invention_rejection_reason=None, invention_candidate_id=None):
++    """Atomically persist an explicitly incomplete pair audit; never label it valid."""
++    summary = {
++        "schema": "ACSIE.h7.generation_pair_summary.incomplete.v1",
++        "seed": int(seed),
++        "generation": int(generation),
++        "required_pair_count": int(required_pair_count),
++        "observed_pair_count": len(pair_rows),
++        "missing_pair_count": max(0, int(required_pair_count) - len(pair_rows)),
++        "pair_rows": pair_rows,
++        "audit_status": "INCOMPLETE",
++        "incomplete_reason": str(reason),
++        "errors": list(errors or []),
++        "primary_invention_rejection_reason": invention_rejection_reason,
++        "primary_invention_candidate_id": invention_candidate_id,
++        "target_access_during_discovery": False,
++        "promotion": "DO NOT PROMOTE",
++    }
++    output_dir = Path(os.environ.get("ACSIE_H7_PAIR_AUDIT_DIR", "h7-pair-audit-summaries"))
++    try:
++        output_dir.mkdir(parents=True, exist_ok=True)
++        target = output_dir / f"seed-{seed}-generation-{generation:02d}.json"
++        temporary = target.with_suffix(".json.tmp")
++        temporary.write_text(json.dumps(summary, sort_keys=True, indent=2, default=_h7_json_default) + "\n", encoding="utf-8")
++        temporary.replace(target)
++        return str(target), summary
++    except OSError as exc:
++        summary["errors"].append("incomplete_pair_audit_write_error: " + str(exc))
++        return None, summary
++
++
++def _h7_unhandled_generation_exception(exc_type, exc_value, exc_traceback):
++    context = dict(_H7_ACTIVE_GENERATION_CONTEXT)
++    try:
++        if context.get("seed") is not None and context.get("generation") is not None:
++            seed = int(context["seed"])
++            generation = int(context["generation"])
++            required = int(context.get("required_pair_count", generation * (generation + 1) // 2))
++            output_dir = Path(os.environ.get("ACSIE_H7_PAIR_AUDIT_DIR", "h7-pair-audit-summaries"))
++            existing = output_dir / f"seed-{seed}-generation-{generation:02d}.json"
++            complete_already_written = False
++            try:
++                prior = json.loads(existing.read_text(encoding="utf-8"))
++                complete_already_written = (
++                    prior.get("schema") == "ACSIE.h7.generation_pair_summary.v1"
++                    and prior.get("required_pair_count") == required
++                    and prior.get("observed_pair_count") == required
++                )
++            except Exception:
++                pass
++            if not complete_already_written:
++                message = type(exc_value).__name__ + ": " + str(exc_value)
++                _h7_write_incomplete_pair_summary(
++                    seed, generation, required,
++                    list(context.get("pair_rows") or []),
++                    "unhandled_generation_exception",
++                    errors=[message],
++                    invention_rejection_reason=context.get("invention_rejection_reason"),
++                    invention_candidate_id=context.get("invention_candidate_id"),
++                )
++            _h7_emit_event(
++                "GENERATION_UNHANDLED_EXCEPTION", seed=seed, generation=generation,
++                exception_type=exc_type.__name__, message=str(exc_value),
++                complete_pair_audit_already_written=complete_already_written,
++                promotion="DO NOT PROMOTE",
++            )
++    except BaseException:
++        pass
++    sys.__excepthook__(exc_type, exc_value, exc_traceback)
++
++
++sys.excepthook = _h7_unhandled_generation_exception
++
++
+ def run_seed(
+     seed: int,
+     generations: int,
+@@ -546,6 +625,15 @@ def run_seed(
+         return {"op": "macro", "id": cap.hidden_id}
+
+     for generation in range(start_generation, generations):
++        _H7_ACTIVE_GENERATION_CONTEXT.clear()
++        _H7_ACTIVE_GENERATION_CONTEXT.update({
++            "seed": seed,
++            "generation": generation,
++            "required_pair_count": generation * (generation + 1) // 2,
++            "pair_rows": [],
++            "invention_candidate_id": None,
++            "invention_rejection_reason": None,
++        })
+         generation_wall_started = time.perf_counter()
+         learner.generation = generation
+         generation_begin_metrics = _h7_runtime_metrics(learner)
+@@ -665,20 +753,22 @@ def run_seed(
+             expression_cap=3000,
+         )
+         primitive = learner.invent_primitive(discovery_train, hold, transfer)
+-        _h7_emit_event(
+-            "PRIMARY_PRIMITIVE_INVENTION_COMPLETE",
+-            seed=seed,
+-            generation=generation,
+-            elapsed_seconds=round(time.perf_counter() - primitive_invention_started, 6),
+-            primitive_found=primitive is not None,
+-            discovery_candidate_count=len(getattr(learner, "last_primitive_candidate_frontier", ())),
+-            expression_enumeration_summary=dict(
+-                getattr(learner, "_expr_enumeration_summary", {}) or {}
+-            ),
+-            primary_invention_summary=dict(
+-                getattr(learner, "_h7_primitive_invention_summary", {}) or {}
+-            ),
++        invention_elapsed_seconds = round(time.perf_counter() - primitive_invention_started, 6)
++        # This is the unvalidated, discovery-ranked invention candidate only.
++        # Final accepted selection is logged after post-selection admission so a
++        # single "selected" field cannot ambiguously name two different stages.
++        discovery_ranked_invention_summary = dict(
++            getattr(learner, "_h7_primitive_invention_summary", {}) or {}
++        )
++        discovery_ranked_candidate_id = (
++            discovery_ranked_invention_summary.get("selected_primitive_id")
++            or getattr(primitive, "primitive_id", None)
++        )
++        discovery_ranked_candidate_parent_details = canonical_parent_generation_details(
++            learner.primitives,
++            getattr(primitive, "parent_ids", ()) if primitive is not None else (),
+         )
++        _H7_ACTIVE_GENERATION_CONTEXT["invention_candidate_id"] = discovery_ranked_candidate_id
+         accepted = False
+         transfer_error = float("inf")
+         ood_error = float("inf")
+@@ -747,19 +837,71 @@ def run_seed(
+                     acceptance_reason = "FRONTIER_ALL_REJECTED"
+             else:
+                 acceptance_reason = "EMPTY_FRONTIER"
++        _H7_ACTIVE_GENERATION_CONTEXT["invention_rejection_reason"] = None if accepted else acceptance_reason
+         parent_used = selected_primitive.parent_ids if selected_primitive is not None else tuple()
+-        selected_primary_parent_ids = sorted(set(str(pid) for pid in parent_used))
+-        selected_primary_parent_generations = [
+-            int(getattr(learner.primitives.get(pid), "generation", -1))
+-            if learner.primitives.get(pid) is not None else -1
+-            for pid in selected_primary_parent_ids
+-        ]
++        selected_parent_details = canonical_parent_generation_details(learner.primitives, parent_used)
++        selected_primary_parent_ids = selected_parent_details["parent_ids"]
++        selected_primary_parent_generations = selected_parent_details["parent_generations"]
++        discovery_ranked_parent_ids = discovery_ranked_candidate_parent_details["parent_ids"]
++        discovery_ranked_parent_generations = discovery_ranked_candidate_parent_details["parent_generations"]
+         selected_primary_pair_recency_gate_passed = primary_pair_recency_gate(
+             generation,
+             selected_primary_parent_generations,
+             selected_primary_parent_ids,
+             list(getattr(learner, "_h7_primary_macro_ids", ())),
+         )
++        # Keep discovery-ranked proposal and post-validation selection separate,
++        # while binding the legacy selected_* fields to the canonical accepted row.
++        primary_invention_summary = dict(discovery_ranked_invention_summary)
++        primary_invention_summary.update({
++            "summary_stage": "DISCOVERY_PROPOSAL_PLUS_POST_VALIDATION_SELECTION",
++            "discovery_ranked_candidate_id": discovery_ranked_candidate_id,
++            "discovery_ranked_candidate_parent_ids": discovery_ranked_parent_ids,
++            "discovery_ranked_candidate_parent_generations": discovery_ranked_parent_generations,
++            "selected_primitive_id": getattr(selected_primitive, "primitive_id", None),
++            "selected_direct_parent_ids": selected_primary_parent_ids,
++            "selected_direct_parent_generations": selected_primary_parent_generations,
++            "selected_pair_recency_gate_passed": bool(selected_primary_pair_recency_gate_passed),
++            "acceptance_status": "ACCEPTED" if accepted else "REJECTED",
++            "acceptance_rejection_reason": None if accepted else acceptance_reason,
++        })
++        _h7_emit_event(
++            "PRIMARY_PRIMITIVE_INVENTION_COMPLETE",
++            seed=seed,
++            generation=generation,
++            elapsed_seconds=invention_elapsed_seconds,
++            primitive_found=primitive is not None,
++            discovery_candidate_count=len(getattr(learner, "last_primitive_candidate_frontier", ())),
++            discovery_ranked_candidate_id=discovery_ranked_candidate_id,
++            discovery_ranked_candidate_parent_ids=discovery_ranked_parent_ids,
++            discovery_ranked_candidate_parent_generations=discovery_ranked_parent_generations,
++            selected_primitive_id=getattr(selected_primitive, "primitive_id", None),
++            selected_direct_parent_ids=selected_primary_parent_ids,
++            selected_direct_parent_generations=selected_primary_parent_generations,
++            selected_pair_recency_gate_passed=bool(selected_primary_pair_recency_gate_passed),
++            accepted=bool(accepted),
++            acceptance_rejection_reason=None if accepted else acceptance_reason,
++            expression_enumeration_summary=dict(getattr(learner, "_expr_enumeration_summary", {}) or {}),
++            primary_invention_summary=primary_invention_summary,
++        )
++        if not accepted:
++            _h7_emit_event(
++                "PRIMARY_PRIMITIVE_INVENTION_REJECTED",
++                seed=seed,
++                generation=generation,
++                primary_invention_rejection_reason=acceptance_reason,
++                discovery_ranked_candidate_id=discovery_ranked_candidate_id,
++                discovery_ranked_candidate_parent_ids=discovery_ranked_parent_ids,
++                discovery_ranked_candidate_parent_generations=discovery_ranked_parent_generations,
++                selected_primitive_id=getattr(selected_primitive, "primitive_id", None),
++                selected_direct_parent_ids=selected_primary_parent_ids,
++                selected_direct_parent_generations=selected_primary_parent_generations,
++                frontier_validation=frontier_validation,
++                candidate_count=primitive_candidate_count,
++                expression_enumeration_summary=dict(getattr(learner, "_expr_enumeration_summary", {}) or {}),
++                search_stats=compact_search_stats(dict(getattr(learner, "last_search_stats", {}) or {})),
++                promotion="DO NOT PROMOTE",
++            )
+         candidate_lineage_ids = (
+             executable_lineage_ids(learner, (selected_primitive.primitive_id,))
+             if selected_primitive is not None and selected_primitive.primitive_id in learner.primitives
+@@ -823,6 +965,7 @@ def run_seed(
+         closure_parent_fidelity = []
+         closure_trap_count = 0
+         closure_pair_outcomes = []
++        _H7_ACTIVE_GENERATION_CONTEXT["pair_rows"] = closure_pair_outcomes
+         required_pairs_this_generation = generation * (generation + 1) // 2
+         closure_fidelity_started = time.perf_counter()
+         closure_fidelity_cache: dict = {}
+@@ -976,7 +1119,9 @@ def run_seed(
+                     candidate_details.append({
+                         "frontier_rank": candidate_index,
+                         "process_id": getattr(candidate_proc, "process_id", None),
++                        "expression": candidate_proc.expression,
+                         "used_primitives": list(getattr(candidate_proc, "used_primitives", ())),
++                        "executable_lineage_ids": sorted(candidate_lineage),
+                         "candidate_in_frontier": bool(direct_pair_match),
+                         "lineage_compatible": bool(candidate_lineage_match),
+                         "competence_ok": bool(candidate_competence),
+@@ -1239,6 +1384,37 @@ def run_seed(
+             except Exception as exc:
+                 pair_audit_status = "INVALID"
+                 pair_audit_errors = [type(exc).__name__ + ": " + str(exc)]
++                pair_audit_path, pair_summary = _h7_write_incomplete_pair_summary(
++                    seed, generation, required_pairs_this_generation,
++                    closure_pair_outcomes, "full_generation_pair_audit_exception",
++                    errors=pair_audit_errors,
++                    invention_rejection_reason=None if accepted else acceptance_reason,
++                    invention_candidate_id=discovery_ranked_candidate_id,
++                )
++                pair_audit_sha256 = sha256(
++                    json.dumps(pair_summary, sort_keys=True, separators=(",", ":"), default=_h7_json_default).encode("utf-8")
++                ).hexdigest()
++        else:
++            incomplete_errors = [
++                f"required_pair_count={required_pairs_this_generation}",
++                f"observed_pair_count={len(closure_pair_outcomes)}",
++                f"retained_count={len(retained)}",
++                f"expected_primary_chain_length={generation + 1}",
++            ]
++            if not accepted:
++                incomplete_errors.append("primary_invention_rejection_reason=" + str(acceptance_reason))
++            pair_audit_status = "INCOMPLETE"
++            pair_audit_errors = list(incomplete_errors)
++            pair_audit_path, pair_summary = _h7_write_incomplete_pair_summary(
++                seed, generation, required_pairs_this_generation,
++                closure_pair_outcomes, "frozen_all_pairs_denominator_not_reached",
++                errors=incomplete_errors,
++                invention_rejection_reason=None if accepted else acceptance_reason,
++                invention_candidate_id=discovery_ranked_candidate_id,
++            )
++            pair_audit_sha256 = sha256(
++                json.dumps(pair_summary, sort_keys=True, separators=(",", ":"), default=_h7_json_default).encode("utf-8")
++            ).hexdigest()
+         _h7_emit_event(
+             "AUDIT_END",
+             seed=seed,
+@@ -1253,7 +1429,7 @@ def run_seed(
+             errors=pair_audit_errors,
+             **_h7_runtime_metrics(learner),
+         )
+-        if pair_summary is not None:
++        if pair_summary is not None and pair_summary.get("schema") == "ACSIE.h7.generation_pair_summary.v1":
+             _h7_emit_event(
+                 "H7_GENERATION_PAIR_SUMMARY",
+                 seed=seed,
+@@ -1571,6 +1747,7 @@ def run_seed(
+             flush=True,
+         )
+
++        _H7_ACTIVE_GENERATION_CONTEXT.clear()
+         if checkpoint_path:
+             last_checkpoint_digest = save_checkpoint(
+                 checkpoint_path,
+diff --git a/research/tests/test_h7_v22_3_repairs.py b/research/tests/test_h7_v22_3_repairs.py
+index d81d8de..8eea7cd 100644
+--- a/research/tests/test_h7_v22_3_repairs.py
++++ b/research/tests/test_h7_v22_3_repairs.py
+@@ -1,6 +1,9 @@
+ from __future__ import annotations
+
++import json
++import os
+ import sys
++import tempfile
+ import unittest
+ from pathlib import Path
+ from types import SimpleNamespace
+@@ -18,6 +21,7 @@ from cognitive_core.recursive_cognitive_compiler import (
+     Trace,
+     ast_depth,
+     eval_expr,
++    h7_primary_pair_rank_prefix,
+ )
+ import cognitive_core.open_ended_growth as growth_module
+ import cognitive_core.behavioral_search as behavioral_search
+@@ -27,6 +31,7 @@ from lab.acsie_open_ended_self_extending_proving import (
+     select_discovery_ranked_candidate,
+     selected_closure_reuse_gate,
+     primary_pair_recency_gate,
++    _h7_write_incomplete_pair_summary,
+ )
+ from lab.h7_exact_audit import memoized_eval_expr
+
+@@ -125,6 +130,41 @@ class H7V223RepairTests(unittest.TestCase):
+         self.assertEqual(compiler._h7_primary_pair_recency_priority(stale), 1)
+         self.assertEqual(compiler._h7_primary_pair_recency_priority(recent), 0)
+
++    def test_incomplete_pair_audit_is_written_when_denominator_is_short(self):
++        rows = [{"pair_index": i, "accepted": False} for i in range(28)]
++        with tempfile.TemporaryDirectory() as tmp:
++            with mock.patch.dict(os.environ, {"ACSIE_H7_PAIR_AUDIT_DIR": tmp}):
++                path, summary = _h7_write_incomplete_pair_summary(
++                    2026100303, 8, 36, rows,
++                    "frozen_all_pairs_denominator_not_reached",
++                    errors=["observed_pair_count=28", "primary_invention_rejection_reason=NO_VALID_PRIMITIVE"],
++                    invention_rejection_reason="NO_VALID_PRIMITIVE",
++                    invention_candidate_id=None,
++                )
++            self.assertIsNotNone(path)
++            loaded = json.loads(Path(path).read_text(encoding="utf-8"))
++            self.assertEqual(loaded["schema"], "ACSIE.h7.generation_pair_summary.incomplete.v1")
++            self.assertEqual(loaded["required_pair_count"], 36)
++            self.assertEqual(loaded["observed_pair_count"], 28)
++            self.assertEqual(loaded["missing_pair_count"], 8)
++            self.assertEqual(loaded["primary_invention_rejection_reason"], "NO_VALID_PRIMITIVE")
++            self.assertEqual(loaded["audit_status"], "INCOMPLETE")
++            self.assertNotEqual(loaded["schema"], "ACSIE.h7.generation_pair_summary.v1")
++
++    def test_canonical_parent_generation_details_are_ordered_and_deduplicated(self):
++        compiler = RecursiveCognitiveCompiler(seed=502)
++        compiler.primitives["prim:g8"] = make_primitive("prim:g8", 8, {"op": "get", "key": "x"})
++        compiler.primitives["prim:g5"] = make_primitive("prim:g5", 5, {"op": "get", "key": "x"})
++        result = growth_module.canonical_parent_generation_details(
++            compiler.primitives, ("prim:g8", "prim:g5", "prim:g8")
++        )
++        self.assertEqual(result["parent_ids"], ["prim:g5", "prim:g8"])
++        self.assertEqual(result["parent_generations"], [5, 8])
++        self.assertEqual(result["parent_details"], [
++            {"parent_id": "prim:g5", "generation": 5},
++            {"parent_id": "prim:g8", "generation": 8},
++        ])
++
+     def test_scoped_depth4_recency_continuation_preserves_primary_pair_under_cap(self):
+         # Gen11 witness: (P9 + P10) * (P9 + P9*P9), with no raw-input
+         # leaves and exactly the two direct primary macros {P9, P10}.
+@@ -396,9 +436,10 @@ class H7V223RepairTests(unittest.TestCase):
+         for primitive in (a, b, c, d):
+             compiler.primitives[primitive.primitive_id] = primitive
+             compiler.archive[primitive.primitive_id] = ArchiveRecord(primitive)
+-        compiler._h7_primary_macro_ids = [
+-            "prim:a", "prim:b", "prim:c", "prim:d"
+-        ]
++        # Only [a,b] belongs to the accepted primary pair tier. c,d are
++        # non-primary alias macros and must not inherit the protected tier just
++        # because their expanded expression happens to be exact on these rows.
++        compiler._h7_primary_macro_ids = ["prim:a", "prim:b"]
+         compiler.generation = 6
+         rows = tuple(
+             Trace(
+@@ -421,6 +462,32 @@ class H7V223RepairTests(unittest.TestCase):
+         self.assertTrue(summary["v22_2_discovery_only_primary_pair_priority"])
+         self.assertIn("prim:a|prim:b", summary["v22_2_frontier_direct_signatures"])
+
++    def test_minimal_primary_pair_preserves_lineage_before_unrolled_cost(self):
++        # All four primitives are genuine primary-chain members. c and d are
++        # executable aliases of a and b respectively; both a+b and c+d fit the
++        # discovery rows, but c+d preserves the deeper primary-chain identity.
++        compiler = RecursiveCognitiveCompiler(max_depth=3, population=24, seed=2026100305)
++        a = make_primitive("prim:a", 0, {"op": "const", "value": 1.0})
++        b = make_primitive("prim:b", 1, {"op": "const", "value": 2.0})
++        c = make_primitive("prim:c", 2, {"op": "macro", "id": "prim:a"}, ("prim:a",))
++        d = make_primitive("prim:d", 3, {"op": "macro", "id": "prim:b"}, ("prim:b",))
++        for primitive in (a, b, c, d):
++            compiler.primitives[primitive.primitive_id] = primitive
++            compiler.archive[primitive.primitive_id] = ArchiveRecord(primitive)
++        compiler._h7_primary_macro_ids = ["prim:a", "prim:b", "prim:c", "prim:d"]
++        compiler.generation = 4
++        rows = tuple(Trace(inputs={"x": float(x)}, target=3.0, family="fixture", context={}, task_id=f"lineage-tier-{x}") for x in range(8))
++        frontier = compiler.synthesize_process_frontier(rows, (), (), max_candidates=32)
++        self.assertTrue(frontier)
++        self.assertEqual(set(frontier[0].used_primitives), {"prim:c", "prim:d"})
++        # The child pair is more expensive when unrolled; lineage preservation
++        # must therefore precede expanded AST cost within the minimal-pair tier.
++        short_alias = h7_primary_pair_rank_prefix(True, 2, 2, 4)
++        lineage_preserving = h7_primary_pair_rank_prefix(True, 4, 4, 7)
++        non_primary = h7_primary_pair_rank_prefix(False, 999, 1, 1)
++        self.assertLess(lineage_preserving, short_alias)
++        self.assertLess(lineage_preserving, non_primary)
++
+     def test_checkpoint_closure_trap_boundary_has_competent_lineage_candidate(self):
+         # Targeted synthetic replay of the Seed 2026100302 Gen5 failure boundary:
+         # a required two-macro addition must be present and lineage-bearing in the

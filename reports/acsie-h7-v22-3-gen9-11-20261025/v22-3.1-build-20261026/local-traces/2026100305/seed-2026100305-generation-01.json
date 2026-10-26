@@ -1,0 +1,227 @@
+{
+  "accepted_pair_count": 1,
+  "accepted_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    }
+  ],
+  "attempted_pair_count": 1,
+  "attempted_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    }
+  ],
+  "bootstrap_primitives": [
+    "prim:69e680889385259c198f"
+  ],
+  "checkpoint_fidelity": {
+    "bootstrap_primitives_after": [
+      "prim:69e680889385259c198f"
+    ],
+    "bootstrap_primitives_before": [
+      "prim:69e680889385259c198f"
+    ],
+    "bootstrap_primitives_preserved": true,
+    "errors": [],
+    "ordered_primary_macro_ids_preserved": true,
+    "primary_macro_ids_after": [
+      "prim:69e680889385259c198f",
+      "prim:ca1cc7ea4217a64a7f5d"
+    ],
+    "primary_macro_ids_before": [
+      "prim:69e680889385259c198f",
+      "prim:ca1cc7ea4217a64a7f5d"
+    ],
+    "status": "VERIFIED"
+  },
+  "eligible_pair_count": 1,
+  "eligible_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    }
+  ],
+  "first_failing_pair": null,
+  "generation": 1,
+  "observed_pair_count": 1,
+  "ordered_primary_macro_ids": [
+    "prim:69e680889385259c198f",
+    "prim:ca1cc7ea4217a64a7f5d"
+  ],
+  "pair_rows": [
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 1,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:72b78a6ba34587ad7b27",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 1,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "71c09be87c6ff47f2c14d70c18a380d43266a896e3e963a4f759736c79d9411d",
+        "limit_reached": true,
+        "primary_macro_count": 2,
+        "primary_pair_expression_count": 20,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 2,
+        "protected_pair_expression_count": 20,
+        "protected_pair_order_sha256": "71c09be87c6ff47f2c14d70c18a380d43266a896e3e963a4f759736c79d9411d",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:69e680889385259c198f",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:ca1cc7ea4217a64a7f5d",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        0,
+        1
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_process_id": "proc:72b78a6ba34587ad7b27",
+      "selected_used_primitives": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    }
+  ],
+  "rejected_pair_count": 0,
+  "rejected_pairs": [],
+  "rejection_breakdown": {
+    "counts": {
+      "candidate_missing": 0,
+      "canonicalization_mismatch": 0,
+      "closure_trap": 0,
+      "competence_failure": 0,
+      "dominance": 0,
+      "equivalence_mismatch": 0,
+      "lineage_break": 0,
+      "primary_pair_add_not_discovery_qualified": 0,
+      "search_budget_exhausted": 0
+    },
+    "pairs": {
+      "candidate_missing": [],
+      "canonicalization_mismatch": [],
+      "closure_trap": [],
+      "competence_failure": [],
+      "dominance": [],
+      "equivalence_mismatch": [],
+      "lineage_break": [],
+      "primary_pair_add_not_discovery_qualified": [],
+      "search_budget_exhausted": []
+    }
+  },
+  "required_pair_count": 1,
+  "schema": "ACSIE.h7.generation_pair_summary.v1",
+  "skipped_pair_count": 0,
+  "skipped_pairs": []
+}
