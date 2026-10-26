@@ -1,0 +1,3028 @@
+{
+  "artifacts": [
+    {
+      "bytes": 8678,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/acsie-h7-v22-3-frozen-qualification.log",
+      "sha256": "9bfa1b37b29ec1cfc867e8e4e17f5e376c750bff55470c3f7307806472db79f3"
+    },
+    {
+      "bytes": 83113696,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/foundry-summary.json",
+      "sha256": "5e70f434e24df921e579381c64c0cf6ba82df4bb22bee74d38ae1d63d13edad8"
+    },
+    {
+      "bytes": 1716,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-00.json",
+      "sha256": "0ff8dfbdf6902ea11a6cf399c6d3bced459540f0d4a7d4ee700d0aabb28a77cc"
+    },
+    {
+      "bytes": 10758,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-01.json",
+      "sha256": "7ffc3ae0001e60ebacee840d2e5f74c8c4385c2ae9afce12669cb77144b6071b"
+    },
+    {
+      "bytes": 51711,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-02.json",
+      "sha256": "7eb7ff80f375ff1897ead8d99dd2146c7ea0dd6388ca2c434c9eda5a25342818"
+    },
+    {
+      "bytes": 920754,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-03.json",
+      "sha256": "2c5ffdb923dfd3d249ea742fd6e3b57a0e49c11d351255ccd452b5e1f2ade2a2"
+    },
+    {
+      "bytes": 1514950,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-04.json",
+      "sha256": "776c98c4ecccfff86a8e701332be4bf7a349d7d38c78bc5ad23c18fd881789c3"
+    },
+    {
+      "bytes": 1400734,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-05.json",
+      "sha256": "1d38ea5bfbd8e986888674733e8d6a89e2e8e7910e897686909dc8902ecd6db4"
+    },
+    {
+      "bytes": 2105312,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-06.json",
+      "sha256": "a0cd04672ff0506efb0a4d909017f41bf28104196c15ea744fd9deaae2aafe20"
+    },
+    {
+      "bytes": 2825648,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-07.json",
+      "sha256": "e9faca1bbf4739c9d69ebda0702c36a4463b1c4d982ebc7f92fb7b43c2ff7591"
+    },
+    {
+      "bytes": 4005902,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-08.json",
+      "sha256": "b715b84372fef7166104812986d487bbd8f11545246e3a42c6203f9d89543659"
+    },
+    {
+      "bytes": 4593055,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-09.json",
+      "sha256": "3cdde156c573efe2e9ad7ef841f95df96492c1e1db1288f0a42188c5c953c167"
+    },
+    {
+      "bytes": 5741315,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-10.json",
+      "sha256": "4706a16c980fb2bc3221b25bcf41aa215e687dafd1b64b63c8f3cdc251509c61"
+    },
+    {
+      "bytes": 5037733,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100301-generation-11.json",
+      "sha256": "e586b6f3e9524208b9f2a3bc8fbcccd842a2eccf612e5c38c190602a953852eb"
+    },
+    {
+      "bytes": 1716,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-00.json",
+      "sha256": "afdf6bff75d52094104727ab77686f7b1a613101028a61d6161fe40d9945c61c"
+    },
+    {
+      "bytes": 9322,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-01.json",
+      "sha256": "e040ed48bbd6be3505744be40c654f018ee1be48fa94eb6b05c4bd485a9cc45c"
+    },
+    {
+      "bytes": 45366,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-02.json",
+      "sha256": "570a888fd25671b7391fc3895c1391ff43c2dc982e7700476fea235366df4654"
+    },
+    {
+      "bytes": 134244,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-03.json",
+      "sha256": "1333064c14c2b3769427259cc46a92e0d6814d3ab77782f18d089a71c4ad2ddb"
+    },
+    {
+      "bytes": 401795,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-04.json",
+      "sha256": "da5817a1cea280859566a9c8104de27de6870360ffa0b15e56360af2a58b855b"
+    },
+    {
+      "bytes": 792164,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-05.json",
+      "sha256": "828fc71d90cc66a1d84ff09692060dfa1ae904b3f6c3ffe3ee18ace449d41421"
+    },
+    {
+      "bytes": 858753,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-06.json",
+      "sha256": "fef4ce6b6055bc896c920ee7bab47812fe69e8b861352f75437453e2550cd94c"
+    },
+    {
+      "bytes": 1014508,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-07.json",
+      "sha256": "4dffa5b9120df929efc56576eac18c064c00158f4f2c0ff4ceade30605e0244b"
+    },
+    {
+      "bytes": 1198936,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-08.json",
+      "sha256": "e4c81837f2ca1665f3293df72cbfca071233ed0fdb36a065311b0dd68b39ddfd"
+    },
+    {
+      "bytes": 1323809,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-09.json",
+      "sha256": "1beab103ea518cc500ef19e094df7ec77260ab25315d1443da522730445130f8"
+    },
+    {
+      "bytes": 1736344,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-10.json",
+      "sha256": "4ecf8bedf7b992184df9d3dd410587124f67bf2969a6e9fbad4371733234b44c"
+    },
+    {
+      "bytes": 1723036,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100302-generation-11.json",
+      "sha256": "5167462f2f930e769c00dc3e4abbc5fd554b6f002685ee4d225c39dec7903615"
+    },
+    {
+      "bytes": 1716,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-00.json",
+      "sha256": "8d4b8f1bbe9a2d3f83fb73677fafb10d4f4c1c21780b6f0025b1983c36411c2f"
+    },
+    {
+      "bytes": 7530,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-01.json",
+      "sha256": "6d8f38c2bdda842a8bf4717a6300a658d5e95f11bea0eb9333461559348f678c"
+    },
+    {
+      "bytes": 21151,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-02.json",
+      "sha256": "e1e7b8ac0e10c52f5c0e14185d883931e39019a3dabda233cb275d9c79fdf841"
+    },
+    {
+      "bytes": 42671,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-03.json",
+      "sha256": "2e881305b8493434e31b87667d198de4d751b832edee642c46350c6942428ec1"
+    },
+    {
+      "bytes": 97564,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-04.json",
+      "sha256": "3721a547021093dec5cd3855858f1a136c411b2f085b8e04ba36f158f1241750"
+    },
+    {
+      "bytes": 192842,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-05.json",
+      "sha256": "c075f45f774423952d660946ef4c31dd67fb746bd0ddbeb5c172f99149850f1e"
+    },
+    {
+      "bytes": 1165952,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-06.json",
+      "sha256": "eaa2695a93d62047d31d5cb4ed6b1d9a2f32ee88f1d052e2b6975f25fe202ada"
+    },
+    {
+      "bytes": 1755530,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-07.json",
+      "sha256": "c489f99a28b9ac876455cb3c5ebd0691a9ea404841c1db55139db0da8dc157cd"
+    },
+    {
+      "bytes": 1528038,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-08.json",
+      "sha256": "d3944e0b266e2c6353aa7027a0e1aadd211dfe02ba71cd5e4c665eebdf8e138d"
+    },
+    {
+      "bytes": 2245350,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-09.json",
+      "sha256": "d64fe4dbb43b096f3535288ae567998e47a356d50d8f7993d57a2a11bdf179d2"
+    },
+    {
+      "bytes": 2714068,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-10.json",
+      "sha256": "3791580041b7a1d7f671b04fb100bb000bf5303eb346c73f0530929706bd5758"
+    },
+    {
+      "bytes": 4075864,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100303-generation-11.json",
+      "sha256": "0c47e82e2cf904fcd5089d96bb11385731fa6cd07481642fcdf102d3efbf7614"
+    },
+    {
+      "bytes": 1716,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-00.json",
+      "sha256": "a2a7d1f3a300c06de192bd9c4d31c99125fe5d15fc591d1ece7261444a53c2cb"
+    },
+    {
+      "bytes": 6674,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-01.json",
+      "sha256": "971376251329852f7062a30422dcc5a55f19305216998303a405503f3e425a08"
+    },
+    {
+      "bytes": 16627,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-02.json",
+      "sha256": "0b6df76fc24f7f59f6c799077255ad6cbea8c113f555b2a0a8855b909677856a"
+    },
+    {
+      "bytes": 31583,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-03.json",
+      "sha256": "ed8a1c5780e1a8f879afe62a672c4d9aff538b6b084cb3e8d0c3cdefbd78f3ff"
+    },
+    {
+      "bytes": 67911,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-04.json",
+      "sha256": "8b16c4cd840e794903659ad9cf552679444622a208695443fe24419767cafd72"
+    },
+    {
+      "bytes": 157896,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-05.json",
+      "sha256": "851db9b0dbdf1798e547dd3ae8384889ab90acdc604f19efcca02f7c1f3fb8a9"
+    },
+    {
+      "bytes": 272929,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-06.json",
+      "sha256": "6eb783b94dce7533f064076f84d3d606638403901658ef9b941e622d76c1a906"
+    },
+    {
+      "bytes": 597515,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-07.json",
+      "sha256": "28211149fb4ca8e1589100038e26456b2bcdc4f264faff461706b87e614fb68a"
+    },
+    {
+      "bytes": 831779,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-08.json",
+      "sha256": "dc7f1a412f44f424da95b47de6106d1416ab01b64bf48e0eac3bb248d027c5df"
+    },
+    {
+      "bytes": 2040739,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-09.json",
+      "sha256": "fae844a4eddef905089c4ce17cd550b707e7cbc40c907e7808d1d27bd94a5a3c"
+    },
+    {
+      "bytes": 2656375,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-10.json",
+      "sha256": "74f4989b6f648221175d82ac84df70c50f1cc618f6a382b5c9361add11bffe19"
+    },
+    {
+      "bytes": 2468822,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100304-generation-11.json",
+      "sha256": "9f925344616e72d267e6586e82f0fa93482077e03c76ed01f46341e7d4231521"
+    },
+    {
+      "bytes": 1716,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-00.json",
+      "sha256": "17fc978832f2e4a1c9d5090d1119c6aa9ba0960ab6efd3ab2c22abd12cb8c359"
+    },
+    {
+      "bytes": 6674,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-01.json",
+      "sha256": "ce66ae17960c3725379fc1bd5d2aa09cebd1fb9e09192e7de7c8106b41755ae2"
+    },
+    {
+      "bytes": 20038,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-02.json",
+      "sha256": "3e6ea40b0f0a4720ef2019a16ac7cc2475925e659e7c326b00a1c081d67ae85f"
+    },
+    {
+      "bytes": 50290,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-03.json",
+      "sha256": "d89c2f7225e732d413c6e950dbb8c0643efe5c9254139b00174e3dbbaf1483ac"
+    },
+    {
+      "bytes": 130797,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-04.json",
+      "sha256": "f8e37d249f3abbb57dd372ebc34d3de28ea1a8af708a382da1b7746e2442e918"
+    },
+    {
+      "bytes": 190235,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-05.json",
+      "sha256": "068b8986c4428683798f4a3a6c2397d3b359a83839eb61539b08ac638f98150e"
+    },
+    {
+      "bytes": 486225,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-06.json",
+      "sha256": "92f3188d167c7f8573126432da6824a6be80409165276e8eded0cbb165c76e74"
+    },
+    {
+      "bytes": 789534,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-07.json",
+      "sha256": "3ea73a99b56d754a5fd67f53c6c2566c4caea21cc7ee1cd20a043f193a765119"
+    },
+    {
+      "bytes": 1268855,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-08.json",
+      "sha256": "d89c3cf614aead39c8696d9b33180a75a581bbbc0380a5ca9fdcf56d2a0fb988"
+    },
+    {
+      "bytes": 2083640,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-09.json",
+      "sha256": "e94f816bbd7559804f029a0068532d109ebf829d27b6de4cf0b55350dbda4996"
+    },
+    {
+      "bytes": 3172125,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-10.json",
+      "sha256": "6182231e342b5a85fd674a9ae9262e32c41a713d84220bcda3ec7d7b06891df2"
+    },
+    {
+      "bytes": 3284998,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/pair_audits/seed-2026100305-generation-11.json",
+      "sha256": "feb023b2d1779dabb5885dbd09dbd1c2c428ccf6674a440bf799eb412819a4b4"
+    },
+    {
+      "bytes": 50746,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_V3_KAGGLE_ERROR_20261026/run_manifest.json",
+      "sha256": "ee78f4e0344d75ecfe3f7d7a054acf92c8b0e8d40b2d37c5af6caddb4fac8931"
+    }
+  ],
+  "provenance": {
+    "all_seed_holdout_transfer_ood_flags_false": true,
+    "archive_hash_match": true,
+    "combined_selection_uses_holdout_transfer_ood_field_present": false,
+    "elapsed_seconds": 3321.324,
+    "executed_archive_sha256": "31c11f123ca60a9e21ae5d5036c1e592eba67858cfd6af87cc491a6c3d5d9b1c",
+    "expected_archive_sha256": "31c11f123ca60a9e21ae5d5036c1e592eba67858cfd6af87cc491a6c3d5d9b1c",
+    "expected_runner_sha256": "e480c5c6df3713e816bfdfd21e1f2956427d1be373d008be119ee6ffb1b57e38",
+    "expected_slots": 60,
+    "foundry_summary_bytes": 83113696,
+    "foundry_summary_sha256": "5e70f434e24df921e579381c64c0cf6ba82df4bb22bee74d38ae1d63d13edad8",
+    "frozen_seed_list": [
+      2026100301,
+      2026100302,
+      2026100303,
+      2026100304,
+      2026100305
+    ],
+    "generations_per_seed": 12,
+    "pair_audit_count": 60,
+    "pair_denominator": "g*(g+1)/2",
+    "pair_denominator_source": "V22_3_QUALIFICATION_STATUS event in the recovered global runner console log",
+    "polling_after_snapshot": false,
+    "promotion": "DO NOT PROMOTE",
+    "qualification_status": "NOT_QUALIFIED",
+    "reported_completed_seed_generation_slots": 56,
+    "run_manifest_bytes": 50746,
+    "run_manifest_sha256": "ee78f4e0344d75ecfe3f7d7a054acf92c8b0e8d40b2d37c5af6caddb4fac8931",
+    "runner_hash_match": true,
+    "runner_sha256": "e480c5c6df3713e816bfdfd21e1f2956427d1be373d008be119ee6ffb1b57e38",
+    "scientific_status": "INCOMPLETE",
+    "selection_flags": [
+      {
+        "holdout": false,
+        "ood": false,
+        "seed": 2026100301,
+        "transfer": false
+      },
+      {
+        "holdout": false,
+        "ood": false,
+        "seed": 2026100302,
+        "transfer": false
+      },
+      {
+        "holdout": false,
+        "ood": false,
+        "seed": 2026100303,
+        "transfer": false
+      },
+      {
+        "holdout": false,
+        "ood": false,
+        "seed": 2026100304,
+        "transfer": false
+      },
+      {
+        "holdout": false,
+        "ood": false,
+        "seed": 2026100305,
+        "transfer": false
+      }
+    ],
+    "selection_uses_holdout_transfer_ood": false,
+    "selection_uses_holdout_transfer_ood_basis": "derived from all five per-seed holdout/transfer/OOD selection flags; global runner preflight asserted holdout_transfer_ood_not_used_for_selection=true",
+    "slot_status_counts": {
+      "FAILED": 27,
+      "INCONCLUSIVE": 4,
+      "PASSED": 29
+    },
+    "source_manifest_sha256": "b3ff47d93a9499be38b4d556d7bbe88e1318024648195a49132a965522f90cc3",
+    "status_check_count": 1,
+    "status_snapshot": "KernelWorkerStatus.ERROR",
+    "target_access_during_discovery": false,
+    "target_access_false": true,
+    "terminal_exception": null
+  },
+  "root_causes": {
+    "0303_gen8": {
+      "accepted": false,
+      "alternate_candidate_id": "NOT_RECORDED_IN_PERSISTED_SUMMARY",
+      "closure_observed": 28,
+      "closure_required": 36,
+      "closure_reuse_rate_observed": 0.7142857142857143,
+      "closure_traps_observed": 5,
+      "discovery_candidate_count": 0,
+      "ood_error": 0.4642970733611805,
+      "primitive_id": "prim:1461faa33862371b6527",
+      "proposal_parent_generations": [
+        6,
+        2
+      ],
+      "reason": "TRANSFER_FAILURE",
+      "summary_primary_target_parent_generations": [
+        4,
+        5
+      ],
+      "transfer_error": 0.07380682826725142
+    },
+    "0305_gate_false_predicates": [
+      "lineage_closed",
+      "every_closure_perfect",
+      "Gen9_10_11_recency_all_pass",
+      "final_closure_success_is_1",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ],
+    "0305_gen10": {
+      "discovery_ranked_candidate_id": "prim:29e6dde886689f2c6ffb",
+      "proposal_parent_generations": [
+        9,
+        8
+      ],
+      "selected_direct_parent_generations": [
+        9,
+        6
+      ],
+      "selected_primitive_id": "prim:b6d64cba2d251406538c"
+    },
+    "0305_gen11": {
+      "closure_reuse_rate": 0.7272727272727273,
+      "closure_traps": 16,
+      "primitive_id": "prim:315a4b71c4f2ecd61599",
+      "recency_checks": 66,
+      "recency_failures": 56,
+      "recency_gate_passed": false,
+      "selected_direct_parent_generations": [
+        5,
+        4
+      ],
+      "summary_primary_target_parent_generations": [
+        0,
+        4
+      ]
+    },
+    "0305_gen5": {
+      "lineage_ok": false,
+      "primitive_id": "prim:6e22731d482440003404",
+      "selected_direct_parent_generations": [
+        0
+      ],
+      "summary_primary_target_parent_generations": [
+        0,
+        2
+      ]
+    }
+  },
+  "schema": "ACSIE.h7.v22_3.version3_terminal_error_audit.v1",
+  "selection_gate_false_predicates_by_seed": {
+    "2026100301": [
+      "lineage_closed",
+      "every_closure_perfect",
+      "every_probe_perfect",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ],
+    "2026100302": [
+      "lineage_closed",
+      "every_closure_perfect",
+      "every_probe_perfect",
+      "Gen9_10_11_recency_all_pass",
+      "final_probe_reuse_is_1",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ],
+    "2026100303": [
+      "every_generation_accepted",
+      "lineage_closed",
+      "every_closure_perfect",
+      "every_probe_perfect",
+      "Gen9_10_11_recency_all_pass",
+      "strict_growth",
+      "depth_growth_contract",
+      "retained_count_at_least_12",
+      "final_probe_success_is_1",
+      "final_probe_reuse_is_1",
+      "final_closure_success_is_1",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ],
+    "2026100304": [
+      "lineage_closed",
+      "every_closure_perfect",
+      "every_probe_perfect",
+      "final_probe_success_is_1",
+      "final_probe_reuse_is_1",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ],
+    "2026100305": [
+      "lineage_closed",
+      "every_closure_perfect",
+      "Gen9_10_11_recency_all_pass",
+      "final_closure_success_is_1",
+      "final_closure_reuse_is_1",
+      "zero_traps_all_generations"
+    ]
+  },
+  "slots": [
+    {
+      "audit_complete": true,
+      "audit_sha256": "0ff8dfbdf6902ea11a6cf399c6d3bced459540f0d4a7d4ee700d0aabb28a77cc",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 0,
+      "closure_pairs_required": 0,
+      "closure_reuse_rate": null,
+      "closure_reuse_successes_observed": 0,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 0,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:7b9e019ca08c0944c250",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [],
+      "summary_primitive_id": "prim:7b9e019ca08c0944c250"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "7ffc3ae0001e60ebacee840d2e5f74c8c4385c2ae9afce12669cb77144b6071b",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 1,
+      "closure_pairs_required": 1,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 1,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 1,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:f7ff4c8074f55158c001",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0
+      ],
+      "summary_primitive_id": "prim:f7ff4c8074f55158c001"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "7eb7ff80f375ff1897ead8d99dd2146c7ea0dd6388ca2c434c9eda5a25342818",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 3,
+      "closure_pairs_required": 3,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 3,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 2,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        0,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:9c37d71e94d0744e366d",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        1
+      ],
+      "summary_primitive_id": "prim:9c37d71e94d0744e366d"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "2c5ffdb923dfd3d249ea742fd6e3b57a0e49c11d351255ccd452b5e1f2ade2a2",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 6,
+      "closure_pairs_required": 6,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 6,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 3,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        2,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:73ce8c6b3c2b7b3de053",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        0
+      ],
+      "summary_primitive_id": "prim:73ce8c6b3c2b7b3de053"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "776c98c4ecccfff86a8e701332be4bf7a349d7d38c78bc5ad23c18fd881789c3",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 10,
+      "closure_pairs_required": 10,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 10,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 4,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        3,
+        2
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:0fcca8b958c7c756accc",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        3
+      ],
+      "summary_primitive_id": "prim:0fcca8b958c7c756accc"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "1d38ea5bfbd8e986888674733e8d6a89e2e8e7910e897686909dc8902ecd6db4",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 15,
+      "closure_pairs_required": 15,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 15,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": null,
+      "generation": 5,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        2,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:0bfd752d97fb5edc5e47",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        2
+      ],
+      "summary_primitive_id": "prim:0bfd752d97fb5edc5e47"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "a0cd04672ff0506efb0a4d909017f41bf28104196c15ea744fd9deaae2aafe20",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 21,
+      "closure_pairs_required": 21,
+      "closure_reuse_rate": 0.7619047619047619,
+      "closure_reuse_successes_observed": 16,
+      "closure_trap_count_observed": 5,
+      "discovery_ranked_candidate_id": null,
+      "generation": 6,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.25,
+      "probe_trap_count": 3,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 5
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        3,
+        2
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:aa76925e4d86255adac4",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        2,
+        4
+      ],
+      "summary_primitive_id": "prim:aa76925e4d86255adac4"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e9faca1bbf4739c9d69ebda0702c36a4463b1c4d982ebc7f92fb7b43c2ff7591",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 28,
+      "closure_reuse_rate": 0.7142857142857143,
+      "closure_reuse_successes_observed": 20,
+      "closure_trap_count_observed": 8,
+      "discovery_ranked_candidate_id": null,
+      "generation": 7,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 8
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        6,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:80b4d6b5c0f013910807",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        6,
+        1
+      ],
+      "summary_primitive_id": "prim:80b4d6b5c0f013910807"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "b715b84372fef7166104812986d487bbd8f11545246e3a42c6203f9d89543659",
+      "closure_competence_failures_observed": 1,
+      "closure_pairs_observed": 36,
+      "closure_pairs_required": 36,
+      "closure_reuse_rate": 0.5,
+      "closure_reuse_successes_observed": 18,
+      "closure_trap_count_observed": 17,
+      "discovery_ranked_candidate_id": null,
+      "generation": 8,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.75,
+      "probe_trap_count": 1,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 17,
+        "competence_failure": 1
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        7,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:7cf9871aa87f7585f1e6",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        1,
+        4
+      ],
+      "summary_primitive_id": "prim:7cf9871aa87f7585f1e6"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "3cdde156c573efe2e9ad7ef841f95df96492c1e1db1288f0a42188c5c953c167",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 45,
+      "closure_pairs_required": 45,
+      "closure_reuse_rate": 0.4444444444444444,
+      "closure_reuse_successes_observed": 20,
+      "closure_trap_count_observed": 25,
+      "discovery_ranked_candidate_id": null,
+      "generation": 9,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 25
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        8,
+        7
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:065c3aa96a4880082e4f",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        8,
+        7
+      ],
+      "summary_primitive_id": "prim:065c3aa96a4880082e4f"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "4706a16c980fb2bc3221b25bcf41aa215e687dafd1b64b63c8f3cdc251509c61",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 55,
+      "closure_pairs_required": 55,
+      "closure_reuse_rate": 0.38181818181818183,
+      "closure_reuse_successes_observed": 21,
+      "closure_trap_count_observed": 34,
+      "discovery_ranked_candidate_id": null,
+      "generation": 10,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 34
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        9,
+        8
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:57877ee3cfe16d604329",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        8,
+        0
+      ],
+      "summary_primitive_id": "prim:57877ee3cfe16d604329"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e586b6f3e9524208b9f2a3bc8fbcccd842a2eccf612e5c38c190602a953852eb",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 66,
+      "closure_pairs_required": 66,
+      "closure_reuse_rate": 0.48484848484848486,
+      "closure_reuse_successes_observed": 32,
+      "closure_trap_count_observed": 34,
+      "discovery_ranked_candidate_id": null,
+      "generation": 11,
+      "lineage_ok": false,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 34
+      },
+      "seed": 2026100301,
+      "selected_pair_gens": [
+        9,
+        10
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": null,
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:e6af0dc33fa83097c61e",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        3,
+        4
+      ],
+      "summary_primitive_id": "prim:e6af0dc33fa83097c61e"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "afdf6bff75d52094104727ab77686f7b1a613101028a61d6161fe40d9945c61c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 0,
+      "closure_pairs_required": 0,
+      "closure_reuse_rate": null,
+      "closure_reuse_successes_observed": 0,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:c8863ee347902ad8a560",
+      "generation": 0,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.75,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:c8863ee347902ad8a560",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [],
+      "summary_primitive_id": "prim:c8863ee347902ad8a560"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e040ed48bbd6be3505744be40c654f018ee1be48fa94eb6b05c4bd485a9cc45c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 1,
+      "closure_pairs_required": 1,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 1,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:170b0469ac9f2641eec3",
+      "generation": 1,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:58f8a853ef5a383209b9",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0
+      ],
+      "summary_primitive_id": "prim:170b0469ac9f2641eec3"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "570a888fd25671b7391fc3895c1391ff43c2dc982e7700476fea235366df4654",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 3,
+      "closure_pairs_required": 3,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 3,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:4c9bbb56a8227388dc10",
+      "generation": 2,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        1,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:58f8a853ef5a383209b9",
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:4c9bbb56a8227388dc10",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:4c9bbb56a8227388dc10"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "1333064c14c2b3769427259cc46a92e0d6814d3ab77782f18d089a71c4ad2ddb",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 6,
+      "closure_pairs_required": 6,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 6,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:11d7afd110a2d44ead43",
+      "generation": 3,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        2,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:4c9bbb56a8227388dc10",
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:11d7afd110a2d44ead43",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        0
+      ],
+      "summary_primitive_id": "prim:11d7afd110a2d44ead43"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "da5817a1cea280859566a9c8104de27de6870360ffa0b15e56360af2a58b855b",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 10,
+      "closure_pairs_required": 10,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 10,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:c4b6174ba9a4c1e815f8",
+      "generation": 4,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        3,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:11d7afd110a2d44ead43",
+        "prim:58f8a853ef5a383209b9"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:c4b6174ba9a4c1e815f8",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        3
+      ],
+      "summary_primitive_id": "prim:c4b6174ba9a4c1e815f8"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "828fc71d90cc66a1d84ff09692060dfa1ae904b3f6c3ffe3ee18ace449d41421",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 15,
+      "closure_pairs_required": 15,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 15,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:d0a2747d8d637dfa42d0",
+      "generation": 5,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:11d7afd110a2d44ead43"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:d0a2747d8d637dfa42d0",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        3
+      ],
+      "summary_primitive_id": "prim:d0a2747d8d637dfa42d0"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "fef4ce6b6055bc896c920ee7bab47812fe69e8b861352f75437453e2550cd94c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 21,
+      "closure_pairs_required": 21,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 21,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:339fcc177a9cb21bb5f7",
+      "generation": 6,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        2,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:4c9bbb56a8227388dc10",
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:339fcc177a9cb21bb5f7",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        0
+      ],
+      "summary_primitive_id": "prim:339fcc177a9cb21bb5f7"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "4dffa5b9120df929efc56576eac18c064c00158f4f2c0ff4ceade30605e0244b",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 28,
+      "closure_reuse_rate": 0.9642857142857143,
+      "closure_reuse_successes_observed": 27,
+      "closure_trap_count_observed": 1,
+      "discovery_ranked_candidate_id": "prim:333e6308aa4aa679610d",
+      "generation": 7,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 1
+      },
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        1,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:58f8a853ef5a383209b9",
+        "prim:c8863ee347902ad8a560"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:333e6308aa4aa679610d",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:333e6308aa4aa679610d"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e4c81837f2ca1665f3293df72cbfca071233ed0fdb36a065311b0dd68b39ddfd",
+      "closure_competence_failures_observed": 2,
+      "closure_pairs_observed": 36,
+      "closure_pairs_required": 36,
+      "closure_reuse_rate": 0.8888888888888888,
+      "closure_reuse_successes_observed": 32,
+      "closure_trap_count_observed": 2,
+      "discovery_ranked_candidate_id": "prim:a7a58ea28ae3d1c92965",
+      "generation": 8,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 2,
+        "competence_failure": 2
+      },
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        1,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:58f8a853ef5a383209b9",
+        "prim:c4b6174ba9a4c1e815f8"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:a7a58ea28ae3d1c92965",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        4,
+        1
+      ],
+      "summary_primitive_id": "prim:a7a58ea28ae3d1c92965"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "1beab103ea518cc500ef19e094df7ec77260ab25315d1443da522730445130f8",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 45,
+      "closure_pairs_required": 45,
+      "closure_reuse_rate": 0.7555555555555555,
+      "closure_reuse_successes_observed": 34,
+      "closure_trap_count_observed": 11,
+      "discovery_ranked_candidate_id": "prim:035e74418793b7f32417",
+      "generation": 9,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": false,
+      "rejection_breakdown": {
+        "closure_trap": 11
+      },
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        8,
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:a7a58ea28ae3d1c92965",
+        "prim:be327523f1964d0c4ac8"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:cc9a45b1072662eec6fb",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        0,
+        3
+      ],
+      "summary_primitive_id": "prim:035e74418793b7f32417"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "4ecf8bedf7b992184df9d3dd410587124f67bf2969a6e9fbad4371733234b44c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 55,
+      "closure_pairs_required": 55,
+      "closure_reuse_rate": 0.7090909090909091,
+      "closure_reuse_successes_observed": 39,
+      "closure_trap_count_observed": 16,
+      "discovery_ranked_candidate_id": "prim:708116f57711e783a5ec",
+      "generation": 10,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.5,
+      "probe_trap_count": 2,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 16
+      },
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        1,
+        9
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:58f8a853ef5a383209b9",
+        "prim:cc9a45b1072662eec6fb"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:708116f57711e783a5ec",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        1,
+        3
+      ],
+      "summary_primitive_id": "prim:708116f57711e783a5ec"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "5167462f2f930e769c00dc3e4abbc5fd554b6f002685ee4d225c39dec7903615",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 66,
+      "closure_pairs_required": 66,
+      "closure_reuse_rate": 0.7575757575757576,
+      "closure_reuse_successes_observed": 50,
+      "closure_trap_count_observed": 16,
+      "discovery_ranked_candidate_id": "prim:f0dc5b989a5c6fd5a574",
+      "generation": 11,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.75,
+      "probe_trap_count": 1,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 16
+      },
+      "seed": 2026100302,
+      "selected_pair_gens": [
+        3,
+        10
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:11d7afd110a2d44ead43",
+        "prim:708116f57711e783a5ec"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:f0dc5b989a5c6fd5a574",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        6,
+        5
+      ],
+      "summary_primitive_id": "prim:f0dc5b989a5c6fd5a574"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "8d4b8f1bbe9a2d3f83fb73677fafb10d4f4c1c21780b6f0025b1983c36411c2f",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 0,
+      "closure_pairs_required": 0,
+      "closure_reuse_rate": null,
+      "closure_reuse_successes_observed": 0,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:82058e1e1f3b884805f0",
+      "generation": 0,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:82058e1e1f3b884805f0"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:82058e1e1f3b884805f0",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [],
+      "summary_primitive_id": "prim:82058e1e1f3b884805f0"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "6d8f38c2bdda842a8bf4717a6300a658d5e95f11bea0eb9333461559348f678c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 1,
+      "closure_pairs_required": 1,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 1,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:f68747183b144bb516f2",
+      "generation": 1,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:82058e1e1f3b884805f0"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:f68747183b144bb516f2",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0
+      ],
+      "summary_primitive_id": "prim:f68747183b144bb516f2"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e1e7b8ac0e10c52f5c0e14185d883931e39019a3dabda233cb275d9c79fdf841",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 3,
+      "closure_pairs_required": 3,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 3,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:a0f9e15a97ff7a82441d",
+      "generation": 2,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        0,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:82058e1e1f3b884805f0",
+        "prim:f68747183b144bb516f2"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:a0f9e15a97ff7a82441d",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:a0f9e15a97ff7a82441d"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "2e881305b8493434e31b87667d198de4d751b832edee642c46350c6942428ec1",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 6,
+      "closure_pairs_required": 6,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 6,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:9a83fc72887554d9d99a",
+      "generation": 3,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        0,
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:82058e1e1f3b884805f0",
+        "prim:f68747183b144bb516f2"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:9a83fc72887554d9d99a",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:9a83fc72887554d9d99a"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "3721a547021093dec5cd3855858f1a136c411b2f085b8e04ba36f158f1241750",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 10,
+      "closure_pairs_required": 10,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 10,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:aa42494341051e8db19c",
+      "generation": 4,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        3,
+        2
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:9a83fc72887554d9d99a",
+        "prim:a0f9e15a97ff7a82441d"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:aa42494341051e8db19c",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        3
+      ],
+      "summary_primitive_id": "prim:aa42494341051e8db19c"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "c075f45f774423952d660946ef4c31dd67fb746bd0ddbeb5c172f99149850f1e",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 15,
+      "closure_pairs_required": 15,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 15,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:4a5093a8ae2b4487e3e",
+      "generation": 5,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:9a83fc72887554d9d99a"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:4a5093a8ae2b4487e3e",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        3
+      ],
+      "summary_primitive_id": "prim:4a5093a8ae2b4487e3e4"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "eaa2695a93d62047d31d5cb4ed6b1d9a2f32ee88f1d052e2b6975f25fe202ada",
+      "closure_competence_failures_observed": 2,
+      "closure_pairs_observed": 21,
+      "closure_pairs_required": 21,
+      "closure_reuse_rate": 0.8571428571428571,
+      "closure_reuse_successes_observed": 18,
+      "closure_trap_count_observed": 1,
+      "discovery_ranked_candidate_id": "prim:7a1f0b1112cc01bfd890",
+      "generation": 6,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 1,
+        "competence_failure": 2
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        5,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:4a5093a8ae2b4487e3e",
+        "prim:aa42494341051e8db19c"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:7a1f0b1112cc01bfd890",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        4,
+        3
+      ],
+      "summary_primitive_id": "prim:7a1f0b1112cc01bfd890"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "c489f99a28b9ac876455cb3c5ebd0691a9ea404841c1db55139db0da8dc157cd",
+      "closure_competence_failures_observed": 2,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 28,
+      "closure_reuse_rate": 0.7142857142857143,
+      "closure_reuse_successes_observed": 20,
+      "closure_trap_count_observed": 6,
+      "discovery_ranked_candidate_id": "prim:8b16be766c884d2478de",
+      "generation": 7,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.75,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 6,
+        "competence_failure": 2
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:4a5093a8ae2b4487e3e4",
+        "prim:9a83fc72887554d9d99a"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:8b16be766c884d2478de",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        6,
+        1
+      ],
+      "summary_primitive_id": "prim:8b16be766c884d2478de"
+    },
+    {
+      "audit_complete": false,
+      "audit_sha256": "d3944e0b266e2c6353aa7027a0e1aadd211dfe02ba71cd5e4c665eebdf8e138d",
+      "closure_competence_failures_observed": 3,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 36,
+      "closure_reuse_rate": 0.7142857142857143,
+      "closure_reuse_successes_observed": 20,
+      "closure_trap_count_observed": 5,
+      "discovery_ranked_candidate_id": "prim:1461faa33862371b6527",
+      "generation": 8,
+      "lineage_ok": false,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 5,
+        "competence_failure": 3
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        6,
+        2
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:7a1f0b1112cc01bfd890",
+        "prim:a0f9e15a97ff7a82441d"
+      ],
+      "selected_primitive_accepted": false,
+      "selected_primitive_id": "prim:1461faa33862371b6527",
+      "slot_gate_passed": false,
+      "slot_status": "INCONCLUSIVE",
+      "summary_primary_target_parent_generations": [
+        4,
+        5
+      ],
+      "summary_primitive_id": "prim:1461faa33862371b6527"
+    },
+    {
+      "audit_complete": false,
+      "audit_sha256": "d64fe4dbb43b096f3535288ae567998e47a356d50d8f7993d57a2a11bdf179d2",
+      "closure_competence_failures_observed": 4,
+      "closure_pairs_observed": 36,
+      "closure_pairs_required": 45,
+      "closure_reuse_rate": 0.5277777777777778,
+      "closure_reuse_successes_observed": 19,
+      "closure_trap_count_observed": 13,
+      "discovery_ranked_candidate_id": "prim:526084bc4aa4cc1c3e9e",
+      "generation": 9,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": false,
+      "rejection_breakdown": {
+        "closure_trap": 13,
+        "competence_failure": 4
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        6,
+        7
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:7a1f0b1112cc01bfd890",
+        "prim:8b16be766c884d2478de"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:526084bc4aa4cc1c3e9e",
+      "slot_gate_passed": false,
+      "slot_status": "INCONCLUSIVE",
+      "summary_primary_target_parent_generations": [
+        1,
+        7
+      ],
+      "summary_primitive_id": "prim:526084bc4aa4cc1c3e9e"
+    },
+    {
+      "audit_complete": false,
+      "audit_sha256": "3791580041b7a1d7f671b04fb100bb000bf5303eb346c73f0530929706bd5758",
+      "closure_competence_failures_observed": 4,
+      "closure_pairs_observed": 45,
+      "closure_pairs_required": 55,
+      "closure_reuse_rate": 0.4,
+      "closure_reuse_successes_observed": 18,
+      "closure_trap_count_observed": 23,
+      "discovery_ranked_candidate_id": "prim:8edeaaa507dac1552ea3",
+      "generation": 10,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 23,
+        "competence_failure": 4
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        5,
+        9
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:4a5093a8ae2b4487e3e4",
+        "prim:526084bc4aa4cc1c3e9e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:8edeaaa507dac1552ea3",
+      "slot_gate_passed": false,
+      "slot_status": "INCONCLUSIVE",
+      "summary_primary_target_parent_generations": [
+        6,
+        3
+      ],
+      "summary_primitive_id": "prim:8edeaaa507dac1552ea3"
+    },
+    {
+      "audit_complete": false,
+      "audit_sha256": "0c47e82e2cf904fcd5089d96bb11385731fa6cd07481642fcdf102d3efbf7614",
+      "closure_competence_failures_observed": 2,
+      "closure_pairs_observed": 55,
+      "closure_pairs_required": 66,
+      "closure_reuse_rate": 0.38181818181818183,
+      "closure_reuse_successes_observed": 21,
+      "closure_trap_count_observed": 32,
+      "discovery_ranked_candidate_id": "prim:e64e55a4a0313b374b4c",
+      "generation": 11,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.5,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 32,
+        "competence_failure": 2
+      },
+      "seed": 2026100303,
+      "selected_pair_gens": [
+        9,
+        10
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:526084bc4aa4cc1c3e9e",
+        "prim:8edeaaa507dac1552ea3"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:e64e55a4a0313b374b4c",
+      "slot_gate_passed": false,
+      "slot_status": "INCONCLUSIVE",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:e64e55a4a0313b374b4c"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "a2a7d1f3a300c06de192bd9c4d31c99125fe5d15fc591d1ece7261444a53c2cb",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 0,
+      "closure_pairs_required": 0,
+      "closure_reuse_rate": null,
+      "closure_reuse_successes_observed": 0,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:955d3c17dbbca3346a2e",
+      "generation": 0,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100304,
+      "selected_pair_gens": [],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:955d3c17dbbca3346a2e",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [],
+      "summary_primitive_id": "prim:955d3c17dbbca3346a2e"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "971376251329852f7062a30422dcc5a55f19305216998303a405503f3e425a08",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 1,
+      "closure_pairs_required": 1,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 1,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:3ae721d99fcfec3233e4",
+      "generation": 1,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:955d3c17dbbca3346a2e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:3ae721d99fcfec3233e4",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0
+      ],
+      "summary_primitive_id": "prim:3ae721d99fcfec3233e4"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "0b6df76fc24f7f59f6c799077255ad6cbea8c113f555b2a0a8855b909677856a",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 3,
+      "closure_pairs_required": 3,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 3,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:11f231ee482f84f68b7f",
+      "generation": 2,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        1,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:3ae721d99fcfec3233e4",
+        "prim:955d3c17dbbca3346a2e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:11f231ee482f84f68b7f",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        0
+      ],
+      "summary_primitive_id": "prim:11f231ee482f84f68b7f"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "ed8a1c5780e1a8f879afe62a672c4d9aff538b6b084cb3e8d0c3cdefbd78f3ff",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 6,
+      "closure_pairs_required": 6,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 6,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:886d849d920dc7d92ca2",
+      "generation": 3,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        1,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:3ae721d99fcfec3233e4",
+        "prim:955d3c17dbbca3346a2e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:886d849d920dc7d92ca2",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        1
+      ],
+      "summary_primitive_id": "prim:886d849d920dc7d92ca2"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "8b16c4cd840e794903659ad9cf552679444622a208695443fe24419767cafd72",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 10,
+      "closure_pairs_required": 10,
+      "closure_reuse_rate": 0.7,
+      "closure_reuse_successes_observed": 7,
+      "closure_trap_count_observed": 3,
+      "discovery_ranked_candidate_id": "prim:cfb81c05ff37aaf34f23",
+      "generation": 4,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 3
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:886d849d920dc7d92ca2"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:b0c420bf3316e423bc15",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        3,
+        1
+      ],
+      "summary_primitive_id": "prim:cfb81c05ff37aaf34f23"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "851db9b0dbdf1798e547dd3ae8384889ab90acdc604f19efcca02f7c1f3fb8a9",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 15,
+      "closure_pairs_required": 15,
+      "closure_reuse_rate": 0.4666666666666667,
+      "closure_reuse_successes_observed": 7,
+      "closure_trap_count_observed": 8,
+      "discovery_ranked_candidate_id": "prim:41ed256df55203f0ab4b",
+      "generation": 5,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.5,
+      "probe_trap_count": 2,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 5,
+        "primary_pair_add_not_discovery_qualified": 3
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        3,
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:886d849d920dc7d92ca2",
+        "prim:955d3c17dbbca3346a2e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:9f30333819569f9b1d9d",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        3,
+        4
+      ],
+      "summary_primitive_id": "prim:41ed256df55203f0ab4b"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "6eb783b94dce7533f064076f84d3d606638403901658ef9b941e622d76c1a906",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 21,
+      "closure_pairs_required": 21,
+      "closure_reuse_rate": 0.5238095238095238,
+      "closure_reuse_successes_observed": 11,
+      "closure_trap_count_observed": 10,
+      "discovery_ranked_candidate_id": "prim:d394afe207ca666805eb",
+      "generation": 6,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.5,
+      "probe_trap_count": 2,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 7,
+        "primary_pair_add_not_discovery_qualified": 3
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        2,
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:11f231ee482f84f68b7f",
+        "prim:886d849d920dc7d92ca2"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:d394afe207ca666805eb",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        2,
+        3
+      ],
+      "summary_primitive_id": "prim:d394afe207ca666805eb"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "28211149fb4ca8e1589100038e26456b2bcdc4f264faff461706b87e614fb68a",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 28,
+      "closure_reuse_rate": 0.42857142857142855,
+      "closure_reuse_successes_observed": 12,
+      "closure_trap_count_observed": 16,
+      "discovery_ranked_candidate_id": "prim:55bba19d9fd31208aea3",
+      "generation": 7,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 14,
+        "primary_pair_add_not_discovery_qualified": 2
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        0,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:955d3c17dbbca3346a2e",
+        "prim:b0c420bf3316e423bc15"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:55bba19d9fd31208aea3",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        0,
+        1
+      ],
+      "summary_primitive_id": "prim:55bba19d9fd31208aea3"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "dc7f1a412f44f424da95b47de6106d1416ab01b64bf48e0eac3bb248d027c5df",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 36,
+      "closure_pairs_required": 36,
+      "closure_reuse_rate": 0.4444444444444444,
+      "closure_reuse_successes_observed": 16,
+      "closure_trap_count_observed": 20,
+      "discovery_ranked_candidate_id": "prim:620296ed662a7160e1a1",
+      "generation": 8,
+      "lineage_ok": false,
+      "probe_reuse_rate": 0.75,
+      "probe_trap_count": 1,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "closure_trap": 19,
+        "primary_pair_add_not_discovery_qualified": 1
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        3,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:886d849d920dc7d92ca2",
+        "prim:b0c420bf3316e423bc15"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:620296ed662a7160e1a1",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        5,
+        3
+      ],
+      "summary_primitive_id": "prim:620296ed662a7160e1a1"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "fae844a4eddef905089c4ce17cd550b707e7cbc40c907e7808d1d27bd94a5a3c",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 45,
+      "closure_pairs_required": 45,
+      "closure_reuse_rate": 0.4888888888888889,
+      "closure_reuse_successes_observed": 22,
+      "closure_trap_count_observed": 23,
+      "discovery_ranked_candidate_id": "prim:2a84f848c0b8d40a5f93",
+      "generation": 9,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.5,
+      "probe_trap_count": 2,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 20,
+        "primary_pair_add_not_discovery_qualified": 3
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        8,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:620296ed662a7160e1a1",
+        "prim:b0c420bf3316e423bc15"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:2a84f848c0b8d40a5f93",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        8,
+        1
+      ],
+      "summary_primitive_id": "prim:2a84f848c0b8d40a5f93"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "74f4989b6f648221175d82ac84df70c50f1cc618f6a382b5c9361add11bffe19",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 55,
+      "closure_pairs_required": 55,
+      "closure_reuse_rate": 0.5272727272727272,
+      "closure_reuse_successes_observed": 29,
+      "closure_trap_count_observed": 26,
+      "discovery_ranked_candidate_id": "prim:896bd5f26d68d2d28fa6",
+      "generation": 10,
+      "lineage_ok": false,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 24,
+        "primary_pair_add_not_discovery_qualified": 2
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        9,
+        7
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:2a84f848c0b8d40a5f93",
+        "prim:55bba19d9fd31208aea3"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:896bd5f26d68d2d28fa6",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        9,
+        2
+      ],
+      "summary_primitive_id": "prim:896bd5f26d68d2d28fa6"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "9f925344616e72d267e6586e82f0fa93482077e03c76ed01f46341e7d4231521",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 66,
+      "closure_pairs_required": 66,
+      "closure_reuse_rate": 0.5909090909090909,
+      "closure_reuse_successes_observed": 39,
+      "closure_trap_count_observed": 27,
+      "discovery_ranked_candidate_id": "prim:8830ef6c8972d6874cd2",
+      "generation": 11,
+      "lineage_ok": true,
+      "probe_reuse_rate": 0.25,
+      "probe_trap_count": 2,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 24,
+        "primary_pair_add_not_discovery_qualified": 3
+      },
+      "seed": 2026100304,
+      "selected_pair_gens": [
+        8,
+        10
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:620296ed662a7160e1a1",
+        "prim:896bd5f26d68d2d28fa6"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:8830ef6c8972d6874cd2",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        10,
+        8
+      ],
+      "summary_primitive_id": "prim:8830ef6c8972d6874cd2"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "17fc978832f2e4a1c9d5090d1119c6aa9ba0960ab6efd3ab2c22abd12cb8c359",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 0,
+      "closure_pairs_required": 0,
+      "closure_reuse_rate": null,
+      "closure_reuse_successes_observed": 0,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:69e680889385259c198f",
+      "generation": 0,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:69e680889385259c198f",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [],
+      "summary_primitive_id": "prim:69e680889385259c198f"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "ce66ae17960c3725379fc1bd5d2aa09cebd1fb9e09192e7de7c8106b41755ae2",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 1,
+      "closure_pairs_required": 1,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 1,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:ca1cc7ea4217a64a7f5d",
+      "generation": 1,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:69e680889385259c198f"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:ca1cc7ea4217a64a7f5d",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0
+      ],
+      "summary_primitive_id": "prim:ca1cc7ea4217a64a7f5d"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "3e6ea40b0f0a4720ef2019a16ac7cc2475925e659e7c326b00a1c081d67ae85f",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 3,
+      "closure_pairs_required": 3,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 3,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:7195554b49c72be55e6d",
+      "generation": 2,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        1
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:7195554b49c72be55e6d",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        1
+      ],
+      "summary_primitive_id": "prim:7195554b49c72be55e6d"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "d89c2f7225e732d413c6e950dbb8c0643efe5c9254139b00174e3dbbaf1483ac",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 6,
+      "closure_pairs_required": 6,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 6,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:a00ac8dc7c095a30bc5b",
+      "generation": 3,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        2
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:7195554b49c72be55e6d"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:a00ac8dc7c095a30bc5b",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        0,
+        2
+      ],
+      "summary_primitive_id": "prim:a00ac8dc7c095a30bc5b"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "f8e37d249f3abbb57dd372ebc34d3de28ea1a8af708a382da1b7746e2442e918",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 10,
+      "closure_pairs_required": 10,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 10,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:c52acbb01d8ea89043f4",
+      "generation": 4,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        2,
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:c52acbb01d8ea89043f4",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        1,
+        2
+      ],
+      "summary_primitive_id": "prim:c52acbb01d8ea89043f4"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "068b8986c4428683798f4a3a6c2397d3b359a83839eb61539b08ac638f98150e",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 15,
+      "closure_pairs_required": 15,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 15,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:6e22731d482440003404",
+      "generation": 5,
+      "lineage_ok": false,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        0
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:69e680889385259c198f"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:6e22731d482440003404",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        0,
+        2
+      ],
+      "summary_primitive_id": "prim:6e22731d482440003404"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "92f3188d167c7f8573126432da6824a6be80409165276e8eded0cbb165c76e74",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 21,
+      "closure_pairs_required": 21,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 21,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:6b62ddff0ed76d37fd6e",
+      "generation": 6,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        3,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:6b62ddff0ed76d37fd6e",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        4
+      ],
+      "summary_primitive_id": "prim:6b62ddff0ed76d37fd6e"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "3ea73a99b56d754a5fd67f53c6c2566c4caea21cc7ee1cd20a043f193a765119",
+      "closure_competence_failures_observed": 0,
+      "closure_pairs_observed": 28,
+      "closure_pairs_required": 28,
+      "closure_reuse_rate": 1.0,
+      "closure_reuse_successes_observed": 28,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:ebb0187e024f353a658f",
+      "generation": 7,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {},
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        3
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:ebb0187e024f353a658f",
+      "slot_gate_passed": true,
+      "slot_status": "PASSED",
+      "summary_primary_target_parent_generations": [
+        2,
+        1
+      ],
+      "summary_primitive_id": "prim:ebb0187e024f353a658f"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "d89c3cf614aead39c8696d9b33180a75a581bbbc0380a5ca9fdcf56d2a0fb988",
+      "closure_competence_failures_observed": 1,
+      "closure_pairs_observed": 36,
+      "closure_pairs_required": 36,
+      "closure_reuse_rate": 0.9722222222222222,
+      "closure_reuse_successes_observed": 35,
+      "closure_trap_count_observed": 0,
+      "discovery_ranked_candidate_id": "prim:d4d380750bf4764d7013",
+      "generation": 8,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": false,
+      "recency_gate_passed": null,
+      "rejection_breakdown": {
+        "competence_failure": 1
+      },
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        7
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:ebb0187e024f353a658f"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:d4d380750bf4764d7013",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        2,
+        7
+      ],
+      "summary_primitive_id": "prim:d4d380750bf4764d7013"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "e94f816bbd7559804f029a0068532d109ebf829d27b6de4cf0b55350dbda4996",
+      "closure_competence_failures_observed": 1,
+      "closure_pairs_observed": 45,
+      "closure_pairs_required": 45,
+      "closure_reuse_rate": 0.8666666666666667,
+      "closure_reuse_successes_observed": 39,
+      "closure_trap_count_observed": 5,
+      "discovery_ranked_candidate_id": "prim:541d38a62c7933cf8f4e",
+      "generation": 9,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 5,
+        "competence_failure": 1
+      },
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        6,
+        8
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:6b62ddff0ed76d37fd6e",
+        "prim:d4d380750bf4764d7013"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:541d38a62c7933cf8f4e",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        6,
+        1
+      ],
+      "summary_primitive_id": "prim:541d38a62c7933cf8f4e"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "6182231e342b5a85fd674a9ae9262e32c41a713d84220bcda3ec7d7b06891df2",
+      "closure_competence_failures_observed": 1,
+      "closure_pairs_observed": 55,
+      "closure_pairs_required": 55,
+      "closure_reuse_rate": 0.7090909090909091,
+      "closure_reuse_successes_observed": 39,
+      "closure_trap_count_observed": 15,
+      "discovery_ranked_candidate_id": "prim:29e6dde886689f2c6ffb",
+      "generation": 10,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": true,
+      "rejection_breakdown": {
+        "closure_trap": 15,
+        "competence_failure": 1
+      },
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        9,
+        6
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:541d38a62c7933cf8f4e",
+        "prim:6b62ddff0ed76d37fd6e"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:b6d64cba2d251406538c",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        2,
+        3
+      ],
+      "summary_primitive_id": "prim:29e6dde886689f2c6ffb"
+    },
+    {
+      "audit_complete": true,
+      "audit_sha256": "feb023b2d1779dabb5885dbd09dbd1c2c428ccf6674a440bf799eb412819a4b4",
+      "closure_competence_failures_observed": 2,
+      "closure_pairs_observed": 66,
+      "closure_pairs_required": 66,
+      "closure_reuse_rate": 0.7272727272727273,
+      "closure_reuse_successes_observed": 48,
+      "closure_trap_count_observed": 16,
+      "discovery_ranked_candidate_id": "prim:315a4b71c4f2ecd61599",
+      "generation": 11,
+      "lineage_ok": true,
+      "probe_reuse_rate": 1.0,
+      "probe_trap_count": 0,
+      "recency_gate_applicable": true,
+      "recency_gate_passed": false,
+      "rejection_breakdown": {
+        "closure_trap": 16,
+        "competence_failure": 2
+      },
+      "seed": 2026100305,
+      "selected_pair_gens": [
+        5,
+        4
+      ],
+      "selected_pair_gens_source": "selected_direct_parent_generations event",
+      "selected_pair_parent_ids": [
+        "prim:6e22731d482440003404",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_primitive_accepted": true,
+      "selected_primitive_id": "prim:315a4b71c4f2ecd61599",
+      "slot_gate_passed": false,
+      "slot_status": "FAILED",
+      "summary_primary_target_parent_generations": [
+        0,
+        4
+      ],
+      "summary_primitive_id": "prim:315a4b71c4f2ecd61599"
+    }
+  ],
+  "status_snapshot": {
+    "checks_performed": 1,
+    "command": "timeout 15s kaggle kernels status memorican/acsie-h7-v22-3-frozen-qualification",
+    "exit_code": 0,
+    "polling_performed": false,
+    "stdout": "memorican/acsie-h7-v22-3-frozen-qualification has status \"KernelWorkerStatus.ERROR\""
+  },
+  "v1_missing_pair_audit_slots": 11,
+  "v1_recorded_traps_known": 147,
+  "v3_observed_closure_traps": 418,
+  "v3_unobserved_required_pair_outcomes": 38,
+  "version1_vs_version3_seed_master": [
+    {
+      "seed": 2026100301,
+      "v1_Gen10_recency": true,
+      "v1_Gen11_recency": true,
+      "v1_Gen9_recency": true,
+      "v1_every_closure_perfect": false,
+      "v1_every_probe_perfect": "NOT_VERIFIED",
+      "v1_execution_status": "KAGGLE_WORKER_ERROR; per-seed final manifest unavailable",
+      "v1_finite_gate": "NOT_VERIFIED",
+      "v1_generations_completed_evidence": 12,
+      "v1_incomplete_audit_generations": [],
+      "v1_lineage_closed": "NOT_VERIFIED",
+      "v1_recorded_traps_in_available_rows": 54,
+      "v1_runtime_seconds": null,
+      "v1_trap_free_ok": false,
+      "v3_Gen10_recency": true,
+      "v3_Gen11_recency": true,
+      "v3_Gen9_recency": true,
+      "v3_closure_capacity_ok": false,
+      "v3_depth_growth_contract": true,
+      "v3_every_closure_perfect": false,
+      "v3_every_probe_perfect": false,
+      "v3_execution_status": "COMPLETED",
+      "v3_false_finite_gate_predicates": [
+        "lineage_closed",
+        "every_closure_perfect",
+        "every_probe_perfect",
+        "final_closure_reuse_is_1",
+        "zero_traps_all_generations"
+      ],
+      "v3_finite_gate": false,
+      "v3_generations_completed": 12,
+      "v3_incomplete_pair_slots": [],
+      "v3_lineage_closed": false,
+      "v3_observed_traps_all_generations": 123,
+      "v3_probe_traps_all_generations": 4,
+      "v3_runtime_seconds": 1627.356,
+      "v3_strict_growth": true,
+      "v3_trap_free_ok": false
+    },
+    {
+      "seed": 2026100302,
+      "v1_Gen10_recency": true,
+      "v1_Gen11_recency": true,
+      "v1_Gen9_recency": true,
+      "v1_every_closure_perfect": false,
+      "v1_every_probe_perfect": "NOT_VERIFIED",
+      "v1_execution_status": "KAGGLE_WORKER_ERROR; per-seed final manifest unavailable",
+      "v1_finite_gate": "NOT_VERIFIED",
+      "v1_generations_completed_evidence": 12,
+      "v1_incomplete_audit_generations": [],
+      "v1_lineage_closed": "NOT_VERIFIED",
+      "v1_recorded_traps_in_available_rows": 29,
+      "v1_runtime_seconds": null,
+      "v1_trap_free_ok": false,
+      "v3_Gen10_recency": true,
+      "v3_Gen11_recency": true,
+      "v3_Gen9_recency": false,
+      "v3_closure_capacity_ok": true,
+      "v3_depth_growth_contract": true,
+      "v3_every_closure_perfect": false,
+      "v3_every_probe_perfect": false,
+      "v3_execution_status": "COMPLETED",
+      "v3_false_finite_gate_predicates": [
+        "lineage_closed",
+        "every_closure_perfect",
+        "every_probe_perfect",
+        "Gen9_10_11_recency_all_pass",
+        "final_probe_reuse_is_1",
+        "final_closure_reuse_is_1",
+        "zero_traps_all_generations"
+      ],
+      "v3_finite_gate": false,
+      "v3_generations_completed": 12,
+      "v3_incomplete_pair_slots": [],
+      "v3_lineage_closed": false,
+      "v3_observed_traps_all_generations": 46,
+      "v3_probe_traps_all_generations": 3,
+      "v3_runtime_seconds": 368.916,
+      "v3_strict_growth": true,
+      "v3_trap_free_ok": false
+    },
+    {
+      "seed": 2026100303,
+      "v1_Gen10_recency": true,
+      "v1_Gen11_recency": true,
+      "v1_Gen9_recency": false,
+      "v1_every_closure_perfect": false,
+      "v1_every_probe_perfect": "NOT_VERIFIED",
+      "v1_execution_status": "KAGGLE_WORKER_ERROR; per-seed final manifest unavailable",
+      "v1_finite_gate": "NOT_VERIFIED",
+      "v1_generations_completed_evidence": 8,
+      "v1_incomplete_audit_generations": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "v1_lineage_closed": "NOT_VERIFIED",
+      "v1_recorded_traps_in_available_rows": 0,
+      "v1_runtime_seconds": null,
+      "v1_trap_free_ok": "NOT_VERIFIED",
+      "v3_Gen10_recency": true,
+      "v3_Gen11_recency": true,
+      "v3_Gen9_recency": false,
+      "v3_closure_capacity_ok": false,
+      "v3_depth_growth_contract": false,
+      "v3_every_closure_perfect": false,
+      "v3_every_probe_perfect": false,
+      "v3_execution_status": "COMPLETED",
+      "v3_false_finite_gate_predicates": [
+        "every_generation_accepted",
+        "lineage_closed",
+        "every_closure_perfect",
+        "every_probe_perfect",
+        "Gen9_10_11_recency_all_pass",
+        "strict_growth",
+        "depth_growth_contract",
+        "retained_count_at_least_12",
+        "final_probe_success_is_1",
+        "final_probe_reuse_is_1",
+        "final_closure_success_is_1",
+        "final_closure_reuse_is_1",
+        "zero_traps_all_generations"
+      ],
+      "v3_finite_gate": false,
+      "v3_generations_completed": 12,
+      "v3_incomplete_pair_slots": [
+        {
+          "generation": 8,
+          "observed": 28,
+          "required": 36,
+          "unobserved": 8
+        },
+        {
+          "generation": 9,
+          "observed": 36,
+          "required": 45,
+          "unobserved": 9
+        },
+        {
+          "generation": 10,
+          "observed": 45,
+          "required": 55,
+          "unobserved": 10
+        },
+        {
+          "generation": 11,
+          "observed": 55,
+          "required": 66,
+          "unobserved": 11
+        }
+      ],
+      "v3_lineage_closed": false,
+      "v3_observed_traps_all_generations": 80,
+      "v3_probe_traps_all_generations": 0,
+      "v3_runtime_seconds": 453.871,
+      "v3_strict_growth": false,
+      "v3_trap_free_ok": false
+    },
+    {
+      "seed": 2026100304,
+      "v1_Gen10_recency": true,
+      "v1_Gen11_recency": true,
+      "v1_Gen9_recency": true,
+      "v1_every_closure_perfect": false,
+      "v1_every_probe_perfect": "NOT_VERIFIED",
+      "v1_execution_status": "KAGGLE_WORKER_ERROR; per-seed final manifest unavailable",
+      "v1_finite_gate": "NOT_VERIFIED",
+      "v1_generations_completed_evidence": 5,
+      "v1_incomplete_audit_generations": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "v1_lineage_closed": "NOT_VERIFIED",
+      "v1_recorded_traps_in_available_rows": 60,
+      "v1_runtime_seconds": null,
+      "v1_trap_free_ok": false,
+      "v3_Gen10_recency": true,
+      "v3_Gen11_recency": true,
+      "v3_Gen9_recency": true,
+      "v3_closure_capacity_ok": false,
+      "v3_depth_growth_contract": true,
+      "v3_every_closure_perfect": false,
+      "v3_every_probe_perfect": false,
+      "v3_execution_status": "COMPLETED",
+      "v3_false_finite_gate_predicates": [
+        "lineage_closed",
+        "every_closure_perfect",
+        "every_probe_perfect",
+        "final_probe_success_is_1",
+        "final_probe_reuse_is_1",
+        "final_closure_reuse_is_1",
+        "zero_traps_all_generations"
+      ],
+      "v3_finite_gate": false,
+      "v3_generations_completed": 12,
+      "v3_incomplete_pair_slots": [],
+      "v3_lineage_closed": false,
+      "v3_observed_traps_all_generations": 133,
+      "v3_probe_traps_all_generations": 9,
+      "v3_runtime_seconds": 376.892,
+      "v3_strict_growth": true,
+      "v3_trap_free_ok": false
+    },
+    {
+      "seed": 2026100305,
+      "v1_Gen10_recency": true,
+      "v1_Gen11_recency": false,
+      "v1_Gen9_recency": true,
+      "v1_every_closure_perfect": false,
+      "v1_every_probe_perfect": "NOT_VERIFIED",
+      "v1_execution_status": "KAGGLE_WORKER_ERROR; per-seed final manifest unavailable",
+      "v1_finite_gate": "NOT_VERIFIED",
+      "v1_generations_completed_evidence": 12,
+      "v1_incomplete_audit_generations": [],
+      "v1_lineage_closed": "NOT_VERIFIED",
+      "v1_recorded_traps_in_available_rows": 4,
+      "v1_runtime_seconds": null,
+      "v1_trap_free_ok": false,
+      "v3_Gen10_recency": true,
+      "v3_Gen11_recency": false,
+      "v3_Gen9_recency": true,
+      "v3_closure_capacity_ok": false,
+      "v3_depth_growth_contract": true,
+      "v3_every_closure_perfect": false,
+      "v3_every_probe_perfect": true,
+      "v3_execution_status": "COMPLETED",
+      "v3_false_finite_gate_predicates": [
+        "lineage_closed",
+        "every_closure_perfect",
+        "Gen9_10_11_recency_all_pass",
+        "final_closure_success_is_1",
+        "final_closure_reuse_is_1",
+        "zero_traps_all_generations"
+      ],
+      "v3_finite_gate": false,
+      "v3_generations_completed": 12,
+      "v3_incomplete_pair_slots": [],
+      "v3_lineage_closed": false,
+      "v3_observed_traps_all_generations": 36,
+      "v3_probe_traps_all_generations": 0,
+      "v3_runtime_seconds": 472.401,
+      "v3_strict_growth": true,
+      "v3_trap_free_ok": false
+    }
+  ],
+  "version3_seed_log_inventory": [
+    {
+      "local_bytes": 308281344,
+      "local_full_download": false,
+      "local_sha256": "bd09fc175634e5f9f98fc3acf25dad8cb82ac0896e3523bebe146665a7d4cd71",
+      "name": "acsie-h7-v22-3-seed-2026100301.log",
+      "remote_bytes": 355689793,
+      "remote_fully_streamed_for_hash": true,
+      "remote_sha256": "d118af5a8b2682ea353b382efe125d6bca94a7f87deba42566a03bb0963e9e11"
+    },
+    {
+      "local_bytes": 16744196,
+      "local_full_download": true,
+      "local_sha256": "507812efdf4990c49e23fc228b2ecb8d221fec44da557abe1b38dafac68f27f6",
+      "name": "acsie-h7-v22-3-seed-2026100302.log",
+      "remote_bytes": 16744196,
+      "remote_fully_streamed_for_hash": false,
+      "remote_sha256": "507812efdf4990c49e23fc228b2ecb8d221fec44da557abe1b38dafac68f27f6"
+    },
+    {
+      "local_bytes": null,
+      "local_full_download": false,
+      "local_sha256": null,
+      "name": "acsie-h7-v22-3-seed-2026100303.log",
+      "remote_bytes": 309027928,
+      "remote_fully_streamed_for_hash": true,
+      "remote_sha256": "da3654b630139d0fde51209b673eb374e4574684ba27a13554b3ca9313f2e77f"
+    },
+    {
+      "local_bytes": 29740938,
+      "local_full_download": true,
+      "local_sha256": "ec5ec5820fa82855efcf778dd90e27e983f33c77e88bcb9a6aac31f5a7af9da9",
+      "name": "acsie-h7-v22-3-seed-2026100304.log",
+      "remote_bytes": 29740938,
+      "remote_fully_streamed_for_hash": false,
+      "remote_sha256": "ec5ec5820fa82855efcf778dd90e27e983f33c77e88bcb9a6aac31f5a7af9da9"
+    },
+    {
+      "local_bytes": 35762585,
+      "local_full_download": true,
+      "local_sha256": "3b4bf0259031fa7056bfe1f4c0451757379efe1222b4da20b39653bab31dd369",
+      "name": "acsie-h7-v22-3-seed-2026100305.log",
+      "remote_bytes": 35762585,
+      "remote_fully_streamed_for_hash": false,
+      "remote_sha256": "3b4bf0259031fa7056bfe1f4c0451757379efe1222b4da20b39653bab31dd369"
+    },
+    {
+      "local_bytes": 8678,
+      "local_full_download": true,
+      "local_sha256": "9bfa1b37b29ec1cfc867e8e4e17f5e376c750bff55470c3f7307806472db79f3",
+      "name": "acsie-h7-v22-3-frozen-qualification.log",
+      "remote_bytes": 8678,
+      "remote_sha256": "9bfa1b37b29ec1cfc867e8e4e17f5e376c750bff55470c3f7307806472db79f3"
+    }
+  ]
+}

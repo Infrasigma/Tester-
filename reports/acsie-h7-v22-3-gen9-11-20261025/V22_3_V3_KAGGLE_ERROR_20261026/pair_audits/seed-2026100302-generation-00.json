@@ -1,0 +1,66 @@
+{
+  "accepted_pair_count": 0,
+  "accepted_pairs": [],
+  "attempted_pair_count": 0,
+  "attempted_pairs": [],
+  "bootstrap_primitives": [
+    "prim:c8863ee347902ad8a560"
+  ],
+  "checkpoint_fidelity": {
+    "bootstrap_primitives_after": [
+      "prim:c8863ee347902ad8a560"
+    ],
+    "bootstrap_primitives_before": [
+      "prim:c8863ee347902ad8a560"
+    ],
+    "bootstrap_primitives_preserved": true,
+    "errors": [],
+    "ordered_primary_macro_ids_preserved": true,
+    "primary_macro_ids_after": [
+      "prim:c8863ee347902ad8a560"
+    ],
+    "primary_macro_ids_before": [
+      "prim:c8863ee347902ad8a560"
+    ],
+    "status": "VERIFIED"
+  },
+  "eligible_pair_count": 0,
+  "eligible_pairs": [],
+  "first_failing_pair": null,
+  "generation": 0,
+  "observed_pair_count": 0,
+  "ordered_primary_macro_ids": [
+    "prim:c8863ee347902ad8a560"
+  ],
+  "pair_rows": [],
+  "rejected_pair_count": 0,
+  "rejected_pairs": [],
+  "rejection_breakdown": {
+    "counts": {
+      "candidate_missing": 0,
+      "canonicalization_mismatch": 0,
+      "closure_trap": 0,
+      "competence_failure": 0,
+      "dominance": 0,
+      "equivalence_mismatch": 0,
+      "lineage_break": 0,
+      "primary_pair_add_not_discovery_qualified": 0,
+      "search_budget_exhausted": 0
+    },
+    "pairs": {
+      "candidate_missing": [],
+      "canonicalization_mismatch": [],
+      "closure_trap": [],
+      "competence_failure": [],
+      "dominance": [],
+      "equivalence_mismatch": [],
+      "lineage_break": [],
+      "primary_pair_add_not_discovery_qualified": [],
+      "search_budget_exhausted": []
+    }
+  },
+  "required_pair_count": 0,
+  "schema": "ACSIE.h7.generation_pair_summary.v1",
+  "skipped_pair_count": 0,
+  "skipped_pairs": []
+}
