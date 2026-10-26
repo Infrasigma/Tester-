@@ -1,0 +1,127 @@
+{
+  "archive_bytes": 104736,
+  "archive_sha256": "7e55b716e74c6d106e4c85e63e81360a2422ca2ec32c1a3b25aadd90ef8bf31e",
+  "files": [
+    {
+      "bytes": 45,
+      "path": "research/recovered/h7_v22_2_runtime/source/__init__.py",
+      "sha256": "a15fd3f6807b8fee3fb2435c0f5c9464d295a62b306ba89bcd59d39fade47927"
+    },
+    {
+      "bytes": 58,
+      "path": "research/recovered/h7_v22_2_runtime/source/cognitive_core/__init__.py",
+      "sha256": "0fb724bfe771bab578dfba4c8130c4839c57a0b152a9aebcf936f559da092023"
+    },
+    {
+      "bytes": 227693,
+      "path": "research/recovered/h7_v22_2_runtime/source/cognitive_core/behavioral_search.py",
+      "sha256": "2902d4ec4010220dd1d1ba81eb2706bd9ca069cfe32eb15bcc1afeed66583b0c"
+    },
+    {
+      "bytes": 44601,
+      "path": "research/recovered/h7_v22_2_runtime/source/cognitive_core/open_ended_growth.py",
+      "sha256": "97789338926b9943f274645c53a2d48a1da044812a227b028d97d81e90b0ce17"
+    },
+    {
+      "bytes": 53174,
+      "path": "research/recovered/h7_v22_2_runtime/source/cognitive_core/recursive_cognitive_compiler.py",
+      "sha256": "1564bcedf91ad8844577a275e9a12068411d00c8a862776baffd8b48b172d88d"
+    },
+    {
+      "bytes": 58,
+      "path": "research/recovered/h7_v22_2_runtime/source/lab/__init__.py",
+      "sha256": "0fb724bfe771bab578dfba4c8130c4839c57a0b152a9aebcf936f559da092023"
+    },
+    {
+      "bytes": 95444,
+      "path": "research/recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py",
+      "sha256": "b15167254489570e89f0e226d1ad4d64f91061d685a91ae697a98b9016c7681d"
+    },
+    {
+      "bytes": 11800,
+      "path": "research/recovered/h7_v22_2_runtime/source/lab/exact_checkpoint.py",
+      "sha256": "4368b04a1cf02d7813cdf405456240c0cc94ed912f8722d8f47fe9869f007195"
+    },
+    {
+      "bytes": 2659,
+      "path": "research/recovered/h7_v22_2_runtime/source/lab/h7_exact_audit.py",
+      "sha256": "26acb12f0327795e6503fa7b707d81e7db0ef6f3883867b1fe144f6dd4deb89b"
+    },
+    {
+      "bytes": 58,
+      "path": "research/recovered/h7_v22_2_runtime/source/research/__init__.py",
+      "sha256": "0fb724bfe771bab578dfba4c8130c4839c57a0b152a9aebcf936f559da092023"
+    },
+    {
+      "bytes": 15549,
+      "path": "research/recovered/h7_v22_2_runtime/source/research/audit_h7_closure_telemetry.py",
+      "sha256": "b45520448b62b60281df23ef839b3cec49ad232705cdf2289fbe25b298624627"
+    },
+    {
+      "bytes": 18070,
+      "path": "research/recovered/h7_v22_2_runtime/source/research/h7_generation_pair_summary.py",
+      "sha256": "81ffba821f5cbfe76a44a00a2177064515b334064701586d48ac6b8a5e4019e0"
+    },
+    {
+      "bytes": 6561,
+      "path": "research/tests/test_h7_closure_telemetry_audit.py",
+      "sha256": "154c935d772bc51471c32f5e09275eec26d4a755793556f726f04051b5597faa"
+    },
+    {
+      "bytes": 12120,
+      "path": "research/tests/test_h7_generation_pair_summary.py",
+      "sha256": "dfcda932a89a1808a4e21fa14d44aadd0f07faf84a152ca8a952efc1d5275728"
+    },
+    {
+      "bytes": 7930,
+      "path": "research/tests/test_h7_v22_2_overlay_regressions.py",
+      "sha256": "b38305c85b7bf1cacfaab10f1d16416dacebfdc1dad5ffeaf78f91fbb10ce97e"
+    },
+    {
+      "bytes": 37422,
+      "path": "research/tests/test_h7_v22_3_repairs.py",
+      "sha256": "c7473a2fe956c5bf56dbbc3ca433cbff7e5ab154cdebd07f75b4d540590f6706"
+    }
+  ],
+  "frozen_contract": {
+    "generations_per_seed": 12,
+    "promotion": "DO NOT PROMOTE",
+    "required_unordered_pairs_per_generation": "g*(g+1)/2",
+    "seeds": [
+      2026100301,
+      2026100302,
+      2026100303,
+      2026100304,
+      2026100305
+    ],
+    "selection_uses_holdout_transfer_ood": false,
+    "target_access_during_discovery": false,
+    "thresholds_or_denominators_changed": false,
+    "total_seed_generation_slots": 60
+  },
+  "kernel_metadata_sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd",
+  "kernel_policy": {
+    "canonical_notebook_url_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+    "code_file": "run_acsie_h7_v22_3.py",
+    "competition_sources": [],
+    "dataset_sources": [],
+    "enable_gpu": false,
+    "enable_internet": false,
+    "id": "memorican/acsie-h7-v22-3-frozen-qualification",
+    "is_private": true,
+    "kernel_sources": [],
+    "kernel_type": "script",
+    "language": "python",
+    "legacy_kernel_metadata_id_alias": "memorican/acsie-h7-v22-3",
+    "title": "ACSIE H7 V22.3 Frozen Qualification"
+  },
+  "runtime_policy": {
+    "continue_after_seed_crash": true,
+    "manifest_has_all_seed_generation_slots": true,
+    "on_timeout": "TIMEOUT_ACTIVE_SLOT_BLOCK_REST_OF_SEED_CONTINUE_NEXT_SEED",
+    "one_child_process_per_seed": true,
+    "per_seed_timeout_seconds": 7200
+  },
+  "schema": "ACSIE.h7.v22_3.embedded_source_manifest.v1",
+  "source_root": "research/recovered/h7_v22_2_runtime/source"
+}

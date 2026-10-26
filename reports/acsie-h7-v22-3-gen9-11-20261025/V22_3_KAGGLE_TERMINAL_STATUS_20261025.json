@@ -1,0 +1,133 @@
+{
+  "audit_assessment": {
+    "H7_GENERATION_PAIR_SUMMARY": "49/60",
+    "H7_PAIR_OUTCOME": "1392/1430",
+    "closure_audit_incomplete_slots": 4,
+    "closure_audit_invalid_slots": 7,
+    "probe_logs_present": false,
+    "run_manifest_present": false,
+    "selected_primitive_slots_recovered": 15,
+    "selected_recency_flags_recovered": 15
+  },
+  "canonical_notebook_url_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
+  "downloaded_files": [
+    {
+      "bytes": 41147110,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-audit-events.jsonl",
+      "sha256": "f5bf54cf4c4e5b8c5b09751d4239be3fc3381098a8e682043956f340f500b674"
+    },
+    {
+      "bytes": 1609,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-00.json",
+      "sha256": "eb0b65df698dcb172c45a7bf5ac4c353f2d88e568977b300069c3ec2176a3e13"
+    },
+    {
+      "bytes": 8176,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-01.json",
+      "sha256": "66a0115c48bbe43405695c392744931856f3923823bbb612e5783a21636a3b53"
+    },
+    {
+      "bytes": 31897,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-02.json",
+      "sha256": "b48547fb8fbf47cbb2bb0c7c3df8d6c721cdaa833d4ab53a0f73c3c971fd770b"
+    },
+    {
+      "bytes": 412187,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-03.json",
+      "sha256": "c86f99617f1b304c94835c7b56020a88cf3e8b3fce6058241bbc143596551641"
+    },
+    {
+      "bytes": 662612,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-04.json",
+      "sha256": "e309b3500199f4642ed5df0439098b06d45893a8c7c62c81f248a1e5ca05e757"
+    },
+    {
+      "bytes": 631443,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-05.json",
+      "sha256": "7a3381984fda0ec1ed8f17b620b570b355a1319e1186b71f9480467d4ec82ad3"
+    },
+    {
+      "bytes": 937354,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-06.json",
+      "sha256": "bd91d11a0663d1f9a5e162d08eb63d3c549c7611f117c9b512ca6f09238defa7"
+    },
+    {
+      "bytes": 1248698,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-07.json",
+      "sha256": "d4a705253264fb702dfa1cb2be0f2ff43b7cf0568058cc920c4a9969df4ff615"
+    },
+    {
+      "bytes": 1746671,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-08.json",
+      "sha256": "95dc3017788d03c4d70d3623104cf85bd071fb99b1b3f682eb0cbfd4c62712a2"
+    },
+    {
+      "bytes": 1997112,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-09.json",
+      "sha256": "6cc6164b057263b73c204c7673afd9b212169d15b42d2adc8fa1100ffc5e10dc"
+    },
+    {
+      "bytes": 2434523,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-10.json",
+      "sha256": "2224f7ea01be5c5ec6ca621a9e053d02848b08f7d18e6cde578e24ed15222858"
+    },
+    {
+      "bytes": 2175182,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-11.json",
+      "sha256": "a7a186526c6c99274fa55ddb54b551127448b73c5829cc11fd29469549374bdf"
+    },
+    {
+      "bytes": 1609,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-00.json",
+      "sha256": "0dc5c7f6cfa63f6f9a576bff87148bf469882858a36f7699df6a3c088436bbb2"
+    },
+    {
+      "bytes": 7437,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-01.json",
+      "sha256": "a6a2a26318aede420824e6434994987a8fa8a994cd280c0aaac8dfc8fc33720c"
+    },
+    {
+      "bytes": 28747,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-02.json",
+      "sha256": "fd25de09b9aceefd965d014c9921b1bbd65bdecc0cfe73ece69b6f9817d25497"
+    },
+    {
+      "bytes": 74081,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-03.json",
+      "sha256": "c874cda09d66102c4a2f8c9c0ce6eeaa2e5258521a36c5ba4bc46453dfb625b4"
+    },
+    {
+      "bytes": 194554,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-04.json",
+      "sha256": "4b66530d0280e508789aa2be150162da418f68b4e5b26dc5d960d3c09fc30756"
+    },
+    {
+      "bytes": 0,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-05.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 62,
+      "path": "tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-05.json.kaggle-partial",
+      "sha256": "c0bdd9286f9d8621250854a97535f3036d041b87dbf3348e734cee7e0dae23a3"
+    }
+  ],
+  "harvest_assessment": "INCOMPLETE_OUTPUT_BUNDLE: audit-events JSONL is valid but slot summary/pair-audit coverage is incomplete; no run manifest or probes recovered",
+  "harvest_command": "timeout 60s kaggle kernels output memorican/acsie-h7-v22-3-frozen-qualification -p $HOME/tmp/v22_3_kaggle_out",
+  "harvest_exit_code": "NOT_CAPTURED (wrapper completion marker absent)",
+  "harvest_output_log_capture_tail": "01<00:00, 876kB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-08.json\nDownloading seed-2026100301-generation-09.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/1.90M [00:00<?, ?B/s]\n 53%|\u2588\u2588\u2588\u2588\u2588\u258e    | 1.00M/1.90M [00:01<00:01, 581kB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1.90M/1.90M [00:02<00:00, 1.04MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1.90M/1.90M [00:02<00:00, 927kB/s] \n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-09.json\nDownloading seed-2026100301-generation-10.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/2.32M [00:00<?, ?B/s]\n 43%|\u2588\u2588\u2588\u2588\u258e     | 1.00M/2.32M [00:01<00:02, 552kB/s]\n 86%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c | 2.00M/2.32M [00:02<00:00, 1.07MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2.32M/2.32M [00:02<00:00, 1.04MB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-10.json\nDownloading seed-2026100301-generation-11.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/2.07M [00:00<?, ?B/s]\n 48%|\u2588\u2588\u2588\u2588\u258a     | 1.00M/2.07M [00:01<00:01, 632kB/s]\n 96%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b| 2.00M/2.07M [00:02<00:00, 1.18MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2.07M/2.07M [00:02<00:00, 1.07MB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100301-generation-11.json\nDownloading seed-2026100302-generation-00.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/1.57k [00:00<?, ?B/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1.57k/1.57k [00:00<00:00, 1.31MB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-00.json\nDownloading seed-2026100302-generation-01.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/7.26k [00:00<?, ?B/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 7.26k/7.26k [00:00<00:00, 715kB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-01.json\nDownloading seed-2026100302-generation-02.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/28.1k [00:00<?, ?B/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 28.1k/28.1k [00:00<00:00, 87.5kB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 28.1k/28.1k [00:00<00:00, 87.3kB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-02.json\nDownloading seed-2026100302-generation-03.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/72.3k [00:00<?, ?B/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 72.3k/72.3k [00:00<00:00, 121kB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 72.3k/72.3k [00:00<00:00, 121kB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-03.json\nDownloading seed-2026100302-generation-04.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/190k [00:00<?, ?B/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 190k/190k [00:01<00:00, 182kB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 190k/190k [00:01<00:00, 181kB/s]\n\nOutput file downloaded to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits/seed-2026100302-generation-04.json\nDownloading seed-2026100302-generation-05.json to /data/data/com.termux/files/home/tmp/v22_3_kaggle_out/acsie-h7-v22-3-pair-audits\n\n  0%|          | 0.00/358k [00:00<?, ?B/s]/data/data/com.termux/files/usr/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-zn8fhe85'}\n  warnings.warn(\n",
+  "harvest_started_utc": "2026-10-25T21:27:41Z",
+  "legacy_metadata_id_alias": "memorican/acsie-h7-v22-3",
+  "list_command": "timeout 15s kaggle kernels list --mine --search v22-3",
+  "list_exit_code": 0,
+  "list_stdout_stderr_combined": "ref                                                           title                                               author     lastRunTime                 totalVotes  \n------------------------------------------------------------  --------------------------------------------------  ---------  --------------------------  ----------  \nmemorican/acsie-h7-v22-2-closure-replay-20261023              ACSIE H7 V22 2 CLOSURE REPLAY 20261023              Memorican  2026-10-23 03:34:35.880000           0  \nmemorican/acsie-h7-arch-v22-1-gen9-11-replay-20261023         ACSIE H7 ARCH V22 1 GEN9 11 REPLAY 20261023         Memorican  2026-10-23 03:10:10.907000           0  \nmemorican/acsie-h7-v22-2-lineage-bounds-replay-20261023       ACSIE H7 V22 2 Lineage Bounds Replay 20261023       Memorican  2026-10-23 08:34:51.560000           0  \nmemorican/acsie-h7-arch-v22-five-seed-qualification-20261023  ACSIE H7 ARCH V22 Five Seed Qualification 20261023  Memorican  2026-10-22 19:14:59.067000           0  \nmemorican/acsie-h7-arch-v22-gen9-11-checkpoint-continuation   ACSIE H7 ARCH V22 Gen9-11 Checkpoint Continuation   Memorican  2026-10-22 19:03:51.970000           0  \nmemorican/acsie-h7-v22-3-frozen-qualification                 ACSIE H7 V22.3 Frozen Qualification                 Memorican  2026-10-25 18:16:36.243000           0  \n",
+  "observed_status": "KernelWorkerStatus.ERROR",
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "schema": "ACSIE.h7.v22_3.kaggle_terminal_status_snapshot.v1",
+  "status_check_occurrence": 1,
+  "status_command": "timeout 15s kaggle kernels status memorican/acsie-h7-v22-3-frozen-qualification",
+  "status_exit_code": 0,
+  "status_stdout_stderr_combined": "memorican/acsie-h7-v22-3-frozen-qualification has status \"KernelWorkerStatus.ERROR\"\n",
+  "timestamp_utc_batch_start": "2026-10-25T21:27:24Z"
+}

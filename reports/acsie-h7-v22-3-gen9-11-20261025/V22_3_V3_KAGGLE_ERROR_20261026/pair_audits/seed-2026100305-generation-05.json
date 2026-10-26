@@ -1,0 +1,6191 @@
+{
+  "accepted_pair_count": 15,
+  "accepted_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 1
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 2
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 3
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 4
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 5
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 6
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 7
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 8
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 9
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 10
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 11
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 12
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 13
+    },
+    {
+      "macro_pair": [
+        "prim:c52acbb01d8ea89043f4",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 14
+    }
+  ],
+  "attempted_pair_count": 15,
+  "attempted_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 1
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 2
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 3
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 4
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 5
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 6
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 7
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 8
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 9
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 10
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 11
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 12
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 13
+    },
+    {
+      "macro_pair": [
+        "prim:c52acbb01d8ea89043f4",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 14
+    }
+  ],
+  "bootstrap_primitives": [
+    "prim:69e680889385259c198f"
+  ],
+  "checkpoint_fidelity": {
+    "bootstrap_primitives_after": [
+      "prim:69e680889385259c198f"
+    ],
+    "bootstrap_primitives_before": [
+      "prim:69e680889385259c198f"
+    ],
+    "bootstrap_primitives_preserved": true,
+    "errors": [],
+    "ordered_primary_macro_ids_preserved": true,
+    "primary_macro_ids_after": [
+      "prim:69e680889385259c198f",
+      "prim:ca1cc7ea4217a64a7f5d",
+      "prim:7195554b49c72be55e6d",
+      "prim:a00ac8dc7c095a30bc5b",
+      "prim:c52acbb01d8ea89043f4",
+      "prim:6e22731d482440003404"
+    ],
+    "primary_macro_ids_before": [
+      "prim:69e680889385259c198f",
+      "prim:ca1cc7ea4217a64a7f5d",
+      "prim:7195554b49c72be55e6d",
+      "prim:a00ac8dc7c095a30bc5b",
+      "prim:c52acbb01d8ea89043f4",
+      "prim:6e22731d482440003404"
+    ],
+    "status": "VERIFIED"
+  },
+  "eligible_pair_count": 15,
+  "eligible_pairs": [
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 1
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 2
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 3
+    },
+    {
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 4
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 5
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 6
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 7
+    },
+    {
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 8
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 9
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 10
+    },
+    {
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 11
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 12
+    },
+    {
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 13
+    },
+    {
+      "macro_pair": [
+        "prim:c52acbb01d8ea89043f4",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 14
+    }
+  ],
+  "first_failing_pair": null,
+  "generation": 5,
+  "observed_pair_count": 15,
+  "ordered_primary_macro_ids": [
+    "prim:69e680889385259c198f",
+    "prim:ca1cc7ea4217a64a7f5d",
+    "prim:7195554b49c72be55e6d",
+    "prim:a00ac8dc7c095a30bc5b",
+    "prim:c52acbb01d8ea89043f4",
+    "prim:6e22731d482440003404"
+  ],
+  "pair_rows": [
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 6,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "pair_index": 0,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 4,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 1,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:7195554b49c72be55e6d": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:7195554b49c72be55e6d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:7195554b49c72be55e6d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:7195554b49c72be55e6d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 2,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 2,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 12,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:bbc791bc3a0ee09063ce",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:096df452eadf726dd504",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:150118907478008445e8",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8e71bb9ed731d735c918",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:6e22731d482440003404"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:743493ece8d56a8e7a2b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:3d897726ac458bd7120d",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:6e22731d482440003404"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 6,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:bb6a78963864cb812ac1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 7,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:0bcc1a5765738b5e6b1e",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 8,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:041a2a6a06b1d53e890e",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 9,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:d25f6116a65ec9fcee4a",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 10,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:124d40627e5cb66e1f92",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 11,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:37e0d4f28aafe7d28bf9",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 2,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 3,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:c52acbb01d8ea89043f4",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        4
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_process_id": "proc:bbc791bc3a0ee09063ce",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 3,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:da0176dd83d41d6f58d9",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:904f5195aff8dd36a715",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:61ff62476def176273f9",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 2,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 4,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:6e22731d482440003404": 0.0
+        },
+        "closure_train": {
+          "prim:69e680889385259c198f": 0.0,
+          "prim:6e22731d482440003404": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:6e22731d482440003404": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:69e680889385259c198f": 0.0,
+        "prim:6e22731d482440003404": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:69e680889385259c198f",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        0,
+        5
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "selected_process_id": "proc:da0176dd83d41d6f58d9",
+      "selected_used_primitives": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:66c1610350b4dc9d5fa7",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:03e6894a7a11202d0f21",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:37a5fd7f8523aba6d508",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:70eba31c92f48d04fca2",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:545a2f3dd5515bf7a794",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:e135bafd5c117855f94f",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 5,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:7195554b49c72be55e6d"
+      ],
+      "pair_index": 5,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:7195554b49c72be55e6d",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        2,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:66c1610350b4dc9d5fa7",
+      "selected_used_primitives": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:66c1610350b4dc9d5fa7",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:03e6894a7a11202d0f21",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:37a5fd7f8523aba6d508",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:70eba31c92f48d04fca2",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:545a2f3dd5515bf7a794",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:e135bafd5c117855f94f",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 6,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:a00ac8dc7c095a30bc5b": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:a00ac8dc7c095a30bc5b": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:a00ac8dc7c095a30bc5b": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:a00ac8dc7c095a30bc5b": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:7195554b49c72be55e6d",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        2,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:66c1610350b4dc9d5fa7",
+      "selected_used_primitives": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 18,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:0da507c28b8ee280afbd",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:56072ed1547adffc816c",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:83b70deab2770b7fc864",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:24ca4a80eb9a6a7c31be",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f208e3b09d98c2cd8704",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:704c89a3f4d6c9168be1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 6,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:b75a05f5e67da35297b3",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 7,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:9631a77ed22127ca1374",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 8,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:a57e6ec767189bdfda29",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 9,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:d58068d790306319af79",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 10,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:83e53800b16cc31b9064",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 11,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:1e4e765d9da2d5ff948c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 12,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:dc2f019e166413daf014",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 13,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:425c3054d7420c319f50",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 14,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:79d565201e4f209c5817",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 15,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f77f2f182dbbb3cc1085",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 16,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:5c48bfc86c54eeb1cb51",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 17,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:eb783cadb68eabd33c3b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 7,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:c52acbb01d8ea89043f4": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:c52acbb01d8ea89043f4": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:c52acbb01d8ea89043f4": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:c52acbb01d8ea89043f4": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:c52acbb01d8ea89043f4",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        3,
+        4
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_process_id": "proc:0da507c28b8ee280afbd",
+      "selected_used_primitives": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:ca1cc7ea4217a64a7f5d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 8,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        },
+        "closure_train": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:ca1cc7ea4217a64a7f5d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:ca1cc7ea4217a64a7f5d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:66c1610350b4dc9d5fa7",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:03e6894a7a11202d0f21",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:37a5fd7f8523aba6d508",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:70eba31c92f48d04fca2",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:545a2f3dd5515bf7a794",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "op": "const",
+              "value": 2
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:e135bafd5c117855f94f",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "pair_index": 9,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        },
+        "closure_train": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:7195554b49c72be55e6d",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        2,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:66c1610350b4dc9d5fa7",
+      "selected_used_primitives": [
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 18,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:0da507c28b8ee280afbd",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:56072ed1547adffc816c",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:83b70deab2770b7fc864",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:24ca4a80eb9a6a7c31be",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f208e3b09d98c2cd8704",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:704c89a3f4d6c9168be1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 6,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:b75a05f5e67da35297b3",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 7,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:9631a77ed22127ca1374",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 8,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:a57e6ec767189bdfda29",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 9,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:d58068d790306319af79",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 10,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:83e53800b16cc31b9064",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 11,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:1e4e765d9da2d5ff948c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 12,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:dc2f019e166413daf014",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 13,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:425c3054d7420c319f50",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 14,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:79d565201e4f209c5817",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 15,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f77f2f182dbbb3cc1085",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 16,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:5c48bfc86c54eeb1cb51",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 17,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:eb783cadb68eabd33c3b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 10,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        },
+        "closure_train": {
+          "prim:7195554b49c72be55e6d": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:7195554b49c72be55e6d": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:c52acbb01d8ea89043f4",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        3,
+        4
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_process_id": "proc:0da507c28b8ee280afbd",
+      "selected_used_primitives": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 2,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:7195554b49c72be55e6d",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 11,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:7195554b49c72be55e6d": 0.0
+        },
+        "closure_train": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:7195554b49c72be55e6d": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:7195554b49c72be55e6d": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:7195554b49c72be55e6d": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 18,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:0da507c28b8ee280afbd",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:56072ed1547adffc816c",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:83b70deab2770b7fc864",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:24ca4a80eb9a6a7c31be",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f208e3b09d98c2cd8704",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:704c89a3f4d6c9168be1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 6,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:b75a05f5e67da35297b3",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 7,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:9631a77ed22127ca1374",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 8,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:a57e6ec767189bdfda29",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 9,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:d58068d790306319af79",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 10,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:83e53800b16cc31b9064",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 11,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:1e4e765d9da2d5ff948c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:7195554b49c72be55e6d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 12,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:dc2f019e166413daf014",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 13,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:425c3054d7420c319f50",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 14,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:79d565201e4f209c5817",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 15,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f77f2f182dbbb3cc1085",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 16,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:5c48bfc86c54eeb1cb51",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 17,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:eb783cadb68eabd33c3b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 3,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "pair_index": 12,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:a00ac8dc7c095a30bc5b": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        },
+        "closure_train": {
+          "prim:a00ac8dc7c095a30bc5b": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:a00ac8dc7c095a30bc5b": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:a00ac8dc7c095a30bc5b": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:c52acbb01d8ea89043f4",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        3,
+        4
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_process_id": "proc:0da507c28b8ee280afbd",
+      "selected_used_primitives": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 6,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:53f40fd20d022cecaef8",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:935fd2d8b43cca94389b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:a00ac8dc7c095a30bc5b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:3b4a02084746e9fa7eae",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:a00ac8dc7c095a30bc5b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:374b1d6aa3fc8b06a07c",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:7195554b49c72be55e6d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:f253d4a64d61ee0fd1e0",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:ca1cc7ea4217a64a7f5d",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8d268a3aa18bed1d29c1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 1,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 13,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        },
+        "closure_train": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:a00ac8dc7c095a30bc5b": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:a00ac8dc7c095a30bc5b": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:a00ac8dc7c095a30bc5b",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        3
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selected_process_id": "proc:53f40fd20d022cecaef8",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:a00ac8dc7c095a30bc5b"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    },
+    {
+      "accepted": true,
+      "attempted": true,
+      "candidate_detail_count": 12,
+      "candidate_details": [
+        {
+          "candidate_in_frontier": true,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 0,
+          "lineage_compatible": true,
+          "ood_error": 0.0,
+          "process_id": "proc:bbc791bc3a0ee09063ce",
+          "reuse_ok": true,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:c52acbb01d8ea89043f4",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:c52acbb01d8ea89043f4",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 1,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:096df452eadf726dd504",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:c52acbb01d8ea89043f4"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 2,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:150118907478008445e8",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:119bc759477066d97307",
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:119bc759477066d97307",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 3,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:8e71bb9ed731d735c918",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:119bc759477066d97307",
+            "prim:6e22731d482440003404"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 4,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:743493ece8d56a8e7a2b",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:1764ebf5fd9d1f022031",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 5,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:3d897726ac458bd7120d",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:1764ebf5fd9d1f022031",
+            "prim:6e22731d482440003404"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 6,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:bb6a78963864cb812ac1",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 7,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:0bcc1a5765738b5e6b1e",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:69e680889385259c198f",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 8,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:041a2a6a06b1d53e890e",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:69e680889385259c198f",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:85d6f501b4f607e149e2",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:85d6f501b4f607e149e2",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 9,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:d25f6116a65ec9fcee4a",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:85d6f501b4f607e149e2"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:a00ac8dc7c095a30bc5b",
+            "prim:b032582cec4e97377b95",
+            "prim:ca1cc7ea4217a64a7f5d"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:b032582cec4e97377b95",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 10,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:124d40627e5cb66e1f92",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:b032582cec4e97377b95"
+          ]
+        },
+        {
+          "candidate_in_frontier": false,
+          "competence_ok": true,
+          "executable_lineage_ids": [
+            "prim:69e680889385259c198f",
+            "prim:6e22731d482440003404",
+            "prim:7195554b49c72be55e6d",
+            "prim:ca1cc7ea4217a64a7f5d",
+            "prim:d980397424f1ff9aba7b"
+          ],
+          "expression": {
+            "left": {
+              "id": "prim:6e22731d482440003404",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:d980397424f1ff9aba7b",
+              "op": "macro"
+            }
+          },
+          "frontier_rank": 11,
+          "lineage_compatible": false,
+          "ood_error": 0.0,
+          "process_id": "proc:37e0d4f28aafe7d28bf9",
+          "reuse_ok": false,
+          "transfer_error": 0.0,
+          "used_primitives": [
+            "prim:6e22731d482440003404",
+            "prim:d980397424f1ff9aba7b"
+          ]
+        }
+      ],
+      "candidate_in_frontier": true,
+      "canonicalization_merged": true,
+      "closure_trap": false,
+      "competence_ok": true,
+      "direct_pair_generated": true,
+      "discovery_fit_passed": true,
+      "dominance_pruned": false,
+      "eligible": true,
+      "flag_observability": {
+        "candidate_in_frontier": "OBSERVED_FRONTIER_CANDIDATE_SIGNATURES",
+        "canonicalization_merged": "OBSERVED_PER_DIRECT_SIGNATURE_REPRESENTATIVE_REDUCTION",
+        "closure_trap": "OBSERVED_DERIVED_GATE_OUTCOME",
+        "competence_ok": "OBSERVED_POST_SELECTION_EVALUATION",
+        "dominance_pruned": "OBSERVED_ARCHIVE_TO_FRONTIER_DROP",
+        "lineage_compatible": "OBSERVED_EXECUTABLE_LINEAGE_FOR_RETURNED_CANDIDATES",
+        "reuse_ok": "OBSERVED_DERIVED_GATE_OUTCOME"
+      },
+      "frontier_lineage_matches": 1,
+      "lineage_compatible": true,
+      "macro_pair": [
+        "prim:c52acbb01d8ea89043f4",
+        "prim:6e22731d482440003404"
+      ],
+      "pair_index": 14,
+      "parent_fidelity_error": {
+        "closure_selection": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        },
+        "closure_train": {
+          "prim:6e22731d482440003404": 0.0,
+          "prim:c52acbb01d8ea89043f4": 0.0
+        }
+      },
+      "parent_fidelity_errors": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "parent_fidelity_errors_selection": {
+        "prim:6e22731d482440003404": 0.0,
+        "prim:c52acbb01d8ea89043f4": 0.0
+      },
+      "primary_pair_add_discovery_qualified": true,
+      "primary_pair_add_expression_generated": true,
+      "rejected": false,
+      "rejection_reasons": [],
+      "reuse_ok": true,
+      "search_budget_exhausted": false,
+      "search_budget_telemetry": {
+        "bootstrap_macro_count": 1,
+        "bootstrap_macro_ids": [
+          "prim:69e680889385259c198f"
+        ],
+        "candidate_limit": 3000,
+        "chain_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "limit_reached": true,
+        "primary_macro_count": 6,
+        "primary_pair_expression_count": 180,
+        "primary_pair_prefix_exceeds_limit": false,
+        "protected_macro_count": 6,
+        "protected_pair_expression_count": 180,
+        "protected_pair_order_sha256": "709d14b1a99c433195483ac81c6d5e5eb8a548a2b34bfe826d3240af18433f50",
+        "returned_unique_expression_count": 3000
+      },
+      "selected_executable_lineage_ids": [
+        "prim:69e680889385259c198f",
+        "prim:6e22731d482440003404",
+        "prim:7195554b49c72be55e6d",
+        "prim:a00ac8dc7c095a30bc5b",
+        "prim:c52acbb01d8ea89043f4",
+        "prim:ca1cc7ea4217a64a7f5d"
+      ],
+      "selected_expression": {
+        "left": {
+          "id": "prim:6e22731d482440003404",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:c52acbb01d8ea89043f4",
+          "op": "macro"
+        }
+      },
+      "selected_lineage_match": true,
+      "selected_pair_gens": [
+        5,
+        4
+      ],
+      "selected_pair_recency_gate_applicable": false,
+      "selected_pair_recency_gate_passed": null,
+      "selected_primary_macro_ids": [
+        "prim:6e22731d482440003404",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selected_process_id": "proc:bbc791bc3a0ee09063ce",
+      "selected_used_primitives": [
+        "prim:6e22731d482440003404",
+        "prim:c52acbb01d8ea89043f4"
+      ],
+      "selection_source": "first_discovery_ranked_frontier_candidate_v1",
+      "skipped": false
+    }
+  ],
+  "rejected_pair_count": 0,
+  "rejected_pairs": [],
+  "rejection_breakdown": {
+    "counts": {
+      "candidate_missing": 0,
+      "canonicalization_mismatch": 0,
+      "closure_trap": 0,
+      "competence_failure": 0,
+      "dominance": 0,
+      "equivalence_mismatch": 0,
+      "lineage_break": 0,
+      "primary_pair_add_not_discovery_qualified": 0,
+      "search_budget_exhausted": 0
+    },
+    "pairs": {
+      "candidate_missing": [],
+      "canonicalization_mismatch": [],
+      "closure_trap": [],
+      "competence_failure": [],
+      "dominance": [],
+      "equivalence_mismatch": [],
+      "lineage_break": [],
+      "primary_pair_add_not_discovery_qualified": [],
+      "search_budget_exhausted": []
+    }
+  },
+  "required_pair_count": 15,
+  "schema": "ACSIE.h7.generation_pair_summary.v1",
+  "skipped_pair_count": 0,
+  "skipped_pairs": []
+}

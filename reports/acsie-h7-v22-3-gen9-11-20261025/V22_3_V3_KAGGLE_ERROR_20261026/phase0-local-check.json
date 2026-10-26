@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "frozen_seeds_exact": true,
+    "full_pair_denominator_frozen": true,
+    "generations_exact": true,
+    "gpu_disabled": true,
+    "holdout_transfer_ood_not_used_for_selection": true,
+    "internet_disabled": true,
+    "private_kernel": true,
+    "promotion_locked": true,
+    "slots_exact": true,
+    "target_access_during_discovery_false": true,
+    "thresholds_denominators_unchanged": true
+  },
+  "embedded_archive_bytes": 108634,
+  "embedded_archive_sha256": "27ebf11dad15cdb6a92bb9c72f9f62c31042e665c0b0a00c86678e73754185fe",
+  "executed_command": "python run_acsie_h7_v22_3.py --phase0-only",
+  "kaggle_dispatch_performed": false,
+  "kernel_metadata_sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd",
+  "phase0_status": "PASSED",
+  "preflight_status": "PASSED",
+  "promotion": "DO NOT PROMOTE",
+  "qualification_slots_evaluated": 0,
+  "qualification_status": "NOT_QUALIFIED",
+  "regression_exit_code": 0,
+  "regression_tests_passed": 43,
+  "research_started": false,
+  "run_mode": "local_phase0_only",
+  "runner_bytes": 181149,
+  "runner_sha256": "e5567bf638087169e2d816f43c8f91e6375cad2544ace14c4385d86e8f43d96a",
+  "schema": "ACSIE.h7.v22_3.phase0_summary.v1",
+  "source_manifest_sha256": "8ed8f071b4414650f346fd30f3bede2cc5d9979b6492565a97545fb498c0f3c1"
+}

@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "bytes": 175949,
+      "path": "research/recovered/h7_v22_2_runtime/v22_3_staging/run_acsie_h7_v22_3.py",
+      "sha256": "4a23250bb03613c337ec311b04c2a1c5294edb47edbfbdf9b76491c57d7ab67b"
+    },
+    {
+      "bytes": 4841,
+      "path": "research/recovered/h7_v22_2_runtime/v22_3_staging/source-manifest.json",
+      "sha256": "a90ef910dc69cd2f1967bfe327548d2f9c11c0dc97ec2f9d7d5d5941fb5aed07"
+    },
+    {
+      "bytes": 499,
+      "path": "research/recovered/h7_v22_2_runtime/v22_3_staging/kernel-metadata.json",
+      "sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd"
+    },
+    {
+      "bytes": 5397,
+      "path": "research/recovered/h7_v22_2_runtime/v22_3_staging/build-report.json",
+      "sha256": "f48babd4c96888e0942569be0157443da04f4785000ed329b9eccfc8156e6957"
+    },
+    {
+      "bytes": 8305,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_1_LOCAL_G0_4_GATE_20261026.md",
+      "sha256": "2ae85208059fe2eeaa13d288a6d3482528e04c4d7822f0c0ee5750f518e0e981"
+    },
+    {
+      "bytes": 21271,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_1_LOCAL_G0_4_GATE_20261026.json",
+      "sha256": "ce397434cc87bf37cd4b5df01119e985823d5f9aa7fe80f68a223f424f984c37"
+    },
+    {
+      "bytes": 40438,
+      "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_1_TASKS_1_TO_3_UNIFIED_20261026.diff",
+      "sha256": "9fd15c658a13b9945926ff7ab003321551af219016fb3b6978b124d0abe128b5"
+    }
+  ],
+  "build_report_file_sha256": "f48babd4c96888e0942569be0157443da04f4785000ed329b9eccfc8156e6957",
+  "date": "2026-10-26",
+  "dispatch_decision": "DO NOT DISPATCH: the current-source local runs failed to finish Gen0-4 within the bounded 12s per-seed attempts; Gen2-4 are not verified.",
+  "embedded_archive_sha256": "7e55b716e74c6d106e4c85e63e81360a2422ca2ec32c1a3b25aadd90ef8bf31e",
+  "kaggle_dispatch_performed": false,
+  "kernel_metadata_file_sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd",
+  "local_gen0_gen4_gate": "BLOCKED",
+  "phase0_elapsed_seconds": 4.768,
+  "phase0_status": "PASSED",
+  "phase0_tests_failed": 0,
+  "phase0_tests_ran": 38,
+  "preflight_checks": {
+    "frozen_seeds_exact": true,
+    "full_pair_denominator_frozen": true,
+    "generations_exact": true,
+    "gpu_disabled": true,
+    "holdout_transfer_ood_not_used_for_selection": true,
+    "internet_disabled": true,
+    "no_dataset_sources": true,
+    "no_kernel_sources": true,
+    "private_kernel": true,
+    "promotion_locked": true,
+    "slots_exact": true,
+    "target_access_during_discovery_false": true,
+    "thresholds_denominators_unchanged": true
+  },
+  "promotion": "DO NOT PROMOTE",
+  "qualification_slots_evaluated": 0,
+  "research_started": false,
+  "runner_build_status": "PASSED",
+  "runner_finalizer_test": {
+    "all_default_slots_inconclusive": true,
+    "archive_sha256_matched": true,
+    "foundry_summary_written": true,
+    "promotion": "DO NOT PROMOTE",
+    "qualification_status": "NOT_QUALIFIED",
+    "run_manifest_written": true,
+    "runner_sha256_matched": true,
+    "slot_count": 60,
+    "slot_manifest_written": true,
+    "status": "PASSED",
+    "target_access_during_discovery_false": true
+  },
+  "runner_sha256": "4a23250bb03613c337ec311b04c2a1c5294edb47edbfbdf9b76491c57d7ab67b",
+  "schema": "ACSIE.h7.v22_3_1.build_phase0_receipt.v1",
+  "source_manifest_file_sha256": "a90ef910dc69cd2f1967bfe327548d2f9c11c0dc97ec2f9d7d5d5941fb5aed07"
+}

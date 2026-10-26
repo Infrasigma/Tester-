@@ -12,6 +12,12 @@ import subprocess
 import sys
 import time
 
+try:
+    from scripts.build_embedded_kaggle_kernel import BuildError, validate_staged_kernel
+except ModuleNotFoundError:
+    # The control script may execute this file by path, where scripts/ itself is sys.path[0].
+    from build_embedded_kaggle_kernel import BuildError, validate_staged_kernel
+
 
 VERSION_RE = re.compile(r"(?i)kernel\s+version\s+(\d+)\s+successfully\s+pushed")
 KNOWN = ("COMPLETE", "ERROR", "FAILED", "CANCELLED", "RUNNING", "QUEUED", "INITIALIZING")
@@ -23,6 +29,24 @@ def run(argv):
                               stderr=subprocess.PIPE, check=False)
     except OSError:
         return None
+
+
+def candidate_dispatch_error(candidate, expected_nonce: str, expected_slug: str) -> str | None:
+    """Require a receipt candidate to bind both the current dispatch and actual kernel slug."""
+    if not isinstance(candidate, dict):
+        return "candidate_not_object"
+    provenance = candidate.get("provenance")
+    nonce = provenance.get("dispatch_nonce") if isinstance(provenance, dict) else None
+    if nonce is None:
+        nonce = candidate.get("dispatch_nonce")
+    if nonce != expected_nonce:
+        return "dispatch_nonce_mismatch"
+    execution = candidate.get("execution")
+    if not isinstance(execution, dict):
+        return "candidate_execution_missing"
+    if execution.get("kernel_slug") != expected_slug:
+        return "kernel_slug_mismatch"
+    return None
 
 
 def main() -> int:
@@ -51,6 +75,12 @@ def main() -> int:
         print("KAGGLE_KERNEL_FAILED: staged kernel payload missing", file=sys.stderr)
         return 2
 
+    try:
+        guard = validate_staged_kernel(kernel_dir, args.kernel_slug)
+    except (BuildError, OSError, ValueError) as exc:
+        print(f"KAGGLE_KERNEL_FAILED: staged payload guard failed: {exc}", file=sys.stderr)
+        return 2
+    print(json.dumps({"event": "staged_kernel_guard", **guard}, sort_keys=True), flush=True)
     pushed = run(["kaggle", "kernels", "push", "--path", str(kernel_dir)])
     if pushed is None or pushed.returncode != 0:
         print("KAGGLE_KERNEL_FAILED: push stage failed", file=sys.stderr)
@@ -86,13 +116,18 @@ def main() -> int:
                         if sentinel is not None and sentinel.returncode == 0 and len(matches) == 1:
                             try:
                                 candidate = json.loads(matches[0].read_text(encoding="utf-8"))
-                                provenance = candidate.get("provenance", {})
-                                nonce = provenance.get("dispatch_nonce") if isinstance(provenance, dict) else None
-                                if nonce is None:
-                                    nonce = candidate.get("dispatch_nonce")
+                                validation_error = candidate_dispatch_error(
+                                    candidate, args.dispatch_nonce, args.kernel_slug
+                                )
                             except (OSError, json.JSONDecodeError, AttributeError):
-                                nonce = None
-                            if nonce == args.dispatch_nonce:
+                                validation_error = "candidate_unreadable"
+                            if validation_error == "kernel_slug_mismatch":
+                                print(
+                                    "KAGGLE_KERNEL_FAILED: receipt candidate kernel slug mismatch",
+                                    file=sys.stderr,
+                                )
+                                return 2
+                            if validation_error is None:
                                 print(f"KAGGLE_KERNEL_VERSION={version}", flush=True)
                                 print(f"KAGGLE_KERNEL_SLUG={args.kernel_slug}", flush=True)
                                 output_path = os.environ.get("GITHUB_OUTPUT")

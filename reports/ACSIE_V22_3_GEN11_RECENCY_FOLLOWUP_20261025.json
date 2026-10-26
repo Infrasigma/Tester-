@@ -1,0 +1,155 @@
+{
+  "algebraic_identity": {
+    "b0": "max(abs(z), max(y,z))",
+    "equals": "H4*H3",
+    "global_identity": true,
+    "h10": "2*b0*b0",
+    "h1_equals_b0": true,
+    "h3": "b0*b0+b0",
+    "h4": "2*b0*b0+b0",
+    "h7": "2*b0*b0",
+    "h8_equals_h4": true,
+    "h9_equals_b0": true,
+    "recent_pair_expression": "(H9+H10)*(H9+H9*H9)"
+  },
+  "baseline_diagnostic": {
+    "counterfactual_ast_depth": 4,
+    "counterfactual_max_abs_error": 5.684341886080802e-14,
+    "counterfactual_parent_generations": [
+      9,
+      10
+    ],
+    "path": "V22_3_PRIMARY_INVENTION_ONLY_GEN9_11_20261025_COMPACT.json",
+    "raw_target_vector_match_count": 532,
+    "raw_two_macro_match_count": 99,
+    "recency_eligible_pre_cap": 0,
+    "recency_eligible_raw_matches": 0,
+    "two_macro_match_parent_generation_counts": [
+      {
+        "admitted_before_later_pruning": 28,
+        "pair_gens": [
+          3,
+          4
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      },
+      {
+        "admitted_before_later_pruning": 7,
+        "pair_gens": [
+          3,
+          8
+        ],
+        "subtree_output_degeneracy_pruned": 42
+      },
+      {
+        "admitted_before_later_pruning": 21,
+        "pair_gens": [
+          3,
+          6
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      },
+      {
+        "admitted_before_later_pruning": 1,
+        "pair_gens": [
+          2,
+          3
+        ],
+        "subtree_output_degeneracy_pruned": 0
+      }
+    ],
+    "used_for_search_or_selection": false,
+    "wall_seconds": 15.934715
+  },
+  "build": {
+    "embedded_archive_sha256": "fa71f7041ddde3bfc78efa6524d5bf242165b3a67345af01a3e87e2f8ac81efc",
+    "kernel_metadata_sha256": "49549cd6983ac15897e6152c5f0c29cb3ba6b8c944885c4c71f5d2b40f39f2e9",
+    "runner_sha256": "4f1a48bb7a8f9bdc74205e661db62005da8f9061f72fc2fbfd0a57506bcba1f2",
+    "source_manifest_canonical_digest": "129610c91b2e0c349284730d796345848c555a9a936c35727660e658b958b3bf",
+    "source_manifest_file_sha256": "59c065cdb85f0d7b49cbd1a8c715c067a7757d816fdadfd9448fbe2ae1b35767",
+    "source_manifest_sha256": "129610c91b2e0c349284730d796345848c555a9a936c35727660e658b958b3bf"
+  },
+  "historical_runs": [
+    {
+      "kernel": "#15 acsie-h7-v22-2-closure-replay-20261023",
+      "posthoc_gate": "FAIL",
+      "selected_parent_generations": [
+        4,
+        3
+      ],
+      "selected_primitive": "prim:7611e41662bbf9487baf",
+      "target_parent_generations": [
+        3,
+        4
+      ]
+    },
+    {
+      "kernel": "#20 acsie-h7-arch-v22-five-seed-qualification-20261023",
+      "posthoc_gate": "FAIL",
+      "selected_parent_generations": [
+        3,
+        8
+      ],
+      "selected_primitive": "prim:275bef7b3109c393f144",
+      "target_parent_generations": [
+        3,
+        4
+      ]
+    },
+    {
+      "kernel": "#22 acsie-h7-arch-v22-gen9-11-checkpoint-continuation",
+      "posthoc_gate": "FAIL",
+      "selected_parent_generations": [
+        8,
+        3
+      ],
+      "selected_primitive": "prim:c9dafc04ed6c1eaa2115",
+      "target_parent_generations": [
+        4,
+        3
+      ]
+    },
+    {
+      "gen11_reached": false,
+      "kernel": "#19 V19 fast gate",
+      "last_generation": 6,
+      "posthoc_gate": "NOT_APPLICABLE"
+    }
+  ],
+  "patch": {
+    "asymmetric_depth_commutative_pairs_reoriented": true,
+    "bounded_recency_continuation_extra_levels": 2,
+    "frozen_gate_changed": false,
+    "post_fix_replay": "INTERRUPTED_NOT_VERIFIED"
+  },
+  "phase0": {
+    "kaggle_dispatch_performed": false,
+    "qualification_slots_evaluated": 0,
+    "status": "PASSED",
+    "tests_failed": 0,
+    "tests_passed": 26
+  },
+  "post_fix_replay_attempts": [
+    {
+      "elapsed_seconds_at_stop": 98,
+      "output_artifact_written": false,
+      "peak_memory_percent_reported": 23.6,
+      "status": "INTERRUPTED_FOR_LOCAL_DEVICE_RESOURCE_LIMIT"
+    },
+    {
+      "elapsed_seconds_at_stop": 61,
+      "output_artifact_written": false,
+      "peak_memory_percent_reported": 14.1,
+      "status": "INTERRUPTED_FOR_LOCAL_DEVICE_RESOURCE_LIMIT"
+    },
+    {
+      "elapsed_seconds_at_stop": 43,
+      "output_artifact_written": false,
+      "peak_memory_percent_reported": 6.9,
+      "status": "SYNTHETIC_REGRESSION_ATTEMPT_INTERRUPTED"
+    }
+  ],
+  "promotion": "DO NOT PROMOTE",
+  "schema": "ACSIE.h7.v22_3.gen11_recency_followup.v1",
+  "status": "NOT_QUALIFIED"
+}

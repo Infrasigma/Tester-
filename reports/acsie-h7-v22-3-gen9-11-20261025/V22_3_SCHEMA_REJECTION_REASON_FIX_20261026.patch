@@ -1,0 +1,213 @@
+diff --git a/research/h7_generation_pair_summary.py b/research/h7_generation_pair_summary.py
+index a645e14..7db4488 100644
+--- a/research/h7_generation_pair_summary.py
++++ b/research/h7_generation_pair_summary.py
+@@ -20,6 +20,10 @@ REJECTION_REASONS = frozenset({
+     # Telemetry outcomes only; these classify a failed evaluator path and do not
+     # alter eligibility, acceptance thresholds, or the all-pairs denominator.
+     "candidate_missing",
++    # Emitted when the exact parent-pair add expression exists in the
++    # discovery archive but did not qualify on discovery rows. This is
++    # telemetry classification only; it does not change any search gate.
++    "primary_pair_add_not_discovery_qualified",
+     "competence_failure",
+     "search_budget_exhausted",
+ })
+diff --git a/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py b/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
+index 956f891..5632155 100644
+--- a/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
++++ b/research/recovered/h7_v22_2_runtime/build_v22_3_runner.py
+@@ -20,9 +20,12 @@ TEST_NAMES = (
+     "test_h7_v22_2_overlay_regressions.py",
+     "test_h7_closure_telemetry_audit.py",
+     "test_h7_v22_3_repairs.py",
++    "test_h7_generation_pair_summary.py",
+ )
+ KERNEL_POLICY = {
+-    "id": "memorican/acsie-h7-v22-3",
++    "id": "memorican/acsie-h7-v22-3-frozen-qualification",
++    "canonical_notebook_url_slug": "memorican/acsie-h7-v22-3-frozen-qualification",
++    "legacy_kernel_metadata_id_alias": "memorican/acsie-h7-v22-3",
+     "title": "ACSIE H7 V22.3 Frozen Qualification",
+     "code_file": "run_acsie_h7_v22_3.py",
+     "language": "python",
+@@ -211,7 +214,11 @@ def check_frozen_contract():
+         "full_pair_denominator_frozen": contract.get("required_unordered_pairs_per_generation") == "g*(g+1)/2",
+         "promotion_locked": contract.get("promotion") == "DO NOT PROMOTE",
+         "metadata_digest_bound": KERNEL_METADATA_SHA256 == SOURCE_MANIFEST.get("kernel_metadata_sha256"),
+-        "kernel_slug_bound": KERNEL_POLICY.get("id") == "memorican/acsie-h7-v22-3",
++        "kernel_slug_bound": (
++            KERNEL_POLICY.get("id") == "memorican/acsie-h7-v22-3-frozen-qualification"
++            and KERNEL_POLICY.get("canonical_notebook_url_slug") == "memorican/acsie-h7-v22-3-frozen-qualification"
++            and KERNEL_POLICY.get("legacy_kernel_metadata_id_alias") == "memorican/acsie-h7-v22-3"
++        ),
+         "frozen_seed_timeout_exact": SEED_TIMEOUT_SECONDS == 7200 and SOURCE_MANIFEST.get("runtime_policy", {}).get("per_seed_timeout_seconds") == 7200,
+     }
+     failed = sorted(key for key, passed in checks.items() if not passed)
+diff --git a/research/recovered/h7_v22_2_runtime/source/research/h7_generation_pair_summary.py b/research/recovered/h7_v22_2_runtime/source/research/h7_generation_pair_summary.py
+index a645e14..7db4488 100644
+--- a/research/recovered/h7_v22_2_runtime/source/research/h7_generation_pair_summary.py
++++ b/research/recovered/h7_v22_2_runtime/source/research/h7_generation_pair_summary.py
+@@ -20,6 +20,10 @@ REJECTION_REASONS = frozenset({
+     # Telemetry outcomes only; these classify a failed evaluator path and do not
+     # alter eligibility, acceptance thresholds, or the all-pairs denominator.
+     "candidate_missing",
++    # Emitted when the exact parent-pair add expression exists in the
++    # discovery archive but did not qualify on discovery rows. This is
++    # telemetry classification only; it does not change any search gate.
++    "primary_pair_add_not_discovery_qualified",
+     "competence_failure",
+     "search_budget_exhausted",
+ })
+diff --git a/research/tests/test_h7_generation_pair_summary.py b/research/tests/test_h7_generation_pair_summary.py
+index 79e0eaa..7440ac7 100644
+--- a/research/tests/test_h7_generation_pair_summary.py
++++ b/research/tests/test_h7_generation_pair_summary.py
+@@ -1,7 +1,11 @@
+ import copy
++import json
++import re
+ import unittest
++from pathlib import Path
+
+ from research.h7_generation_pair_summary import (
++    REJECTION_REASONS,
+     audit_embedded_generation_pair_summaries,
+     audit_generation_pair_summary,
+     build_generation_pair_summary,
+@@ -107,5 +111,135 @@ class H7GenerationPairSummaryTests(unittest.TestCase):
+         self.assertIn("accepted_pair_count_mismatch", result["errors"])
+
+
++    def test_all_runtime_driver_rejection_identifiers_are_schema_approved(self):
++        runtime_driver = (
++            Path(__file__).resolve().parents[1]
++            / "recovered/h7_v22_2_runtime/source/lab/acsie_open_ended_self_extending_proving.py"
++        )
++        source = runtime_driver.read_text(encoding="utf-8")
++        emitted = set(re.findall(
++            r"^\s*rejection_reasons\s*=\s*\[\s*['\"]([a-z][a-z0-9_]*)['\"]\s*\]",
++            source,
++            flags=re.MULTILINE,
++        ))
++        self.assertEqual(emitted, {
++            "search_budget_exhausted",
++            "primary_pair_add_not_discovery_qualified",
++            "candidate_missing",
++            "competence_failure",
++            "closure_trap",
++            "lineage_break",
++        })
++        self.assertLessEqual(emitted, REJECTION_REASONS)
++
++        before = {
++            "_h7_primary_macro_ids": ["prim:left", "prim:right"],
++            "bootstrap_primitives": ["prim:bootstrap"],
++        }
++        for reason in sorted(emitted):
++            with self.subTest(reason=reason):
++                transition = {
++                    "pair_index": 0,
++                    "macro_pair": ["prim:left", "prim:right"],
++                    "eligible": True,
++                    "attempted": True,
++                    "accepted": False,
++                    "rejected": True,
++                    "skipped": False,
++                    "rejection_reasons": [reason],
++                    "candidate_details": [],
++                }
++                summary = build_generation_pair_summary(
++                    1,
++                    [transition],
++                    primary_macro_ids=before["_h7_primary_macro_ids"],
++                    bootstrap_primitives=before["bootstrap_primitives"],
++                    checkpoint_before=before,
++                    checkpoint_after=copy.deepcopy(before),
++                )
++                result = audit_generation_pair_summary(summary)
++                self.assertEqual(result["audit_status"], "CONSISTENT", result)
++
++    def test_five_seed_failure_excerpt_rejection_reasons_are_schema_approved(self):
++        failure_log = (
++            Path(__file__).resolve().parents[1]
++            / "recovered/h7_v22_2_runtime/evidence/V22_3_KAGGLE_FAILURE_EVENT_LINES_20261025.log"
++        )
++        expected = {
++            2026100301: (6, 3, "closure_trap"),
++            2026100302: (7, 1, "closure_trap"),
++            2026100303: (6, 4, "competence_failure"),
++            2026100304: (5, 3, "closure_trap"),
++            2026100305: (4, 0, "competence_failure"),
++        }
++        events = []
++        if failure_log.is_file():
++            for line in failure_log.read_text(encoding="utf-8").splitlines():
++                if not line.startswith("{"):
++                    continue
++                try:
++                    event = json.loads(line)
++                except json.JSONDecodeError:
++                    continue
++                if event.get("event") == "H7_PAIR_OUTCOME":
++                    events.append(event)
++            by_seed = {event.get("seed"): event for event in events}
++        else:
++            # The isolated embedded bundle intentionally omits the bulky raw
++            # harvest log. Retain the five captured seed/generation/pair/reason
++            # facts as compact regression fixtures so Phase-0 still exercises
++            # each real rejection identifier through the schema builder.
++            by_seed = {
++                seed: {
++                    "seed": seed,
++                    "generation": generation,
++                    "pair_index": pair_index,
++                    "macro_pair": [f"prim:fixture:{seed}:left", f"prim:fixture:{seed}:right"],
++                    "rejected": True,
++                    "rejection_reasons": [reason],
++                    "candidate_details": [],
++                }
++                for seed, (generation, pair_index, reason) in expected.items()
++            }
++        self.assertEqual(set(by_seed), set(expected))
++        for seed, (generation, pair_index, reason) in expected.items():
++            with self.subTest(seed=seed):
++                event = by_seed[seed]
++                self.assertEqual(event["generation"], generation)
++                self.assertEqual(event["pair_index"], pair_index)
++                self.assertIs(event["rejected"], True)
++                self.assertIsInstance(event["rejection_reasons"], list)
++                self.assertIn(reason, event["rejection_reasons"])
++                self.assertTrue(set(event["rejection_reasons"]).issubset(REJECTION_REASONS))
++                # Exercise the actual schema builder/auditor using the rejection
++                # payload recorded for each of the five frozen seeds.
++                parent_ids = list(event["macro_pair"])
++                checkpoint = {
++                    "_h7_primary_macro_ids": parent_ids,
++                    "bootstrap_primitives": ["prim:bootstrap"],
++                }
++                transition = {
++                    "pair_index": 0,
++                    "macro_pair": parent_ids,
++                    "eligible": True,
++                    "attempted": True,
++                    "accepted": False,
++                    "rejected": True,
++                    "skipped": False,
++                    "rejection_reasons": list(event["rejection_reasons"]),
++                    "candidate_details": list(event.get("candidate_details") or []),
++                }
++                built = build_generation_pair_summary(
++                    1,
++                    [transition],
++                    primary_macro_ids=parent_ids,
++                    bootstrap_primitives=checkpoint["bootstrap_primitives"],
++                    checkpoint_before=checkpoint,
++                    checkpoint_after=copy.deepcopy(checkpoint),
++                )
++                result = audit_generation_pair_summary(built)
++                self.assertEqual(result["audit_status"], "CONSISTENT", result)
++
++
+ if __name__ == "__main__":
+     unittest.main()

@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-26",
+  "files": [
+    {
+      "bytes": 8305,
+      "path": "V22_3_1_LOCAL_G0_4_GATE_20261026.md",
+      "sha256": "2ae85208059fe2eeaa13d288a6d3482528e04c4d7822f0c0ee5750f518e0e981"
+    },
+    {
+      "bytes": 21271,
+      "path": "V22_3_1_LOCAL_G0_4_GATE_20261026.json",
+      "sha256": "ce397434cc87bf37cd4b5df01119e985823d5f9aa7fe80f68a223f424f984c37"
+    },
+    {
+      "bytes": 40438,
+      "path": "V22_3_1_TASKS_1_TO_3_UNIFIED_20261026.diff",
+      "sha256": "9fd15c658a13b9945926ff7ab003321551af219016fb3b6978b124d0abe128b5"
+    },
+    {
+      "bytes": 3475,
+      "path": "V22_3_1_BUILD_PHASE0_RECEIPT_20261026.json",
+      "sha256": "7313cc2e9c843dea322a3306a865b00343de2791532ef22d238d13d7cf734ed7"
+    },
+    {
+      "bytes": 38791,
+      "path": "source/build_v22_3_runner.py",
+      "sha256": "caa986029a3630522b4596c6275206d0bd3f7e99484d32b039d2e66137eaf14f"
+    },
+    {
+      "bytes": 44601,
+      "path": "source/open_ended_growth.py",
+      "sha256": "97789338926b9943f274645c53a2d48a1da044812a227b028d97d81e90b0ce17"
+    },
+    {
+      "bytes": 53174,
+      "path": "source/recursive_cognitive_compiler.py",
+      "sha256": "1564bcedf91ad8844577a275e9a12068411d00c8a862776baffd8b48b172d88d"
+    },
+    {
+      "bytes": 95444,
+      "path": "source/acsie_open_ended_self_extending_proving.py",
+      "sha256": "b15167254489570e89f0e226d1ad4d64f91061d685a91ae697a98b9016c7681d"
+    },
+    {
+      "bytes": 37422,
+      "path": "source/test_h7_v22_3_repairs.py",
+      "sha256": "c7473a2fe956c5bf56dbbc3ca433cbff7e5ab154cdebd07f75b4d540590f6706"
+    },
+    {
+      "bytes": 175949,
+      "path": "generated/run_acsie_h7_v22_3.py",
+      "sha256": "4a23250bb03613c337ec311b04c2a1c5294edb47edbfbdf9b76491c57d7ab67b"
+    },
+    {
+      "bytes": 4841,
+      "path": "generated/source-manifest.json",
+      "sha256": "a90ef910dc69cd2f1967bfe327548d2f9c11c0dc97ec2f9d7d5d5941fb5aed07"
+    },
+    {
+      "bytes": 499,
+      "path": "generated/kernel-metadata.json",
+      "sha256": "ea0d79ad05bf20e4163a42be5bc93d3b284183b89b3e3021cc68e036787ca4bd"
+    },
+    {
+      "bytes": 5397,
+      "path": "generated/build-report.json",
+      "sha256": "f48babd4c96888e0942569be0157443da04f4785000ed329b9eccfc8156e6957"
+    },
+    {
+      "bytes": 47104,
+      "path": "local-traces/2026100305/stdout.log",
+      "sha256": "597befc93f2670c1edf52032dcce17808d73aadfd3f84e8eed2700d7463483fa"
+    },
+    {
+      "bytes": 1716,
+      "path": "local-traces/2026100305/seed-2026100305-generation-00.json",
+      "sha256": "17fc978832f2e4a1c9d5090d1119c6aa9ba0960ab6efd3ab2c22abd12cb8c359"
+    },
+    {
+      "bytes": 6674,
+      "path": "local-traces/2026100305/seed-2026100305-generation-01.json",
+      "sha256": "ce66ae17960c3725379fc1bd5d2aa09cebd1fb9e09192e7de7c8106b41755ae2"
+    },
+    {
+      "bytes": 30831,
+      "path": "local-traces/2026100304/stdout.log",
+      "sha256": "fccd14fdf3d7ffa10be9181110ceebdbd91b96eebcdf526ee862b59c182ac35b"
+    },
+    {
+      "bytes": 1716,
+      "path": "local-traces/2026100304/seed-2026100304-generation-00.json",
+      "sha256": "a2a7d1f3a300c06de192bd9c4d31c99125fe5d15fc591d1ece7261444a53c2cb"
+    },
+    {
+      "bytes": 6674,
+      "path": "local-traces/2026100304/seed-2026100304-generation-01.json",
+      "sha256": "971376251329852f7062a30422dcc5a55f19305216998303a405503f3e425a08"
+    }
+  ],
+  "kaggle_dispatch_performed": false,
+  "local_gen0_gen4_gate": "BLOCKED",
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "schema": "ACSIE.h7.v22_3_1.tester_mirror_manifest.v1",
+  "source_commit": "ec141c360624d376ac7581a4bdace995ffb227a5"
+}

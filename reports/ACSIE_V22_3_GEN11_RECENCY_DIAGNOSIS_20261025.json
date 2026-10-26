@@ -1,0 +1,1715 @@
+{
+  "algorithm_selection_changed": false,
+  "behavioral_search_pre_post_cap_diagnostics_patch": true,
+  "candidate_diagnostics_telemetry_patch": true,
+  "checkpoint_bytes": 17589621,
+  "complete_candidate_list_persisted_before_patch": false,
+  "current_replay": {
+    "generation_summary": [
+      {
+        "closure_frontier_recency_checks": 45,
+        "closure_frontier_recency_ineligible_count": 4,
+        "closure_frontier_recency_sample": [
+          {
+            "pair_gens": [
+              9,
+              1
+            ],
+            "pair_index": 0,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:f7ff4c8074f55158c001"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 1,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 2,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 3,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              5
+            ],
+            "pair_index": 4,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:22db8a28d488b47c499b"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 5,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 6,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 7,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          }
+        ],
+        "elapsed_seconds": 115.350937,
+        "generation": 9,
+        "primary_invention_recency_summary": {
+          "candidate_pair_samples": [
+            {
+              "direct_parent_generations": [
+                7,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": true,
+              "recency_priority": 0
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:4a74eb1f189c78ff450e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:90f8b2f7342986a6adca",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:13e721bf242502d84dcf"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:8ba8277fdda30d72710a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:73fffff0d43e940284ae"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:13e721bf242502d84dcf",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:90f8b2f7342986a6adca"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:4a74eb1f189c78ff450e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:69f3935e50742f8cff10"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:90f8b2f7342986a6adca",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:90f8b2f7342986a6adca"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:8ba8277fdda30d72710a",
+                "prim:90f8b2f7342986a6adca"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:47dd956f284744d86f83"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:8ba8277fdda30d72710a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:69f3935e50742f8cff10"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:8ba8277fdda30d72710a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:90f8b2f7342986a6adca",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                7
+              ],
+              "direct_parent_ids": [
+                "prim:73fffff0d43e940284ae",
+                "prim:90f8b2f7342986a6adca"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:73fffff0d43e940284ae"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:73fffff0d43e940284ae"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:90f8b2f7342986a6adca",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:47dd956f284744d86f83",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                7,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:69f3935e50742f8cff10",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            }
+          ],
+          "discovery_fitting_alternative_count": 32,
+          "generation": 9,
+          "recency_eligible_discovery_candidate_count": 1,
+          "recency_ineligible_discovery_candidate_count": 31,
+          "selected_direct_parent_generations": [
+            7,
+            8
+          ],
+          "selected_direct_parent_ids": [
+            "prim:13e721bf242502d84dcf",
+            "prim:9759420bfb5bc95dcb96"
+          ],
+          "selected_frontier_count_after_signature_preserving": 32,
+          "selected_pair_recency_gate_passed": true,
+          "selected_primitive_id": "prim:1c9f1097608c3f094303",
+          "source": "OpenEndedRecursiveCognitiveCompiler.invent_primitive"
+        },
+        "primary_pair_recency_gate_applicable": true,
+        "primary_pair_recency_gate_checks": 45,
+        "primary_pair_recency_gate_failures": 4,
+        "primary_pair_recency_gate_passed": true,
+        "probe_rows_observed": 4,
+        "required_pairs": 45,
+        "selected_pair_gens": [
+          7,
+          8
+        ],
+        "selected_primary_macro_id": "prim:1c9f1097608c3f094303",
+        "selected_primary_parent_ids": [
+          "prim:13e721bf242502d84dcf",
+          "prim:9759420bfb5bc95dcb96"
+        ],
+        "selected_primary_target_parent_generations": [
+          8,
+          7
+        ],
+        "selected_primary_target_parent_ids": [
+          "prim:9759420bfb5bc95dcb96",
+          "prim:13e721bf242502d84dcf"
+        ],
+        "v22_1_reuse": "33/45",
+        "v22_2_reuse": "37/45",
+        "v22_3_closure_traps": 0,
+        "v22_3_lineage_ok": true,
+        "v22_3_pair_rows_observed": 45,
+        "v22_3_probe_reuse": 1.0,
+        "v22_3_probe_traps": 0,
+        "v22_3_reuse": "45/45"
+      },
+      {
+        "closure_frontier_recency_checks": 55,
+        "closure_frontier_recency_ineligible_count": 10,
+        "closure_frontier_recency_sample": [
+          {
+            "pair_gens": [
+              9,
+              1
+            ],
+            "pair_index": 0,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:f7ff4c8074f55158c001"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 1,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 2,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 3,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              5
+            ],
+            "pair_index": 4,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:22db8a28d488b47c499b"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 5,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              10
+            ],
+            "pair_index": 6,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:26db1445ec125612c47d"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 7,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          }
+        ],
+        "elapsed_seconds": 191.447343,
+        "generation": 10,
+        "primary_invention_recency_summary": {
+          "candidate_pair_samples": [
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": true,
+              "recency_priority": 0
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": true,
+              "recency_priority": 0
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:4a74eb1f189c78ff450e"
+              ],
+              "recency_eligible": true,
+              "recency_priority": 0
+            },
+            {
+              "direct_parent_generations": [
+                8,
+                1
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:f7ff4c8074f55158c001"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                1
+              ],
+              "direct_parent_ids": [
+                "prim:9e3491aef701868d2c2a",
+                "prim:f7ff4c8074f55158c001"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                1
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:f7ff4c8074f55158c001"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:1c9f1097608c3f094303"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:8ba8277fdda30d72710a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:73fffff0d43e940284ae"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:1c9f1097608c3f094303",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                0,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:7b9e019ca08c0944c250",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:62e410ba7d71a9e9b936",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:273c036b863980be92e1",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                8,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:d8df2b7bb19647d47d03"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                8,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:e822dd9a37b8d3a5a23c"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:698e712a87cf2fa2b68c",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:9586e1528160496d8d5a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:2d7cb422932b718d7583",
+                "prim:4a74eb1f189c78ff450e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:9586e1528160496d8d5a",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:2d7cb422932b718d7583",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:9586e1528160496d8d5a",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:2d7cb422932b718d7583",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                8,
+                1
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:e9457c5fa46eda65bf0e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:d8df2b7bb19647d47d03"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:9e3491aef701868d2c2a",
+                "prim:d8df2b7bb19647d47d03"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:e822dd9a37b8d3a5a23c"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:9e3491aef701868d2c2a",
+                "prim:e822dd9a37b8d3a5a23c"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                0,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:7b9e019ca08c0944c250",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                9
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:62e410ba7d71a9e9b936"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:273c036b863980be92e1",
+                "prim:4a74eb1f189c78ff450e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                9,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:62e410ba7d71a9e9b936",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            }
+          ],
+          "discovery_fitting_alternative_count": 94,
+          "generation": 10,
+          "recency_eligible_discovery_candidate_count": 3,
+          "recency_ineligible_discovery_candidate_count": 85,
+          "selected_direct_parent_generations": [
+            9,
+            8
+          ],
+          "selected_direct_parent_ids": [
+            "prim:1c9f1097608c3f094303",
+            "prim:9759420bfb5bc95dcb96"
+          ],
+          "selected_frontier_count_after_signature_preserving": 94,
+          "selected_pair_recency_gate_passed": true,
+          "selected_primitive_id": "prim:26db1445ec125612c47d",
+          "source": "OpenEndedRecursiveCognitiveCompiler.invent_primitive"
+        },
+        "primary_pair_recency_gate_applicable": true,
+        "primary_pair_recency_gate_checks": 55,
+        "primary_pair_recency_gate_failures": 10,
+        "primary_pair_recency_gate_passed": true,
+        "probe_rows_observed": 4,
+        "required_pairs": 55,
+        "selected_pair_gens": [
+          9,
+          8
+        ],
+        "selected_primary_macro_id": "prim:26db1445ec125612c47d",
+        "selected_primary_parent_ids": [
+          "prim:1c9f1097608c3f094303",
+          "prim:9759420bfb5bc95dcb96"
+        ],
+        "selected_primary_target_parent_generations": [
+          8,
+          0
+        ],
+        "selected_primary_target_parent_ids": [
+          "prim:9759420bfb5bc95dcb96",
+          "prim:7b9e019ca08c0944c250"
+        ],
+        "v22_1_reuse": "37/55",
+        "v22_2_reuse": "36/55",
+        "v22_3_closure_traps": 0,
+        "v22_3_lineage_ok": true,
+        "v22_3_pair_rows_observed": 55,
+        "v22_3_probe_reuse": 1.0,
+        "v22_3_probe_traps": 0,
+        "v22_3_reuse": "55/55"
+      },
+      {
+        "closure_frontier_recency_checks": 66,
+        "closure_frontier_recency_ineligible_count": 31,
+        "closure_frontier_recency_sample": [
+          {
+            "pair_gens": [
+              9,
+              1
+            ],
+            "pair_index": 0,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:f7ff4c8074f55158c001"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 1,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              3
+            ],
+            "pair_index": 2,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:b9f3c773c769732d845e"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 3,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              5
+            ],
+            "pair_index": 4,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:22db8a28d488b47c499b"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 5,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              10
+            ],
+            "pair_index": 6,
+            "passed": true,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:26db1445ec125612c47d"
+            ]
+          },
+          {
+            "pair_gens": [
+              9,
+              8
+            ],
+            "pair_index": 7,
+            "passed": false,
+            "selected_primary_macro_ids": [
+              "prim:1c9f1097608c3f094303",
+              "prim:9759420bfb5bc95dcb96"
+            ]
+          }
+        ],
+        "elapsed_seconds": 268.746678,
+        "generation": 11,
+        "primary_invention_recency_summary": {
+          "candidate_pair_samples": [
+            {
+              "direct_parent_generations": [
+                8,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:9e3491aef701868d2c2a",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                8,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:9759420bfb5bc95dcb96",
+                "prim:e7528617a6abcb95234b"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:5c14f65eba67a1d9dd2e",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:606654a0a31424bed253",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:925089ab51a4660f2bfa",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:73ce8c6b3c2b7b3de053",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                8
+              ],
+              "direct_parent_ids": [
+                "prim:7fd4c717ee9049a2853d",
+                "prim:9759420bfb5bc95dcb96"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:9e3491aef701868d2c2a",
+                "prim:e7528617a6abcb95234b"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:5c14f65eba67a1d9dd2e",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:606654a0a31424bed253",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:925089ab51a4660f2bfa",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:73ce8c6b3c2b7b3de053",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:7fd4c717ee9049a2853d",
+                "prim:9e3491aef701868d2c2a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:8ba8277fdda30d72710a",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:5c14f65eba67a1d9dd2e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:e7528617a6abcb95234b"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:606654a0a31424bed253"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:925089ab51a4660f2bfa"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:73ce8c6b3c2b7b3de053"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:4a74eb1f189c78ff450e",
+                "prim:7fd4c717ee9049a2853d"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:b9f3c773c769732d845e",
+                "prim:c8dfbb37ab96f1cc9a06"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                4,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:73fffff0d43e940284ae",
+                "prim:b9f3c773c769732d845e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                4
+              ],
+              "direct_parent_ids": [
+                "prim:b9f3c773c769732d845e",
+                "prim:dbfeda049ee3a98bcf63"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:8ba8277fdda30d72710a",
+                "prim:e7528617a6abcb95234b"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:5c14f65eba67a1d9dd2e"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:606654a0a31424bed253"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                3,
+                6
+              ],
+              "direct_parent_ids": [
+                "prim:606654a0a31424bed253",
+                "prim:8ba8277fdda30d72710a"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:73ce8c6b3c2b7b3de053"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            },
+            {
+              "direct_parent_generations": [
+                6,
+                3
+              ],
+              "direct_parent_ids": [
+                "prim:01966e0dc8e2ac50ae95",
+                "prim:7fd4c717ee9049a2853d"
+              ],
+              "recency_eligible": false,
+              "recency_priority": 1
+            }
+          ],
+          "discovery_fitting_alternative_count": 57,
+          "generation": 11,
+          "recency_eligible_discovery_candidate_count": 0,
+          "recency_ineligible_discovery_candidate_count": 57,
+          "selected_direct_parent_generations": [
+            8,
+            3
+          ],
+          "selected_direct_parent_ids": [
+            "prim:9759420bfb5bc95dcb96",
+            "prim:b9f3c773c769732d845e"
+          ],
+          "selected_frontier_count_after_signature_preserving": 57,
+          "selected_pair_recency_gate_passed": false,
+          "selected_primitive_id": "prim:c9dafc04ed6c1eaa2115",
+          "source": "OpenEndedRecursiveCognitiveCompiler.invent_primitive"
+        },
+        "primary_pair_recency_gate_applicable": true,
+        "primary_pair_recency_gate_checks": 66,
+        "primary_pair_recency_gate_failures": 31,
+        "primary_pair_recency_gate_passed": false,
+        "probe_rows_observed": 4,
+        "required_pairs": 66,
+        "selected_pair_gens": [
+          8,
+          3
+        ],
+        "selected_primary_macro_id": "prim:c9dafc04ed6c1eaa2115",
+        "selected_primary_parent_ids": [
+          "prim:9759420bfb5bc95dcb96",
+          "prim:b9f3c773c769732d845e"
+        ],
+        "selected_primary_target_parent_generations": [
+          3,
+          4
+        ],
+        "selected_primary_target_parent_ids": [
+          "prim:b9f3c773c769732d845e",
+          "prim:4a74eb1f189c78ff450e"
+        ],
+        "v22_1_reuse": "41/66",
+        "v22_2_reuse": "39/66",
+        "v22_3_closure_traps": 0,
+        "v22_3_lineage_ok": true,
+        "v22_3_pair_rows_observed": 66,
+        "v22_3_probe_reuse": 1.0,
+        "v22_3_probe_traps": 0,
+        "v22_3_reuse": "66/66"
+      }
+    ],
+    "observed_pair_rows": 166,
+    "observed_probe_rows": 12,
+    "qualification_status": "NOT_QUALIFIED",
+    "seed_level_gate_summary": {
+      "completed_generations": 12,
+      "depth_growth_contract": true,
+      "every_closure_perfect": false,
+      "every_probe_perfect": true,
+      "finite_open_ended_growth_gate": false,
+      "gate_reasons": [],
+      "lineage_closed": true,
+      "primary_pair_recency_gate_checks": 3,
+      "primary_pair_recency_gate_failures": 1,
+      "strict_growth": true
+    },
+    "status": "COMPLETED"
+  },
+  "dataset11_checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
+  "dataset12_checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
+  "embedded_archive_sha256": "aeb8ea3b3b3a0b4c42f6f9b2ac3014147141f90e06ed498f16685d91c6f857d6",
+  "fast_v2_output_check": {
+    "attempts": 1,
+    "exit_code": 124,
+    "last_30_lines_available": false,
+    "log_obtained": false,
+    "summary_obtained": false,
+    "timeout_seconds": 18
+  },
+  "full_replay_repeated_after_telemetry_patch": false,
+  "gen11_discovery_fitting_alternative_count": 57,
+  "gen11_recency_eligible_count": 0,
+  "gen11_recency_ineligible_count": 57,
+  "gen11_selected_parent_generations": [
+    8,
+    3
+  ],
+  "gen11_target_parent_generations": [
+    3,
+    4
+  ],
+  "historical_kernel20": {
+    "qualification_status": "NOT_QUALIFIED",
+    "selected_pair_gens": "NOT_RECORDED_IN_COMPACT_OUTPUT",
+    "selected_primitive_ids": {
+      "10": "prim:2a99a640a4caf8f64f59",
+      "11": "prim:275bef7b3109c393f144",
+      "9": "prim:0554d5eaeaea8fd440a9"
+    },
+    "status": "CRASHED"
+  },
+  "historical_kernel22": {
+    "qualification_status": "NOT_QUALIFIED_SINGLE_SEED_DIAGNOSTIC_ONLY",
+    "selected_pair_gens": {
+      "10": "NOT_VERIFIED_FROM_COMPACT_OUTPUT",
+      "11": [
+        8,
+        3
+      ],
+      "9": [
+        7,
+        8
+      ]
+    },
+    "selected_primitive_ids": {
+      "10": "prim:8e39e69622c8e752417c",
+      "11": "prim:c9dafc04ed6c1eaa2115",
+      "9": "prim:1c9f1097608c3f094303"
+    },
+    "status": "PASSED_GEN0_11_SINGLE_SEED_DIAGNOSTIC"
+  },
+  "kaggle_dispatch_performed": false,
+  "manifest_sha256": "19d7ed1f0e223eeb366008bc028b6146d304325d3a4d43560e3433edef2022f4",
+  "phase0_tests": {
+    "failed": 0,
+    "passed": 25,
+    "qualification_slots_evaluated": 0,
+    "research_started": false,
+    "status": "PASSED"
+  },
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "reason_not_repeated": "Only active Desktop Commander device is the Termux phone; saved doctrine avoids phone compute and user explicitly forbade Kaggle dispatch.",
+  "runner_sha256": "c795fb87c24a47195bfd6376e6b61cfd608c39f0b80b177ae06c0bf5616b9f84",
+  "schema": "ACSIE.h7.v22_3.gen11_recency_diagnosis.v1",
+  "selection_uses_holdout_transfer_ood": false,
+  "status": "DIAGNOSED_NOT_FIXED_ALGORITHM",
+  "target_access_during_discovery": false,
+  "thresholds_or_denominators_changed": false
+}

@@ -1,0 +1,1116 @@
+{
+  "checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
+  "checkpoint_state_digest": "98e11ce0e4940df6dd410dbc6d09f63fc877d0b825a6e9e9b6c19b02fae5e75b",
+  "closure_pair_results": [
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "pair_index": 0
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:9c37d71e94d0744e366d"
+      ],
+      "pair_index": 1
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:b9f3c773c769732d845e"
+      ],
+      "pair_index": 2
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:4a74eb1f189c78ff450e"
+      ],
+      "pair_index": 3
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:22db8a28d488b47c499b"
+      ],
+      "pair_index": 4
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 5
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 6
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 7
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 8
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 9
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:7b9e019ca08c0944c250",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 10
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:9c37d71e94d0744e366d"
+      ],
+      "pair_index": 11
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:b9f3c773c769732d845e"
+      ],
+      "pair_index": 12
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:4a74eb1f189c78ff450e"
+      ],
+      "pair_index": 13
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:22db8a28d488b47c499b"
+      ],
+      "pair_index": 14
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 15
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 16
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 17
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 18
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 19
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:f7ff4c8074f55158c001",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 20
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:b9f3c773c769732d845e"
+      ],
+      "pair_index": 21
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:4a74eb1f189c78ff450e"
+      ],
+      "pair_index": 22
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:22db8a28d488b47c499b"
+      ],
+      "pair_index": 23
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 24
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 25
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 26
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 27
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 28
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9c37d71e94d0744e366d",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 29
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:4a74eb1f189c78ff450e"
+      ],
+      "pair_index": 30
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:22db8a28d488b47c499b"
+      ],
+      "pair_index": 31
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 32
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 33
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 34
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 35
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 36
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:b9f3c773c769732d845e",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 37
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:22db8a28d488b47c499b"
+      ],
+      "pair_index": 38
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 39
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 40
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 41
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_prior_partial_run_progress_11_22_33_44_of_44_all_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 42
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 43
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:4a74eb1f189c78ff450e",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 44
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:9e3491aef701868d2c2a"
+      ],
+      "pair_index": 45
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 46
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 47
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 48
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 49
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:22db8a28d488b47c499b",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 50
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "pair_index": 51
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 52
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 53
+    },
+    {
+      "accepted": true,
+      "closure_trap": false,
+      "evidence_status": "aggregate_only_tail_partial_run_progress_44_of_44_and_55_of_55_all_slice_pairs_accepted_zero_traps",
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 54
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 77,
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 55,
+      "seconds": 6.8241,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:ac943395bf1d0435a88f"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 224,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 56,
+      "seconds": 12.854549,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:9d19b5659d078ba782b6"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 418,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 57,
+      "seconds": 14.980954,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:5d68ce0e1f86d1c9052b"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 3,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 58,
+      "seconds": 4.326287,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:2548e50b2b4da6a97c73"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 2,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 59,
+      "seconds": 4.063739,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:7604f53b77ee7f0cf0fa"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 80,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 60,
+      "seconds": 4.860247,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:094a304c0bcc97fec2df"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 224,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 61,
+      "seconds": 9.138544,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:9d19b5659d078ba782b6"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 77,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 62,
+      "seconds": 6.636233,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:ac943395bf1d0435a88f"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 418,
+      "macro_pair": [
+        "prim:1c9f1097608c3f094303",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 63,
+      "seconds": 15.842086,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:5d68ce0e1f86d1c9052b"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 3,
+      "macro_pair": [
+        "prim:1c9f1097608c3f094303",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 64,
+      "seconds": 3.611272,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:8880a694b594985f05d2"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 2,
+      "macro_pair": [
+        "prim:26db1445ec125612c47d",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 65,
+      "seconds": 3.841283,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:7604f53b77ee7f0cf0fa"
+    }
+  ],
+  "closure_traps": 0,
+  "directly_evaluated_tail_pair_indices": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "gen10_closure": "55/55 (previously reported, not rerun in this bounded slice)",
+  "gen11_accepted": true,
+  "gen11_closure_accepted": 66,
+  "gen11_closure_pairs_attempted": 66,
+  "gen11_closure_pairs_required": 66,
+  "gen11_closure_reuse_rate": 1.0,
+  "gen11_probe_count": 4,
+  "gen11_selected_ast_depth": 4,
+  "gen11_selected_direct_parent_generations": [
+    9,
+    10
+  ],
+  "gen11_selected_direct_parent_ids": [
+    "prim:1c9f1097608c3f094303",
+    "prim:26db1445ec125612c47d"
+  ],
+  "gen11_selected_expression": {
+    "left": {
+      "left": {
+        "id": "prim:1c9f1097608c3f094303",
+        "op": "macro"
+      },
+      "op": "add",
+      "right": {
+        "id": "prim:26db1445ec125612c47d",
+        "op": "macro"
+      }
+    },
+    "op": "mul",
+    "right": {
+      "left": {
+        "left": {
+          "id": "prim:1c9f1097608c3f094303",
+          "op": "macro"
+        },
+        "op": "add",
+        "right": {
+          "id": "prim:26db1445ec125612c47d",
+          "op": "macro"
+        }
+      },
+      "op": "sub",
+      "right": {
+        "left": {
+          "id": "prim:1c9f1097608c3f094303",
+          "op": "macro"
+        },
+        "op": "mul",
+        "right": {
+          "id": "prim:1c9f1097608c3f094303",
+          "op": "macro"
+        }
+      }
+    }
+  },
+  "gen11_selected_primitive_id": "prim:1a7f483ad996e0c26f19",
+  "gen9_11_invention_seconds": [
+    2.070919,
+    13.248422,
+    61.730968
+  ],
+  "gen9_closure": "45/45 (previously reported, not rerun in this bounded slice)",
+  "generation_records": [
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 0.0,
+        "passed": true,
+        "primitive_id": "prim:1c9f1097608c3f094303",
+        "transfer_error": 0.0
+      },
+      "ast_depth": 2,
+      "ast_nodes": 3,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:22db8a28d488b47c499b",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "id": "prim:9759420bfb5bc95dcb96",
+          "op": "macro"
+        },
+        "op": "sub",
+        "right": {
+          "id": "prim:13e721bf242502d84dcf",
+          "op": "macro"
+        }
+      },
+      "generation": 9,
+      "holdout_error_mae": 0.0,
+      "invent_primitive_seconds": 2.070919,
+      "ood_error_mae_recomputed": 0.0,
+      "recency_eligible_discovery_candidate_count": 1,
+      "selected_direct_parent_generations": [
+        7,
+        8
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:1c9f1097608c3f094303",
+      "transfer_error_mae_recomputed": 0.0,
+      "used_primitives": [
+        "prim:13e721bf242502d84dcf",
+        "prim:9759420bfb5bc95dcb96"
+      ]
+    },
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 0.0,
+        "passed": true,
+        "primitive_id": "prim:26db1445ec125612c47d",
+        "transfer_error": 0.0
+      },
+      "ast_depth": 2,
+      "ast_nodes": 3,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303",
+        "prim:22db8a28d488b47c499b",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "id": "prim:9759420bfb5bc95dcb96",
+          "op": "macro"
+        },
+        "op": "sub",
+        "right": {
+          "id": "prim:1c9f1097608c3f094303",
+          "op": "macro"
+        }
+      },
+      "generation": 10,
+      "holdout_error_mae": 0.0,
+      "invent_primitive_seconds": 13.248422,
+      "ood_error_mae_recomputed": 0.0,
+      "recency_eligible_discovery_candidate_count": 4,
+      "selected_direct_parent_generations": [
+        9,
+        8
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:26db1445ec125612c47d",
+      "transfer_error_mae_recomputed": 0.0,
+      "used_primitives": [
+        "prim:1c9f1097608c3f094303",
+        "prim:9759420bfb5bc95dcb96"
+      ]
+    },
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 6.24389429049188e-13,
+        "passed": true,
+        "primitive_id": "prim:1a7f483ad996e0c26f19",
+        "transfer_error": 6.039613253960852e-14
+      },
+      "ast_depth": 4,
+      "ast_nodes": 11,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303",
+        "prim:22db8a28d488b47c499b",
+        "prim:26db1445ec125612c47d",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "left": {
+            "id": "prim:1c9f1097608c3f094303",
+            "op": "macro"
+          },
+          "op": "add",
+          "right": {
+            "id": "prim:26db1445ec125612c47d",
+            "op": "macro"
+          }
+        },
+        "op": "mul",
+        "right": {
+          "left": {
+            "left": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:26db1445ec125612c47d",
+              "op": "macro"
+            }
+          },
+          "op": "sub",
+          "right": {
+            "left": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            }
+          }
+        }
+      },
+      "generation": 11,
+      "holdout_error_mae": 2.6053233644537006e-14,
+      "invent_primitive_seconds": 61.730968,
+      "ood_error_mae_recomputed": 6.24389429049188e-13,
+      "recency_eligible_discovery_candidate_count": 1,
+      "selected_direct_parent_generations": [
+        9,
+        10
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:1a7f483ad996e0c26f19",
+      "transfer_error_mae_recomputed": 6.039613253960852e-14,
+      "used_primitives": [
+        "prim:1c9f1097608c3f094303",
+        "prim:26db1445ec125612c47d"
+      ]
+    }
+  ],
+  "lineage_ok": true,
+  "prior_prefix_detail_level": "aggregate-only for pair indices 0..54; original bounded runs persisted progress counts but did not persist individual row objects before timeout",
+  "prior_prefix_verified_pair_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "probe_results": [
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 0,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "selected_process_id": "proc:34b007b7465521eced6f"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 1,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:22db8a28d488b47c499b",
+        "prim:9c37d71e94d0744e366d"
+      ],
+      "selected_process_id": "proc:34e1b72ad3fb7f145cc4"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 2,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:26db1445ec125612c47d"
+      ],
+      "selected_process_id": "proc:40c8d4087ef92fa99e30"
+    },
+    {
+      "competence": true,
+      "lineage_ok": true,
+      "probe_index": 3,
+      "probe_trap": false,
+      "reuse_ok": true,
+      "sampled_parent_primitive_ids": [
+        "prim:1a7f483ad996e0c26f19",
+        "prim:13e721bf242502d84dcf"
+      ],
+      "selected_process_id": "proc:4ecf33402d8c3b699403"
+    }
+  ],
+  "probe_reuse_count": 4,
+  "probe_reuse_rate": 1.0,
+  "probe_success_count": 4,
+  "probe_success_rate": 1.0,
+  "probe_traps": 0,
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "recency_eligible_discovery_candidate_count": 1,
+  "recency_gate_passed": true,
+  "retained_primary_count_gen11": 12,
+  "schema": "ACSIE.h7.v22_3.gen11_closure_probe_complete.v1",
+  "seed": 2026100301,
+  "selection_uses_holdout_transfer_ood": false,
+  "state_snapshot_bytes": 21164198,
+  "state_snapshot_sha256": "760c6a811c162694615351e9b803d271221c32cb7c139da44ed4dc7e33b8545f",
+  "status": "COMPLETED",
+  "target_access_during_discovery": false,
+  "thresholds_or_denominators_changed": false,
+  "wall_seconds": 188.688
+}

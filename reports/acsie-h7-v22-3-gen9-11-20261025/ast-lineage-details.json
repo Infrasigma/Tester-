@@ -1,0 +1,196 @@
+{
+  "checkpoint_sha256": "9fa4cdd87ab5039ac6a9bda6e8f65211f1b077622d5a4feb573a30a342c96818",
+  "details": [
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 0.0,
+        "passed": true,
+        "primitive_id": "prim:1c9f1097608c3f094303",
+        "transfer_error": 0.0
+      },
+      "ast_depth": 2,
+      "ast_nodes": 3,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303",
+        "prim:22db8a28d488b47c499b",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "id": "prim:9759420bfb5bc95dcb96",
+          "op": "macro"
+        },
+        "op": "sub",
+        "right": {
+          "id": "prim:13e721bf242502d84dcf",
+          "op": "macro"
+        }
+      },
+      "generation": 9,
+      "holdout_error_mae": 0.0,
+      "invent_primitive_seconds": 2.070919,
+      "lineage_ids_include_selected_primitive": true,
+      "ood_error_mae_recomputed": 0.0,
+      "recency_eligible_discovery_candidate_count": 1,
+      "selected_direct_parent_generations": [
+        7,
+        8
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:1c9f1097608c3f094303",
+      "transfer_error_mae_recomputed": 0.0,
+      "used_primitives": [
+        "prim:13e721bf242502d84dcf",
+        "prim:9759420bfb5bc95dcb96"
+      ]
+    },
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 0.0,
+        "passed": true,
+        "primitive_id": "prim:26db1445ec125612c47d",
+        "transfer_error": 0.0
+      },
+      "ast_depth": 2,
+      "ast_nodes": 3,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303",
+        "prim:22db8a28d488b47c499b",
+        "prim:26db1445ec125612c47d",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "id": "prim:9759420bfb5bc95dcb96",
+          "op": "macro"
+        },
+        "op": "sub",
+        "right": {
+          "id": "prim:1c9f1097608c3f094303",
+          "op": "macro"
+        }
+      },
+      "generation": 10,
+      "holdout_error_mae": 0.0,
+      "invent_primitive_seconds": 13.248422,
+      "lineage_ids_include_selected_primitive": true,
+      "ood_error_mae_recomputed": 0.0,
+      "recency_eligible_discovery_candidate_count": 4,
+      "selected_direct_parent_generations": [
+        9,
+        8
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:26db1445ec125612c47d",
+      "transfer_error_mae_recomputed": 0.0,
+      "used_primitives": [
+        "prim:1c9f1097608c3f094303",
+        "prim:9759420bfb5bc95dcb96"
+      ]
+    },
+    {
+      "accepted": true,
+      "admission_validation": {
+        "ood_error": 6.24389429049188e-13,
+        "passed": true,
+        "primitive_id": "prim:1a7f483ad996e0c26f19",
+        "transfer_error": 6.039613253960852e-14
+      },
+      "ast_depth": 4,
+      "ast_nodes": 11,
+      "executable_lineage_ids": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1a7f483ad996e0c26f19",
+        "prim:1c9f1097608c3f094303",
+        "prim:22db8a28d488b47c499b",
+        "prim:26db1445ec125612c47d",
+        "prim:4a74eb1f189c78ff450e",
+        "prim:7b9e019ca08c0944c250",
+        "prim:9759420bfb5bc95dcb96",
+        "prim:9c37d71e94d0744e366d",
+        "prim:9e3491aef701868d2c2a",
+        "prim:b9f3c773c769732d845e",
+        "prim:f7ff4c8074f55158c001"
+      ],
+      "expression": {
+        "left": {
+          "left": {
+            "id": "prim:1c9f1097608c3f094303",
+            "op": "macro"
+          },
+          "op": "add",
+          "right": {
+            "id": "prim:26db1445ec125612c47d",
+            "op": "macro"
+          }
+        },
+        "op": "mul",
+        "right": {
+          "left": {
+            "left": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            },
+            "op": "add",
+            "right": {
+              "id": "prim:26db1445ec125612c47d",
+              "op": "macro"
+            }
+          },
+          "op": "sub",
+          "right": {
+            "left": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            },
+            "op": "mul",
+            "right": {
+              "id": "prim:1c9f1097608c3f094303",
+              "op": "macro"
+            }
+          }
+        }
+      },
+      "generation": 11,
+      "holdout_error_mae": 2.6053233644537006e-14,
+      "invent_primitive_seconds": 61.730968,
+      "lineage_ids_include_selected_primitive": true,
+      "ood_error_mae_recomputed": 6.24389429049188e-13,
+      "recency_eligible_discovery_candidate_count": 1,
+      "selected_direct_parent_generations": [
+        9,
+        10
+      ],
+      "selected_pair_recency_gate_passed": true,
+      "selected_primitive_id": "prim:1a7f483ad996e0c26f19",
+      "transfer_error_mae_recomputed": 6.039613253960852e-14,
+      "used_primitives": [
+        "prim:1c9f1097608c3f094303",
+        "prim:26db1445ec125612c47d"
+      ]
+    }
+  ],
+  "gen11_recent_pair_counterfactual_is_selected": false,
+  "promotion": "DO NOT PROMOTE",
+  "schema": "ACSIE.h7.v22_3.gen9_11_ast_lineage_details.v1",
+  "seed": 2026100301,
+  "selection_uses_holdout_transfer_ood": false,
+  "target_access_during_discovery": false,
+  "wall_seconds": 82.165
+}

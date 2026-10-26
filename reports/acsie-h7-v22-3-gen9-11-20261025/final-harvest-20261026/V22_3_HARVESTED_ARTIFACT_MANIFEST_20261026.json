@@ -1,0 +1,340 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1900,
+      "path": "V22_3_5_SEED_SUMMARY_20261026.md",
+      "sha256": "634cf512b1ee9fd46987e011aa8bef72553411bc6fa422cde836ecf8f4973bd6"
+    },
+    {
+      "bytes": 84153,
+      "path": "V22_3_60_SLOT_DISPOSITION_20261026.md",
+      "sha256": "42203b241911b6ea6a5fab330fcb22f8cfb637567b87f8095a5457804a72e191"
+    },
+    {
+      "bytes": 265723,
+      "path": "V22_3_FINAL_HARVEST_AUDIT_20261026.json",
+      "sha256": "9458058613320851b5720f267edfabcda4425f920a6753f3680f141f350e4347"
+    },
+    {
+      "bytes": 87547,
+      "path": "V22_3_FINAL_HARVEST_AUDIT_20261026.md",
+      "sha256": "92c184114d0c33b160302b9a4a9ae54abfdc3a90bf1fbea8fa46eacc51db137a"
+    },
+    {
+      "bytes": 1681,
+      "path": "V22_3_FINAL_VERDICT_20261026.md",
+      "sha256": "325abe0f6c801892d52ee7e397299a74068449a2ffbca95d621b5db9f1edd4dd"
+    },
+    {
+      "bytes": 1098449,
+      "compression": "gzip",
+      "path": "logs/acsie-h7-v22-3-seed-2026100302.log.gz",
+      "sha256": "bbfe47dc4fe5c45b9e25b60ba1b77eaf7b97171bcc9ce6e028e55213e58d7b89",
+      "source_raw_log_bytes": 18562551,
+      "source_raw_log_path": "tmp/v22_3_final_harvest/acsie-h7-v22-3-seed-2026100302.log",
+      "source_raw_log_sha256": "21bd3643e4667b9fc334f9fed593a889588db9c7f2c8e920b3c361dab8cf6de2"
+    },
+    {
+      "bytes": 1716,
+      "path": "pair_audits/seed-2026100301-generation-00.json",
+      "sha256": "0ff8dfbdf6902ea11a6cf399c6d3bced459540f0d4a7d4ee700d0aabb28a77cc"
+    },
+    {
+      "bytes": 8283,
+      "path": "pair_audits/seed-2026100301-generation-01.json",
+      "sha256": "776b58198b593526c35f27a89c42579cde1063555052ac04cedea615b3c6aa16"
+    },
+    {
+      "bytes": 32004,
+      "path": "pair_audits/seed-2026100301-generation-02.json",
+      "sha256": "b2aaf106911a326e5f3dfd04eee2aebceffadf499b2719eb67597d40e836dd23"
+    },
+    {
+      "bytes": 412220,
+      "path": "pair_audits/seed-2026100301-generation-03.json",
+      "sha256": "d2b0e7fa0278dcd3d48541763877bf2c80881f98a6b0d263b7aba73ab37c98c5"
+    },
+    {
+      "bytes": 662534,
+      "path": "pair_audits/seed-2026100301-generation-04.json",
+      "sha256": "5f0831c246dfa9520eec83cb45dbdfba34910be2a6e99a2d1bdd961077df1a6f"
+    },
+    {
+      "bytes": 631328,
+      "path": "pair_audits/seed-2026100301-generation-05.json",
+      "sha256": "9633f248efa1dce85dc7cf76b11d80f2d52c1311883d1733b16f487f07c80922"
+    },
+    {
+      "bytes": 937240,
+      "path": "pair_audits/seed-2026100301-generation-06.json",
+      "sha256": "6965bd157339a0f3b2ed534c81a077fbf3c0532b49072b09b2a09f80aa174d74"
+    },
+    {
+      "bytes": 1248648,
+      "path": "pair_audits/seed-2026100301-generation-07.json",
+      "sha256": "03b3f448b28f9f31fb5fd452d0432b345bab804e1cd10844acbe61bd9994ce20"
+    },
+    {
+      "bytes": 1746096,
+      "path": "pair_audits/seed-2026100301-generation-08.json",
+      "sha256": "71dfd15df60b68af28fe42eb4f906f0e9bd5c1d9d2bd7c4a875afcfef83e2a35"
+    },
+    {
+      "bytes": 1995594,
+      "path": "pair_audits/seed-2026100301-generation-09.json",
+      "sha256": "8889a87d5ea011a819f23ab19fc44d0628612ed7f99411af44103d06e4f5a8cd"
+    },
+    {
+      "bytes": 2432319,
+      "path": "pair_audits/seed-2026100301-generation-10.json",
+      "sha256": "5a513818685bcf1b52f117f86e0eb76df52afcd2dd026e543db1411603bcc138"
+    },
+    {
+      "bytes": 2172955,
+      "path": "pair_audits/seed-2026100301-generation-11.json",
+      "sha256": "3371871f162f206550a5aade9f9ba563fb3a754a9fa7046382728e45e3a3a688"
+    },
+    {
+      "bytes": 1716,
+      "path": "pair_audits/seed-2026100302-generation-00.json",
+      "sha256": "afdf6bff75d52094104727ab77686f7b1a613101028a61d6161fe40d9945c61c"
+    },
+    {
+      "bytes": 7544,
+      "path": "pair_audits/seed-2026100302-generation-01.json",
+      "sha256": "75fc1e4eaf641d940d43b4f0dbf8a7d6acb036579e1c1057525c9f46b79f9168"
+    },
+    {
+      "bytes": 28854,
+      "path": "pair_audits/seed-2026100302-generation-02.json",
+      "sha256": "7c2f774a89849a4d8bdf0ea52e06d69d7766934fc29431412e7647b3c3f4b791"
+    },
+    {
+      "bytes": 74188,
+      "path": "pair_audits/seed-2026100302-generation-03.json",
+      "sha256": "d20bc4e5ad3b24f5a669b9d562805ec2768028a68d5c358dd36c5998ca017402"
+    },
+    {
+      "bytes": 194587,
+      "path": "pair_audits/seed-2026100302-generation-04.json",
+      "sha256": "281c7ec8149a40acb3720c1dfc48491587b00fdda45f6ddabefcde9ee371b2f5"
+    },
+    {
+      "bytes": 367714,
+      "path": "pair_audits/seed-2026100302-generation-05.json",
+      "sha256": "fe46b62394e8dcecd95ec348065bb43c3234cec5846b1d4fc1bbd053734ed828"
+    },
+    {
+      "bytes": 412150,
+      "path": "pair_audits/seed-2026100302-generation-06.json",
+      "sha256": "5370303b79bc58000b85b29f360c28f4e87a486d31150a8d3398470023087ee7"
+    },
+    {
+      "bytes": 493079,
+      "path": "pair_audits/seed-2026100302-generation-07.json",
+      "sha256": "53438bd8b9152f00d1162a9247e575b299eb5d10947277570dc2cec423404a68"
+    },
+    {
+      "bytes": 593706,
+      "path": "pair_audits/seed-2026100302-generation-08.json",
+      "sha256": "dfed16754fe8b6f6b1e42d8f82eda9044443c33686c65320db44bcdd7cbdf759"
+    },
+    {
+      "bytes": 664915,
+      "path": "pair_audits/seed-2026100302-generation-09.json",
+      "sha256": "993d3e6581e29c940d6c57ba2297a1a05525ff42b8ed305f83888a67d947681a"
+    },
+    {
+      "bytes": 867006,
+      "path": "pair_audits/seed-2026100302-generation-10.json",
+      "sha256": "04f92c21c0adf9ad92d8c008d3d3358db5ff0e69e63fd72482324816aa3bc4ac"
+    },
+    {
+      "bytes": 885611,
+      "path": "pair_audits/seed-2026100302-generation-11.json",
+      "sha256": "6bec198b77be82e7b3a3426e4a2e48ae3593aa55f3099fcc89bf3d7194bfe971"
+    },
+    {
+      "bytes": 1716,
+      "path": "pair_audits/seed-2026100303-generation-00.json",
+      "sha256": "8d4b8f1bbe9a2d3f83fb73677fafb10d4f4c1c21780b6f0025b1983c36411c2f"
+    },
+    {
+      "bytes": 6682,
+      "path": "pair_audits/seed-2026100303-generation-01.json",
+      "sha256": "dcfccc46ff5841cea62841ff67eeeadb53c0af96b3ab7a28907336d400ee87bd"
+    },
+    {
+      "bytes": 17431,
+      "path": "pair_audits/seed-2026100303-generation-02.json",
+      "sha256": "c84123b3c440d025c470c32d5b58fa7b7f635e146ebad00dff22f4b0149f9a90"
+    },
+    {
+      "bytes": 33973,
+      "path": "pair_audits/seed-2026100303-generation-03.json",
+      "sha256": "0170e609caaf9890d0c9737b340913f45ec76a25b8e5b6ccd98b67806bb85a9d"
+    },
+    {
+      "bytes": 66750,
+      "path": "pair_audits/seed-2026100303-generation-04.json",
+      "sha256": "f270a3f39056af892adb352db5768be1000a95eeaf48c03a6bbbb08fae9fd963"
+    },
+    {
+      "bytes": 119905,
+      "path": "pair_audits/seed-2026100303-generation-05.json",
+      "sha256": "4741e8a063328abf8c647500173617fb831ad6da4b089b5246471494b606bc77"
+    },
+    {
+      "bytes": 508008,
+      "path": "pair_audits/seed-2026100303-generation-06.json",
+      "sha256": "a480293f2cc605b8a9d4880279dfbe2febc52ec9e44ed30dbe8a40d0525c68d2"
+    },
+    {
+      "bytes": 772231,
+      "path": "pair_audits/seed-2026100303-generation-07.json",
+      "sha256": "bd101756ed25e1081b3dc281575fb0a96145907228f0a2a510cc192dbdce010b"
+    },
+    {
+      "bytes": 1716,
+      "path": "pair_audits/seed-2026100304-generation-00.json",
+      "sha256": "a2a7d1f3a300c06de192bd9c4d31c99125fe5d15fc591d1ece7261444a53c2cb"
+    },
+    {
+      "bytes": 6250,
+      "path": "pair_audits/seed-2026100304-generation-01.json",
+      "sha256": "625023089b16b1f133cdecfbe8aeccd2e39404acebfbe9f510acab103d4c0806"
+    },
+    {
+      "bytes": 15273,
+      "path": "pair_audits/seed-2026100304-generation-02.json",
+      "sha256": "b48bbbc935b00605062e5b2e4abd0008193768ac2152df3be65a7bfed2f5ceef"
+    },
+    {
+      "bytes": 28793,
+      "path": "pair_audits/seed-2026100304-generation-03.json",
+      "sha256": "8ff66c951e3e8510ee3abdc44842928c7622b1cb749a6b901a67a69fe32ec869"
+    },
+    {
+      "bytes": 54851,
+      "path": "pair_audits/seed-2026100304-generation-04.json",
+      "sha256": "024f52b8cf6c615a6b2a428506ef0b3c09e82db738c963dc6fe73c6747c5ecec"
+    },
+    {
+      "bytes": 107081,
+      "path": "pair_audits/seed-2026100304-generation-05.json",
+      "sha256": "3fe35b89eb1d86d5add61d9698b74d0ca56b7fc836cbba71f1f13d9285200cb2"
+    },
+    {
+      "bytes": 171208,
+      "path": "pair_audits/seed-2026100304-generation-06.json",
+      "sha256": "19d3059cf17437f2640440de0ae7773f012dea3e407b0338f3a9d089b49b3c63"
+    },
+    {
+      "bytes": 326371,
+      "path": "pair_audits/seed-2026100304-generation-07.json",
+      "sha256": "1011d3152ad8a50b6163f2750c965872c22eafeab6650928ae0534862bf58483"
+    },
+    {
+      "bytes": 444569,
+      "path": "pair_audits/seed-2026100304-generation-08.json",
+      "sha256": "453c59e568a350bc720bfcb4b413f326296685293fee73d1b94da1b4784ef5fc"
+    },
+    {
+      "bytes": 961248,
+      "path": "pair_audits/seed-2026100304-generation-09.json",
+      "sha256": "11f3088a25dba2ce564e65efbe728e9f69f0886ed9e77877b0c7fcbd41d531a2"
+    },
+    {
+      "bytes": 1232576,
+      "path": "pair_audits/seed-2026100304-generation-10.json",
+      "sha256": "174406d4f195341cb9396eb0acd06be7663d156efa51c2f7e13d3c6e2709f440"
+    },
+    {
+      "bytes": 1174580,
+      "path": "pair_audits/seed-2026100304-generation-11.json",
+      "sha256": "8e4726c1400856478b3d47ba4101b255c4571508c81dc5210c4475ca356fc3e7"
+    },
+    {
+      "bytes": 1716,
+      "path": "pair_audits/seed-2026100305-generation-00.json",
+      "sha256": "17fc978832f2e4a1c9d5090d1119c6aa9ba0960ab6efd3ab2c22abd12cb8c359"
+    },
+    {
+      "bytes": 6250,
+      "path": "pair_audits/seed-2026100305-generation-01.json",
+      "sha256": "8f721ab46c2ce64e8b20a42ead399abb084d037b413340233123265349d1f68f"
+    },
+    {
+      "bytes": 17368,
+      "path": "pair_audits/seed-2026100305-generation-02.json",
+      "sha256": "3bc96a6ed3910209bdbcbce4961386a1acd1f26fb7f7f797ac054173a18b9b39"
+    },
+    {
+      "bytes": 38447,
+      "path": "pair_audits/seed-2026100305-generation-03.json",
+      "sha256": "7f2cdb0602db026add778becea02453975a7aec2fc12c0b82561b810300a0660"
+    },
+    {
+      "bytes": 83995,
+      "path": "pair_audits/seed-2026100305-generation-04.json",
+      "sha256": "3c0e0eb34471dbe6b9986378106fc583a19761a9cd9439ed333251a6254240ca"
+    },
+    {
+      "bytes": 122549,
+      "path": "pair_audits/seed-2026100305-generation-05.json",
+      "sha256": "61fba1e73c46d5e6d3a2db93815a2666adc5681018fe6e62c26df2a5dfad9a84"
+    },
+    {
+      "bytes": 262566,
+      "path": "pair_audits/seed-2026100305-generation-06.json",
+      "sha256": "0869b16933a23b0a35e0c1ad1f7c2b393fa86ea78a0a5285784b125fd47b3290"
+    },
+    {
+      "bytes": 408770,
+      "path": "pair_audits/seed-2026100305-generation-07.json",
+      "sha256": "353b26085d6a4affee76e877de1ad40786ae835da83572145438e6d3d4024cdb"
+    },
+    {
+      "bytes": 629477,
+      "path": "pair_audits/seed-2026100305-generation-08.json",
+      "sha256": "a0bf6158eb595719b6cd644cb8598de0192eeae3dd00006b82d3663146a9c201"
+    },
+    {
+      "bytes": 985004,
+      "path": "pair_audits/seed-2026100305-generation-09.json",
+      "sha256": "abd6a74c376d42d8c509d332ee46e3e754289e2e75992e6d39717bebf427f97b"
+    },
+    {
+      "bytes": 1443482,
+      "path": "pair_audits/seed-2026100305-generation-10.json",
+      "sha256": "2b352c0928900066195e0c9f6866cd426dfc313f9e92f46048fc1f565bc38640"
+    },
+    {
+      "bytes": 1519202,
+      "path": "pair_audits/seed-2026100305-generation-11.json",
+      "sha256": "1020b608b90f48baff232addf6f496b12176f0529d1773e54db934997d21412f"
+    }
+  ],
+  "audit_jsonl_downloaded": false,
+  "canonical_repository": "Infrasigma/ACSIE",
+  "date": "2026-10-26",
+  "expected_generation_pair_audits": 60,
+  "harvested_generation_pair_audits": 56,
+  "kernel": "memorican/acsie-h7-v22-3-frozen-qualification",
+  "large_log_policy": "Only the 18,562,551-byte seed-2026100302 log was fully recovered; stored compressed. Other log terminal markers are captured by HTTP Range metadata in the audit report. The 356,293,670-byte seed-0301 log was not fully downloaded.",
+  "missing_generation_pair_audits": [
+    "pair_audits/seed-2026100303-generation-08.json",
+    "pair_audits/seed-2026100303-generation-09.json",
+    "pair_audits/seed-2026100303-generation-10.json",
+    "pair_audits/seed-2026100303-generation-11.json"
+  ],
+  "original_foundry_summary_found": false,
+  "original_run_manifest_found": false,
+  "original_run_manifest_sha256_match": "UNVERIFIED",
+  "promotion": "DO NOT PROMOTE",
+  "qualification_status": "NOT_QUALIFIED",
+  "schema": "ACSIE.h7.v22_3.harvested_artifact_manifest.v1",
+  "target_access_during_discovery_manifest_field": "UNVERIFIED",
+  "whitelist": "run_manifest.json, foundry-summary.json, *.log, seed-*.json only; the audit .jsonl was never downloaded",
+  "worker_status_snapshot": "KernelWorkerStatus.ERROR"
+}

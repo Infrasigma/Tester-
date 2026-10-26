@@ -1,0 +1,198 @@
+{
+  "closure_pair_results": [
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 77,
+      "macro_pair": [
+        "prim:9e3491aef701868d2c2a",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 55,
+      "seconds": 6.8241,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:ac943395bf1d0435a88f"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 224,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:9759420bfb5bc95dcb96"
+      ],
+      "pair_index": 56,
+      "seconds": 12.854549,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:9d19b5659d078ba782b6"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 418,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 57,
+      "seconds": 14.980954,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:5d68ce0e1f86d1c9052b"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 3,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 58,
+      "seconds": 4.326287,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:2548e50b2b4da6a97c73"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 2,
+      "macro_pair": [
+        "prim:13e721bf242502d84dcf",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 59,
+      "seconds": 4.063739,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:7604f53b77ee7f0cf0fa"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 80,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:1c9f1097608c3f094303"
+      ],
+      "pair_index": 60,
+      "seconds": 4.860247,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:094a304c0bcc97fec2df"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 224,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 61,
+      "seconds": 9.138544,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:9d19b5659d078ba782b6"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 77,
+      "macro_pair": [
+        "prim:9759420bfb5bc95dcb96",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 62,
+      "seconds": 6.636233,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:ac943395bf1d0435a88f"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 418,
+      "macro_pair": [
+        "prim:1c9f1097608c3f094303",
+        "prim:26db1445ec125612c47d"
+      ],
+      "pair_index": 63,
+      "seconds": 15.842086,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:5d68ce0e1f86d1c9052b"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 3,
+      "macro_pair": [
+        "prim:1c9f1097608c3f094303",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 64,
+      "seconds": 3.611272,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:8880a694b594985f05d2"
+    },
+    {
+      "accepted": true,
+      "candidate_or_selected_competence": true,
+      "closure_trap": false,
+      "evidence_status": "directly_evaluated_in_snapshot_continuation",
+      "frontier_any_lineage_match": true,
+      "frontier_count": 2,
+      "macro_pair": [
+        "prim:26db1445ec125612c47d",
+        "prim:1a7f483ad996e0c26f19"
+      ],
+      "pair_index": 65,
+      "seconds": 3.841283,
+      "selected_lineage_ok": true,
+      "selected_process_id": "proc:7604f53b77ee7f0cf0fa"
+    }
+  ],
+  "closure_traps": 0,
+  "complete": false,
+  "evaluated_pair_indices": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "promotion": "DO NOT PROMOTE",
+  "schema": "ACSIE.h7.v22_3.gen11_closure_partial.v1",
+  "snapshot_sha256": "760c6a811c162694615351e9b803d271221c32cb7c139da44ed4dc7e33b8545f"
+}

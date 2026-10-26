@@ -1,0 +1,17 @@
+{
+  "additional_polling_authorized": false,
+  "elapsed_check_seconds": 3.58,
+  "end_utc": "2026-10-25T08:04:28Z",
+  "exit_code": 0,
+  "intended_version": "2 (Fast v2 full runner)",
+  "kernel": "memorican/acsie-gen3-foundry-fast",
+  "outputs_downloaded": false,
+  "polls_performed": 1,
+  "promotion_status": "DO NOT PROMOTE",
+  "qualification_status": "NOT_ESTABLISHED_BY_THIS_STATUS_CHECK",
+  "schema": "ACSIE.kaggle.single_bounded_status_check.v1",
+  "start_utc": "2026-10-25T08:04:24Z",
+  "status_output": "memorican/acsie-gen3-foundry-fast has status \"KernelWorkerStatus.CANCEL_ACKNOWLEDGED\"",
+  "terminal_status": "CANCEL_ACKNOWLEDGED",
+  "timeout_seconds": 9
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "ACSIE.kaggle.single_bounded_status_check.v1",
+  "kernel": "memorican/acsie-gen3-foundry-fast",
+  "intended_version": "2 (Fast v2 full runner)",
+  "start_utc": "2026-10-25T08:55:46Z",
+  "end_utc": "2026-10-25T08:55:53Z",
+  "elapsed_check_seconds": 8.28,
+  "timeout_seconds": 9,
+  "exit_code": 0,
+  "polls_performed": 1,
+  "status_output": "memorican/acsie-gen3-foundry-fast has status \"KernelWorkerStatus.CANCEL_ACKNOWLEDGED\"",
+  "terminal_status": "CANCEL_ACKNOWLEDGED",
+  "outputs_downloaded": false,
+  "additional_polling_authorized": false,
+  "qualification_status": "NOT_ESTABLISHED_BY_THIS_STATUS_CHECK",
+  "promotion_status": "DO NOT PROMOTE"
+}
