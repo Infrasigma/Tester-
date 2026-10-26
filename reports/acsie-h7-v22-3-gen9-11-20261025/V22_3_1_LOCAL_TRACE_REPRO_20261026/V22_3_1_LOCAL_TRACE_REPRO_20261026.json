@@ -1,0 +1,191 @@
+{
+  "code_head": "ec141c360624d376ac7581a4bdace995ffb227a5",
+  "date": "2026-10-26",
+  "dispatch_performed": false,
+  "embedded_archive_sha256": "7e55b716e74c6d106e4c85e63e81360a2422ca2ec32c1a3b25aadd90ef8bf31e",
+  "local_gate": "BLOCKED_INCOMPLETE",
+  "local_runs": [
+    {
+      "command_timeout_seconds": 25,
+      "completed_slot_metrics": [
+        {
+          "closure_reuse_rate": null,
+          "closure_trap_count": 0,
+          "competence_failure_count": 0,
+          "file_sha256": "17fc978832f2e4a1c9d5090d1119c6aa9ba0960ab6efd3ab2c22abd12cb8c359",
+          "generation": 0,
+          "observed_pairs": 0,
+          "required_pairs": 0,
+          "seed": 2026100305,
+          "status": "PRESENT"
+        },
+        {
+          "closure_reuse_rate": 1.0,
+          "closure_trap_count": 0,
+          "competence_failure_count": 0,
+          "file_sha256": "ce66ae17960c3725379fc1bd5d2aa09cebd1fb9e09192e7de7c8106b41755ae2",
+          "generation": 1,
+          "observed_pairs": 1,
+          "required_pairs": 1,
+          "seed": 2026100305,
+          "status": "PRESENT"
+        },
+        {
+          "closure_reuse_rate": 1.0,
+          "closure_trap_count": 0,
+          "competence_failure_count": 0,
+          "file_sha256": "3e6ea40b0f0a4720ef2019a16ac7cc2475925e659e7c326b00a1c081d67ae85f",
+          "generation": 2,
+          "observed_pairs": 3,
+          "required_pairs": 3,
+          "seed": 2026100305,
+          "status": "PRESENT"
+        }
+      ],
+      "exit_status": 124,
+      "generations_requested": 5,
+      "note": "Gen0-2 audit files were written; process hit timeout during later generation work. Gen3-4 not certified.",
+      "pair_audit_files_present": [
+        0,
+        1,
+        2
+      ],
+      "run_log_sha256": "f45f87a054e93514d9443b3f8284cd8946322baf103d1df4822405b7dae5b79c",
+      "seed": 2026100305
+    },
+    {
+      "command_timeout_seconds": 25,
+      "completed_slot_metrics": [
+        {
+          "closure_reuse_rate": null,
+          "closure_trap_count": 0,
+          "competence_failure_count": 0,
+          "file_sha256": "a2a7d1f3a300c06de192bd9c4d31c99125fe5d15fc591d1ece7261444a53c2cb",
+          "generation": 0,
+          "observed_pairs": 0,
+          "required_pairs": 0,
+          "seed": 2026100304,
+          "status": "PRESENT"
+        },
+        {
+          "closure_reuse_rate": 1.0,
+          "closure_trap_count": 0,
+          "competence_failure_count": 0,
+          "file_sha256": "971376251329852f7062a30422dcc5a55f19305216998303a405503f3e425a08",
+          "generation": 1,
+          "observed_pairs": 1,
+          "required_pairs": 1,
+          "seed": 2026100304,
+          "status": "PRESENT"
+        }
+      ],
+      "exit_status": 124,
+      "generations_requested": 5,
+      "note": "Gen0-1 audit files were written; Gen2 was still in closure evaluation at timeout. Gen2-4 not certified.",
+      "pair_audit_files_present": [
+        0,
+        1
+      ],
+      "run_log_sha256": "07a2ae4a0ffd8a31a403cbcd2e2ddcea5baeba535a2a68a75e0d7f1a755e50ae",
+      "seed": 2026100304
+    }
+  ],
+  "phase0": {
+    "elapsed_seconds": 4.459,
+    "qualification_slots_evaluated": 0,
+    "research_started": false,
+    "status": "PASSED",
+    "tests_failed": 0,
+    "tests_ran": 38
+  },
+  "promotion": "DO NOT PROMOTE",
+  "reason": "The required full Gen0-4 local gate did not complete for both seeds under the bounded local timeouts. A passing subset is not sufficient to dispatch.",
+  "runner_sha256": "4a23250bb03613c337ec311b04c2a1c5294edb47edbfbdf9b76491c57d7ab67b",
+  "schema": "ACSIE.h7.v22_3_1.local_trace_reproduction.v1",
+  "seed_2026100305_gen2_pair_index_1": {
+    "candidate_details": [
+      {
+        "candidate_in_frontier": true,
+        "competence_ok": true,
+        "executable_lineage_ids": [
+          "prim:69e680889385259c198f",
+          "prim:7195554b49c72be55e6d",
+          "prim:ca1cc7ea4217a64a7f5d"
+        ],
+        "expression": {
+          "left": {
+            "id": "prim:69e680889385259c198f",
+            "op": "macro"
+          },
+          "op": "add",
+          "right": {
+            "id": "prim:7195554b49c72be55e6d",
+            "op": "macro"
+          }
+        },
+        "frontier_rank": 0,
+        "lineage_compatible": true,
+        "ood_error": 0.0,
+        "process_id": "proc:d7f1616c498ed19b8e50",
+        "reuse_ok": true,
+        "transfer_error": 0.0,
+        "used_primitives": [
+          "prim:69e680889385259c198f",
+          "prim:7195554b49c72be55e6d"
+        ]
+      },
+      {
+        "candidate_in_frontier": false,
+        "competence_ok": true,
+        "executable_lineage_ids": [
+          "prim:69e680889385259c198f",
+          "prim:ca1cc7ea4217a64a7f5d"
+        ],
+        "expression": {
+          "left": {
+            "id": "prim:69e680889385259c198f",
+            "op": "macro"
+          },
+          "op": "add",
+          "right": {
+            "id": "prim:ca1cc7ea4217a64a7f5d",
+            "op": "macro"
+          }
+        },
+        "frontier_rank": 1,
+        "lineage_compatible": false,
+        "ood_error": 0.0,
+        "process_id": "proc:c3b1e338ca60d333dc5e",
+        "reuse_ok": false,
+        "transfer_error": 0.0,
+        "used_primitives": [
+          "prim:69e680889385259c198f",
+          "prim:ca1cc7ea4217a64a7f5d"
+        ]
+      }
+    ],
+    "closure_trap": false,
+    "reuse_ok": true,
+    "selected_executable_lineage_ids": [
+      "prim:69e680889385259c198f",
+      "prim:7195554b49c72be55e6d",
+      "prim:ca1cc7ea4217a64a7f5d"
+    ],
+    "selected_expression": {
+      "left": {
+        "id": "prim:69e680889385259c198f",
+        "op": "macro"
+      },
+      "op": "add",
+      "right": {
+        "id": "prim:7195554b49c72be55e6d",
+        "op": "macro"
+      }
+    },
+    "selected_used_primitives": [
+      "prim:69e680889385259c198f",
+      "prim:7195554b49c72be55e6d"
+    ]
+  },
+  "source_manifest_sha256": "a90ef910dc69cd2f1967bfe327548d2f9c11c0dc97ec2f9d7d5d5941fb5aed07"
+}
