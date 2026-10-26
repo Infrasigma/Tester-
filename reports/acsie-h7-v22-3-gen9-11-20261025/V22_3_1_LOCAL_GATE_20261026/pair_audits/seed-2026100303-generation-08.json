@@ -1,0 +1,22 @@
+{
+  "audit_status": "INCOMPLETE",
+  "errors": [
+    "required_pair_count=36",
+    "observed_pair_count=0",
+    "retained_count=8",
+    "expected_primary_chain_length=9",
+    "primary_invention_rejection_reason=TRANSFER_FAILURE"
+  ],
+  "generation": 8,
+  "incomplete_reason": "frozen_all_pairs_denominator_not_reached",
+  "missing_pair_count": 36,
+  "observed_pair_count": 0,
+  "pair_rows": [],
+  "primary_invention_candidate_id": "prim:1461faa33862371b6527",
+  "primary_invention_rejection_reason": "TRANSFER_FAILURE",
+  "promotion": "DO NOT PROMOTE",
+  "required_pair_count": 36,
+  "schema": "ACSIE.h7.generation_pair_summary.incomplete.v1",
+  "seed": 2026100303,
+  "target_access_during_discovery": false
+}
