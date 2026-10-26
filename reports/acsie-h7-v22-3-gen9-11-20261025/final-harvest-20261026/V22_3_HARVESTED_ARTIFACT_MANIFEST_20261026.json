@@ -1,24 +1,24 @@
 {
   "artifacts": [
     {
-      "bytes": 1553,
+      "bytes": 1900,
       "path": "V22_3_5_SEED_SUMMARY_20261026.md",
-      "sha256": "725b4cf4588430affba6b5339f53bb5a82ea907a1c17631283696f7ad2651de3"
+      "sha256": "634cf512b1ee9fd46987e011aa8bef72553411bc6fa422cde836ecf8f4973bd6"
     },
     {
-      "bytes": 84067,
+      "bytes": 84153,
       "path": "V22_3_60_SLOT_DISPOSITION_20261026.md",
-      "sha256": "129e6455e6003c188ece9d9a3e2fb7e92b7cf1e22e50d6a13ba7e36c3ce9d034"
+      "sha256": "42203b241911b6ea6a5fab330fcb22f8cfb637567b87f8095a5457804a72e191"
     },
     {
-      "bytes": 262822,
+      "bytes": 265723,
       "path": "V22_3_FINAL_HARVEST_AUDIT_20261026.json",
-      "sha256": "6d42ac972c5f370f2633dc5a8b455c4368a87e08d257650a6f7b40a93d1f84af"
+      "sha256": "9458058613320851b5720f267edfabcda4425f920a6753f3680f141f350e4347"
     },
     {
-      "bytes": 87114,
+      "bytes": 87547,
       "path": "V22_3_FINAL_HARVEST_AUDIT_20261026.md",
-      "sha256": "e27901c3abb81b81487acd12541d459b2db1eb27626834b45c1f65f9084c7a3d"
+      "sha256": "92c184114d0c33b160302b9a4a9ae54abfdc3a90bf1fbea8fa46eacc51db137a"
     },
     {
       "bytes": 1681,
@@ -29,7 +29,7 @@
       "bytes": 1098449,
       "compression": "gzip",
       "path": "logs/acsie-h7-v22-3-seed-2026100302.log.gz",
-      "sha256": "73082d5233539497f86a0b0589c51c705cd4dcbd136adaa49e49a7d9809a17f5",
+      "sha256": "bbfe47dc4fe5c45b9e25b60ba1b77eaf7b97171bcc9ce6e028e55213e58d7b89",
       "source_raw_log_bytes": 18562551,
       "source_raw_log_path": "tmp/v22_3_final_harvest/acsie-h7-v22-3-seed-2026100302.log",
       "source_raw_log_sha256": "21bd3643e4667b9fc334f9fed593a889588db9c7f2c8e920b3c361dab8cf6de2"

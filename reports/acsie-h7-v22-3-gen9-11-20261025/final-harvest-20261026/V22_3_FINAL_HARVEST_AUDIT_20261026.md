@@ -16,13 +16,13 @@ NOT_QUALIFIED — DO NOT PROMOTE. The single Kaggle status snapshot returned Ker
 
 ## Five-seed master summary
 
-| Seed | Pair-audit JSONs | Log terminal gate marker | Completed generations | Every closure perfect | Every probe perfect | Closure traps | Probe traps | Lineage closed | Recency failures (9–11) | Finite growth gate | Runtime seconds |
-|---|---:|---|---:|---|---|---:|---:|---|---:|---|---|
-| 2026100301 | 12/12 | FAIL | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNAVAILABLE (no run manifest) |
-| 2026100302 | 12/12 | FAIL | 12 | False | False | 24 | 1 | False | 1 | False | UNAVAILABLE (no run manifest) |
-| 2026100303 | 8/12 | FAIL | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNAVAILABLE (no run manifest) |
-| 2026100304 | 12/12 | FAIL | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNAVAILABLE (no run manifest) |
-| 2026100305 | 12/12 | FAIL | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNAVAILABLE (no run manifest) |
+| Seed | Pair-audit JSONs | Gate marker | Generations completed | Runtime evidence | Every closure perfect | Every probe perfect | Trap-free OK | Lineage closed | Finite growth gate | Gen9/10/11 recency |
+|---|---:|---|---|---|---|---|---|---|---|---|
+| 2026100301 | 12/12 | FAIL | UNVERIFIED (12/12 pair-audit JSONs present) | UNAVAILABLE (run manifest/log summary missing) | False | UNVERIFIED | false; 6 trap-positive slots | UNVERIFIED | False | G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED |
+| 2026100302 | 12/12 | FAIL | 12 | >=272.061 s lower bound; run total unavailable | False | False | false; 7 trap-positive slots | False | False | G9=CONFLICT; G10=PASS; G11=PASS |
+| 2026100303 | 8/12 | FAIL | UNVERIFIED (8/12 pair-audit JSONs present) | UNAVAILABLE (run manifest/log summary missing) | False | UNVERIFIED | false; 3 trap-positive slots | UNVERIFIED | False | G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED |
+| 2026100304 | 12/12 | FAIL | UNVERIFIED (12/12 pair-audit JSONs present) | UNAVAILABLE (run manifest/log summary missing) | False | UNVERIFIED | false; 8 trap-positive slots | UNVERIFIED | False | G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED |
+| 2026100305 | 12/12 | FAIL | UNVERIFIED (12/12 pair-audit JSONs present) | UNAVAILABLE (run manifest/log summary missing) | False | UNVERIFIED | false; 10 trap-positive slots | UNVERIFIED | False | G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED |
 
 Seed 2026100302 is the only fully downloaded/parsed full seed log. Its exact final summary: 12 completed generations; final closure reuse 0.6363636; final probe reuse 0.75; every_closure_perfect=false; every_probe_perfect=false; 24 closure traps; 1 probe trap; lineage_closed=false; one recency failure; finite_open_ended_growth_gate=false. The log ends OPEN_ENDED_SELF_EXTENDING_GATE=FAIL.
 
@@ -53,7 +53,7 @@ Closure reuse is computed from the recovered generation pair-audit JSON as true 
 | 2026100302 | 6 | 21 | 0.7619 | 5 | 1.0000 | 0 | True | prim:339fcc177a9cb21bb5f7 | UNVERIFIED | UNVERIFIED | PAIR_AUDIT_JSON_PRESENT |
 | 2026100302 | 7 | 28 | 0.7500 | 7 | 1.0000 | 0 | True | prim:333e6308aa4aa679610d | UNVERIFIED | UNVERIFIED | PAIR_AUDIT_JSON_PRESENT |
 | 2026100302 | 8 | 36 | 0.6944 | 9 | 1.0000 | 0 | True | prim:a7a58ea28ae3d1c92965 | UNVERIFIED | UNVERIFIED | PAIR_AUDIT_JSON_PRESENT |
-| 2026100302 | 9 | 45 | 0.6000 | 18 | 1.0000 | 0 | True | prim:035e74418793b7f32417 | [8,5] | True | PAIR_AUDIT_JSON_PRESENT |
+| 2026100302 | 9 | 45 | 0.6000 | 18 | 1.0000 | 0 | True | prim:035e74418793b7f32417 | {"invention_event":[8,5],"runtime_row":[8,3]} | CONFLICT (invention_event=True; runtime_row=False) | PAIR_AUDIT_JSON_PRESENT |
 | 2026100302 | 10 | 55 | 0.5818 | 23 | 0.5000 | 2 | True | prim:708116f57711e783a5ec | [1,9] | True | PAIR_AUDIT_JSON_PRESENT |
 | 2026100302 | 11 | 66 | 0.6364 | 24 | 0.7500 | 1 | False | prim:f0dc5b989a5c6fd5a574 | [3,10] | True | PAIR_AUDIT_JSON_PRESENT |
 | 2026100303 | 0 | 0 | — | 0 | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | UNVERIFIED | PAIR_AUDIT_JSON_PRESENT |

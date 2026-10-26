@@ -47,6 +47,78 @@
   "kernel": "memorican/acsie-h7-v22-3-frozen-qualification",
   "local_embedded_archive_sha256": "eeef65e6bb74dbf25b6b101874acc283604b0c3bb6bfb655c9538ac837b614d8",
   "local_runner_sha256": "82eba365a03c717126a31d2fd0dd2a88a3d9da14107e76bdae101ca43655885e",
+  "master_summary": [
+    {
+      "every_closure_perfect": false,
+      "every_probe_perfect": "UNVERIFIED",
+      "finite_open_ended_growth_gate": false,
+      "gate_marker": "FAIL",
+      "gen9_10_11_recency": "G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED",
+      "generations_completed": "UNVERIFIED (12/12 pair-audit JSONs present)",
+      "lineage_closed": "UNVERIFIED",
+      "pair_audit_jsons": "12/12",
+      "runtime_evidence": "UNAVAILABLE (run manifest/log summary missing)",
+      "seed": 2026100301,
+      "trap_free_ok": false,
+      "trap_positive_slots": 6
+    },
+    {
+      "every_closure_perfect": false,
+      "every_probe_perfect": false,
+      "finite_open_ended_growth_gate": false,
+      "gate_marker": "FAIL",
+      "gen9_10_11_recency": "G9=CONFLICT; G10=PASS; G11=PASS",
+      "generations_completed": 12,
+      "lineage_closed": false,
+      "pair_audit_jsons": "12/12",
+      "runtime_evidence": ">=272.061 s lower bound; run total unavailable",
+      "seed": 2026100302,
+      "trap_free_ok": false,
+      "trap_positive_slots": 7
+    },
+    {
+      "every_closure_perfect": false,
+      "every_probe_perfect": "UNVERIFIED",
+      "finite_open_ended_growth_gate": false,
+      "gate_marker": "FAIL",
+      "gen9_10_11_recency": "G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED",
+      "generations_completed": "UNVERIFIED (8/12 pair-audit JSONs present)",
+      "lineage_closed": "UNVERIFIED",
+      "pair_audit_jsons": "8/12",
+      "runtime_evidence": "UNAVAILABLE (run manifest/log summary missing)",
+      "seed": 2026100303,
+      "trap_free_ok": false,
+      "trap_positive_slots": 3
+    },
+    {
+      "every_closure_perfect": false,
+      "every_probe_perfect": "UNVERIFIED",
+      "finite_open_ended_growth_gate": false,
+      "gate_marker": "FAIL",
+      "gen9_10_11_recency": "G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED",
+      "generations_completed": "UNVERIFIED (12/12 pair-audit JSONs present)",
+      "lineage_closed": "UNVERIFIED",
+      "pair_audit_jsons": "12/12",
+      "runtime_evidence": "UNAVAILABLE (run manifest/log summary missing)",
+      "seed": 2026100304,
+      "trap_free_ok": false,
+      "trap_positive_slots": 8
+    },
+    {
+      "every_closure_perfect": false,
+      "every_probe_perfect": "UNVERIFIED",
+      "finite_open_ended_growth_gate": false,
+      "gate_marker": "FAIL",
+      "gen9_10_11_recency": "G9=UNVERIFIED; G10=UNVERIFIED; G11=UNVERIFIED",
+      "generations_completed": "UNVERIFIED (12/12 pair-audit JSONs present)",
+      "lineage_closed": "UNVERIFIED",
+      "pair_audit_jsons": "12/12",
+      "runtime_evidence": "UNAVAILABLE (run manifest/log summary missing)",
+      "seed": 2026100305,
+      "trap_free_ok": false,
+      "trap_positive_slots": 10
+    }
+  ],
   "missing_slots": [
     {
       "generation": 8,
@@ -2329,7 +2401,7 @@
       "probe_reuse_rate": 1.0,
       "probe_trap_count": 0,
       "progress_event_present": true,
-      "recency_passed": true,
+      "recency_passed": "CONFLICT (invention_event=True; runtime_row=False)",
       "rejected_pair_count": 18,
       "rejection_breakdown": {
         "candidate_missing": 0,
@@ -2350,10 +2422,16 @@
         3
       ],
       "seed": 2026100302,
-      "selected_pair_gens": [
-        8,
-        5
-      ],
+      "selected_pair_gens": {
+        "invention_event": [
+          8,
+          5
+        ],
+        "runtime_row": [
+          8,
+          3
+        ]
+      },
       "selected_primitive_id": "prim:035e74418793b7f32417",
       "slot_evidence": "PAIR_AUDIT_JSON_PRESENT"
     },
