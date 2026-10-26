@@ -8,7 +8,7 @@
 - `SEED_2026100303_GEN8_INVENTION_SPOTCHECK=FAILED_TRANSFER` — candidate `prim:1461faa33862371b6527` was discovery-ranked but rejected with `TRANSFER_FAILURE`; Gen8 pair audit is incomplete (0/36 observed). This is diagnostic-only and not a qualification result.
 - Phase-0 runner preflight/regressions: `PASSED`; 39 tests, 0 failures; compile passed; `research_started=false`; 0 qualification slots evaluated.
 - Full local driver for seed 0305 printed `OPEN_ENDED_SELF_EXTENDING_GATE=FAIL` despite its Gen0–4 pair audit being complete and clean. This broader gate result is retained as a separate failure and is not represented as an overall seed pass.
-- Kaggle dispatch is authorized by the explicit local Gen0–4 closure gate, but the 0303 Gen8 transfer failure remains unresolved diagnostic evidence. Promotion remains `DO NOT PROMOTE`; H7 remains unresolved and AGI/ASI/general capability not demonstrated.
+- Kaggle kernel version 3 was dispatched after both Gen0–4 closure gates passed. The one permitted status check returned `KernelWorkerStatus.RUNNING`; no further status checks were made. The 0303 Gen8 transfer failure remains unresolved diagnostic evidence. Promotion remains `DO NOT PROMOTE`; H7 remains unresolved and AGI/ASI/general capability not demonstrated.
 
 ## Pair audit table
 

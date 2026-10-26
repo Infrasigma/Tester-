@@ -136,6 +136,7 @@
     }
   ],
   "created_utc": "2026-10-26",
+  "dispatch_receipt": "V22_3_1_KAGGLE_DISPATCH_RECEIPT_20261026.md",
   "files": [
     {
       "path": "research/recovered/h7_v22_2_runtime/evidence/V22_3_1_LOCAL_GATE_20261026/pair_audits/seed-2026100305-generation-00.json",
@@ -235,8 +236,12 @@
     }
   ],
   "global_open_ended_gate_seed0305": "FAIL",
-  "kaggle_dispatch_performed": false,
+  "kaggle_dispatch_performed": true,
+  "kaggle_kernel_version": 3,
+  "kaggle_status_at_single_check": "KernelWorkerStatus.RUNNING",
+  "kaggle_status_check_count": 1,
   "phase0": "PASSED_39_TESTS",
+  "polling_after_status_check": false,
   "promotion": "DO NOT PROMOTE",
   "schema": "ACSIE.h7.v22_3_1.local_gate_verification.v1",
   "seed_0301_gen6_pair5": "PASSED_SPOT_CHECK_INCOMPLETE_AUDIT",
